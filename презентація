@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Ministry | Зцілення через Надію</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            DEFAULT: '#B8860B', // Darker professional gold
+                            light: '#DAA520',
+                            pale: '#FDF5E6'
+                        },
+                        slate: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            800: '#1E293B',
+                            900: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F1F5F9; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8860B; }
+        
+        .flag-gradient {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1649174066224-436f9829994c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gold flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight block text-slate-900 uppercase">Military Ministry</span>
+                    <span class="text-[10px] text-gold tracking-widest block uppercase font-bold">Зцілення Надією</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#vision" class="text-slate-600 hover:text-gold transition-colors font-semibold">Бачення</a>
+                <a href="#about" class="text-slate-600 hover:text-gold transition-colors font-semibold">Мій шлях</a>
+                <a href="#activity" class="text-slate-600 hover:text-gold transition-colors font-semibold">Діяльність</a>
+                <a href="#stories" class="text-slate-600 hover:text-gold transition-colors font-semibold">Історії</a>
+                <a href="#partnership" class="text-slate-600 hover:text-gold transition-colors font-semibold">Партнерство</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="#join-form" class="bg-gold hover:bg-gold-light text-white font-bold px-6 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg">
+                    Стати партнером
+                </a>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-800 p-2">
+                <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-6 space-y-4">
+            <a href="#vision" onclick="toggleMobileMenu()" class="block font-bold py-2">Бачення</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-bold py-2">Мій шлях</a>
+            <a href="#activity" onclick="toggleMobileMenu()" class="block font-bold py-2">Діяльність</a>
+            <a href="#stories" onclick="toggleMobileMenu()" class="block font-bold py-2">Історії</a>
+            <a href="#join-form" onclick="toggleMobileMenu()" class="block text-center bg-gold text-white font-bold py-3 rounded-xl">Стати партнером</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-20 pb-24 flag-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase">
+                        В рамках "Україна для Христа"
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1] text-slate-900">
+                        Military <br><span class="text-gold">Ministry</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 leading-relaxed max-w-2xl">
+                        Допомагаємо ветеранам знайти шлях додому через духовне відновлення та підтримку спільноти.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#join-form" class="bg-gold hover:bg-gold-light text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg transition-all hover:-translate-y-1">
+                            Підтримати місію
+                        </a>
+                        <a href="#activity" class="bg-white border border-slate-200 text-slate-800 font-bold text-lg px-10 py-4 rounded-xl shadow-sm hover:bg-slate-50 transition-all">
+                            Наша діяльність
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <!-- Militarized Flag / Visual -->
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-gold to-yellow-200 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1590487850022-777640f09a56?q=80&w=1974&auto=format&fit=crop" 
+                                 alt="Український прапор мілітарі" class="w-full aspect-[4/5] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
+                                <p class="text-white font-bold text-xl italic">"Ми — тил тих, хто тримав фронт"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION SECTION -->
+    <section id="vision" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-gold font-bold uppercase tracking-widest text-sm mb-6">Бачення</h2>
+            <blockquote class="font-serif italic text-3xl sm:text-4xl text-slate-800 leading-snug">
+                "Тож ідіть, і навчіть всі народи... І ото, Я перебуватиму з вами повсякденно аж до кінця віку!"
+            </blockquote>
+            <p class="mt-8 text-slate-500 font-bold text-lg">— Матвія 28:19-20</p>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs mb-3 block">Мій шлях</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-6">Від фронту до духовного служіння</h2>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            Я — один із тих, хто зі зброєю в руках захищав наш дім. Я пройшов шлях воїна і на власному досвіді розумію цінність кожного моменту на передовій та складність повернення.
+                        </p>
+                        <p>
+                            Сьогодні я продовжую свій шлях служіння українському народу, але вже в лавах місії <strong>Україна для Христа</strong>. Моє покликання — бути поряд з ветеранами, допомагаючи їм інтегруватися в суспільство та знайти внутрішній мир через віру.
+                        </p>
+                        <p class="font-bold text-slate-800">
+                            Я знаю, як важливо відчувати, що тебе розуміють без зайвих слів.
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <!-- Your Photo from Drive -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white transform rotate-2">
+                        <img src="https://docs.google.com/uc?export=view&id=1MtyHgwiF-JES3rKlpARwjDUviLGki8qn" 
+                             alt="Мій особистий шлях" class="w-full h-full object-cover aspect-[4/5]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTIVITY SECTION -->
+    <section id="activity" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-gold font-bold uppercase tracking-widest text-sm mb-3">Діяльність</h2>
+                <h3 class="text-4xl font-extrabold text-slate-900">Як ми діємо</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gold text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-bed-pulse"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Госпіталі</h4>
+                    <p class="text-slate-500">Відвідування поранених бійців, розмови та молитва там, де починається шлях відновлення.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gold text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Подкасти</h4>
+                    <p class="text-slate-500">Спільний проект з УБТС — відкриті розмови про віру та війну для тисяч слухачів.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gold text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-users-rays"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Ретрити</h4>
+                    <p class="text-slate-500">Час у Карпатах для ветеранів. Можливість скинути "броню" серед своїх у безпечному колі.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DANIK'S STORY -->
+    <section id="stories" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-gold/20 blur-3xl rounded-full"></div>
+                    <img src="https://docs.google.com/uc?export=view&id=1iQ7C-WJPR0bZixD-sy9sqFlYSXIDmx4x" 
+                         alt="Данік та дружба" class="rounded-3xl shadow-2xl relative border-2 border-white/10">
+                </div>
+                <div class="space-y-8">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs">Історія дружби</span>
+                    <h2 class="text-4xl font-extrabold leading-tight">Більше, ніж просто допомога</h2>
+                    <p class="text-slate-400 text-xl leading-relaxed">
+                        Данік — військовополонений, який пройшов через пекло. Він отримав тяжкі травми у свої 19 років. Зараз йому 23, і він веде неймовірно активне життя. 
+                    </p>
+                    <p class="text-slate-400 text-xl leading-relaxed">
+                        Хоча Данік не є церковною людиною, Бог благословляє його справжньою "християнською бульбашкою". Я надзвичайно вдячний за дружбу з ним і продовжую вкладати в ці стосунки, бо саме так будується справжня спільнота.
+                    </p>
+                    <div class="pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <span class="font-bold text-lg">Цінність дружби та довіри</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT CALCULATOR -->
+    <section id="partnership" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-gold font-bold uppercase tracking-widest text-sm mb-3">Партнерство</h2>
+                <h3 class="text-3xl font-extrabold text-slate-900">Ваш внесок у зцілення</h3>
+            </div>
+
+            <div class="bg-slate-50 p-8 sm:p-12 rounded-[2.5rem] border border-slate-200">
+                <div class="flex flex-col gap-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button onclick="updateImpact(500)" class="calc-btn p-4 rounded-2xl bg-white border border-slate-200 font-bold hover:border-gold hover:text-gold transition-all">500 грн</button>
+                        <button onclick="updateImpact(1000)" class="calc-btn p-4 rounded-2xl bg-white border border-slate-200 font-bold hover:border-gold hover:text-gold transition-all">1000 грн</button>
+                        <button onclick="updateImpact(2500)" class="calc-btn p-4 rounded-2xl bg-gold text-white font-bold transition-all shadow-md">2500 грн</button>
+                        <button onclick="updateImpact(5000)" class="calc-btn p-4 rounded-2xl bg-white border border-slate-200 font-bold hover:border-gold hover:text-gold transition-all">5000 грн</button>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col md:flex-row items-center gap-8 shadow-sm">
+                        <div class="text-center md:text-left shrink-0">
+                            <span class="text-slate-400 text-xs font-bold uppercase tracking-wider block mb-1">Ви інвестуєте:</span>
+                            <span id="impact-amt" class="text-5xl font-extrabold text-slate-900">2500 <span class="text-lg">грн/міс</span></span>
+                        </div>
+                        <div class="h-px md:h-12 w-full md:w-px bg-slate-200"></div>
+                        <p id="impact-text" class="text-slate-600 font-medium">Повне забезпечення одного ветерана під час 3-денного ретриту в горах (харчування, проживання, матеріали).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN FORM -->
+    <section id="join-form" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white rounded-[3rem] p-8 sm:p-16 shadow-xl border border-slate-100">
+                <h3 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Приєднатися до команди підтримки</h3>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Ваше ім'я" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-gold focus:outline-none transition-all">
+                        <input type="tel" placeholder="Номер телефону" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-gold focus:outline-none transition-all">
+                    </div>
+                    <select class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-gold focus:outline-none transition-all">
+                        <option>Фінансова підтримка</option>
+                        <option>Молитовна підтримка</option>
+                        <option>Інша допомога</option>
+                    </select>
+                    <button class="w-full py-5 bg-gold hover:bg-gold-light text-white font-extrabold text-xl rounded-2xl shadow-lg transition-all hover:scale-[1.02]">
+                        Стати частиною місії
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400">© 2026 Military Ministry | Україна для Христа (Cru)</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        const impacts = {
+            500: "Забезпечення духовною літературою та корисними дрібницями для 3-х ветеранів у госпіталі.",
+            1000: "Організація регулярної зустрічі 'кола довіри' для групи ветеранів у місті.",
+            2500: "Повне забезпечення одного ветерана під час 3-денного ретриту в горах (харчування, проживання, матеріали).",
+            5000: "Покриття витрат на запис та монтаж одного випуску ветеранського подкасту з УБТС."
+        };
+
+        function updateImpact(amt) {
+            document.getElementById('impact-amt').innerHTML = `${amt} <span class="text-lg">грн/міс</span>`;
+            document.getElementById('impact-text').innerText = impacts[amt];
+            
+            // UI updates for buttons
+            document.querySelectorAll('.calc-btn').forEach(btn => {
+                if(btn.innerText.includes(amt)) {
+                    btn.classList.add('bg-gold', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-800');
+                } else {
+                    btn.classList.remove('bg-gold', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-800');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
