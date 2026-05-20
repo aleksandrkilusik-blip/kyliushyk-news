@@ -407,10 +407,23 @@
                     <div class="bg-white p-8 rounded-[2.5rem] border-2 border-gold shadow-2xl text-center h-full flex flex-col justify-center">
                         <h4 class="text-xl font-bold mb-6 uppercase tracking-tight">Реквізити для пожертви</h4>
                         
-                        <!-- Заміна картинки на кнопку-посилання на PDF -->
-                        <a href="qr-poster-МІсія _Україна для Христа_.pdf" target="_blank" class="bg-slate-50 hover:bg-gold/10 p-6 rounded-3xl mb-8 flex flex-col items-center justify-center w-full max-w-[280px] mx-auto transition-all border-2 border-transparent hover:border-gold shadow-sm hover:shadow-md group" style="aspect-ratio: 1/1; text-decoration: none;">
-                            <div class="w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-qrcode text-4xl text-slate-800"></i>
+                        <!-- Завантажене зображення плакату з QR-кодом -->
+                        <div class="bg-slate-50 p-4 rounded-3xl mb-6 relative group overflow-hidden w-full max-w-[320px] mx-auto border border-slate-200 shadow-sm">
+                            <img src="qr-poster-Місія _Україна для Христа__page-0001.jpg" 
+                                 alt="QR-код ПриватБанк" 
+                                 class="w-full h-auto object-contain rounded-2xl">
+                        </div>
+
+                        <div class="mb-8">
+                            <a href="qr-poster-МІсія _Україна для Христа_.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 w-full bg-gold/10 hover:bg-gold/20 text-gold font-bold py-3 px-4 rounded-xl transition-all text-sm shadow-sm active:scale-95 font-sans">
+                                <i class="fa-solid fa-file-pdf text-base"></i> Завантажити плакат у PDF
+                            </a>
+                        </div>
+
+                        <div class="space-y-4 text-left mb-6 text-sm font-medium">
+                            <div class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full bg-gold text-white flex items-center justify-center shrink-0 font-bold text-xs">1</span>
+                                <p class="text-slate-700">Відкрийте сканер QR у застосунку <strong>Приват24</strong></p>
                             </div>
                             <span class="text-slate-800 font-bold text-lg mb-1">Відкрити QR-код</span>
                             <span class="text-slate-500 text-sm font-medium flex items-center gap-2">
