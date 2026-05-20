@@ -45,16 +45,17 @@
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #B8860B; }
         
-        /* Тимчасовий фон під час завантаження реального зображення */
         .hero-bg {
-            background: linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.88)), #F8FAFC;
+            /* Фонове зображення: 4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg */
+            background: linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.88)), url('4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
         }
-        .stats-card {
-            background: white;
-            border-bottom: 4px solid #B8860B;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        
+        /* Глобальний стиль для всіх картинок, щоб при помилці завантаження вони виглядали як сірий фон, а не ламали верстку */
+        img {
+            background-color: #E2E8F0;
+            color: transparent; /* Ховаємо alt-текст, якщо картинка не загрузилась */
         }
     </style>
 </head>
@@ -116,10 +117,11 @@
                 </div>
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-2 bg-gold/20 rounded-[3rem] blur opacity-20"></div>
-                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
-                        <!-- Зимове фото ретриту (два ветерани в снігу з горнятком) -->
+                    <!-- Суворий контроль пропорцій (aspect-[4/5]) та повне заповнення -->
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] w-full">
                         <img src="3452AB0C-ED9F-415C-AC0F-3770C44428FD_1_105_c.jpeg" 
-                             alt="Military Ministry Ukraine" class="w-full aspect-[4/5] object-cover">
+                             alt="Military Ministry Ukraine" 
+                             class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
             </div>
@@ -199,9 +201,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative order-2 lg:order-1">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
-                    <!-- Реальна фотографія Олександра у футболці та з видимим протезом -->
-                    <img src="498EDC1E-8DDB-4D94-992D-3141F6514D94_1_105_c.jpeg" 
-                         alt="Олександр місіонер" class="relative rounded-[2.5rem] shadow-2xl border-8 border-white object-cover aspect-[4/5] w-full">
+                    <!-- Жорсткий контейнер aspect-[4/5] для портрета -->
+                    <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white overflow-hidden aspect-[4/5] w-full">
+                        <img src="498EDC1E-8DDB-4D94-992D-3141F6514D94_1_105_c.jpeg" 
+                             alt="Олександр місіонер" 
+                             class="w-full h-full object-cover object-top absolute inset-0">
+                    </div>
                 </div>
                 <div class="space-y-6 order-1 lg:order-2 font-sans">
                     <span class="text-gold font-bold uppercase tracking-widest text-xs block">Мій шлях</span>
@@ -254,9 +259,9 @@
                         <h3 class="text-2xl font-extrabold text-slate-900 font-sans">Турбота в госпіталях</h3>
                         <p class="text-slate-600 leading-relaxed text-lg">Ми приносимо корисні речі, але найголовніше — час для вислуховування та спільної молитви там, де біль найгостріший.</p>
                     </div>
-                    <div class="rounded-[2rem] overflow-hidden shadow-lg aspect-video">
-                        <!-- Реальне фото з коридору госпіталю -->
-                        <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Госпіталі Олександр" class="w-full h-full object-cover">
+                    <!-- Контейнер aspect-video (16:9) для пейзажних фото -->
+                    <div class="rounded-[2rem] overflow-hidden shadow-lg aspect-video relative w-full">
+                        <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Госпіталі Олександр" class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
 
@@ -270,9 +275,8 @@
                             <a href="https://youtu.be/WIReJo30ppA?si=EU2fyat3aB_rKlat" target="_blank" class="bg-slate-800 text-white px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all hover:bg-slate-700"><i class="fa-solid fa-play"></i> Свіжий випуск</a>
                         </div>
                     </div>
-                    <div class="rounded-[2rem] overflow-hidden shadow-lg aspect-video">
-                        <!-- Фото Олександр з родиною на фоні UBTS та плашки презентації -->
-                        <img src="BF1D9159-2999-4C60-A31C-2261B8221B50_1_105_c.jpeg" alt="Олександр на фоні презентації" class="w-full h-full object-cover">
+                    <div class="rounded-[2rem] overflow-hidden shadow-lg aspect-video relative w-full">
+                        <img src="BF1D9159-2999-4C60-A31C-2261B8221B50_1_105_c.jpeg" alt="Олександр на фоні презентації" class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
 
@@ -289,22 +293,25 @@
                                 <li class="flex items-center gap-3"><i class="fa-solid fa-heart text-gold"></i> Духовне відновлення та спільна молитва</li>
                             </ul>
                         </div>
-                        <div class="rounded-[2rem] overflow-hidden shadow-xl aspect-video border-4 border-slate-100">
-                            <!-- Групове фото в Карпатах із прапором -->
-                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover">
+                        <div class="rounded-[2rem] overflow-hidden shadow-xl aspect-video relative border-4 border-slate-100 w-full">
+                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover object-center absolute inset-0">
                         </div>
                     </div>
                     
-                    <!-- Retreat Mini Gallery з реальними фото -->
+                    <!-- Міні-галерея: жорсткі квадрати -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <!-- Зимові гори з другом -->
-                        <img src="98B3CE18-9EC4-42F7-BFBE-A3D5748A8EBB_1_105_c.jpeg" class="rounded-2xl aspect-square object-cover shadow-sm border border-slate-200" alt="Зимові гори">
-                        <!-- Подорож у Будапешт -->
-                        <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" class="rounded-2xl aspect-square object-cover shadow-sm border border-slate-200" alt="Поїздка Будапешт">
-                        <!-- Спільне фото в Карпатах на містку -->
-                        <img src="89FAE2FB-0AE4-4873-9267-46C26F270302_1_105_c.jpeg" class="rounded-2xl aspect-square object-cover shadow-sm border border-slate-200" alt="Група Карпати місток">
-                        <!-- Три ветерани в Карпатах восени -->
-                        <img src="791C802F-E7C1-4976-9224-14D26F410A1D_1_105_c.jpeg" class="rounded-2xl aspect-square object-cover shadow-sm border border-slate-200" alt="Три ветерани ліс">
+                        <div class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <img src="98B3CE18-9EC4-42F7-BFBE-A3D5748A8EBB_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Зимові гори">
+                        </div>
+                        <div class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Поїздка Будапешт">
+                        </div>
+                        <div class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <img src="89FAE2FB-0AE4-4873-9267-46C26F270302_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Група Карпати місток">
+                        </div>
+                        <div class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <img src="791C802F-E7C1-4976-9224-14D26F410A1D_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Три ветерани ліс">
+                        </div>
                     </div>
                 </div>
 
@@ -320,25 +327,25 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Миттєвості наших зустрічей та ретритів</h2>
             </div>
 
-            <!-- Image Grid -->
+            <!-- Image Grid (Жорсткі пропорції 4:3) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" alt="Ретрит Карпати з прапором" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" alt="Ретрит Карпати з прапором" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="98B3CE18-9EC4-42F7-BFBE-A3D5748A8EBB_1_105_c.jpeg" alt="Зимові Карпати" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="98B3CE18-9EC4-42F7-BFBE-A3D5748A8EBB_1_105_c.jpeg" alt="Зимові Карпати" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Подорож у Будапешт" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Подорож у Будапешт" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="89FAE2FB-0AE4-4873-9267-46C26F270302_1_105_c.jpeg" alt="Спільна зустріч у Карпатах" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="89FAE2FB-0AE4-4873-9267-46C26F270302_1_105_c.jpeg" alt="Спільна зустріч у Карпатах" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="D509E6D5-8D60-4709-809C-6D33256B86C8_1_105_c.jpeg" alt="Семінарія УБТС" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="D509E6D5-8D60-4709-809C-6D33256B86C8_1_105_c.jpeg" alt="Семінарія УБТС" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm">
-                    <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Турбота в госпіталі" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 bg-white shadow-sm w-full">
+                    <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Турбота в госпіталі" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
         </div>
@@ -348,9 +355,9 @@
     <section class="py-24 bg-slate-900 text-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10">
-                    <!-- Затишна кав'ярня з друзями -->
-                    <img src="B2C3C9EB-21D0-4323-9172-05391B2AF5BA_1_105_c.jpeg" alt="Данік" class="w-full aspect-square object-cover">
+                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10 aspect-square w-full">
+                    <!-- Затишна кав'ярня з друзями (квадрат) -->
+                    <img src="AF5E91B8-931B-4F83-B7B3-62506B626C88_1_105_c.jpeg" alt="Данік" class="w-full h-full object-cover object-center absolute inset-0">
                 </div>
                 <div class="space-y-6">
                     <span class="text-gold font-bold uppercase tracking-widest text-xs">Історія дружби</span>
@@ -399,7 +406,7 @@
                         </h4>
                         <div class="text-slate-700 leading-relaxed text-base space-y-4 font-medium">
                             <p>
-                                Зараз мені потрібно знайти <strong>35 000 гривень</strong> в місяць на зарплату та витрати по служінню. Щоб зібрати цю суму якомога швидше та продолжувати займатися служінням, мені необхідно знайти приблизно <strong>25 людей</strong>, які могли б жертвувати приблизно <strong>1500 гривень</strong> на місяць. Переказ коштів здійснюється за допомогою банківського переказу на рахунок місії.
+                                Зараз мені потрібно знайти <strong>35 000 гривень</strong> в місяць на зарплату та витрати по служінню. Щоб зібрати цю суму якомога швидше та продовжити займатися служінням, мені необхідно знайти приблизно <strong>25 людей</strong>, які могли б жертвувати приблизно <strong>1500 гривень</strong> на місяць. Переказ коштів здійснюється за допомогою банківського переказу на рахунок місії.
                             </p>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
                                 <div class="bg-white p-4 rounded-xl text-center border border-gold/10">
@@ -424,13 +431,13 @@
 
                 <!-- QR CODE SECTION -->
                 <div class="lg:col-span-5 w-full">
-                    <div class="bg-white p-8 rounded-[2.5rem] border-2 border-gold shadow-2xl text-center">
+                    <div class="bg-white p-8 rounded-[2.5rem] border-2 border-gold shadow-2xl text-center h-full flex flex-col justify-center">
                         <h4 class="text-xl font-bold mb-6 uppercase tracking-tight">Реквізити для пожертви</h4>
                         
-                        <!-- QR Code Image using your uploaded photo -->
-                        <div class="bg-slate-50 p-6 rounded-3xl mb-6 relative group overflow-hidden">
+                        <!-- QR Code Image using your uploaded photo: object-contain is crucial here -->
+                        <div class="bg-slate-50 p-6 rounded-3xl mb-6 relative group overflow-hidden w-full max-w-[280px] mx-auto aspect-square">
                             <img src="image_c9fed0.jpg" 
-                                 alt="QR ПриватБанк" class="w-full max-w-[240px] mx-auto rounded-xl border-4 border-white shadow-md"
+                                 alt="QR ПриватБанк" class="w-full h-full object-contain absolute inset-0"
                                  onerror="this.src='image_c9feec.jpg';">
                         </div>
 
@@ -451,9 +458,11 @@
                                 <p class="text-slate-700">Відскануйте код або завантажте плакат для друку</p>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">Отримувач пожертви:</p>
-                        <p class="text-slate-800 font-extrabold text-base">Місія «Україна для Христа»</p>
-                        <p class="text-slate-500 text-xs mt-1 italic">Добровільна пожертва на статутну діяльність</p>
+                        <div class="mt-auto">
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">Отримувач пожертви:</p>
+                            <p class="text-slate-800 font-extrabold text-base">Місія «Україна для Христа»</p>
+                            <p class="text-slate-500 text-xs mt-1 italic">Добровільна пожертва на статутну діяльність</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -498,7 +507,6 @@
         </div>
     </footer>
 
-    <!-- LIGHTWEIGHT SELF-HEALING fallback script -->
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -513,35 +521,6 @@
             });
             document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-white shadow-md";
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const hero = document.querySelector('.hero-bg');
-            if (hero) {
-                const bgImage = '4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg';
-                const testImg = new Image();
-                testImg.src = bgImage;
-                testImg.onload = function() {
-                    hero.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.88)), url('${bgImage}')`;
-                };
-                testImg.onerror = function() {
-                    hero.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.88)), url('https://raw.githubusercontent.com/aleksandrilusik-blip/kyliushyk-news/main/${bgImage}')`;
-                };
-            }
-        });
-
-        // Global self-healing handler for relative images
-        window.addEventListener('error', function(e) {
-            if (e.target.tagName === 'IMG') {
-                const img = e.target;
-                const originalSrc = img.getAttribute('src');
-                if (originalSrc && !originalSrc.startsWith('http') && !img.dataset.fallbackTried) {
-                    img.dataset.fallbackTried = 'true';
-                    const repoName = 'kyliushyk-news';
-                    const githubUser = 'aleksandrilusik-blip';
-                    img.src = `https://raw.githubusercontent.com/${githubUser}/${repoName}/main/${originalSrc}`;
-                }
-            }
-        }, true);
     </script>
 </body>
 </html>
