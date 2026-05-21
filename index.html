@@ -33,7 +33,7 @@
                     },
                     colors: {
                         gold: {
-                            DEFAULT: '#FBBF24', // Оновлений відтінок жовтого під новий стиль
+                            DEFAULT: '#FBBF24',
                             light: '#FCD34D',
                             pale: '#FEF3C7'
                         },
@@ -59,7 +59,6 @@
         ::-webkit-scrollbar-thumb:hover { background: #FBBF24; }
         
         .hero-bg {
-            /* Оновлений темний градієнт для читабельності білого тексту */
             background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)), url('4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
@@ -97,7 +96,6 @@
             </nav>
 
             <div class="flex items-center gap-5">
-                <!-- Language Switcher -->
                 <div class="relative flex items-center">
                     <select id="lang-switcher" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm focus:outline-none cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
                         <option value="uk" class="text-slate-800 dark:text-slate-800">UA</option>
@@ -108,7 +106,6 @@
                     <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none"></i>
                 </div>
 
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
@@ -125,7 +122,6 @@
         </div>
     </header>
 
-    <!-- НОВА HERO СЕКЦІЯ -->
     <section class="relative pt-32 pb-48 hero-bg transition-colors duration-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-tight leading-[0.9] text-white font-sans mb-8">
@@ -145,14 +141,14 @@
         </div>
     </section>
 
-    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ (Наїжджає на фон) -->
+    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-24 mb-16">
-        <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 py-10 px-6 sm:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 py-10 px-6 sm:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center transition-colors duration-200">
             <div class="space-y-3">
                 <span class="block text-5xl sm:text-6xl font-extrabold text-gold">1951</span>
                 <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-1-lbl">Рік заснування місії</span>
             </div>
-            <div class="space-y-3 md:border-l md:border-r border-slate-100 dark:border-slate-700">
+            <div class="space-y-3 md:border-l md:border-r border-slate-100 dark:border-slate-700 transition-colors duration-200">
                 <span class="block text-5xl sm:text-6xl font-extrabold text-gold">191+</span>
                 <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-2-lbl">Країн світу</span>
             </div>
@@ -170,27 +166,17 @@
                 <div class="relative order-2 lg:order-1">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
                     <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full max-w-md mx-auto transition-colors duration-200" style="aspect-ratio: 4 / 5;">
-                        <img src="IMG_0278_Original.jpeg" 
-                             alt="Олександр у військовій формі" 
-                             class="w-full h-full object-cover object-center absolute inset-0">
+                        <img src="IMG_0278_Original.jpeg" alt="Олександр у військовій формі" class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
                 <div class="space-y-6 order-1 lg:order-2 font-sans">
                     <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="path-tag">Мій шлях</span>
                     <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6 transition-colors duration-200" data-i18n="path-h2">Від розвідника до місіонера</h2>
                     <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base transition-colors duration-200">
-                        <p data-i18n="path-p1">
-                            Мене звати Олександр. Під час навчання в університеті я прийшов до Христа завдяки служінню CRU — один зі співробітників місії поділився зі мною Євангелієм. Цей момент став для мене духовним народженням і повністю змінив напрямок мого життя.
-                        </p>
-                        <p data-i18n="path-p2">
-                            Я деякий час працював у сфері продажів. Хоча війна на Донбасі вже тривала, життя для багатьох залишалося звичним. Але повномасштабне вторгнення 2022 року змінило все. Мене мобілізували до Збройних Сил України, і я служив розвідником у штурмовій бригаді. Під час одного з бойових завдань я отримав важке поранення і втратив кінцівку.
-                        </p>
-                        <p data-i18n="path-p3">
-                            Під час відновлення та реабілітації я познайомився з багатьма побратимами, які також пережили втрати та перебували в пошуку сенсу, надії й спільноти. Бог почав глибоко працювати в моєму серці, і я зрозумів, що не можу мовчати — я хочу йти поруч з тими, хто страждає.
-                        </p>
-                        <p class="font-bold text-slate-800 dark:text-slate-200" data-i18n="path-p4">
-                            Саме тому я приєднався до місії «Україна для Христа» (CRU), щоб ділитися Євангелієм із ветеранами — тими, хто поранений тілом і душею, але відкритий до істини. Лише Христос може зцілити найглибші рани.
-                        </p>
+                        <p data-i18n="path-p1">Мене звати Олександр. Під час навчання в університеті я прийшов до Христа завдяки служінню CRU — один зі співробітників місії поділився зі мною Євангелієм. Цей момент став для мене духовним народженням і повністю змінив напрямок мого життя.</p>
+                        <p data-i18n="path-p2">Я деякий час працював у сфері продажів. Хоча війна на Донбасі вже тривала, життя для багатьох залишалося звичним. Але повномасштабне вторгнення 2022 року змінило все. Мене мобілізували до Збройних Сил України, і я служив розвідником у штурмовій бригаді. Під час одного з бойових завдань я отримав важке поранення і втратив кінцівку.</p>
+                        <p data-i18n="path-p3">Під час відновлення та реабілітації я познайомився з багатьма побратимами, які також пережили втрати та перебували в пошуку сенсу, надії й спільноти. Бог почав глибоко працювати в моєму серці, і я зрозумів, що не можу мовчати — я хочу йти поруч з тими, хто страждає.</p>
+                        <p class="font-bold text-slate-800 dark:text-slate-200" data-i18n="path-p4">Саме тому я приєднався до місії «Україна для Христа» (CRU), щоб ділитися Євангелієм із ветеранами — тими, хто поранений тілом і душею, але відкритий до істини. Лише Христос може зцілити найглибші рани.</p>
                     </div>
                 </div>
             </div>
@@ -243,7 +229,7 @@
                         </div>
 
                         <p data-i18n="challenge-p2">
-                            Саме тому я долучився до місії <strong class="dark:text-white">«Україна для Христа»</strong> — щоб бути поруч, слухати їхні історії й вказувати на Того, хто здатен відновити.
+                            Саме тому я долучився до місії <strong class="dark:text-white">«Україна для Христа»</strong> — щоб бути поруч, слухати їх історії й вказувати на Того, хто здатен відновити.
                         </p>
                     </div>
                 </div>
@@ -352,20 +338,14 @@
                     <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="team-tag">Наша команда</span>
                     <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6 transition-colors duration-200" data-i18n="team-h2">Разом будуємо служіння</h2>
                     <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200">
-                        <p data-i18n="team-p1">
-                            Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біль, і саме тому об'єднали свої зусилля.
-                        </p>
-                        <p data-i18n="team-p2">
-                            Зараз ми разом будуємо міцне служіння для ветеранів. Наша мета — стати надійним духовним тилом, підтримкою та дружньою спільнотою для кожного, хто повертається з фронту, щоб допомогти їм знайти надію та зцілення у Христі.
-                        </p>
+                        <p data-i18n="team-p1">Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біль, і саме тому об'єднали свої зусилля.</p>
+                        <p data-i18n="team-p2">Зараз ми разом будуємо міцне служіння для ветеранів. Наша мета — стати надійним духовним тилом, підтримкою та дружньою спільнотою для кожного, хто повертається з фронту, щоб допомогти їм знайти надію та зцілення у Христі.</p>
                     </div>
                 </div>
                 <div class="relative">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
                     <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full transition-colors duration-200" style="aspect-ratio: 4 / 3;">
-                        <img src="47A4B823-5251-4ED2-8B24-E828EAFFF46F_1_105_c.jpeg" 
-                             alt="Команда Military Ministry" 
-                             class="w-full h-full object-cover object-center absolute inset-0">
+                        <img src="47A4B823-5251-4ED2-8B24-E828EAFFF46F_1_105_c.jpeg" alt="Команда Military Ministry" class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
             </div>
@@ -416,12 +396,8 @@
                         <span data-i18n="fin-h4">Фінансова політика Кемпус Крусейд</span>
                     </h4>
                     <div class="text-slate-600 dark:text-slate-300 leading-relaxed text-base space-y-4 font-medium transition-colors duration-200">
-                        <p data-i18n="fin-p1">
-                            Місія «Україна для Христа» функціонує як організація, співробітники якої повністю покладаються на Бога в забезпеченні свого служіння. Тому до обов’язку кожного співробітника входить пошук партнерів по служінню, які б регулярно жертвували на його власне служіння.
-                        </p>
-                        <p data-i18n="fin-p2">
-                            На сьогоднішній день в місії CRU працюють близько 19 000 співробітників по всьому світу. Більшість з них знаходять підтримку свого служіння за допомогою окремих людей. Як виявилося, більшість християн віддають перевагу жертвувати гроші на конкретне служіння, а не у загальний фонд. Вклад у власне служіння місіонера допомагає бачити конкретні результати участі у благовісті.
-                        </p>
+                        <p data-i18n="fin-p1">Місія «Україна для Христа» функціонує як організація, співробітники якої повністю покладаються на Бога в забезпеченні свого служіння. Тому до обов’язку кожного співробітника входить пошук партнерів по служінню, які б регулярно жертвували на його власне служіння.</p>
+                        <p data-i18n="fin-p2">На сьогоднішній день в місії CRU працюють близько 19 000 співробітників по всьому світу. Більшість з них знаходять підтримку свого служіння за допомогою окремих людей. Як виявилося, більшість християн віддають перевагу жертвувати гроші на конкретне служіння, а не у загальний фонд. Вклад у власне служіння місіонера допомагає бачити конкретні результати участі у благовісті.</p>
                     </div>
                 </div>
             </div>
@@ -554,57 +530,60 @@
                 </div>
             </div>
 
-            <!-- ARCHIVE -->
-            <div>
-                <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8 text-center font-sans transition-colors duration-200" data-i18n="archive-title">Архів молитовних листів</h3>
-                <div class="max-w-4xl mx-auto space-y-4">
-                    <!-- 2026 -->
-                    <details class="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors duration-200" open>
-                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none [&::-webkit-details-marker]:hidden p-6 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
-                            <span class="text-xl">2026</span>
-                            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
-                        </summary>
-                        <div class="p-6 pt-0 border-t border-slate-200 dark:border-slate-700 mt-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <a href="https://us16.campaign-archive.com/?u=8f90cbc57c904494ec74dc157&id=debb78a126" target="_blank" class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-gold hover:text-gold dark:hover:border-gold dark:hover:text-gold transition-colors shadow-sm text-slate-700 dark:text-slate-300 group/link">
-                                    <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center group-hover/link:bg-gold group-hover/link:text-white transition-colors">
-                                        <i class="fa-regular fa-envelope-open text-lg"></i>
-                                    </div>
-                                    <span class="font-bold text-lg" data-i18n="letter-mar-26">Березень</span>
-                                </a>
-                                <a href="https://mailchi.mp/b257707a4ffb/t5whsbmqs4-573" target="_blank" class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-gold hover:text-gold dark:hover:border-gold dark:hover:text-gold transition-colors shadow-sm text-slate-700 dark:text-slate-300 group/link">
-                                    <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center group-hover/link:bg-gold group-hover/link:text-white transition-colors">
-                                        <i class="fa-regular fa-envelope-open text-lg"></i>
-                                    </div>
-                                    <span class="font-bold text-lg" data-i18n="letter-feb-26">Лютий</span>
-                                </a>
-                            </div>
+            <!-- ARCHIVE BLOG CARDS -->
+            <div class="mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 (April) -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
+                        <div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div>
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
+                            <img src="47A4B823-5251-4ED2-8B24-E828EAFFF46F_1_105_c.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
-                    </details>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
+                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-apr">Новини за квітень</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-apr">Свіжі оновлення з мого служіння. Роздуми, історії та плани.</p>
+                            <a href="newsletter-april.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
 
-                    <!-- 2025 -->
-                    <details class="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors duration-200">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none [&::-webkit-details-marker]:hidden p-6 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
-                            <span class="text-xl">2025</span>
-                            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
-                        </summary>
-                        <div class="p-6 pt-0 border-t border-slate-200 dark:border-slate-700 mt-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <a href="https://mailchi.mp/77dd8efa211f/qsviscb39b" target="_blank" class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-gold hover:text-gold dark:hover:border-gold dark:hover:text-gold transition-colors shadow-sm text-slate-700 dark:text-slate-300 group/link">
-                                    <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center group-hover/link:bg-gold group-hover/link:text-white transition-colors">
-                                        <i class="fa-regular fa-envelope-open text-lg"></i>
-                                    </div>
-                                    <span class="font-bold text-lg" data-i18n="letter-nov-dec-25">Листопад - Грудень</span>
-                                </a>
-                                <a href="https://mailchi.mp/6f4d02f5aed4/87b3a3m69j" target="_blank" class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-gold hover:text-gold dark:hover:border-gold dark:hover:text-gold transition-colors shadow-sm text-slate-700 dark:text-slate-300 group/link">
-                                    <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center group-hover/link:bg-gold group-hover/link:text-white transition-colors">
-                                        <i class="fa-regular fa-envelope-open text-lg"></i>
-                                    </div>
-                                    <span class="font-bold text-lg" data-i18n="letter-nov-25">Листопад</span>
-                                </a>
-                            </div>
+                    <!-- Card 2 (March) -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
+                            <img src="IMG_6519.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
-                    </details>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-mar-26">Березень 2026</span>
+                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-mar">Оновлення служіння</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-mar">Збираємо довгоочікуваний врожай. Історії відновлення.</p>
+                            <a href="https://us16.campaign-archive.com/?u=8f90cbc57c904494ec74dc157&id=debb78a126" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Feb) -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center">
+                            <img src="98B3CE18-9EC4-42F7-BFBE-A3D5748A8EBB_1_105_c.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-feb-26">Лютий 2026</span>
+                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-feb">Зимовий ретрит</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-feb">Зимовий ретрит та планування. Роздуми після часу в горах.</p>
+                            <a href="https://mailchi.mp/b257707a4ffb/t5whsbmqs4-573" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="https://us16.campaign-archive.com/home/?u=8f90cbc57c904494ec74dc157&id=debb78a126" target="_blank" class="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-bold hover:text-gold dark:hover:text-gold transition-colors text-sm uppercase tracking-widest group/all">
+                        <span data-i18n="btn-all-archives">Переглянути всі архіви</span> <i class="fa-solid fa-arrow-right group-hover/all:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -649,7 +628,7 @@
                 "challenge-h2": "Досягти ветеранів України надією Христа",
                 "challenge-p1": "Сьогодні в Україні понад <strong class='dark:text-white'>1,3 мільйона ветеранів</strong> — багато з них мають глибокі зовнішні та внутрішні рани. Після війни ця цифра може зрости до <strong class='dark:text-white'>5–6 мільйонів</strong>.",
                 "challenge-quote": "Багато ветеранів повертаються з болем, ізоляцією та внутрішньою пусткою. Церква — це місце, де вони можуть знайти Творця, відчути прийняття й спільноту, яка допоможе реінтегруватися в суспільство.",
-                "challenge-p2": "Саме тому я долучився до місії <strong class='dark:text-white'>«Україна для Христа»</strong> — щоб бути поруч, слухати їхні історії й вказувати на Того, хто здатен відновити.",
+                "challenge-p2": "Саме тому я долучився до місії <strong class='dark:text-white'>«Україна для Христа»</strong> — щоб бути поруч, слухати їх історії й вказувати на Того, хто здатен відновити.",
                 "stat-vets": "Ветеранів сьогодні",
                 "stat-fams": "Потенційно з родинами",
                 "path-tag": "Мій шлях",
@@ -718,11 +697,6 @@
                 "form-lname": "Прізвище",
                 "form-email": "Ваша email адреса",
                 "btn-sub": "Підписатись",
-                "archive-title": "Архів молитовних листів",
-                "letter-mar-26": "Березень",
-                "letter-feb-26": "Лютий",
-                "letter-nov-dec-25": "Листопад - Грудень",
-                "letter-nov-25": "Листопад",
                 "bible-quote": "\"Тоді Він казав Своїм учням: Жниво справді велике, та робітників мало; тож благайте Господаря жнива, щоб на жниво Своє Він робітників вислав.\"",
                 "bible-ref": "(Від Матвія 9:37-38)",
                 "foot-title": "Давайте спілкуватися",
@@ -731,7 +705,19 @@
                 "form-success": "Дякуємо! Ви успішно підписалися на оновлення.",
                 "form-error": "Сталася помилка. Будь ласка, спробуйте пізніше.",
                 "form-loading": "Відправка...",
-                "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\""
+                "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\"",
+                "badge-new": "Нове",
+                "card-apr-26": "Квітень 2026",
+                "card-mar-26": "Березень 2026",
+                "card-feb-26": "Лютий 2026",
+                "card-title-apr": "Новини за квітень",
+                "card-title-mar": "Оновлення служіння",
+                "card-title-feb": "Зимовий ретрит",
+                "card-desc-apr": "Свіжі оновлення з мого служіння. Роздуми, історії та плани.",
+                "card-desc-mar": "Збираємо довгоочікуваний врожай. Історії відновлення.",
+                "card-desc-feb": "Зимовий ретрит та планування. Роздуми після часу в горах.",
+                "btn-read-letter": "Читати лист",
+                "btn-all-archives": "Переглянути всі архіви"
             },
             en: {
                 "sub-brand": "Healing with Hope",
@@ -825,11 +811,6 @@
                 "form-lname": "Last Name",
                 "form-email": "Your email address",
                 "btn-sub": "Subscribe",
-                "archive-title": "Prayer Letters Archive",
-                "letter-mar-26": "March",
-                "letter-feb-26": "February",
-                "letter-nov-dec-25": "November - December",
-                "letter-nov-25": "November",
                 "bible-quote": "\"Then he said to his disciples, 'The harvest is plentiful but the workers are few. Ask the Lord of the harvest, therefore, to send out workers into his harvest field.'\"",
                 "bible-ref": "(Matthew 9:37-38)",
                 "foot-title": "Let's communicate",
@@ -838,7 +819,19 @@
                 "form-success": "Thank you! You have successfully subscribed to updates.",
                 "form-error": "An error occurred. Please try again later.",
                 "form-loading": "Sending...",
-                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\""
+                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
+                "badge-new": "New",
+                "card-apr-26": "April 2026",
+                "card-mar-26": "March 2026",
+                "card-feb-26": "February 2026",
+                "card-title-apr": "April News",
+                "card-title-mar": "Ministry Updates",
+                "card-title-feb": "Winter Retreat",
+                "card-desc-apr": "Fresh updates from my ministry. Reflections, stories, and plans.",
+                "card-desc-mar": "Harvesting the long-awaited crop. Stories of restoration.",
+                "card-desc-feb": "Winter retreat and planning. Reflections after time in the mountains.",
+                "btn-read-letter": "Read letter",
+                "btn-all-archives": "View all archives"
             },
             pl: {
                 "sub-brand": "Uzdrowienie Nadzieją",
@@ -932,11 +925,6 @@
                 "form-lname": "Nazwisko",
                 "form-email": "Twój adres email",
                 "btn-sub": "Subskrybuj",
-                "archive-title": "Archiwum listów modlitewnych",
-                "letter-mar-26": "Marzec",
-                "letter-feb-26": "Luty",
-                "letter-nov-dec-25": "Listopad - Grudzień",
-                "letter-nov-25": "Listopad",
                 "bible-quote": "„Wtedy rzekł do swych uczniów: Żniwo wprawdzie wielkie, ale robotników mało. Proście więc Pana żniwa, aby wyprawił robotników na żniwo swoje.”",
                 "bible-ref": "(Ew. Mateusza 9:37-38)",
                 "foot-title": "Porozmawiajmy",
@@ -945,7 +933,19 @@
                 "form-success": "Dziękujemy! Pomyślnie zasubskrybowałeś aktualizacje.",
                 "form-error": "Wystąpił błąd. Spróbuj ponownie później.",
                 "form-loading": "Wysyłanie...",
-                "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”"
+                "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
+                "badge-new": "Nowe",
+                "card-apr-26": "Kwiecień 2026",
+                "card-mar-26": "Marzec 2026",
+                "card-feb-26": "Luty 2026",
+                "card-title-apr": "Wiadomości kwietniowe",
+                "card-title-mar": "Aktualizacje służby",
+                "card-title-feb": "Zimowe rekolekcje",
+                "card-desc-apr": "Świeże aktualizacje z mojej służby. Refleksje, historie i plany.",
+                "card-desc-mar": "Zbieranie długo oczekiwanych plonów. Historie odnowy.",
+                "card-desc-feb": "Zimowe rekolekcje i planowanie. Refleksje po czasie w górach.",
+                "btn-read-letter": "Czytaj list",
+                "btn-all-archives": "Zobacz wszystkie archiwa"
             },
             de: {
                 "sub-brand": "Heilung durch Hoffnung",
@@ -1039,11 +1039,6 @@
                 "form-lname": "Nachname",
                 "form-email": "Ihre E-Mail-Adresse",
                 "btn-sub": "Abonnieren",
-                "archive-title": "Archiv der Gebetsbriefe",
-                "letter-mar-26": "März",
-                "letter-feb-26": "Februar",
-                "letter-nov-dec-25": "November - Dezember",
-                "letter-nov-25": "November",
                 "bible-quote": "„Da sprach er zu seinen Jüngern: Die Ernte ist groß, aber wenige sind der Arbeiter. Darum bittet den Herrn der Ernte, dass er Arbeiter in seine Ernte sende.“",
                 "bible-ref": "(Matthäus 9:37-38)",
                 "foot-title": "Lassen Sie uns kommunizieren",
@@ -1052,7 +1047,19 @@
                 "form-success": "Danke! Sie haben die Updates erfolgreich abonniert.",
                 "form-error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
                 "form-loading": "Wird gesendet...",
-                "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“"
+                "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
+                "badge-new": "Neu",
+                "card-apr-26": "April 2026",
+                "card-mar-26": "März 2026",
+                "card-feb-26": "Februar 2026",
+                "card-title-apr": "Neuigkeiten im April",
+                "card-title-mar": "Dienst-Updates",
+                "card-title-feb": "Winter-Retreat",
+                "card-desc-apr": "Frische Updates aus meinem Dienst. Reflexionen, Geschichten und Pläne.",
+                "card-desc-mar": "Ernte der lang ersehnten Erträge. Geschichten der Wiederherstellung.",
+                "card-desc-feb": "Winter-Retreat und Planung. Reflexionen nach der Zeit in den Bergen.",
+                "btn-read-letter": "Brief lesen",
+                "btn-all-archives": "Alle Archive anzeigen"
             }
         };
 
