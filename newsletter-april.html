@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Молитовний лист | Зцілення через Надію</title>
+    <title>Молитовний лист | Україна для Христа</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B7A99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3L3 21h18L12 3z'/%3E%3Cpath d='M8 15h8'/%3E%3C/svg%3E">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -23,37 +29,76 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Логіка перемикання мов */
+        body.lang-uk-active .lang-en { display: none !important; }
+        body.lang-en-active .lang-uk { display: none !important; }
+        
+        /* Плавний перехід для темної теми */
+        * { transition: background-color 0.3s ease, border-color 0.3s ease; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased leading-relaxed">
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-800 dark:text-slate-200 antialiased leading-relaxed lang-uk-active">
 
-    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+    <header class="bg-white dark:bg-slate-800 sticky top-0 z-50 shadow-sm border-b border-gray-100 dark:border-slate-700">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-6">
-                <a href="index.html" class="inline-flex items-center gap-2">
-                    <svg class="w-8 h-8 text-brandBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                    <span class="text-xl font-bold text-gray-900 tracking-tight">УКРАЇНА <span class="font-normal text-gray-500">для Христа</span></span>
+                
+                <a href="index.html" class="inline-flex items-center gap-3">
+                    <svg class="w-8 h-8 text-brandBlue dark:text-[#45a8c9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3L3 21h18L12 3z"/>
+                        <path d="M8 15h8"/>
+                    </svg>
+                    
+                    <div class="flex items-center gap-2.5">
+                        <span class="text-[1.35rem] font-black text-gray-900 dark:text-white tracking-tight uppercase">
+                            <span class="lang-uk">Україна</span>
+                            <span class="lang-en">Ukraine</span>
+                        </span>
+                        <div class="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
+                        <span class="text-[0.65rem] font-bold text-gray-600 dark:text-gray-400 uppercase leading-[1.1] flex flex-col tracking-wider">
+                            <span class="lang-uk"><span>для</span><span>Христа</span></span>
+                            <span class="lang-en"><span>for</span><span>Christ</span></span>
+                        </span>
+                    </div>
                 </a>
-                <a href="index.html" class="hidden md:inline-flex items-center text-gray-600 hover:text-brandBlue font-medium transition-colors">
+                
+                <a href="index.html" class="hidden lg:inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-brandBlue dark:hover:text-white font-medium ml-4">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    Повернутися
+                    <span class="lang-uk">Повернутися</span>
+                    <span class="lang-en">Go Back</span>
                 </a>
             </div>
-            <a href="#donate" class="inline-block bg-[#1a2b3c] text-white font-bold py-2.5 px-6 rounded-full shadow hover:bg-gray-800 transition-colors text-sm tracking-wide">
-                Підтримати мене
-            </a>
+            
+            <div class="flex items-center gap-3 md:gap-4">
+                <button id="langToggle" class="text-gray-600 dark:text-gray-300 hover:text-brandBlue font-bold text-sm bg-gray-100 dark:bg-slate-700 px-3 py-1.5 rounded-lg shadow-sm">
+                    EN
+                </button>
+
+                <button id="themeToggle" class="text-gray-600 dark:text-gray-300 hover:text-brandBlue p-2 rounded-lg bg-gray-100 dark:bg-slate-700 shadow-sm w-9 h-9 flex items-center justify-center">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+
+                <a href="#donate" class="hidden sm:inline-block bg-[#1a2b3c] dark:bg-white dark:text-[#1a2b3c] text-white font-bold py-2 px-5 md:py-2.5 md:px-6 rounded-full shadow hover:bg-gray-800 dark:hover:bg-gray-200 text-sm tracking-wide">
+                    <span class="lang-uk">Підтримати мене</span>
+                    <span class="lang-en">Support Me</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-10 md:py-14">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
-            <div class="bg-brandBlue rounded-[2rem] p-8 md:p-12 lg:col-span-7 flex flex-col justify-center text-white shadow-lg relative overflow-hidden">
+            <div class="bg-brandBlue dark:bg-[#07566b] rounded-[2rem] p-8 md:p-12 lg:col-span-7 flex flex-col justify-center text-white shadow-lg relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
 
                 <div class="flex flex-wrap gap-3 mb-8 text-xs md:text-sm font-bold uppercase tracking-wider relative z-10">
-                    <span class="bg-gold text-[#0a4d61] px-4 py-2 rounded-full flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 bg-[#0a4d61] rounded-full"></span> Оновлення служіння
+                    <span class="bg-gold text-[#0a4d61] px-4 py-2 rounded-full flex items-center gap-2 shadow-sm">
+                        <span class="w-2.5 h-2.5 bg-[#0a4d61] rounded-full"></span> 
+                        <span class="lang-uk">Оновлення служіння</span>
+                        <span class="lang-en">Ministry Update</span>
                     </span>
                     <span class="border border-white/40 text-white px-4 py-2 rounded-full flex items-center gap-2 backdrop-blur-sm">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -62,235 +107,396 @@
                 </div>
 
                 <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold leading-tight mb-8 relative z-10">
-                    Світло крізь <br>
-                    <span class="text-gold">темряву</span>
+                    <span class="lang-uk">Світло крізь <br><span class="text-gold">темряву</span></span>
+                    <span class="lang-en">Light Through <br><span class="text-gold">Darkness</span></span>
                 </h1>
 
                 <div class="text-[1.1rem] text-white/95 space-y-5 mb-8 relative z-10 font-medium">
-                    <p class="text-xl font-bold text-white">Служіння ветеранам. Україна.</p>
-                    <p>Привіт, дорога молитовна родино! Останній час видався для мене неймовірно насиченим, але водночас глибоким місяцем. Я мав можливість долучитися до різних команд та взяти участь у проведені двох ретритів.</p>
-                    <p>Мені бувало складно комунікувати з людьми через внутрішню апатію, але я неймовірно радий, що <strong>Бог продовжує діяти через мене попри всі мої людські слабкості</strong>. Господь розвертає ці складні моменти на добро: мені стало легше розуміти хлопців, які проходять схожі випробування.</p>
+                    <p class="text-xl font-bold text-white">
+                        <span class="lang-uk">Служіння ветеранам. Україна.</span>
+                        <span class="lang-en">Veterans Ministry. Ukraine.</span>
+                    </p>
+                    <div class="lang-uk">
+                        <p>Привіт, дорога молитовна родино! Останній час видався для мене неймовірно насиченим, але водночас глибоким місяцем. Я мав можливість долучитися до різних команд та взяти участь у проведені двох ретритів.</p>
+                        <p class="mt-4">Мені бувало складно комунікувати з людьми через внутрішню апатію, але я неймовірно радий, що <strong>Бог продовжує діяти через мене попри всі мої людські слабкості</strong>. Господь розвертає ці складні моменти на добро: мені стало легше розуміти хлопців, які проходять схожі випробування.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>Greetings, dear prayer family! The recent period has been incredibly busy, yet a deeply profound month for me. I had the opportunity to join various teams and participate in hosting two retreats.</p>
+                        <p class="mt-4">It was sometimes difficult for me to communicate with people due to internal apathy, but I am incredibly glad that <strong>God continues to work through me despite all my human weaknesses</strong>. The Lord turns these difficult moments into good: it has become easier for me to understand the guys who are going through similar trials.</p>
+                    </div>
                 </div>
 
-                <blockquote class="border-l-4 border-gold bg-white/10 p-5 rounded-r-xl mb-10 relative z-10 text-white/95 italic">
-                    «Але Він сказав мені: "Досить тобі Моєї благодаті, бо сила Моя здійснюється в немочі". Тому я охоче буду хвалитися своїми немочами, щоб у мені оселилася сила Христова».
-                    <span class="block mt-3 text-sm font-bold text-gold not-italic uppercase tracking-wide">— 2 до Коринтян 12:9</span>
+                <blockquote class="border-l-4 border-gold bg-white/10 p-5 rounded-r-xl mb-10 relative z-10 text-white/95 italic shadow-sm">
+                    <span class="lang-uk">«Але Він сказав мені: "Досить тобі Моєї благодаті, бо сила Моя здійснюється в немочі". Тому я охоче буду хвалитися своїми немочами, щоб у мені оселилася сила Христова».</span>
+                    <span class="lang-en">"But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me."</span>
+                    
+                    <span class="block mt-3 text-sm font-bold text-gold not-italic uppercase tracking-wide">
+                        <span class="lang-uk">— 2 до Коринтян 12:9</span>
+                        <span class="lang-en">— 2 Corinthians 12:9</span>
+                    </span>
                 </blockquote>
 
                 <div class="flex flex-wrap gap-4 relative z-10">
-                    <a href="#stories" class="bg-gold text-[#0a4d61] font-bold px-8 py-3.5 rounded-full hover:bg-yellow-400 transition-colors uppercase tracking-widest text-sm text-center">
-                        Читати історії
+                    <a href="#stories" class="bg-gold text-[#0a4d61] font-bold px-8 py-3.5 rounded-full hover:bg-yellow-400 transition-colors uppercase tracking-widest text-sm text-center shadow-md">
+                        <span class="lang-uk">Читати історії</span>
+                        <span class="lang-en">Read Stories</span>
                     </a>
                     <a href="#prayer-requests" class="border border-white/60 text-white font-bold px-8 py-3.5 rounded-full hover:bg-white/10 transition-colors uppercase tracking-widest text-sm text-center">
-                        Молитовні потреби
+                        <span class="lang-uk">Молитовні потреби</span>
+                        <span class="lang-en">Prayer Requests</span>
                     </a>
                 </div>
             </div>
 
             <div class="rounded-[2rem] overflow-hidden relative lg:col-span-5 h-[450px] lg:h-auto shadow-lg group">
-                <img src="mounting.jpeg" alt="Світлина з ретриту в горах" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="mounting.jpeg" alt="Retreat in mountains" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div class="absolute bottom-5 left-5 right-5 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-white shadow-xl">
-                    <p class="mb-2 font-medium text-sm text-gold">Час для відновлення 🏔️</p>
+                    <p class="mb-2 font-medium text-sm text-gold">
+                        <span class="lang-uk">Час для відновлення 🏔️</span>
+                        <span class="lang-en">Time for restoration 🏔️</span>
+                    </p>
                     <p class="text-sm leading-relaxed text-white/90">
-                        Це був безцінний час тиші та молитви у зимових горах. Він дозволив мені відновити сили та почути Божий голос перед наступним сезоном нашого служіння.
+                        <span class="lang-uk">Це був безцінний час тиші та молитви у зимових горах. Він дозволив мені відновити сили та почути Божий голос перед наступним сезоном нашого служіння.</span>
+                        <span class="lang-en">It was an invaluable time of silence and prayer in the winter mountains. It allowed me to restore my strength and hear God's voice before the next season of our ministry.</span>
                     </p>
                 </div>
             </div>
         </div>
 
         <div id="stories" class="text-center mb-12 mt-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">Відповіді на молитви та історії служіння</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+                <span class="lang-uk">Відповіді на молитви та історії служіння</span>
+                <span class="lang-en">Answered Prayers and Ministry Stories</span>
+            </h2>
         </div>
 
         <div class="max-w-4xl mx-auto space-y-12">
             
-            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8">Біль подруги та криза віри</h3>
-                <img src="IMG_6178.jpeg" alt="Фото подруги Ані" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
+            <div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100 dark:border-slate-700">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                    <span class="lang-uk">Біль подруги та криза віри</span>
+                    <span class="lang-en">A Friend's Pain and Crisis of Faith</span>
+                </h3>
+                <img src="IMG_6178.jpeg" alt="Anya" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
                 
-                <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
-                    <p>Хочу поділитися з вами історією моєї подруги Ані. Вона переживає важку кризу в житті та кризу віри. Аня — дружина військового. Її перший чоловік загинув на цій війні, а теперішній чоловік зараз також служить на фронті. Через увесь цей біль вона не може знайти себе, не розуміє, куди рухатися далі, і, що найболючіше, поки не бачить у цьому Бога.</p>
-                    <p>Я намагаюся підтримувати її як друг. Нам вдалося знайти для неї кваліфікованих психотерапевта та психіатра (до цього в неї був негативний досвід, коли лікарі просто проігнорували її біль). Зараз Аня розпочала лікування, і наше спілкування перейшло на глибший, духовний рівень. Вона починає шукати Бога в усьому цьому, і я бачу перші промінчики покращення.</p>
+                <div class="space-y-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <div class="lang-uk">
+                        <p>Хочу поділитися з вами історією моєї подруги Ані. Вона переживає важку кризу в житті та кризу віри. Аня — дружина військового. Її перший чоловік загинув на цій війні, а теперішній чоловік зараз також служить на фронті. Через увесь цей біль вона не може знайти себе, не розуміє, куди рухатися далі, і, що найболючіше, поки не бачить у цьому Бога.</p>
+                        <p>Я намагаюся підтримувати її як друг. Нам вдалося знайти для неї кваліфікованих психотерапевта та психіатра. Зараз Аня розпочала лікування, і наше спілкування перейшло на глибший, духовний рівень. Вона починає шукати Бога в усьому цьому, і я бачу перші промінчики покращення.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>I want to share with you the story of my friend Anya. She is experiencing a severe life crisis and a crisis of faith. Anya is the wife of a soldier. Her first husband died in this war, and her current husband is now also serving at the front. Through all this pain, she cannot find herself, doesn't understand where to move next, and, most painfully, doesn't yet see God in this.</p>
+                        <p>I try to support her as a friend. We managed to find qualified psychotherapists and psychiatrists for her. Now Anya has started treatment, and our communication has moved to a deeper, spiritual level. She is starting to look for God in all of this, and I see the first rays of improvement.</p>
+                    </div>
                     
-                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] p-5 rounded-r-xl my-8 text-gray-700 italic text-lg shadow-sm">
-                        «Близький Господь до зламаних серцем, і впокорених духом спасає... Він зцілює зламаних серцем, і перев'язує їхні рани».
-                        <span class="block mt-3 text-sm font-bold text-brandBlue not-italic uppercase tracking-wide">— Псалом 34:18 / Псалом 147:3</span>
+                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] dark:bg-slate-700 p-5 rounded-r-xl my-8 text-gray-700 dark:text-gray-200 italic text-lg shadow-sm">
+                        <span class="lang-uk">«Близький Господь до зламаних серцем, і впокорених духом спасає... Він зцілює зламаних серцем, і перев'язує їхні рани».</span>
+                        <span class="lang-en">"The Lord is close to the brokenhearted and saves those who are crushed in spirit... He heals the brokenhearted and binds up their wounds."</span>
+                        
+                        <span class="block mt-3 text-sm font-bold text-brandBlue dark:text-[#57c2e6] not-italic uppercase tracking-wide">
+                            <span class="lang-uk">— Псалом 34:18 / Псалом 147:3</span>
+                            <span class="lang-en">— Psalm 34:18 / Psalm 147:3</span>
+                        </span>
                     </blockquote>
 
-                    <blockquote class="pl-6 py-3 border-l-4 border-gold bg-orange-50/50 rounded-r-xl mt-6">
-                        <p class="text-lg italic text-gray-900 font-medium">Прошу вас молитися за її повне емоційне та духовне відновлення.</p>
+                    <blockquote class="pl-6 py-3 border-l-4 border-gold bg-orange-50/50 dark:bg-orange-900/20 rounded-r-xl mt-6">
+                        <p class="text-lg italic text-gray-900 dark:text-white font-medium">
+                            <span class="lang-uk">Прошу вас молитися за її повне емоційне та духовне відновлення.</span>
+                            <span class="lang-en">I ask you to pray for her complete emotional and spiritual recovery.</span>
+                        </p>
                     </blockquote>
                 </div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8">Ретрит у Будапешті: коли двоє варті великих зусиль</h3>
-                <img src="IMG_6228.jpeg" alt="Фото з ретриту" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
+            <div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100 dark:border-slate-700">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                    <span class="lang-uk">Ретрит у Будапешті: коли двоє варті великих зусиль</span>
+                    <span class="lang-en">Retreat in Budapest: When Two Are Worth the Effort</span>
+                </h3>
+                <img src="IMG_6228.jpeg" alt="Retreat" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
                 
-                <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
-                    <p>Наш другий ретрит для ветеранів проходив у Будапешті. На жаль, через життєві обставини з шести запланованих учасників змогли поїхати лише двоє хлопців. У нас були великі сумніви: чи доречно проводити ретрит для такої малої кількості людей? До того ж дорогою виникало безліч перешкод.</p>
-                    <p>Але Бог вкотре довів, що Він діє там, де важко. Цей ретрит пройшов чудово. Ми мали дуже глибокі розмови, відвідали багато гарних місць. Найціннішим було почути від хлопців, що <strong>тут вони нарешті відчули той самий спокій з минулого життя</strong> — де не треба нікуди бігти, не тисне війна, і можна почуватися безпечно та комфортно серед своїх.</p>
+                <div class="space-y-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <div class="lang-uk">
+                        <p>Наш другий ретрит для ветеранів проходив у Будапешті. На жаль, через життєві обставини з шести запланованих учасників змогли поїхати лише двоє хлопців. У нас були великі сумніви: чи доречно проводити ретрит для такої малої кількості людей? До того ж дорогою виникало безліч перешкод.</p>
+                        <p>Але Бог вкотре довів, що Він діє там, де важко. Цей ретрит пройшов чудово. Ми мали дуже глибокі розмови, відвідали багато гарних місць. Найціннішим було почути від хлопців, що <strong>тут вони нарешті відчули той самий спокій з минулого життя</strong> — де не треба нікуди бігти, не тисне війна, і можна почуватися безпечно та комфортно серед своїх.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>Our second retreat for veterans took place in Budapest. Unfortunately, due to life circumstances, out of six planned participants, only two guys could go. We had big doubts: is it appropriate to hold a retreat for such a small number of people? Plus, there were many obstacles along the way.</p>
+                        <p>But God once again proved that He works where it is hard. This retreat went wonderfully. We had very deep conversations and visited many beautiful places. The most valuable thing was to hear from the guys that <strong>here they finally felt that same peace from their past life</strong> — where you don't have to run anywhere, the war doesn't press on you, and you can feel safe and comfortable among friends.</p>
+                    </div>
                     
-                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] p-5 rounded-r-xl mt-8 text-gray-700 italic text-lg shadow-sm">
-                        «Мир залишаю вам, Мій мир даю вам; не так, як світ дає, Я даю вам. Нехай не тривожиться серце ваше і не лякається».
-                        <span class="block mt-3 text-sm font-bold text-brandBlue not-italic uppercase tracking-wide">— Від Івана 14:27</span>
+                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] dark:bg-slate-700 p-5 rounded-r-xl mt-8 text-gray-700 dark:text-gray-200 italic text-lg shadow-sm">
+                        <span class="lang-uk">«Мир залишаю вам, Мій мир даю вам; не так, як світ дає, Я даю вам. Нехай не тривожиться серце ваше і не лякається».</span>
+                        <span class="lang-en">"Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid."</span>
+                        
+                        <span class="block mt-3 text-sm font-bold text-brandBlue dark:text-[#57c2e6] not-italic uppercase tracking-wide">
+                            <span class="lang-uk">— Від Івана 14:27</span>
+                            <span class="lang-en">— John 14:27</span>
+                        </span>
                     </blockquote>
                 </div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8">Новини від Даніка</h3>
-                <img src="danic.jpeg" alt="Фото Даніка" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
+            <div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100 dark:border-slate-700">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                    <span class="lang-uk">Новини від Даніка</span>
+                    <span class="lang-en">News from Danik</span>
+                </h3>
+                <img src="danic.jpeg" alt="Danik" class="w-full h-auto rounded-2xl mb-8 shadow-sm">
                 
-                <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
-                    <p>Особливо мене вразила історія Даніка. Він потрапив на війну в 19 років. У перших же боях їхню колону розбили, і хлопець опинився в полоні. Він пробув там 2 місяці, пройшовши через тюрми в білорусі, росії та Криму. У нього була ампутована кисть руки та обморожені ноги, але попри ці жахи, Данік виявляв неймовірну мужність — він піклувався про інших полонених і намагався дістати їжу для товаришів.</p>
-                    <p>Слухаючи його, я дивувався цій залізній стійкості й думав, що мені до нього далеко. Проте в особистій розмові Данік зізнався, що теж переживає дуже складні періоди в духовному та емоційному стані, але не складає рук і рухається далі.</p>
-                    <p>Данік — не церковна людина, але Бог оточив його християнами. Дорогою назад ми багато спілкувалися. Він поділився, що йому дуже близька ідея християнства, жертва Христа та Божі заповіді, хоча через певні упередження він поки не відносить себе до жодної спільноти. Данік почав молитися після полону, щоб Бог керував його життям.</p>
+                <div class="space-y-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <div class="lang-uk">
+                        <p>Особливо мене вразила історія Даніка. Він потрапив на війну в 19 років. У перших же боях їхню колону розбили, і хлопець опинився в полоні. Він пробув там 2 місяці, пройшовши через тюрми. У нього була ампутована кисть руки та обморожені ноги, але попри ці жахи, Данік виявляв неймовірну мужність — він піклувався про інших полонених і намагався дістати їжу для товаришів.</p>
+                        <p>Слухаючи його, я дивувався цій залізній стійкості й думав, що мені до нього далеко. Проте в особистій розмові Данік зізнався, що теж переживає дуже складні періоди в духовному та емоційному стані, але не складає рук і рухається далі.</p>
+                        <p>Данік — не церковна людина, але Бог оточив його християнами. Дорогою назад ми багато спілкувалися. Він поділився, що йому дуже близька ідея християнства, жертва Христа та Божі заповіді, хоча через певні упередження він поки не відносить себе до жодної спільноти. Данік почав молитися після полону, щоб Бог керував його життям.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>I was particularly struck by Danik's story. He went to war at the age of 19. In the very first battles, their column was destroyed, and the boy ended up in captivity. He spent 2 months there, going through prisons. He had his hand amputated and feet frostbitten, but despite these horrors, Danik showed incredible courage — he cared for other prisoners and tried to get food for his comrades.</p>
+                        <p>Listening to him, I marveled at this iron resilience and thought that I am far from his level. However, in a personal conversation, Danik admitted that he also goes through very difficult periods in his spiritual and emotional state, but he does not give up and moves forward.</p>
+                        <p>Danik is not a churchgoer, but God surrounded him with Christians. On the way back, we talked a lot. He shared that the idea of Christianity, the sacrifice of Christ, and God's commandments are very close to his heart, although due to certain prejudices he does not yet associate himself with any community. Danik started praying after captivity, asking God to guide his life.</p>
+                    </div>
                     
-                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] p-5 rounded-r-xl my-8 text-gray-700 italic text-lg shadow-sm">
-                        «Щоб Бога шукали вони, чи не помацають Його та не знайдуть, хоч Він і недалеко від кожного з нас».
-                        <span class="block mt-3 text-sm font-bold text-brandBlue not-italic uppercase tracking-wide">— Дії Апостолів 17:27</span>
+                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] dark:bg-slate-700 p-5 rounded-r-xl my-8 text-gray-700 dark:text-gray-200 italic text-lg shadow-sm">
+                        <span class="lang-uk">«Щоб Бога шукали вони, чи не помацають Його та не знайдуть, хоч Він і недалеко від кожного з нас».</span>
+                        <span class="lang-en">"God did this so that they would seek him and perhaps reach out for him and find him, though he is not far from any one of us."</span>
+                        
+                        <span class="block mt-3 text-sm font-bold text-brandBlue dark:text-[#57c2e6] not-italic uppercase tracking-wide">
+                            <span class="lang-uk">— Дії Апостолів 17:27</span>
+                            <span class="lang-en">— Acts 17:27</span>
+                        </span>
                     </blockquote>
 
-                    <blockquote class="pl-6 py-3 border-l-4 border-gold bg-orange-50/50 rounded-r-xl mt-6">
-                        <p class="text-lg italic text-gray-900 font-medium">Будь ласка, моліться за покаяння Даніка — це неймовірна людина, яку Бог дуже любить і чекає у Своїй родині.</p>
+                    <blockquote class="pl-6 py-3 border-l-4 border-gold bg-orange-50/50 dark:bg-orange-900/20 rounded-r-xl mt-6">
+                        <p class="text-lg italic text-gray-900 dark:text-white font-medium">
+                            <span class="lang-uk">Будь ласка, моліться за покаяння Даніка — це неймовірна людина, яку Бог дуже любить і чекає у Своїй родині.</span>
+                            <span class="lang-en">Please pray for Danik's repentance — he is an incredible person whom God loves very much and is waiting for in His family.</span>
+                        </p>
                     </blockquote>
                 </div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8">Подкасти, які відгукуються</h3>
+            <div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[2rem] shadow-md border border-gray-100 dark:border-slate-700">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                    <span class="lang-uk">Подкасти, які відгукуються</span>
+                    <span class="lang-en">Podcasts that Resonate</span>
+                </h3>
                 
                 <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-sm mb-8">
                     <iframe src="https://www.youtube.com/embed/KR7hr8g7_wY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
                 </div>
 
-                <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
-                    <p>Також цього місяця ми записали два важливих подкасти. Один із них — із заступником єпископа, у якого на війні загинув зять. Спікер дуже відкрито, зі сльозами на очах ділився цим етапом свого життя.</p>
-                    <p>Після виходу епізоду ми отримали чимало повідомлень про те, як сильно це відгукнулося людям. З одного боку, прикро, що так багато українців зараз переживають цей страшний біль втрати. Але з іншого — саме для цього я й створюю цей контент: щоб люди знали, що вони не одні, знаходили однодумців та отримували Боже підбадьорення. І я бачу, що цей задум працює.</p>
+                <div class="space-y-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <div class="lang-uk">
+                        <p>Також цього місяця ми записали два важливих подкасти. Один із них — із заступником єпископа, у якого на війні загинув зять. Спікер дуже відкрито, зі сльозами на очах ділився цим етапом свого життя.</p>
+                        <p>Після виходу епізоду ми отримали чимало повідомлень про те, як сильно це відгукнулося людям. З одного боку, прикро, що так багато українців зараз переживають цей страшний біль втрати. Але з іншого — саме для цього я й створюю цей контент: щоб люди знали, що вони не одні, знаходили однодумців та отримували Боже підбадьорення. І я бачу, що цей задум працює.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>Also this month we recorded two important podcasts. One of them is with a deputy bishop whose son-in-law died in the war. The speaker very openly, with tears in his eyes, shared this stage of his life.</p>
+                        <p>After the episode was released, we received many messages about how strongly it resonated with people. On the one hand, it's sad that so many Ukrainians are currently experiencing this terrible pain of loss. But on the other hand, this is exactly why I create this content: so people know they are not alone, find like-minded individuals, and receive God's encouragement. And I see that this idea works.</p>
+                    </div>
                     
-                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] p-5 rounded-r-xl mt-8 text-gray-700 italic text-lg shadow-sm">
-                        «Благословенний Бог... Отець милосердя і Бог усякої втіхи, Що втішає нас у всіх наших скорботах, щоб і ми могли втішати тих, що в усякій скорботі, тією втіхою, якою Бог потішає нас самих».
-                        <span class="block mt-3 text-sm font-bold text-brandBlue not-italic uppercase tracking-wide">— 2 до Коринтян 1:3-4</span>
+                    <blockquote class="border-l-4 border-brandBlue bg-[#f0f8fa] dark:bg-slate-700 p-5 rounded-r-xl mt-8 text-gray-700 dark:text-gray-200 italic text-lg shadow-sm">
+                        <span class="lang-uk">«Благословенний Бог... Отець милосердя і Бог усякої втіхи, Що втішає нас у всіх наших скорботах, щоб і ми могли втішати тих, що в усякій скорботі, тією втіхою, якою Бог потішає нас самих».</span>
+                        <span class="lang-en">"Praise be to the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort, who comforts us in all our troubles, so that we can comfort those in any trouble with the comfort we ourselves receive from God."</span>
+                        
+                        <span class="block mt-3 text-sm font-bold text-brandBlue dark:text-[#57c2e6] not-italic uppercase tracking-wide">
+                            <span class="lang-uk">— 2 до Коринтян 1:3-4</span>
+                            <span class="lang-en">— 2 Corinthians 1:3-4</span>
+                        </span>
                     </blockquote>
                 </div>
             </div>
 
-            <div class="bg-amber-50/60 p-8 md:p-12 rounded-[2rem] shadow-md border border-amber-200">
-                <h3 class="text-3xl font-bold text-amber-900 mb-6">Плани та Superhumans</h3>
+            <div class="bg-amber-50/60 dark:bg-[#3d2e14] p-8 md:p-12 rounded-[2rem] shadow-md border border-amber-200 dark:border-amber-900/50">
+                <h3 class="text-3xl font-bold text-amber-900 dark:text-amber-500 mb-6">
+                    <span class="lang-uk">Плани та Superhumans</span>
+                    <span class="lang-en">Plans and Superhumans</span>
+                </h3>
                 
-                <div class="space-y-5 text-lg text-amber-950 leading-relaxed">
-                    <p>Щодо мене особисто — я проходжу власне відновлення. Мені стає краще, і я вже нарешті бачу світло попереду. Я безмежно вдячний за ваші молитви, я дійсно відчуваю їхню силу, вони допомагають мені йти далі.</p>
-                    <p>Зараз я налагодив контакт із центром <em>Superhumans</em> і висловив бажання долучитися до команди «Рівний рівному». Це дозволить мені ще ефективніше допомагати ветеранам у їхньому відновленні та реабілітації й поверненні до цивільного життя.</p>
+                <div class="space-y-5 text-lg text-amber-950 dark:text-amber-100 leading-relaxed">
+                    <div class="lang-uk">
+                        <p>Щодо мене особисто — я проходжу власне відновлення. Мені стає краще, і я вже нарешті бачу світло попереду. Я безмежно вдячний за ваші молитви, я дійсно відчуваю їхню силу, вони допомагають мені йти далі.</p>
+                        <p>Зараз я налагодив контакт із центром <em>Superhumans</em> і висловив бажання долучитися до команди «Рівний рівному». Це дозволить мені ще ефективніше допомагати ветеранам у їхньому відновленні та реабілітації й поверненні до цивільного життя.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>As for me personally — I am going through my own recovery. I am getting better, and I finally see the light ahead. I am infinitely grateful for your prayers, I truly feel their power, they help me keep going.</p>
+                        <p>I have recently established contact with the <em>Superhumans</em> center and expressed a desire to join the "Peer to Peer" team. This will allow me to even more effectively help veterans in their recovery, rehabilitation, and return to civilian life.</p>
+                    </div>
                     
-                    <blockquote class="border-l-4 border-brandBlue bg-white p-5 rounded-r-xl my-6 text-gray-700 italic shadow-sm">
-                        «Носіть тягарі один одного, і так виконаєте закона Христового».
-                        <span class="block mt-3 text-sm font-bold text-brandBlue not-italic uppercase tracking-wide">— до Галатів 6:2</span>
+                    <blockquote class="border-l-4 border-brandBlue bg-white dark:bg-slate-800 p-5 rounded-r-xl my-6 text-gray-700 dark:text-gray-300 italic shadow-sm">
+                        <span class="lang-uk">«Носіть тягарі один одного, і так виконаєте закона Христового».</span>
+                        <span class="lang-en">"Carry each other’s burdens, and in this way you will fulfill the law of Christ."</span>
+                        
+                        <span class="block mt-3 text-sm font-bold text-brandBlue dark:text-[#57c2e6] not-italic uppercase tracking-wide">
+                            <span class="lang-uk">— до Галатів 6:2</span>
+                            <span class="lang-en">— Galatians 6:2</span>
+                        </span>
                     </blockquote>
 
-                    <p>Також у нашій місії добігає кінця цей "робочий рік", і ми починаємо процес збору фінансової та молитовної підтримки на наступний період. Рік тому ви стали частиною моєї команди партнерів, за що я вам неймовірно вдячний. Завдяки вам ми можемо досягати сердець тих, хто віддав так багато заради нашого життя, допомагати їм знаходити сенси після пережитого жаху.</p>
+                    <div class="lang-uk">
+                        <p>Також у нашій місії добігає кінця цей "робочий рік", і ми починаємо процес збору фінансової та молитовної підтримки на наступний період. Рік тому ви стали частиною моєї команди партнерів, за що я вам неймовірно вдячний. Завдяки вам ми можемо досягати сердець тих, хто віддав так багато заради нашого життя.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>Also, our "working year" in the ministry is coming to an end, and we are starting the process of gathering financial and prayer support for the next period. A year ago, you became part of my partner team, for which I am incredibly grateful. Thanks to you, we can reach the hearts of those who gave so much for our lives.</p>
+                    </div>
                 </div>
             </div>
 
         </div>
 
-        <div id="prayer-requests" class="max-w-4xl mx-auto bg-white p-8 md:p-12 lg:p-14 rounded-[2.5rem] shadow-lg mt-16 border border-gray-100">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight mb-8 text-center">
-                Молитовні потреби
+        <div id="prayer-requests" class="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 md:p-12 lg:p-14 rounded-[2.5rem] shadow-lg mt-16 border border-gray-100 dark:border-slate-700">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-8 text-center">
+                <span class="lang-uk">Молитовні потреби</span>
+                <span class="lang-en">Prayer Requests</span>
             </h2>
             
-            <div class="p-8 border border-blue-100 rounded-3xl bg-[#f0f8fa] flex flex-col gap-6 shadow-inner">
-                <ul class="list-none space-y-5 text-lg text-gray-700">
+            <div class="p-8 border border-blue-100 dark:border-slate-700 rounded-3xl bg-[#f0f8fa] dark:bg-slate-700/50 flex flex-col gap-6 shadow-inner">
+                <ul class="list-none space-y-5 text-lg text-gray-700 dark:text-gray-300">
                     <li class="flex gap-4 items-start">
-                        <span class="text-brandBlue font-bold text-xl leading-none">✓</span> 
-                        <span><strong>За подругу Аню</strong> — за зцілення її душевних ран, благословення в лікуванні та віднайдення віри й сенсу в Бозі.</span>
+                        <span class="text-brandBlue dark:text-[#57c2e6] font-bold text-xl leading-none">✓</span> 
+                        <span class="lang-uk"><strong>За подругу Аню</strong> — за зцілення її душевних ран, благословення в лікуванні та віднайдення віри.</span>
+                        <span class="lang-en"><strong>For friend Anya</strong> — for the healing of her emotional wounds, blessing in treatment, and finding faith.</span>
                     </li>
                     <li class="flex gap-4 items-start">
-                        <span class="text-brandBlue font-bold text-xl leading-none">✓</span> 
-                        <span><strong>За Даніка</strong> — за його духовний пошук, звільнення від упереджень та щире покаяння й прийняття Христа.</span>
+                        <span class="text-brandBlue dark:text-[#57c2e6] font-bold text-xl leading-none">✓</span> 
+                        <span class="lang-uk"><strong>За Даніка</strong> — за його духовний пошук, звільнення від упереджень та щире покаяння.</span>
+                        <span class="lang-en"><strong>For Danik</strong> — for his spiritual search, freedom from prejudices, and sincere repentance.</span>
                     </li>
                     <li class="flex gap-4 items-start">
-                        <span class="text-brandBlue font-bold text-xl leading-none">✓</span> 
-                        <span><strong>За моє служіння та плани</strong> — за можливість долучитися до команди «Рівний рівному» в Superhumans.</span>
+                        <span class="text-brandBlue dark:text-[#57c2e6] font-bold text-xl leading-none">✓</span> 
+                        <span class="lang-uk"><strong>За моє служіння та плани</strong> — за можливість долучитися до команди «Рівний рівному» в Superhumans.</span>
+                        <span class="lang-en"><strong>For my ministry and plans</strong> — for the opportunity to join the "Peer to Peer" team at Superhumans.</span>
                     </li>
                     <li class="flex gap-4 items-start">
-                        <span class="text-brandBlue font-bold text-xl leading-none">✓</span> 
-                        <span><strong>За фінансову та молитовну підтримку</strong> — за формування команди партнерів на наступний робочий рік місії, щоб служіння ветеранам продовжувалося.</span>
+                        <span class="text-brandBlue dark:text-[#57c2e6] font-bold text-xl leading-none">✓</span> 
+                        <span class="lang-uk"><strong>За фінансову підтримку</strong> — за формування команди партнерів на наступний робочий рік місії.</span>
+                        <span class="lang-en"><strong>For financial support</strong> — for building a team of partners for the next working year of the ministry.</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="text-lg text-gray-600 italic border-t border-gray-100 pt-8 mt-10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>Дякую, що ви поруч у кожному кроці цього шляху!</p>
-                <p class="text-right"><span class="text-sm not-italic text-gray-400 block">З молитвою про вас,</span> <strong class="text-gray-900 not-italic font-bold text-xl block mt-0.5">Олександр</strong></p>
+            <div class="text-lg text-gray-600 dark:text-gray-400 italic border-t border-gray-100 dark:border-slate-700 pt-8 mt-10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>
+                    <span class="lang-uk">Дякую, що ви поруч у кожному кроці цього шляху!</span>
+                    <span class="lang-en">Thank you for being there every step of the way!</span>
+                </p>
+                <p class="text-right">
+                    <span class="text-sm not-italic text-gray-400 dark:text-gray-500 block">
+                        <span class="lang-uk">З молитвою про вас,</span>
+                        <span class="lang-en">Praying for you,</span>
+                    </span> 
+                    <strong class="text-gray-900 dark:text-white not-italic font-bold text-xl block mt-0.5">
+                        <span class="lang-uk">Олександр</span>
+                        <span class="lang-en">Oleksandr</span>
+                    </strong>
+                </p>
             </div>
         </div>
 
-        <div id="donate" class="max-w-4xl mx-auto mt-20 mb-10 bg-[#35657a] rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl">
+        <div id="donate" class="max-w-4xl mx-auto mt-20 mb-10 bg-[#35657a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200">
             <div class="text-center space-y-6 mb-12">
-                <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full shadow-sm" data-i18n="inv-badge">Підтримайте моє служіння</span>
-                <h3 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Інвестуйте у відновлення ветеранів</h3>
-                <p class="text-xl text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
-                    Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стать частиною моєї команди?
+                <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full shadow-sm">
+                    <span class="lang-uk">Підтримайте моє служіння</span>
+                    <span class="lang-en">Support My Ministry</span>
+                </span>
+                <h3 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+                    <span class="lang-uk">Інвестуйте у відновлення ветеранів</span>
+                    <span class="lang-en">Invest in Veterans' Recovery</span>
+                </h3>
+                <p class="text-xl text-white/90 leading-relaxed font-medium">
+                    <span class="lang-uk">Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?</span>
+                    <span class="lang-en">My ministry is fully funded by the generous support of people like you. By becoming my financial partner, you are directly investing in the spiritual and psychological recovery of Ukraine's veterans. Are you ready to join my team?</span>
                 </p>
             </div>
 
-            <div class="bg-white rounded-[2.5rem] p-8 sm:p-10 shadow-xl border border-slate-100">
-                <h4 class="text-2xl font-bold mb-8 text-center uppercase tracking-tight text-slate-900" data-i18n="qr-h4">Реквізити для пожертви</h4>
+            <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 sm:p-10 shadow-xl border border-slate-100 dark:border-slate-700">
+                <h4 class="text-2xl font-bold mb-8 text-center uppercase tracking-tight text-slate-900 dark:text-white">
+                    <span class="lang-uk">Реквізити для пожертви</span>
+                    <span class="lang-en">Donation Details</span>
+                </h4>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
                     <a href="https://next.privat24.ua/payments/form/%7B%22companyID%22:%222055560%22,%22form%22:%7B%22query%22:%2219117130%22%7D%7D" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-2 w-full bg-[#75B220] hover:bg-[#62971a] text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
                         <i class="fa-solid fa-building-columns text-2xl"></i>
-                        <span class="text-sm tracking-wide uppercase" data-i18n="btn-pb">Приват24</span>
+                        <span class="text-sm tracking-wide uppercase">Privat24</span>
                     </a>
 
-                    <button onclick="navigator.clipboard.writeText('UA063052990000026004045007863'); alert('IBAN скопійовано у буфер обміну!');" class="flex flex-col items-center justify-center gap-2 w-full bg-[#000000] hover:bg-slate-800 text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
+                    <button id="copyIbanBtn" class="flex flex-col items-center justify-center gap-2 w-full bg-[#000000] hover:bg-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
                         <i class="fa-solid fa-cat text-2xl"></i>
-                        <span class="text-sm tracking-wide uppercase" data-i18n="btn-mono">Monobank (IBAN)</span>
+                        <span class="text-sm tracking-wide uppercase">Monobank (IBAN)</span>
                     </button>
 
                     <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-2 w-full bg-[#005691] hover:bg-[#004372] text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
                         <i class="fa-solid fa-globe text-2xl"></i>
-                        <span class="text-sm tracking-wide uppercase" data-i18n="btn-cru">Cru.org</span>
+                        <span class="text-sm tracking-wide uppercase">Cru.org</span>
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                    <div class="lg:col-span-4 bg-slate-50 rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100">
-                        <img src="qr.jpg" alt="QR Code" class="w-full max-w-[200px] object-contain mix-blend-multiply rounded-xl">
-                        <p class="mt-4 text-sm text-slate-500 font-bold text-center" data-i18n="qr-scan">Відскануйте QR-код для швидкого переказу</p>
+                    <div class="lg:col-span-4 bg-slate-50 dark:bg-slate-800 rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 dark:border-slate-700">
+                        <img src="qr.jpg" alt="QR Code" class="w-full max-w-[200px] object-contain mix-blend-multiply dark:mix-blend-normal rounded-xl">
+                        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 font-bold text-center">
+                            <span class="lang-uk">Відскануйте QR-код для швидкого переказу</span>
+                            <span class="lang-en">Scan the QR code for a quick transfer</span>
+                        </p>
                     </div>
 
                     <div class="lg:col-span-8 space-y-6">
-                        <p class="font-bold text-xl text-slate-900 border-b border-slate-200 pb-3" data-i18n="how-title">Як зробити внесок:</p>
+                        <p class="font-bold text-xl text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-3">
+                            <span class="lang-uk">Як зробити внесок:</span>
+                            <span class="lang-en">How to make a donation:</span>
+                        </p>
 
-                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                            <p class="font-bold text-[#75B220] mb-2"><i class="fa-solid fa-building-columns"></i> <span data-i18n="how-pb">Через Приват24:</span></p>
-                            <ul class="space-y-1 text-sm text-slate-700">
-                                <li data-i18n="pb-1">1. Перейдіть за кнопкою вище або в "Мої Платежі"</li>
-                                <li data-i18n="pb-2">2. Пошук: <strong>місія Україна для Христа</strong></li>
-                                <li data-i18n="pb-3">3. У полі "Залучив" введіть: <strong class="text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">5544</strong></li>
-                                <li data-i18n="pb-4">4. Введіть ПІБ та суму.</li>
+                        <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700">
+                            <p class="font-bold text-[#75B220] mb-2"><i class="fa-solid fa-building-columns"></i> 
+                                <span class="lang-uk">Через Приват24:</span>
+                                <span class="lang-en">Via Privat24:</span>
+                            </p>
+                            <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                                <li class="lang-uk">1. Перейдіть за кнопкою вище або в "Мої Платежі"</li>
+                                <li class="lang-uk">2. Пошук: <strong class="dark:text-white">місія Україна для Христа</strong></li>
+                                <li class="lang-uk">3. У полі "Залучив" введіть: <strong class="text-amber-600 bg-amber-50 dark:bg-amber-900/30 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-700">5544</strong></li>
+                                <li class="lang-uk">4. Введіть ПІБ та суму.</li>
+
+                                <li class="lang-en">1. Click the button above or go to "My Payments"</li>
+                                <li class="lang-en">2. Search: <strong class="dark:text-white">місія Україна для Христа</strong></li>
+                                <li class="lang-en">3. In the "Залучив" field enter: <strong class="text-amber-600 bg-amber-50 dark:bg-amber-900/30 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-700">5544</strong></li>
+                                <li class="lang-en">4. Enter your Full Name and amount.</li>
                             </ul>
                         </div>
 
-                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                            <p class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-cat"></i> <span data-i18n="how-mono-title">Через Monobank:</span></p>
-                            <ul class="space-y-1 text-sm text-slate-700">
-                                <li data-i18n="mono-1">1. Скопіюйте IBAN та відкрийте застосунок</li>
-                                <li data-i18n="mono-2">2. "Інші платежі" → "Платіж за реквізитами (IBAN)"</li>
-                                <li data-i18n="mono-3">3. Вставте IBAN <span class="text-[10px] bg-slate-200 px-1 rounded block mt-1 break-all w-fit font-mono">UA063052990000026004045007863</span></li>
-                                <li data-i18n="mono-4">4. Призначення: Благодійний внесок, <strong>залучив 5544</strong></li>
+                        <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700">
+                            <p class="font-bold text-slate-900 dark:text-white mb-2"><i class="fa-solid fa-cat"></i> 
+                                <span class="lang-uk">Через Monobank:</span>
+                                <span class="lang-en">Via Monobank:</span>
+                            </p>
+                            <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                                <li class="lang-uk">1. Скопіюйте IBAN та відкрийте застосунок</li>
+                                <li class="lang-uk">2. "Інші платежі" → "Платіж за реквізитами (IBAN)"</li>
+                                <li class="lang-uk">3. Вставте IBAN <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1 rounded block mt-1 break-all w-fit font-mono">UA063052990000026004045007863</span></li>
+                                <li class="lang-uk">4. Призначення: Благодійний внесок, <strong class="dark:text-white">залучив 5544</strong></li>
+
+                                <li class="lang-en">1. Copy IBAN and open the app</li>
+                                <li class="lang-en">2. "Other payments" → "Payment by details (IBAN)"</li>
+                                <li class="lang-en">3. Paste IBAN <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1 rounded block mt-1 break-all w-fit font-mono">UA063052990000026004045007863</span></li>
+                                <li class="lang-en">4. Description: Charitable contribution, <strong class="dark:text-white">залучив 5544</strong></li>
                             </ul>
                         </div>
 
-                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                            <p class="font-bold text-[#005691] mb-2"><i class="fa-solid fa-globe"></i> <span data-i18n="how-cru-title">Через Cru.org (З усього світу):</span></p>
-                            <ul class="space-y-1 text-sm text-slate-700">
-                                <li data-i18n="cru-1">1. Перейдіть за посиланням на офіційний сайт Cru</li>
-                                <li data-i18n="cru-2">2. Виберіть суму та натисніть "Give a Gift"</li>
-                                <li data-i18n="cru-3">3. Заповніть дані платіжної картки</li>
+                        <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700">
+                            <p class="font-bold text-[#005691] dark:text-blue-400 mb-2"><i class="fa-solid fa-globe"></i> 
+                                <span class="lang-uk">Через Cru.org (З усього світу):</span>
+                                <span class="lang-en">Via Cru.org (Worldwide):</span>
+                            </p>
+                            <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                                <li class="lang-uk">1. Перейдіть за посиланням на офіційний сайт Cru</li>
+                                <li class="lang-uk">2. Виберіть суму та натисніть "Give a Gift"</li>
+                                <li class="lang-uk">3. Заповніть дані платіжної картки</li>
+
+                                <li class="lang-en">1. Follow the link to the official Cru website</li>
+                                <li class="lang-en">2. Choose the amount and click "Give a Gift"</li>
+                                <li class="lang-en">3. Fill in your payment card details</li>
                             </ul>
                         </div>
                     </div>
@@ -300,5 +506,57 @@
 
     </main>
 
+    <script>
+        // ТЕМНА ТЕМА
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+        } else {
+            htmlEl.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ПЕРЕМИКАЧ МОВИ
+        const langToggleBtn = document.getElementById('langToggle');
+        const bodyEl = document.body;
+
+        let currentLang = localStorage.getItem('language') || 'uk';
+        setLanguage(currentLang);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'uk' ? 'en' : 'uk';
+            setLanguage(currentLang);
+            localStorage.setItem('language', currentLang);
+        });
+
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                bodyEl.classList.remove('lang-uk-active');
+                bodyEl.classList.add('lang-en-active');
+                langToggleBtn.textContent = 'UA';
+            } else {
+                bodyEl.classList.remove('lang-en-active');
+                bodyEl.classList.add('lang-uk-active');
+                langToggleBtn.textContent = 'EN';
+            }
+        }
+
+        // КОПІЮВАННЯ IBAN
+        document.getElementById('copyIbanBtn').addEventListener('click', () => {
+            navigator.clipboard.writeText('UA063052990000026004045007863');
+            const alertMsg = currentLang === 'uk' ? 'IBAN скопійовано у буфер обміну!' : 'IBAN copied to clipboard!';
+            alert(alertMsg);
+        });
+    </script>
 </body>
 </html>
