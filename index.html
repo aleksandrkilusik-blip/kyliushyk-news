@@ -33,9 +33,9 @@
                     },
                     colors: {
                         gold: {
-                            DEFAULT: '#B8860B', 
-                            light: '#DAA520',
-                            pale: '#FDF5E6'
+                            DEFAULT: '#FBBF24', // Оновлений відтінок жовтого під новий стиль
+                            light: '#FCD34D',
+                            pale: '#FEF3C7'
                         },
                         slate: {
                             50: '#F8FAFC',
@@ -56,16 +56,11 @@
         .dark ::-webkit-scrollbar-track { background: #0F172A; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
         .dark ::-webkit-scrollbar-thumb { background: #334155; }
-        ::-webkit-scrollbar-thumb:hover { background: #B8860B; }
+        ::-webkit-scrollbar-thumb:hover { background: #FBBF24; }
         
         .hero-bg {
-            background: linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.88)), url('4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .dark .hero-bg {
-            background: linear-gradient(rgba(15,23,42,0.96), rgba(15,23,42,0.88)), url('4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
+            /* Оновлений темний градієнт для читабельності білого тексту */
+            background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)), url('4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -79,12 +74,12 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-white transition-colors duration-200">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900 transition-colors duration-200">
 
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-gold flex items-center justify-center text-white shadow-md">
+                <div class="w-10 h-10 rounded-lg bg-gold flex items-center justify-center text-slate-900 shadow-md">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <div>
@@ -120,7 +115,7 @@
                 </button>
 
                 <div class="hidden md:block">
-                    <a href="#partnership" class="bg-gold hover:bg-gold-light text-white font-bold px-6 py-2.5 rounded-full transition-all shadow-md" data-i18n="btn-partner">
+                    <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-bold px-6 py-2.5 rounded-full transition-all shadow-md" data-i18n="btn-partner">
                         Стати партнером
                     </a>
                 </div>
@@ -130,39 +125,43 @@
         </div>
     </header>
 
-    <section class="relative pt-20 pb-32 hero-bg transition-colors duration-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-bold tracking-widest uppercase" data-i18n="hero-tag">
-                        В рамках "Україна для Христа"
-                    </div>
-                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight leading-[1] text-slate-900 dark:text-white font-sans transition-colors duration-200">
-                        Military <br><span class="text-gold font-serif italic">Ministry</span>
-                    </h1>
-                    <p class="text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-medium transition-colors duration-200" data-i18n="hero-desc">
-                        Бути поруч із тими, хто повертається з війни. Я — духовний тил ветеранів України.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#about" class="bg-gold hover:bg-gold-light text-white font-extrabold text-lg px-10 py-4 rounded-2xl shadow-xl hover:-translate-y-1 transition-all" data-i18n="nav-path">
-                            Мій шлях
-                        </a>
-                        <a href="#vision" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-all" data-i18n="nav-vision">
-                            Бачення
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 relative group">
-                    <div class="absolute -inset-2 bg-gold/20 rounded-[3rem] blur opacity-20"></div>
-                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 w-full transition-colors duration-200" style="aspect-ratio: 4 / 5;">
-                        <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" 
-                             alt="Military Ministry Ukraine" 
-                             class="w-full h-full object-cover object-center absolute inset-0">
-                    </div>
-                </div>
+    <!-- НОВА HERO СЕКЦІЯ -->
+    <section class="relative pt-32 pb-48 hero-bg transition-colors duration-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-tight leading-[0.9] text-white font-sans mb-8">
+                Military <br><span class="text-gold font-serif italic">Ministry</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-medium mb-12" data-i18n="hero-desc">
+                Бути поруч із тими, хто повертається з війни. Я — духовний тил ветеранів України.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-extrabold text-lg px-10 py-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-all" data-i18n="btn-partner">
+                    Стати партнером
+                </a>
+                <a href="#newsletter-form" class="bg-slate-800/50 hover:bg-slate-700/80 border border-slate-500 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-sm hover:-translate-y-1 transition-all backdrop-blur-md" data-i18n="hero-btn-news">
+                    Останні новини
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ (Наїжджає на фон) -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-24 mb-16">
+        <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 py-10 px-6 sm:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="space-y-3">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">1951</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-1-lbl">Рік заснування місії</span>
+            </div>
+            <div class="space-y-3 md:border-l md:border-r border-slate-100 dark:border-slate-700">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">191+</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-2-lbl">Країн світу</span>
+            </div>
+            <div class="space-y-3">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">1991</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-3-lbl">Служимо в Україні з</span>
+            </div>
+        </div>
+    </div>
 
     <!-- МІЙ ШЛЯХ (ABOUT) -->
     <section id="about" class="py-24 bg-white dark:bg-slate-900 transition-colors duration-200">
@@ -271,7 +270,7 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button onclick="switchTab('tab-hospitals')" id="btn-tab-hospitals" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-white shadow-md" data-i18n="tab-hosp">
+                <button onclick="switchTab('tab-hospitals')" id="btn-tab-hospitals" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md" data-i18n="tab-hosp">
                     Госпіталі
                 </button>
                 <button onclick="switchTab('tab-podcasts')" id="btn-tab-podcasts" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-pod">
@@ -430,7 +429,7 @@
             <!-- Big Blue Investment Block -->
             <div class="mt-16 bg-[#35657a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200">
                 <div class="max-w-4xl mx-auto text-center space-y-6 mb-12">
-                    <span class="inline-block bg-[#EAAA40] text-slate-900 font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full shadow-sm" data-i18n="inv-badge">Підтримайте моє служіння</span>
+                    <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full shadow-sm" data-i18n="inv-badge">Підтримайте моє служіння</span>
                     <h3 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Інвестуйте у відновлення ветеранів</h3>
                     <p class="text-xl text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
                         Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?
@@ -637,6 +636,10 @@
                 "btn-partner": "Стати партнером",
                 "hero-tag": 'В рамках "Україна для Христа"',
                 "hero-desc": "Бути поруч із тими, хто повертається з війни. Я — духовний тил ветеранів України.",
+                "hero-btn-news": "Останні новини",
+                "stat-1-lbl": "Рік заснування місії",
+                "stat-2-lbl": "Країн світу",
+                "stat-3-lbl": "Служимо в Україні з",
                 "vision-tag": "Бачення",
                 "vision-h3": "Війна залишає рани не лише на тілі, а й на душі. Я вірю, що тільки Христос здатен дати справжнє зцілення.",
                 "win-desc": "Донести Євангеліє до ветеранів через стосунки, свідчення та служіння.",
@@ -740,6 +743,10 @@
                 "btn-partner": "Become a Partner",
                 "hero-tag": "Part of \"Ukraine for Christ\"",
                 "hero-desc": "Standing beside those returning from war. I am the spiritual rear for Ukraine's veterans.",
+                "hero-btn-news": "Latest News",
+                "stat-1-lbl": "Year mission founded",
+                "stat-2-lbl": "Countries worldwide",
+                "stat-3-lbl": "Serving in Ukraine since",
                 "vision-tag": "Vision",
                 "vision-h3": "War leaves wounds not only on the body but also on the soul. I believe only Christ can provide true healing.",
                 "win-desc": "Bring the Gospel to veterans through relationships, testimony, and ministry.",
@@ -843,6 +850,10 @@
                 "btn-partner": "Zostań partnerem",
                 "hero-tag": "W ramach \"Ukraina dla Chrystusa\"",
                 "hero-desc": "Stać obok tych, którzy wracają z wojny. Jestem duchowym zapleczem dla weteranów Ukrainy.",
+                "hero-btn-news": "Ostatnie wiadomości",
+                "stat-1-lbl": "Rok założenia misji",
+                "stat-2-lbl": "Krajów na świecie",
+                "stat-3-lbl": "Służymy w Ukrainie od",
                 "vision-tag": "Wizja",
                 "vision-h3": "Wojna pozostawia rany nie tylko na ciele, ale i na duszy. Wierzę, że tylko Chrystus może dać prawdziwe uzdrowienie.",
                 "win-desc": "Zanieść Ewangelię weteranom poprzez relacje, świadectwo i służbę.",
@@ -946,6 +957,10 @@
                 "btn-partner": "Partner werden",
                 "hero-tag": 'Im Rahmen von "Ukraine für Christus"',
                 "hero-desc": "An der Seite derer stehen, die aus dem Krieg zurückkehren. Ich bin der geistliche Rückhalt für die Veteranen der Ukraine.",
+                "hero-btn-news": "Neueste Nachrichten",
+                "stat-1-lbl": "Gründungsjahr der Mission",
+                "stat-2-lbl": "Länder weltweit",
+                "stat-3-lbl": "Wir dienen in der Ukraine seit",
                 "vision-tag": "Vision",
                 "vision-h3": "Krieg hinterlässt Wunden nicht nur am Körper, sondern auch an der Seele. Ich glaube, dass nur Christus wahre Heilung schenken kann.",
                 "win-desc": "Das Evangelium durch Beziehungen, Zeugnisse und Dienst zu den Veteranen bringen.",
@@ -1086,7 +1101,7 @@
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50";
             });
-            document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-white shadow-md";
+            document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md";
         }
 
         // --- Theme Toggle Logic ---
