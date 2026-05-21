@@ -93,6 +93,7 @@
                 <a href="#challenge" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-challenge">Чому ветерани?</a>
                 <a href="#activity" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-activity">Діяльність</a>
                 <a href="#partnership" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-partnership">Підтримка</a>
+                <a href="#newsletters" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-newsletters">Молитовні листи</a>
             </nav>
 
             <div class="flex items-center gap-5">
@@ -119,6 +120,16 @@
 
                 <button onclick="toggleMobileMenu()" class="md:hidden text-slate-800 dark:text-white p-2"><i id="menu-icon" class="fa-solid fa-bars text-2xl"></i></button>
             </div>
+        </div>
+        
+        <!-- Мобільне меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-6 space-y-4 shadow-xl transition-colors duration-200">
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-path">Мій шлях</a>
+            <a href="#vision" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-vision">Бачення</a>
+            <a href="#challenge" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-challenge">Чому ветерани?</a>
+            <a href="#activity" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-activity">Діяльність</a>
+            <a href="#partnership" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-partnership">Підтримка</a>
+            <a href="#newsletters" onclick="toggleMobileMenu()" class="block font-bold text-gold uppercase tracking-widest text-sm" data-i18n="nav-newsletters">Молитовні листи</a>
         </div>
     </header>
 
@@ -504,7 +515,7 @@
     </section>
 
     <!-- ОНОВЛЕННЯ ТА ЛИСТИ -->
-    <section class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
+    <section id="newsletters" class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
@@ -537,7 +548,7 @@
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div>
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
-                            <img src="47A4B823-5251-4ED2-8B24-E828EAFFF46F_1_105_c.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="IMG_6228.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
@@ -612,6 +623,7 @@
                 "nav-path": "Мій шлях",
                 "nav-activity": "Діяльність",
                 "nav-partnership": "Підтримка",
+                "nav-newsletters": "Молитовні листи",
                 "btn-partner": "Стати партнером",
                 "hero-tag": 'В рамках "Україна для Христа"',
                 "hero-desc": "Бути поруч із тими, хто повертається з війни. Я — духовний тил ветеранів України.",
@@ -726,6 +738,7 @@
                 "nav-path": "My Path",
                 "nav-activity": "Activity",
                 "nav-partnership": "Support",
+                "nav-newsletters": "Prayer Letters",
                 "btn-partner": "Become a Partner",
                 "hero-tag": "Part of \"Ukraine for Christ\"",
                 "hero-desc": "Standing beside those returning from war. I am the spiritual rear for Ukraine's veterans.",
@@ -840,6 +853,7 @@
                 "nav-path": "Moja Droga",
                 "nav-activity": "Działalność",
                 "nav-partnership": "Wsparcie",
+                "nav-newsletters": "Listy Modlitewne",
                 "btn-partner": "Zostań partnerem",
                 "hero-tag": "W ramach \"Ukraina dla Chrystusa\"",
                 "hero-desc": "Stać obok tych, którzy wracają z wojny. Jestem duchowym zapleczem dla weteranów Ukrainy.",
@@ -954,6 +968,7 @@
                 "nav-path": "Mein Weg",
                 "nav-activity": "Aktivitäten",
                 "nav-partnership": "Unterstützung",
+                "nav-newsletters": "Gebetsbriefe",
                 "btn-partner": "Partner werden",
                 "hero-tag": 'Im Rahmen von "Ukraine für Christus"',
                 "hero-desc": "An der Seite derer stehen, die aus dem Krieg zurückkehren. Ich bin der geistliche Rückhalt für die Veteranen der Ukraine.",
