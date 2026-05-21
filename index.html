@@ -76,18 +76,19 @@
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900 transition-colors duration-200">
 
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-gold flex items-center justify-center text-slate-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- ЛОГОТИП (Текст видалено, залишено тільки мале лого) -->
+            <a href="#" class="shrink-0 flex items-center">
+                <!-- Вкажіть точну назву вашого малого логотипу з репозиторію замість logo.png -->
+                <img src="logo.png" alt="Military Ministry" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <!-- Резервна іконка, якщо картинка logo.png не завантажиться -->
+                <div class="hidden w-10 h-10 rounded-lg bg-gold items-center justify-center text-slate-900 shadow-md">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <div>
-                    <span class="font-extrabold text-xl tracking-tight block text-slate-900 dark:text-white uppercase">Military Ministry</span>
-                    <span class="text-[10px] text-gold tracking-widest block uppercase font-bold" data-i18n="sub-brand">Зцілення Надією</span>
-                </div>
-            </div>
+            </a>
             
-            <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest">
+            <!-- НАВІГАЦІЯ (Змінено md:flex на lg:flex, щоб меню не розтягувало екран на планшетах) -->
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-widest">
                 <a href="#about" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-path">Мій шлях</a>
                 <a href="#vision" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-vision">Бачення</a>
                 <a href="#challenge" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-challenge">Чому ветерани?</a>
@@ -96,8 +97,9 @@
                 <a href="#newsletters" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-newsletters">Молитовні листи</a>
             </nav>
 
-            <div class="flex items-center gap-5">
-                <div class="relative flex items-center">
+            <div class="flex items-center gap-3 sm:gap-5 shrink-0">
+                <!-- Language Switcher -->
+                <div class="relative flex items-center shrink-0">
                     <select id="lang-switcher" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm focus:outline-none cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
                         <option value="uk" class="text-slate-800 dark:text-slate-800">UA</option>
                         <option value="en" class="text-slate-800 dark:text-slate-800">EN</option>
@@ -107,23 +109,26 @@
                     <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none"></i>
                 </div>
 
-                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors shrink-0">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
                 </button>
 
-                <div class="hidden md:block">
-                    <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-bold px-6 py-2.5 rounded-full transition-all shadow-md" data-i18n="btn-partner">
+                <!-- КНОПКА ПІДТРИМКИ (Виправлено перенос рядка та розміри) -->
+                <div class="hidden md:block shrink-0">
+                    <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-bold px-5 xl:px-6 py-2.5 rounded-full transition-all shadow-md whitespace-nowrap text-sm xl:text-base inline-block" data-i18n="btn-partner">
                         Стати партнером
                     </a>
                 </div>
 
-                <button onclick="toggleMobileMenu()" class="md:hidden text-slate-800 dark:text-white p-2"><i id="menu-icon" class="fa-solid fa-bars text-2xl"></i></button>
+                <!-- Гамбургер меню -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-800 dark:text-white p-2 shrink-0"><i id="menu-icon" class="fa-solid fa-bars text-2xl"></i></button>
             </div>
         </div>
         
         <!-- Мобільне меню -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-6 space-y-4 shadow-xl transition-colors duration-200">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-6 space-y-4 shadow-xl transition-colors duration-200">
             <a href="#about" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-path">Мій шлях</a>
             <a href="#vision" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-vision">Бачення</a>
             <a href="#challenge" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-challenge">Чому ветерани?</a>
