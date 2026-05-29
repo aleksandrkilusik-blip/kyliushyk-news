@@ -271,10 +271,10 @@
                     Госпіталі
                 </button>
                 <button onclick="switchTab('tab-podcasts')" id="btn-tab-podcasts" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-pod">
-                    Подкасти
+                    Без броні
                 </button>
                 <button onclick="switchTab('tab-retreats')" id="btn-tab-retreats" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-ret">
-                    Ретрити "Коло довіри"
+                    Ретрити
                 </button>
             </div>
 
@@ -292,7 +292,7 @@
 
                 <div id="tab-podcasts" class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="pod-h3">Подкаст "Голос Надії"</h3>
+                        <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="pod-h3">Подкаст "Без броні"</h3>
                         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg font-medium transition-colors duration-200" data-i18n="pod-p">Відкриті розмови про віру та війну для тисяч воїнів у партнерстві з Українською Баптистською Теологічною Семінарією (УБТС).</p>
                         <div class="flex flex-wrap gap-4">
                             <a href="https://www.youtube.com/watch?v=o-OJkDOy-cM&list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all hover:bg-red-700"><i class="fa-brands fa-youtube"></i> <span data-i18n="btn-play">Плейлист</span></a>
@@ -321,18 +321,15 @@
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 1/1;">
-                            <img src="retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Зимові гори">
+                            <img src="retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Спільний обід">
                         </div>
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 1/1;">
-                            <img src="mounting.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Три ветерани ліс">
+                            <img src="mounting.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Зимові гори">
                         </div>
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 1/1;">
-                            <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Група Карпати місток">
-                        </div>
-                        <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 1/1;">
-                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Три ветерани ліс">
+                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0" alt="Група з прапором">
                         </div>
                     </div>
                 </div>
@@ -415,69 +412,45 @@
             </div>
 
             <!-- Big Blue Investment Block -->
-            <div class="mt-16 bg-[#35657a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200">
-                <div class="max-w-4xl mx-auto text-center space-y-6 mb-12">
-                    <span class="inline-block bg-[#EAAA40] text-slate-900 font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full shadow-sm" data-i18n="inv-badge">Підтримайте моє служіння</span>
-                    <h3 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Інвестуйте у відновлення ветеранів</h3>
-                    <p class="text-xl text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
+            <div class="mt-16 bg-[#135d7a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200 grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6 text-left">
+                    <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-2">
+                        <i class="fa-solid fa-globe text-gold text-xl"></i>
+                    </div>
+                    <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Інвестуйте у відновлення ветеранів</h3>
+                    <p class="text-lg text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
                         Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?
                     </p>
                 </div>
-
-                <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 sm:p-10 shadow-xl border border-slate-100 dark:border-slate-800">
-                    <h4 class="text-2xl font-bold mb-8 text-center uppercase tracking-tight text-slate-900 dark:text-white" data-i18n="qr-h4">Реквізити для пожертви</h4>
-
-                    <!-- Buttons Row -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
-                        <a href="https://next.privat24.ua/payments/form/%7B%22companyID%22:%222055560%22,%22form%22:%7B%22query%22:%2219117130%22%7D%7D" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-2 w-full bg-[#75B220] hover:bg-[#62971a] text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
-                            <i class="fa-solid fa-building-columns text-2xl"></i>
-                            <span class="text-sm tracking-wide uppercase" data-i18n="btn-pb">Приват24</span>
-                        </a>
-
-                        <button onclick="navigator.clipboard.writeText('UA063052990000026004045007863'); alert(window.t('iban-alert'));" class="flex flex-col items-center justify-center gap-2 w-full bg-[#000000] hover:bg-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
-                            <i class="fa-solid fa-cat text-2xl"></i>
-                            <span class="text-sm tracking-wide uppercase" data-i18n="btn-mono">Monobank (IBAN)</span>
+                
+                <div class="space-y-6">
+                    <!-- Accordion Orange Button -->
+                    <div class="bg-[#d98127] rounded-[2rem] overflow-hidden transition-all duration-300 shadow-xl border border-black/5">
+                        <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-[#c97521] transition-colors focus:outline-none">
+                            <div class="flex items-center gap-5 pr-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-black/10 rounded-2xl flex items-center justify-center shrink-0 text-slate-900">
+                                    <i class="fa-regular fa-credit-card text-xl sm:text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug" data-i18n="btn-orange-title">Підтримати через Приват24 або Monobank</h4>
+                                    <p class="text-xs sm:text-sm font-bold text-slate-900/70 mt-1" data-i18n="btn-orange-sub">Натисніть, щоб переглянути реквізити</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-slate-900 text-white rounded-full flex items-center justify-center shrink-0 transform transition-transform duration-300 acc-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
                         </button>
 
-                        <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-2 w-full bg-[#005691] hover:bg-[#004372] text-white font-extrabold py-5 px-4 rounded-2xl transition-all shadow-sm active:scale-95 text-center">
-                            <i class="fa-solid fa-globe text-2xl"></i>
-                            <span class="text-sm tracking-wide uppercase" data-i18n="btn-cru">Cru.org</span>
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                        <!-- QR Code -->
-                        <div class="lg:col-span-4 bg-slate-50 dark:bg-slate-800 rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="qr.jpg" alt="QR Code" class="w-full max-w-[200px] object-contain mix-blend-multiply dark:mix-blend-normal rounded-xl">
-                            <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 font-bold text-center" data-i18n="qr-scan">Відскануйте QR-код для швидкого переказу</p>
-                        </div>
-
-                        <!-- Instructions -->
-                        <div class="lg:col-span-8 space-y-6">
-                            <p class="font-bold text-xl text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-3" data-i18n="how-title">Як зробити внесок:</p>
-
-                            <!-- Privat -->
-                            <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 transition-colors duration-200">
-                                <p class="font-bold text-[#75B220] mb-2"><i class="fa-solid fa-building-columns"></i> <span data-i18n="how-pb">Через Приват24:</span></p>
-                                <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
-                                    <li data-i18n="pb-1">1. Перейдіть за кнопкою вище або в "Мої Платежі"</li>
-                                    <li data-i18n="pb-2">2. Пошук: <strong class="dark:text-white">місія Україна для Христа</strong></li>
-                                    <li data-i18n="pb-3">3. У полі "Залучив" введіть: <strong class="text-gold bg-gold/10 px-1 rounded">5544</strong></li>
-                                    <li data-i18n="pb-4">4. Введіть ПІБ та суму.</li>
-                                </ul>
-                            </div>
-
-                            <!-- Mono -->
-                            <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 transition-colors duration-200">
-                                <p class="font-bold text-slate-900 dark:text-white mb-2"><i class="fa-solid fa-cat"></i> <span data-i18n="how-mono-title">Через Monobank:</span></p>
-                                <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
-                                    <li data-i18n="mono-1">1. Скопіюйте IBAN та відкрийте застосунок</li>
-                                    <li data-i18n="mono-2">2. "Інші платежі" → "Платіж за реквізитами (IBAN)"</li>
-                                    <li data-i18n="mono-3">3. Вставте IBAN <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1 rounded block mt-1 break-all w-fit">UA063052990000026004045007863</span></li>
-                                    <li data-i18n="mono-4">4. Призначення: Благодійний внесок, <strong class="dark:text-white">залучив 5544</strong></li>
-                                </ul>
-                            </div>
-
+                        <!-- Expanded Content -->
+                        <div id="bank-details" class="hidden bg-[#0c3953] text-white p-6 sm:p-8 border-t border-black/10">
+                            <h5 class="text-xl font-bold mb-8" data-i18n="acc-title">Переказ через Приват24 або Monobank:</h5>
+                            <div class="space-y-8">
+                                <!-- Step 1 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">1</div>
+                                    <div class="space-y-3 w-full">
+                                        <p class="text-slate-200 text-sm md:text-base font-medium" data-i18n="acc-step1">В меню "Платежі" (у Monobank: "Платіж за IBAN") введіть рахунок:</p>
+                                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-3 border border-white/10 gap-3">
                             <!-- Cru -->
                             <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 transition-colors duration-200">
                                 <p class="font-bold text-[#005691] dark:text-blue-400 mb-2"><i class="fa-solid fa-globe"></i> <span data-i18n="how-cru-title">Через Cru.org (З усього світу):</span></p>
@@ -492,14 +465,12 @@
                 </div>
             </div>
 
-            <div id="join-form" class="mt-16 bg-slate-50 dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200">
-                <p class="text-xl font-serif italic text-slate-700 dark:text-slate-300 font-medium leading-relaxed transition-colors duration-200" data-i18n="quote-end">
+            <div id="join-form" class="mt-16 bg-white dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200">
+                <p class="text-xl sm:text-2xl font-serif italic text-slate-800 dark:text-slate-200 font-medium leading-relaxed" data-i18n="quote-end">
                     "Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні."
                 </p>
                 
-                <div class="h-px bg-slate-200 dark:bg-slate-700 w-24 mx-auto transition-colors duration-200"></div>
-                
-                <div class="space-y-4">
+                <div class="space-y-4 pt-4">
                     <p class="text-xs uppercase font-extrabold tracking-widest text-slate-400" data-i18n="quick-contact">Швидкий зв'язок зі мною:</p>
                     <div class="flex flex-wrap justify-center gap-4">
                         <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
@@ -601,18 +572,73 @@
         </div>
     </section>
 
-    <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
-        <div class="max-w-7xl mx-auto px-4 text-center space-y-6">
-            <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white font-sans tracking-tight transition-colors duration-200" data-i18n="foot-title">Давайте спілкуватися</h3>
-            <div class="flex justify-center">
-                <a href="mailto:oleksandr.kyliushyk@cru.org" class="inline-flex items-center gap-3 bg-slate-50 dark:bg-slate-800 px-8 py-4 rounded-2xl border border-transparent hover:border-gold dark:hover:border-gold transition-all group">
-                    <i class="fa-solid fa-envelope text-gold text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="font-bold text-slate-700 dark:text-slate-300">oleksandr.kyliushyk@cru.org</span>
-                </a>
+    <footer class="bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 border-t border-slate-200 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+                <!-- Ліва колонка -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-6">
+                        <img src="logo-03.png" alt="Україна для Христа" class="h-10 w-auto object-contain dark:invert" onerror="this.style.display='none';">
+                    </div>
+                    
+                    <div>
+                        <p class="font-bold text-slate-900 dark:text-white text-lg sm:text-xl leading-relaxed" data-i18n="romans-verse">
+                            "Нехай Бог надії наповнить вас усією радістю й миром у вірі, щоб ви силою Святого Духа були наповнені надією."
+                        </p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 font-medium" data-i18n="romans-ref">Римлянам 15:13</p>
+                    </div>
+                    
+                    <div class="space-y-5 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <p class="text-slate-500 dark:text-slate-400 italic text-sm" data-i18n="best-wishes">
+                            З найкращими побажаннями у Христі,
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-14 h-14 rounded-full object-cover shadow-md border-2 border-white dark:border-slate-800">
+                            <div>
+                                <h4 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="my-name">Олександр Килюшик</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1 leading-snug" data-i18n="my-role">
+                                    Військове служіння в "Україна для Христа"<br>
+                                    Campus Crusade for Christ Int'l
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Права колонка -->
+                <div class="flex flex-col md:items-end justify-between space-y-12">
+                    <div class="space-y-4 md:text-right">
+                        <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-regular fa-envelope text-lg text-slate-400 group-hover:text-gold transition-colors"></i>
+                            <span class="font-bold text-sm">oleksandr.kyliushyk@cru.org</span>
+                        </a>
+                        <a href="tel:+380976058965" class="flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-solid fa-phone text-lg text-slate-400 group-hover:text-gold transition-colors"></i>
+                            <span class="font-bold text-sm">+380 (97) 605 89 65</span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.instagram.com/sollex991?igsh=N3djd3UxcHIyYnZj&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#0088cc] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-12 font-sans" data-i18n="foot-copy">© 2026 | Military Ministry | В партнерстві з Cru</p>
-        </div>
-    </footer>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest text-center md:text-left" data-i18n="foot-copy">© 2026 Україна для Христа. Всі права захищені.</p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-gold transition-colors shadow-sm">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+            </div>
+        </footer>
 
     <!-- TRANSLATIONS SCRIPT -->
     <script>
@@ -657,11 +683,11 @@
                 "act-tag": "Діяльність",
                 "act-h2": "Як я дію",
                 "tab-hosp": "Госпіталі",
-                "tab-pod": "Подкасти",
-                "tab-ret": "Ретрити \"Коло довіри\"",
+                "tab-pod": "Без броні",
+                "tab-ret": "Ретрити",
                 "hosp-h3": "Турбота в госпіталях",
                 "hosp-p": "Я приношу корисні речі, але найголовніше — час для вислуховування та спільної молитви там, де біль найгостріший.",
-                "pod-h3": "Подкаст \"Голос Надії\"",
+                "pod-h3": "Подкаст \"Без броні\"",
                 "pod-p": "Відкриті розмови про віру та війну для тисяч воїнів у партнерстві з Українською Баптистською Теологічною Семінарією (УБТС).",
                 "btn-play": "Плейлист",
                 "btn-new": "Свіжий випуск",
@@ -701,6 +727,18 @@
                 "inv-badge": "Підтримайте моє служіння",
                 "inv-h2": "Інвестуйте у відновлення ветеранів",
                 "inv-p": "Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?",
+                "btn-orange-title": "Підтримати через Приват24 або Monobank",
+                "btn-orange-sub": "Натисніть, щоб переглянути реквізити",
+                "acc-title": "Переказ через Приват24 або Monobank:",
+                "acc-step1": "В меню \"Платежі\" (у Monobank: \"Платіж за IBAN\") введіть рахунок:",
+                "acc-step2": "Система автоматично знайде отримувача. Перевірте: <br><strong class=\"text-white text-lg font-extrabold\">Місія \"Україна для Христа\"</strong>",
+                "acc-step3": "У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class='text-gold font-bold'>обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):",
+                "acc-step4": "Вкажіть бажану суму пожертви. Призначення платежу зазвичай формується автоматично.",
+                "acc-thanks": "Підтвердіть платіж.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Щиро дякуємо за вашу підтримку!</span>",
+                "btn-copy": "Скопіювати",
+                "btn-copied": "Скопійовано!",
+                "btn-cru-title": "Підтримати через Cru.org",
+                "btn-cru-sub": "Для міжнародних банківських карток",
                 "quick-contact": "Швидкий зв'язок зі мною:",
                 "btn-tg": "Написати в Telegram",
                 "btn-wa": "Написати в WhatsApp",
@@ -735,7 +773,13 @@
                 "card-desc-mar": "Збираємо довгоочікуваний врожай. Історії відновлення.",
                 "card-desc-feb": "Зимовий ретрит та планування. Роздуми після часу в горах.",
                 "btn-read-letter": "Читати лист",
-                "btn-all-archives": "Переглянути всі архіви"
+                "btn-all-archives": "Переглянути всі архіви",
+                "romans-verse": "\"Нехай Бог надії наповнить вас усією радістю й миром у вірі, щоб ви силою Святого Духа були наповнені надією.\"",
+                "romans-ref": "Римлянам 15:13",
+                "best-wishes": "З найкращими побажаннями у Христі,",
+                "my-name": "Олександр Килюшик",
+                "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l",
+                "foot-copy": "© 2026 Україна для Христа. Всі права захищені."
             },
             en: {
                 "sub-brand": "Healing with Hope",
@@ -777,11 +821,11 @@
                 "act-tag": "Activity",
                 "act-h2": "How I Act",
                 "tab-hosp": "Hospitals",
-                "tab-pod": "Podcasts",
-                "tab-ret": "Retreats \"Circle of Trust\"",
+                "tab-pod": "Without Armor",
+                "tab-ret": "Retreats",
                 "hosp-h3": "Care in Hospitals",
                 "hosp-p": "I bring useful items, but most importantly—time to listen and pray together where the pain is sharpest.",
-                "pod-h3": "Podcast \"Voice of Hope\"",
+                "pod-h3": "Podcast \"Without Armor\"",
                 "pod-p": "Open conversations about faith and war for thousands of warriors in partnership with the Ukrainian Baptist Theological Seminary (UBTS).",
                 "btn-play": "Playlist",
                 "btn-new": "New Episode",
@@ -821,6 +865,18 @@
                 "inv-badge": "Support my ministry",
                 "inv-h2": "Invest in the restoration of veterans",
                 "inv-p": "My ministry is fully funded by the generous support of people like you. By becoming my financial partner, you are directly investing in the spiritual and psychological restoration of Ukraine's veterans. Are you ready to become part of my team?",
+                "btn-orange-title": "Support via Privat24 or Monobank",
+                "btn-orange-sub": "Click to view bank details",
+                "acc-title": "Transfer via Privat24 or Monobank:",
+                "acc-step1": "In the 'Payments' menu (in Monobank: 'Payment by IBAN'), enter the account:",
+                "acc-step2": "The system will automatically find the recipient. Verify: <br><strong class=\"text-white text-lg font-extrabold\">Mission \"Ukraine for Christ\"</strong>",
+                "acc-step3": "In the 'Payment Comment' field, <strong class='text-gold font-bold'>you must indicate</strong> my internal mission number (you can copy it below):",
+                "acc-step4": "Enter the desired donation amount. The payment purpose is usually generated automatically.",
+                "acc-thanks": "Confirm the payment.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Thank you very much for your support!</span>",
+                "btn-copy": "Copy",
+                "btn-copied": "Copied!",
+                "btn-cru-title": "Support via Cru.org",
+                "btn-cru-sub": "For international bank cards",
                 "quick-contact": "Quick contact with me:",
                 "btn-tg": "Write on Telegram",
                 "btn-wa": "Write on WhatsApp",
@@ -855,7 +911,13 @@
                 "card-desc-mar": "Harvesting the long-awaited crop. Stories of restoration.",
                 "card-desc-feb": "Winter retreat and planning. Reflections after time in the mountains.",
                 "btn-read-letter": "Read letter",
-                "btn-all-archives": "View all archives"
+                "btn-all-archives": "View all archives",
+                "romans-verse": "\"May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.\"",
+                "romans-ref": "Romans 15:13",
+                "best-wishes": "With best wishes in Christ,",
+                "my-name": "Oleksandr Kyliushyk",
+                "my-role": "Military Ministry in \"Ukraine for Christ\"<br>Campus Crusade for Christ Int'l",
+                "foot-copy": "© 2026 Ukraine for Christ. All rights reserved."
             },
             pl: {
                 "sub-brand": "Uzdrowienie Nadzieją",
@@ -897,11 +959,11 @@
                 "act-tag": "Działalność",
                 "act-h2": "Jak działam",
                 "tab-hosp": "Szpitale",
-                "tab-pod": "Podcasty",
-                "tab-ret": "Rekolekcje \"Krąg Zaufania\"",
+                "tab-pod": "Bez pancerza",
+                "tab-ret": "Rekolekcje",
                 "hosp-h3": "Opieka w szpitalach",
                 "hosp-p": "Przynoszę przydatne rzeczy, ale najważniejsze to czas na wysłuchanie i wspólną modlitwę tam, gdzie ból jest najostrzejszy.",
-                "pod-h3": "Podcast \"Głos Nadziei\"",
+                "pod-h3": "Podcast \"Bez pancerza\"",
                 "pod-p": "Otwarte rozmowy o wierze i wojnie dla tysięcy żołnierzy w partnerstwie z Ukraińskim Baptystycznym Seminarium Teologicznym (UBTS).",
                 "btn-play": "Playlista",
                 "btn-new": "Nowy odcinek",
@@ -941,6 +1003,18 @@
                 "inv-badge": "Wesprzyj moją służbę",
                 "inv-h2": "Zainwestuj w odnowę weteranów",
                 "inv-p": "Moja służba jest w pełni finansowana dzięki hojnemu wsparciu ludzi takich jak Ty. Zostając moim partnerem finansowym, inwestujesz bezpośrednio w duchową i psychologiczną odnowę weteranów Ukrainy. Czy jesteś gotowy stać się częścią mojej drużyny?",
+                "btn-orange-title": "Wesprzyj przez Privat24 lub Monobank",
+                "btn-orange-sub": "Kliknij, aby zobaczyć dane bankowe",
+                "acc-title": "Przelew przez Privat24 lub Monobank:",
+                "acc-step1": "W menu 'Płatności' (w Monobank: 'Płatność na IBAN') wprowadź konto:",
+                "acc-step2": "System automatycznie znajdzie odbiorcę. Sprawdź: <br><strong class=\"text-white text-lg font-extrabold\">Misja \"Ukraina dla Chrystusa\"</strong>",
+                "acc-step3": "W polu 'Komentarz do płatności' <strong class='text-gold font-bold'>koniecznie podaj</strong> mój wewnętrzny numer misji (możesz go skopiować poniżej):",
+                "acc-step4": "Wprowadź żądaną kwotę darowizny. Cel płatności jest zazwyczaj generowany automatycznie.",
+                "acc-thanks": "Potwierdź płatność.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Dziękujemy bardzo za wsparcie!</span>",
+                "btn-copy": "Kopiuj",
+                "btn-copied": "Skopiowano!",
+                "btn-cru-title": "Wesprzyj przez Cru.org",
+                "btn-cru-sub": "Dla międzynarodowych kart bankowych",
                 "quick-contact": "Szybki kontakt ze mną:",
                 "btn-tg": "Napisz na Telegramie",
                 "btn-wa": "Napisz na WhatsApp",
@@ -975,7 +1049,13 @@
                 "card-desc-mar": "Zbieranie długo oczekiwanych plonów. Historie odnowy.",
                 "card-desc-feb": "Zimowe rekolekcje i planowanie. Refleksje po czasie w górach.",
                 "btn-read-letter": "Czytaj list",
-                "btn-all-archives": "Zobacz wszystkie archiwa"
+                "btn-all-archives": "Zobacz wszystkie archiwa",
+                "romans-verse": "\"A Bóg nadziei niechaj was napełni wszelką radością i pokojem w wierze, abyście obfitowali w nadzieję przez moc Ducha Świętego.\"",
+                "romans-ref": "Rzymian 15:13",
+                "best-wishes": "Z najlepszymi życzeniami w Chrystusie,",
+                "my-name": "Ołeksandr Kyliuszyk",
+                "my-role": "Służba Wojskowa w \"Ukraina dla Chrystusa\"<br>Campus Crusade for Christ Int'l",
+                "foot-copy": "© 2026 Ukraina dla Chrystusa. Wszelkie prawa zastrzeżone."
             },
             de: {
                 "sub-brand": "Heilung durch Hoffnung",
@@ -1017,11 +1097,11 @@
                 "act-tag": "Aktivitäten",
                 "act-h2": "Wie ich handle",
                 "tab-hosp": "Krankenhäuser",
-                "tab-pod": "Podcasts",
-                "tab-ret": "Retreats „Kreis des Vertrauens“",
+                "tab-pod": "Ohne Rüstung",
+                "tab-ret": "Retreats",
                 "hosp-h3": "Fürsorge in Krankenhäusern",
                 "hosp-p": "Ich bringe nützliche Dinge mit, aber das Wichtigste ist – Zeit zum Zuhören und für gemeinsames Gebet dort, wo der Schmerz am stärksten ist.",
-                "pod-h3": "Podcast „Stimme der Hoffnung“",
+                "pod-h3": "Podcast \"Ohne Rüstung\"",
                 "pod-p": "Offene Gespräche über Glaube und Krieg für Tausende von Kriegern in Partnerschaft mit dem Ukrainian Baptist Theological Seminary (UBTS).",
                 "btn-play": "Playlist",
                 "btn-new": "Neue Episode",
@@ -1061,6 +1141,18 @@
                 "inv-badge": "Unterstützen Sie meinen Dienst",
                 "inv-h2": "Investieren Sie in die Wiederherstellung von Veteranen",
                 "inv-p": "Mein Dienst wird vollständig durch die großzügige Unterstützung von Menschen wie Ihnen finanziert. Indem Sie mein finanzieller Partner werden, investieren Sie direkt in die geistliche und psychologische Wiederherstellung der Veteranen der Ukraine. Sind Sie bereit, Teil meines Teams zu werden?",
+                "btn-orange-title": "Unterstützung über Privat24 oder Monobank",
+                "btn-orange-sub": "Klicken Sie hier, um die Bankdaten anzuzeigen",
+                "acc-title": "Überweisung über Privat24 oder Monobank:",
+                "acc-step1": "Geben Sie im Menü 'Zahlungen' (in Monobank: 'Zahlung per IBAN') das Konto ein:",
+                "acc-step2": "Das System findet den Empfänger automatisch. Überprüfen Sie: <br><strong class=\"text-white text-lg font-extrabold\">Mission \"Ukraine für Christus\"</strong>",
+                "acc-step3": "Im Feld 'Zahlungskommentar' <strong class='text-gold font-bold'>müssen Sie</strong> meine interne Missionsnummer angeben (Sie können sie unten kopieren):",
+                "acc-step4": "Geben Sie den gewünschten Spendenbetrag ein. Der Verwendungszweck wird in der Regel automatisch generiert.",
+                "acc-thanks": "Bestätigen Sie die Zahlung.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Vielen Dank für Ihre Unterstützung!</span>",
+                "btn-copy": "Kopieren",
+                "btn-copied": "Kopiert!",
+                "btn-cru-title": "Unterstützung über Cru.org",
+                "btn-cru-sub": "Für internationale Bankkarten",
                 "quick-contact": "Schneller Kontakt zu mir:",
                 "btn-tg": "Auf Telegram schreiben",
                 "btn-wa": "Auf WhatsApp schreiben",
@@ -1095,7 +1187,13 @@
                 "card-desc-mar": "Ernte der lang ersehnten Erträge. Geschichten der Wiederherstellung.",
                 "card-desc-feb": "Winter-Retreat und Planung. Reflexionen nach der Zeit in den Bergen.",
                 "btn-read-letter": "Brief lesen",
-                "btn-all-archives": "Alle Archive anzeigen"
+                "btn-all-archives": "Alle Archive anzeigen",
+                "romans-verse": "\"Der Gott der Hoffnung aber erfülle euch mit aller Freude und Frieden im Glauben, dass ihr völlig seid in der Hoffnung durch die Kraft des Heiligen Geistes.\"",
+                "romans-ref": "Römer 15:13",
+                "best-wishes": "Mit besten Grüßen in Christus,",
+                "my-name": "Oleksandr Kyliushyk",
+                "my-role": "Militärdienst in \"Ukraine für Christus\"<br>Campus Crusade for Christ Int'l",
+                "foot-copy": "© 2026 Ukraine für Christus. Alle Rechte vorbehalten."
             }
         };
 
@@ -1148,6 +1246,36 @@
                 btn.className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50";
             });
             document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md";
+        }
+
+        function toggleAccordion(id, btn) {
+            const content = document.getElementById(id);
+            const icon = btn.querySelector('.acc-icon');
+            content.classList.toggle('hidden');
+            if(content.classList.contains('hidden')) {
+                icon.classList.remove('rotate-180');
+            } else {
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const span = btn.querySelector('.copy-text');
+                const icon = btn.querySelector('i');
+                const originalText = span.innerText;
+                span.innerText = window.t('btn-copied') || 'Скопійовано!';
+                icon.className = 'fa-solid fa-check';
+                btn.classList.add('text-green-400', 'bg-white/20');
+                
+                setTimeout(() => {
+                    span.innerText = window.t('btn-copy') || 'Скопіювати';
+                    icon.className = 'fa-regular fa-copy';
+                    btn.classList.remove('text-green-400', 'bg-white/20');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
 
         // --- Theme Toggle Logic ---
