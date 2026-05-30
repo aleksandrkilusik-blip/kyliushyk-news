@@ -353,7 +353,6 @@
                 <div class="relative">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
                     <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full transition-colors duration-200" style="aspect-ratio: 4 / 3;">
-                        <!-- Оновлено назву файлу на team.jpeg -->
                         <img src="team.jpeg" alt="Команда Military Ministry" class="w-full h-full object-cover object-center absolute inset-0">
                     </div>
                 </div>
@@ -417,7 +416,7 @@
                     <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-2">
                         <i class="fa-solid fa-globe text-gold text-xl"></i>
                     </div>
-                    <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Інвестуйте у відновлення ветеранів</h3>
+                    <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Підтримати мене</h3>
                     <p class="text-lg text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
                         Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?
                     </p>
@@ -451,17 +450,70 @@
                                     <div class="space-y-3 w-full">
                                         <p class="text-slate-200 text-sm md:text-base font-medium" data-i18n="acc-step1">В меню "Платежі" (у Monobank: "Платіж за IBAN") введіть рахунок:</p>
                                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-3 border border-white/10 gap-3">
-                            <!-- Cru -->
-                            <div class="bg-slate-50 dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 transition-colors duration-200">
-                                <p class="font-bold text-[#005691] dark:text-blue-400 mb-2"><i class="fa-solid fa-globe"></i> <span data-i18n="how-cru-title">Через Cru.org (З усього світу):</span></p>
-                                <ul class="space-y-1 text-sm text-slate-700 dark:text-slate-300">
-                                    <li data-i18n="cru-1">1. Перейдіть за посиланням на офіційний сайт Cru</li>
-                                    <li data-i18n="cru-2">2. Виберіть суму та натисніть "Give a Gift"</li>
-                                    <li data-i18n="cru-3">3. Заповніть дані платіжної картки</li>
-                                </ul>
+                                            <code class="text-sm md:text-base font-mono text-white font-bold tracking-wider break-all">UA063052990000026004045007863</code>
+                                            <button onclick="copyToClipboard('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 mt-1">2</div>
+                                    <div>
+                                        <p class="text-slate-200 text-sm md:text-base font-medium leading-relaxed" data-i18n="acc-step2">Система автоматично знайде отримувача. Перевірте: <br><strong class="text-white text-lg font-extrabold">Місія "Україна для Христа"</strong></p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 mt-1">3</div>
+                                    <div class="space-y-3 w-full">
+                                        <p class="text-slate-200 text-sm md:text-base font-medium leading-relaxed" data-i18n="acc-step3">У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class='text-gold font-bold'>обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):</p>
+                                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-3 border border-white/10 gap-3 max-w-[280px]">
+                                            <code class="text-xl md:text-2xl font-extrabold text-gold tracking-widest pl-2">5544</code>
+                                            <button onclick="copyToClipboard('5544', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">4</div>
+                                    <div>
+                                        <p class="text-slate-200 text-sm md:text-base font-medium" data-i18n="acc-step4">Вкажіть бажану суму пожертви. Призначення платежу зазвичай формується автоматично.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Success message -->
+                                <div class="flex gap-4 items-center mt-8 pt-6 border-t border-white/10">
+                                    <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <p class="text-sm md:text-base leading-relaxed font-medium" data-i18n="acc-thanks">Підтвердіть платіж.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Щиро дякуємо за вашу підтримку!</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- CRU Button -->
+                    <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6">
+                        <div class="flex items-center gap-5 pr-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
+                                <i class="fa-solid fa-globe text-xl sm:text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug" data-i18n="btn-cru-title">Підтримати через Cru.org</h4>
+                                <p class="text-xs sm:text-sm font-bold text-slate-500 mt-1" data-i18n="btn-cru-sub">Для міжнародних банківських карток</p>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center shrink-0 transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -725,7 +777,7 @@
                 "cru-2": "2. Виберіть суму та натисніть \"Give a Gift\"",
                 "cru-3": "3. Заповніть дані платіжної картки",
                 "inv-badge": "Підтримайте моє служіння",
-                "inv-h2": "Інвестуйте у відновлення ветеранів",
+                "inv-h2": "Підтримати мене",
                 "inv-p": "Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?",
                 "btn-orange-title": "Підтримати через Приват24 або Monobank",
                 "btn-orange-sub": "Натисніть, щоб переглянути реквізити",
@@ -753,15 +805,6 @@
                 "letter-feb-26": "Лютий",
                 "letter-nov-dec-25": "Листопад - Грудень",
                 "letter-nov-25": "Листопад",
-                "bible-quote": "\"Тоді Він казав Своїм учням: Жниво справді велике, та робітників мало; тож благайте Господаря жнива, щоб на жниво Своє Він робітників вислав.\"",
-                "bible-ref": "(Від Матвія 9:37-38)",
-                "foot-title": "Давайте спілкуватися",
-                "foot-copy": "© 2026 | Military Ministry | В партнерстві з Cru",
-                "iban-alert": "IBAN скопійовано! Відкрийте Monobank та вставте його.",
-                "form-success": "Дякуємо! Ви успішно підписалися на оновлення.",
-                "form-error": "Сталася помилка. Будь ласка, спробуйте пізніше.",
-                "form-loading": "Відправка...",
-                "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\"",
                 "badge-new": "Нове",
                 "card-apr-26": "Квітень 2026",
                 "card-mar-26": "Березень 2026",
@@ -779,7 +822,11 @@
                 "best-wishes": "З найкращими побажаннями у Христі,",
                 "my-name": "Олександр Килюшик",
                 "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Україна для Христа. Всі права захищені."
+                "foot-copy": "© 2026 Україна для Христа. Всі права захищені.",
+                "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\"",
+                "form-success": "Дякуємо! Ви успішно підписалися на оновлення.",
+                "form-error": "Сталася помилка. Будь ласка, спробуйте пізніше.",
+                "form-loading": "Відправка..."
             },
             en: {
                 "sub-brand": "Healing with Hope",
@@ -863,7 +910,7 @@
                 "cru-2": "2. Select amount and click \"Give a Gift\"",
                 "cru-3": "3. Fill in your payment card details",
                 "inv-badge": "Support my ministry",
-                "inv-h2": "Invest in the restoration of veterans",
+                "inv-h2": "Support me",
                 "inv-p": "My ministry is fully funded by the generous support of people like you. By becoming my financial partner, you are directly investing in the spiritual and psychological restoration of Ukraine's veterans. Are you ready to become part of my team?",
                 "btn-orange-title": "Support via Privat24 or Monobank",
                 "btn-orange-sub": "Click to view bank details",
@@ -893,13 +940,6 @@
                 "letter-nov-25": "November",
                 "bible-quote": "\"Then he said to his disciples, 'The harvest is plentiful but the workers are few. Ask the Lord of the harvest, therefore, to send out workers into his harvest field.'\"",
                 "bible-ref": "(Matthew 9:37-38)",
-                "foot-title": "Let's communicate",
-                "foot-copy": "© 2026 | Military Ministry | In partnership with Cru",
-                "iban-alert": "IBAN copied! Open Monobank and paste it.",
-                "form-success": "Thank you! You have successfully subscribed to updates.",
-                "form-error": "An error occurred. Please try again later.",
-                "form-loading": "Sending...",
-                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
                 "badge-new": "New",
                 "card-apr-26": "April 2026",
                 "card-mar-26": "March 2026",
@@ -917,7 +957,11 @@
                 "best-wishes": "With best wishes in Christ,",
                 "my-name": "Oleksandr Kyliushyk",
                 "my-role": "Military Ministry in \"Ukraine for Christ\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Ukraine for Christ. All rights reserved."
+                "foot-copy": "© 2026 Ukraine for Christ. All rights reserved.",
+                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
+                "form-success": "Thank you! You have successfully subscribed to updates.",
+                "form-error": "An error occurred. Please try again later.",
+                "form-loading": "Sending..."
             },
             pl: {
                 "sub-brand": "Uzdrowienie Nadzieją",
@@ -1001,7 +1045,7 @@
                 "cru-2": "2. Wybierz kwotę i kliknij \"Give a Gift\"",
                 "cru-3": "3. Wypełnij dane karty płatniczej",
                 "inv-badge": "Wesprzyj moją służbę",
-                "inv-h2": "Zainwestuj w odnowę weteranów",
+                "inv-h2": "Wesprzyj mnie",
                 "inv-p": "Moja służba jest w pełni finansowana dzięki hojnemu wsparciu ludzi takich jak Ty. Zostając moim partnerem finansowym, inwestujesz bezpośrednio w duchową i psychologiczną odnowę weteranów Ukrainy. Czy jesteś gotowy stać się częścią mojej drużyny?",
                 "btn-orange-title": "Wesprzyj przez Privat24 lub Monobank",
                 "btn-orange-sub": "Kliknij, aby zobaczyć dane bankowe",
@@ -1031,13 +1075,6 @@
                 "letter-nov-25": "Listopad",
                 "bible-quote": "„Wtedy rzekł do swych uczniów: Żniwo wprawdzie wielkie, ale robotników mało. Proście więc Pana żniwa, aby wyprawił robotników na żniwo swoje.”",
                 "bible-ref": "(Ew. Mateusza 9:37-38)",
-                "foot-title": "Porozmawiajmy",
-                "foot-copy": "© 2026 | Military Ministry | We współpracy z Cru",
-                "iban-alert": "IBAN skopiowany! Otwórz Monobank i wklej go.",
-                "form-success": "Dziękujemy! Pomyślnie zasubskrybowałeś aktualizacje.",
-                "form-error": "Wystąpił błąd. Spróbuj ponownie później.",
-                "form-loading": "Wysyłanie...",
-                "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
                 "badge-new": "Nowe",
                 "card-apr-26": "Kwiecień 2026",
                 "card-mar-26": "Marzec 2026",
@@ -1055,7 +1092,11 @@
                 "best-wishes": "Z najlepszymi życzeniami w Chrystusie,",
                 "my-name": "Ołeksandr Kyliuszyk",
                 "my-role": "Służba Wojskowa w \"Ukraina dla Chrystusa\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Ukraina dla Chrystusa. Wszelkie prawa zastrzeżone."
+                "foot-copy": "© 2026 Ukraina dla Chrystusa. Wszelkie prawa zastrzeżone.",
+                "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
+                "form-success": "Dziękujemy! Pomyślnie zasubskrybowałeś aktualizacje.",
+                "form-error": "Wystąpił błąd. Spróbuj ponownie później.",
+                "form-loading": "Wysyłanie..."
             },
             de: {
                 "sub-brand": "Heilung durch Hoffnung",
@@ -1139,7 +1180,7 @@
                 "cru-2": "2. Wählen Sie den Betrag und klicken Sie auf „Give a Gift“",
                 "cru-3": "3. Geben Sie Ihre Zahlungskartendaten ein",
                 "inv-badge": "Unterstützen Sie meinen Dienst",
-                "inv-h2": "Investieren Sie in die Wiederherstellung von Veteranen",
+                "inv-h2": "Unterstütze mich",
                 "inv-p": "Mein Dienst wird vollständig durch die großzügige Unterstützung von Menschen wie Ihnen finanziert. Indem Sie mein finanzieller Partner werden, investieren Sie direkt in die geistliche und psychologische Wiederherstellung der Veteranen der Ukraine. Sind Sie bereit, Teil meines Teams zu werden?",
                 "btn-orange-title": "Unterstützung über Privat24 oder Monobank",
                 "btn-orange-sub": "Klicken Sie hier, um die Bankdaten anzuzeigen",
@@ -1167,15 +1208,6 @@
                 "letter-feb-26": "Februar",
                 "letter-nov-dec-25": "November - Dezember",
                 "letter-nov-25": "November",
-                "bible-quote": "„Da sprach er zu seinen Jüngern: Die Ernte ist groß, aber wenige sind der Arbeiter. Darum bittet den Herrn der Ernte, dass er Arbeiter in seine Ernte sende.“",
-                "bible-ref": "(Matthäus 9:37-38)",
-                "foot-title": "Lassen Sie uns kommunizieren",
-                "foot-copy": "© 2026 | Military Ministry | In Partnerschaft mit Cru",
-                "iban-alert": "IBAN kopiert! Öffnen Sie Monobank und fügen Sie sie ein.",
-                "form-success": "Danke! Sie haben die Updates erfolgreich abonniert.",
-                "form-error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-                "form-loading": "Wird gesendet...",
-                "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
                 "badge-new": "Neu",
                 "card-apr-26": "April 2026",
                 "card-mar-26": "März 2026",
@@ -1193,7 +1225,11 @@
                 "best-wishes": "Mit besten Grüßen in Christus,",
                 "my-name": "Oleksandr Kyliushyk",
                 "my-role": "Militärdienst in \"Ukraine für Christus\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Ukraine für Christus. Alle Rechte vorbehalten."
+                "foot-copy": "© 2026 Ukraine für Christus. Alle Rechte vorbehalten.",
+                "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
+                "form-success": "Danke! Sie haben die Updates erfolgreich abonniert.",
+                "form-error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+                "form-loading": "Wird gesendet..."
             }
         };
 
