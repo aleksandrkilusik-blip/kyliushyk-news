@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молитовний лист | Military Ministry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            DEFAULT: '#FBBF24',
+                            light: '#FCD34D',
+                            pale: '#FEF3C7'
+                        },
+                        slate: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#020617'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F1F5F9; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FBBF24; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold selection:text-slate-900">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="index.html" class="shrink-0 flex items-center group">
+                <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-gold group-hover:text-slate-900 transition-colors shadow-sm mr-3">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <img src="logo-03.png" alt="Military Ministry" class="h-8 w-auto object-contain hidden sm:block" onerror="this.style.display='none';">
+                <span class="font-bold text-slate-900 uppercase tracking-widest text-sm sm:hidden">На головну</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#stories" class="text-slate-600 hover:text-gold transition-colors">Історії</a>
+                <a href="#prayer" class="text-slate-600 hover:text-gold transition-colors">Молитовні потреби</a>
+            </nav>
+
+            <div class="flex items-center">
+                <a href="#support" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-2.5 rounded-full transition-all shadow-md text-sm">
+                    Підтримати
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 sm:space-y-20">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <div class="lg:col-span-7 relative rounded-[2.5rem] overflow-hidden shadow-sm aspect-square sm:aspect-[4/3] lg:aspect-auto">
+                <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Ретрит у Будапешті" class="w-full h-full object-cover object-center absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 sm:p-10 w-full">
+                    <div class="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+                        <i class="fa-regular fa-calendar"></i> Травень 2026
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                        Відновлення, два ретрити та нові знайомства!
+                    </h1>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-sm border border-slate-100 flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full -mr-4 -mt-4"></div>
+                <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1 rounded-md mb-6 w-fit">Останні новини</span>
+                
+                <h2 class="text-2xl font-extrabold text-slate-900 mb-6 font-serif italic">Вітаю, дорогі друзі!</h2>
+                
+                <div class="space-y-4 text-slate-600 leading-relaxed text-base">
+                    <p>
+                        Останній період був доволі насиченим та непростим, через що я на деякий час випав із написання листів. Проте за цей час накопичилося чимало подій та свідчень про те, як Бог веде мене та служіння, якими я щиро хочу з вами поділитися.
+                    </p>
+                    <p>
+                        Наприкінці лютого я мав честь долучитися до панельної дискусії для служіння «Крещендо», де ми говорили про ветеранський досвід. Для мене надзвичайно цінно бачити, що людям цікаво, вони готові слухати та вчитися взаємодіяти з тими, хто пройшов війну.
+                    </p>
+                </div>
+                
+                <a href="#stories" class="mt-8 inline-flex items-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-900 font-bold px-6 py-3 rounded-xl transition-colors border border-slate-200 w-fit">
+                    Читати далі <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div id="stories" class="pt-8">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-10">Події та свідоцтва</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:shadow-lg transition-shadow">
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative">
+                        <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" class="w-full h-full object-cover" alt="Будапешт">
+                    </div>
+                    <span class="inline-block bg-gold/20 text-slate-800 font-bold uppercase tracking-widest text-[10px] px-3 py-1 rounded-md mb-4 w-fit">Ретрит для віруючих</span>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">4 дні відновлення</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow">
+                        Я нарешті здав на права! Завдяки цьому я зміг поїхати автівкою до Будапешта на ретрит для віруючих ветеранів. Це був благословенний час: ми ходили історичними місцями, спілкувалися за смачною їжею. У неформальних моментах хлопці відкривалися. Особливо приємно було знову зустріти Андрія, з яким ми познайомилися ще влітку.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:shadow-lg transition-shadow">
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative">
+                        <img src="mounting.jpeg" class="w-full h-full object-cover" alt="Карпати">
+                    </div>
+                    <span class="inline-block bg-gold/20 text-slate-800 font-bold uppercase tracking-widest text-[10px] px-3 py-1 rounded-md mb-4 w-fit">Ретрит у Карпатах</span>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">Історія Захарія</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow">
+                        Одразу після Угорщини я поїхав у Карпати на ретрит із невіруючими ветеранами та їх сім'ями. Там я познайомився із Захарієм. Він був довго відсторонений від церкви через негативний досвід, але зараз щиро хоче повернутися і шукає «адекватних» християн. Ветерани часто почуваються чужими всюди, тому їм критично важливо мати коло «своїх».
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:shadow-lg transition-shadow">
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative">
+                        <img src="IMG_6519.jpeg" class="w-full h-full object-cover" alt="Подкаст Без броні">
+                    </div>
+                    <span class="inline-block bg-gold/20 text-slate-800 font-bold uppercase tracking-widest text-[10px] px-3 py-1 rounded-md mb-4 w-fit">Медіа служіння</span>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">Подкаст "Без броні"</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow">
+                        Продовжуємо записувати наш подкаст. Нещодавно ми спілкувалися з сім'єю, де чоловік служить із самого початку повномасштабного вторгнення. Попри певні перешкоди під час підготовки, Бог благословив цю розмову. Я радію, що ми маємо ресурси фіксувати такі глибокі історії, аби ці люди були дійсно почуті.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="prayer" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 items-start">
+            
+            <div class="lg:col-span-5 bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-sm border border-slate-100">
+                <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold mb-6 text-xl">
+                    🙏
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8">Будь ласка, моліться за нас</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-circle-check text-gold mt-1 text-lg"></i>
+                        <p class="text-slate-700 leading-relaxed text-sm"><strong class="text-slate-900">Наступна поїздка до Будапешта:</strong> Скоро я знову їду туди, але вже з невіруючими хлопцями. Моліться за мудрість у спілкуванні.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-circle-check text-gold mt-1 text-lg"></i>
+                        <p class="text-slate-700 leading-relaxed text-sm"><strong class="text-slate-900">Дорога до Києва:</strong> Одразу після проєкту на мене чекає довгий переїзд до Києва на зустріч із ветеранами. Прошу молитви за безпеку та сили в дорозі.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-circle-check text-gold mt-1 text-lg"></i>
+                        <p class="text-slate-700 leading-relaxed text-sm"><strong class="text-slate-900">За подругу Аню:</strong> Її чоловік у війську, а вона зараз проходить через важку кризу віри та апатію. Моліться за її духовне та психологічне відновлення.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-circle-check text-gold mt-1 text-lg"></i>
+                        <p class="text-slate-700 leading-relaxed text-sm"><strong class="text-slate-900">За мій стан:</strong> Буду відвертим — я переживаю важкий час. Відчуваю пустку та тягар, іноді важко просто почати щось робити. Але я вдячний Богу, що навіть через мою слабкість Він продовжує діяти. Моліться, щоб Він наповнив мене Своєю силою.</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-6 bg-gold/10 rounded-2xl border border-gold/20">
+                    <p class="text-slate-800 font-medium italic text-sm">
+                        Дякую, що ви є частиною цього служіння. Ваша підтримка — це те, що допомагає рухатися далі.
+                    </p>
+                </div>
+            </div>
+
+            <div id="support" class="lg:col-span-7 bg-[#135d7a] rounded-[2.5rem] p-8 sm:p-10 shadow-xl border border-transparent">
+                <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-globe text-gold text-xl"></i>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">Підтримати мене</h3>
+                <p class="text-base text-white/90 leading-relaxed font-medium mb-8">
+                    Якщо ви відчуваєте спонукання підтримати наше служіння фінансово, ось як ви можете це зробити:
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-[#d98127] rounded-3xl overflow-hidden transition-all duration-300 shadow-lg border border-black/5">
+                        <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-5 sm:p-6 flex items-center justify-between hover:bg-[#c97521] transition-colors focus:outline-none">
+                            <div class="flex items-center gap-4 pr-4">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-black/10 rounded-xl flex items-center justify-center shrink-0 text-slate-900">
+                                    <i class="fa-regular fa-credit-card text-lg sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-extrabold text-slate-900 leading-snug">Підтримати через Приват24/Mono</h4>
+                                    <p class="text-xs font-bold text-slate-900/70 mt-1">Натисніть, щоб переглянути реквізити</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center shrink-0 transform transition-transform duration-300 acc-icon">
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </div>
+                        </button>
+
+                        <div id="bank-details" class="hidden bg-[#0c3953] text-white p-6 sm:p-8 border-t border-black/10">
+                            <div class="space-y-6">
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-6 h-6 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0 mt-0.5">1</div>
+                                    <div class="space-y-2 w-full">
+                                        <p class="text-slate-200 text-sm font-medium">Введіть рахунок (Платіж за IBAN):</p>
+                                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-2.5 border border-white/10 gap-2">
+                                            <code class="text-xs md:text-sm font-mono text-white font-bold tracking-wider break-all">UA063052990000026004045007863</code>
+                                            <button onclick="copyToClipboard('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                                <i class="fa-regular fa-copy"></i> <span class="copy-text">Скопіювати</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <div class="w-6 h-6 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0 mt-0.5">2</div>
+                                    <div class="space-y-2 w-full">
+                                        <p class="text-slate-200 text-sm font-medium">У полі «Коментар» <strong class='text-gold font-bold'>обов'язково вкажіть</strong> мій номер:</p>
+                                        <div class="flex items-center justify-between bg-[#154b68] rounded-xl p-2.5 border border-white/10 gap-4 max-w-[200px]">
+                                            <code class="text-lg font-extrabold text-gold tracking-widest pl-2">5544</code>
+                                            <button onclick="copyToClipboard('5544', this)" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2">
+                                                <i class="fa-regular fa-copy"></i> <span class="copy-text">Копія</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 rounded-3xl p-5 sm:p-6 flex items-center justify-between transition-colors border border-white/20 group">
+                        <div class="flex items-center gap-4 pr-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center shrink-0 text-[#005691]">
+                                <i class="fa-solid fa-globe text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base sm:text-lg font-extrabold text-white leading-snug">Через Cru.org</h4>
+                                <p class="text-xs font-bold text-white/60 mt-1">Для міжнародних карток</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 bg-white/10 group-hover:bg-white group-hover:text-slate-900 text-white rounded-full flex items-center justify-center shrink-0 transition-colors">
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] border border-slate-100 p-8 sm:p-16 shadow-sm text-center max-w-4xl mx-auto space-y-8 mt-12">
+            <div class="w-12 h-12 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto text-xl border border-gold/20">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900">Як я можу молитися за ВАС?</h2>
+            <p class="text-slate-600 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
+                Партнерство — це вулиця з двостороннім рухом. Поки ви підтримуєте мене у молитвах під час цих важких часів в Україні, я хочу молитися і за вас. Будь ласка, не соромтеся написати мені. Дозвольте розділити ваші переживання в молитві.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="mailto:oleksandr.kyliushyk@cru.org" class="bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold px-6 py-3 rounded-xl border border-slate-200 transition-colors flex items-center gap-2 text-sm shadow-sm">
+                    <i class="fa-regular fa-paper-plane"></i> Написати на пошту
+                </a>
+                <a href="https://t.me/+380976058965" target="_blank" class="bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2 text-sm shadow-sm">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/380976058965" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2 text-sm shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-10 border-t border-slate-200">
+            <a href="newsletter-april.html" class="flex flex-col gap-2 group">
+                <div class="w-10 h-10 rounded-full border border-gold text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Попередній</span>
+                <span class="font-extrabold text-slate-800 text-sm">Квітень 2026</span>
+            </a>
+            
+            <a href="index.html#newsletters" class="hidden sm:inline-flex items-center gap-2 text-slate-400 hover:text-slate-800 font-bold text-xs uppercase tracking-widest transition-colors">
+                Всі архіви <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="flex flex-col gap-2 opacity-50 cursor-not-allowed items-end">
+                <div class="w-10 h-10 rounded-full border border-slate-300 text-slate-400 flex items-center justify-center">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Наступний</span>
+                <span class="font-extrabold text-slate-400 text-sm">Червень 2026</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function toggleAccordion(id, btn) {
+            const content = document.getElementById(id);
+            const icon = btn.querySelector('.acc-icon');
+            content.classList.toggle('hidden');
+            if(content.classList.contains('hidden')) {
+                icon.classList.remove('rotate-180');
+            } else {
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const span = btn.querySelector('.copy-text');
+                const icon = btn.querySelector('i');
+                const originalText = span.innerText;
+                span.innerText = 'Скопійовано!';
+                icon.className = 'fa-solid fa-check';
+                btn.classList.add('text-green-400', 'bg-white/20');
+                
+                setTimeout(() => {
+                    span.innerText = originalText;
+                    icon.className = 'fa-regular fa-copy';
+                    btn.classList.remove('text-green-400', 'bg-white/20');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
