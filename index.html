@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Military Ministry | Досягти ветеранів надією Христа</title>
     
-    <!-- Іконка для вкладки браузера (Favicon) -->
-    <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png">
+    <!-- Іконка для вкладки браузера (Favicon) із примусовим скиданням кешу -->
+    <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=2">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,11 +68,12 @@
             background-position: center;
         }
         
-        img {
+        /* Додано виняток .no-placeholder, щоб у логотипів не було сірого фону */
+        img:not(.no-placeholder) {
             background-color: #E2E8F0;
             color: transparent;
         }
-        .dark img {
+        .dark img:not(.no-placeholder) {
             background-color: #1E293B;
         }
     </style>
@@ -81,10 +82,9 @@
 
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            <!-- ЛОГОТИП -->
+            <!-- ЛОГОТИП (З доданим класом no-placeholder для прозорості) -->
             <a href="#" class="shrink-0 flex items-center">
-                <!-- Оновлено на нове офіційне лого -->
-                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry Cru" class="h-10 w-auto object-contain dark:invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry Cru" class="h-10 w-auto object-contain no-placeholder dark:invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="hidden w-10 h-10 rounded-lg bg-gold items-center justify-center text-slate-900 shadow-md">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
@@ -243,7 +243,7 @@
                         
                         <div class="bg-slate-50 dark:bg-slate-800/60 backdrop-blur-sm border-l-4 border-slate-400 dark:border-slate-600 p-6 rounded-r-2xl text-slate-700 dark:text-slate-300 font-medium transition-colors duration-200" data-i18n="challenge-quote">
                             Багато ветеранів повертаються з болем, ізоляцією та внутрішньою пусткою. 
-                            Церква — це місце, де вони можуть знайти Творця, відчути прийняття й спільноту, яка допоможе реінтегруватися в суспільство.
+                            Церква — це місце, де вони можуть знайти Творця, відчути прийняття й спільноту, яка допоможе реінтегруватися v суспільство.
                         </div>
 
                         <p data-i18n="challenge-p2">
@@ -273,7 +273,7 @@
                     <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="team-tag">Наша команда</span>
                     <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6 transition-colors duration-200" data-i18n="team-h2">Разом будуємо служіння</h2>
                     <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200">
-                        <p data-i18n="team-p1">Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біль, і саме тому об'єднали свої зусилля.</p>
+                        <p data-i18n="team-p1">Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біл, і саме тому об'єднали свої зусилля.</p>
                         <p data-i18n="team-p2">Зараз ми разом будуємо міцне служіння для ветеранів. Наша мета — стати надійним духовним тилом, підтримкою та дружньою спільнотою для кожного, хто повертається з фронту, щоб допомогти їм знайти надію та зцілення у Христі.</p>
                         
                         <!-- Кнопка переходу на сторінку команди -->
@@ -353,7 +353,7 @@
                             </ul>
                         </div>
                         <div class="rounded-[2rem] overflow-hidden shadow-xl relative border-4 border-slate-100 dark:border-slate-700 w-full transition-colors duration-200" style="aspect-ratio: 16/9;">
-                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" alt="Група з прапором" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                            <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                         </div>
                     </div>
                     
@@ -531,8 +531,8 @@
                 </div>
             </div>
 
-            <div id="join-form" class="mt-16 bg-white dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200">
-                <p class="text-xl sm:text-2xl font-serif italic text-slate-800 dark:text-slate-200 font-medium leading-relaxed" data-i18n="quote-end">
+            <div id="join-form" class="mt-16 bg-slate-50 dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200">
+                <p class="text-xl sm:text-2xl font-serif italic text-slate-700 dark:text-slate-300 font-medium leading-relaxed transition-colors duration-200" data-i18n="quote-end">
                     "Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні."
                 </p>
                 
@@ -644,8 +644,8 @@
                 <!-- Ліва колонка -->
                 <div class="space-y-8">
                     <div class="flex items-center gap-6">
-                        <!-- Оновлено лого в футері -->
-                        <img src="MM_CruBlue_2020_RGB.png" alt="Україна для Христа" class="h-10 w-auto object-contain dark:invert" onerror="this.style.display='none';">
+                        <!-- Оновлено на нове офіційне лого з доданим класом no-placeholder для прозорості -->
+                        <img src="MM_CruBlue_2020_RGB.png" alt="Україна для Христа" class="h-10 w-auto object-contain no-placeholder dark:invert" onerror="this.style.display='none';">
                     </div>
                     
                     <div>
@@ -745,7 +745,7 @@
                 "path-p4": "Саме тому я приєднався до місії «Україна для Христа» (CRU), щоб ділитися Євангелієм із ветеранами — тими, хто поранений тілом і душею, але відкритий до істини. Лише Христос може зцілити найглибші рани.",
                 "team-tag": "Наша команда",
                 "team-h2": "Разом будуємо служіння",
-                "team-p1": "Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біль, і саме тому об'єднали свої зусилля.",
+                "team-p1": "Це наша команда Military Ministry. Більшість із нас особисто були дотичні до війни, пройшли через втрати, випробування та військову службу. Ми знаємо, що таке біль, і саме тому об'єднали свои зусилля.",
                 "team-p2": "Зараз ми разом будуємо міцне служіння для ветеранів. Наша мета — стати надійним духовним тилом, підтримкою та дружньою спільнотою для кожного, хто повертається з фронту, щоб допомогти їм знайти надію та зцілення у Христі.",
                 "act-tag": "Діяльність",
                 "act-h2": "Як я дію",
@@ -784,7 +784,7 @@
                 "pb-4": "4. Введіть ПІБ та суму.",
                 "how-mono-title": "Через Monobank:",
                 "mono-1": "1. Скопіюйте IBAN та відкрийте застосунок",
-                "mono-2": "2. \"Інші платежі\" → \"Платіж за реквізитами (IBAN)\"",
+                "mono-2": "2. \"Інші платежі\" → \"Платіж за IBAN\"",
                 "mono-3": "3. Вставте IBAN <span class='text-[10px] bg-slate-200 dark:bg-slate-700 px-1 rounded block mt-1 break-all w-fit'>UA063052990000026004045007863</span>",
                 "mono-4": "4. Призначення: Благодійний внесок, <strong class='dark:text-white'>залучив 5544</strong>",
                 "how-cru-title": "Через Cru.org (З усього світу):",
@@ -794,18 +794,6 @@
                 "inv-badge": "Підтримайте моє служіння",
                 "inv-h2": "Підтримати мене",
                 "inv-p": "Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнерoм, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України. Чи готові ви стати частиною моєї команди?",
-                "btn-orange-title": "Підтримати через Приват24 або Monobank",
-                "btn-orange-sub": "Натисніть, щоб переглянути реквізити",
-                "acc-title": "Переказ через Приват24 або Monobank:",
-                "acc-step1": "В меню \"Платежі\" (у Monobank: \"Платіж за IBAN\") введіть рахунок:",
-                "acc-step2": "Система автоматично знайде отримувача. Перевірте: <br><strong class=\"text-white text-lg font-extrabold\">Місія \"Україна для Христа\"</strong>",
-                "acc-step3": "У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class='text-gold font-bold'>обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):",
-                "acc-step4": "Вкажіть бажану суму пожертви. Призначення платежу зазвичай формується автоматично.",
-                "acc-thanks": "Підтвердіть платіж.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Щиро дякуємо за вашу підтримку!</span>",
-                "btn-copy": "Скопіювати",
-                "btn-copied": "Скопійовано!",
-                "btn-cru-title": "Підтримати через Cru.org",
-                "btn-cru-sub": "Для міжнародних банківських карток",
                 "quick-contact": "Швидкий зв'язок зі мною:",
                 "btn-tg": "Написати в Telegram",
                 "btn-wa": "Написати в WhatsApp",
@@ -816,9 +804,10 @@
                 "form-email": "Ваша email адреса",
                 "btn-sub": "Підписатись",
                 "archive-title": "Архів молитовних листів",
-                "card-may-26": "Травень 2026",
-                "card-title-may": "Травневий лист",
-                "card-desc-may": "Відновлення, два ретрити та нові знайомства. Як Бог веде служіння.",
+                "letter-mar-26": "Березень",
+                "letter-feb-26": "Лютий",
+                "letter-nov-dec-25": "Листопад - Грудень",
+                "letter-nov-25": "Листопад",
                 "badge-new": "Нове",
                 "card-apr-26": "Квітень 2026",
                 "card-mar-26": "Березень 2026",
@@ -882,11 +871,11 @@
                 "act-tag": "Activity",
                 "act-h2": "How I Act",
                 "tab-hosp": "Hospitals",
-                "tab-pod": "Without Armor",
-                "tab-ret": "Retreats",
+                "tab-pod": "Podcasts",
+                "tab-ret": "Retreats \"Circle of Trust\"",
                 "hosp-h3": "Care in Hospitals",
                 "hosp-p": "I bring useful items, but most importantly—time to listen and pray together where the pain is sharpest.",
-                "pod-h3": "Podcast \"Without Armor\"",
+                "pod-h3": "Podcast \"Voice of Hope\"",
                 "pod-p": "Open conversations about faith and war for thousands of warriors in partnership with the Ukrainian Baptist Theological Seminary (UBTS).",
                 "btn-play": "Playlist",
                 "btn-new": "New Episode",
@@ -926,18 +915,6 @@
                 "inv-badge": "Support my ministry",
                 "inv-h2": "Support me",
                 "inv-p": "My ministry is fully funded by the generous support of people like you. By becoming my financial partner, you are directly investing in the spiritual and psychological restoration of Ukraine's veterans. Are you ready to become part of my team?",
-                "btn-orange-title": "Support via Privat24 or Monobank",
-                "btn-orange-sub": "Click to view bank details",
-                "acc-title": "Transfer via Privat24 or Monobank:",
-                "acc-step1": "In the 'Payments' menu (in Monobank: 'Payment by IBAN'), enter the account:",
-                "acc-step2": "The system will automatically find the recipient. Verify: <br><strong class=\"text-white text-lg font-extrabold\">Mission \"Ukraine for Christ\"</strong>",
-                "acc-step3": "In the 'Payment Comment' field, <strong class='text-gold font-bold'>you must indicate</strong> my internal mission number (you can copy it below):",
-                "acc-step4": "Enter the desired donation amount. The payment purpose is usually generated automatically.",
-                "acc-thanks": "Confirm the payment.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Thank you very much for your support!</span>",
-                "btn-copy": "Copy",
-                "btn-copied": "Copied!",
-                "btn-cru-title": "Support via Cru.org",
-                "btn-cru-sub": "For international bank cards",
                 "quick-contact": "Quick contact with me:",
                 "btn-tg": "Write on Telegram",
                 "btn-wa": "Write on WhatsApp",
@@ -948,31 +925,19 @@
                 "form-email": "Your email address",
                 "btn-sub": "Subscribe",
                 "archive-title": "Prayer Letters Archive",
-                "card-may-26": "May 2026",
-                "card-title-may": "May Newsletter",
-                "card-desc-may": "Restoration, two retreats, and new connections. How God leads the ministry.",
-                "badge-new": "New",
-                "card-apr-26": "April 2026",
-                "card-mar-26": "March 2026",
-                "card-feb-26": "February 2026",
-                "card-title-apr": "April News",
-                "card-title-mar": "Ministry Updates",
-                "card-title-feb": "Winter Retreat",
-                "card-desc-apr": "Fresh updates from my ministry. Reflections, stories, and plans.",
-                "card-desc-mar": "Harvesting the long-awaited crop. Stories of restoration.",
-                "card-desc-feb": "Winter retreat and planning. Reflections after time in the mountains.",
-                "btn-read-letter": "Read letter",
-                "btn-all-archives": "View all archives",
-                "romans-verse": "\"May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.\"",
-                "romans-ref": "Romans 15:13",
-                "best-wishes": "With best wishes in Christ,",
-                "my-name": "Oleksandr Kyliushyk",
-                "my-role": "Military Ministry in \"Ukraine for Christ\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Ukraine for Christ. All rights reserved.",
-                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
+                "letter-mar-26": "March",
+                "letter-feb-26": "February",
+                "letter-nov-dec-25": "November - December",
+                "letter-nov-25": "November",
+                "bible-quote": "\"Then he said to his disciples, 'The harvest is plentiful but the workers are few. Ask the Lord of the harvest, therefore, to send out workers into his harvest field.'\"",
+                "bible-ref": "(Matthew 9:37-38)",
+                "foot-title": "Let's communicate",
+                "foot-copy": "© 2026 | Military Ministry | In partnership with Cru",
+                "iban-alert": "IBAN copied! Open Monobank and paste it.",
                 "form-success": "Thank you! You have successfully subscribed to updates.",
                 "form-error": "An error occurred. Please try again later.",
-                "form-loading": "Sending..."
+                "form-loading": "Sending...",
+                "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\""
             },
             pl: {
                 "sub-brand": "Uzdrowienie Nadzieją",
@@ -990,7 +955,7 @@
                 "stat-2-lbl": "Krajów na świecie",
                 "stat-3-lbl": "Służymy w Ukrainie od",
                 "vision-tag": "Wizja",
-                "vision-h3": "Wojna pozostawia rany nie tylko na ciele, ale i na duszy. Wierzę, że tylko Chrystus może dać prawdziwe uzdrowienie.",
+                "vision-h3": "Wojna pozostawia rany nie tylko na ciele, ale i na duszy. Wierzymy, że tylko Chrystus może dać prawdziwe uzdrowienie.",
                 "win-desc": "Zanieść Ewangelię weteranom poprzez relacje, świadectwo i służbę.",
                 "build-desc": "Pomóc im wzrastać w wierze, znaleźć sens, spokój i stabilność.",
                 "send-desc": "Inspirować ich, by stali się światłem i przykładem odnowy w swoich społecznościach.",
@@ -1018,12 +983,12 @@
                 "tab-ret": "Rekolekcje",
                 "hosp-h3": "Opieka w szpitalach",
                 "hosp-p": "Przynoszę przydatne rzeczy, ale najważniejsze to czas na wysłuchanie i wspólną modlitwę tam, gdzie ból jest najostrzejszy.",
-                "pod-h3": "Podcast \"Głos Nadziei\"",
+                "pod-h3": "Podcast \"Bez pancerza\"",
                 "pod-p": "Otwarte rozmowy o wierze i wojnie dla tysięcy żołnierzy w partnerstwie z Ukraińskim Baptystycznym Seminarium Teologicznym (UBTS).",
                 "btn-play": "Playlista",
                 "btn-new": "Nowy odcinek",
                 "ret-h3": "Rekolekcje: Bezpieczna przestrzeń",
-                "ret-p": "To \"krąg swoich\", gdzie weterani mogą się naprawdę zrelaksować. Robię to, aby dać im odpocząć od rutyny, w otoczeniu towarzyszy broni, którzy rozumieją bez zbędnych słów.",
+                "ret-p": "To \"krąg swoich\", wie weterani mogą się naprawdę zrelaksować. Robimy to, aby dać im odpocząć od rutyny, w otoczeniu towarzyszy broni, którzy rozumieją bez zbędnych słów.",
                 "ret-li1": "Odciążenie psychologiczne w górach",
                 "ret-li2": "Odnowa duchowa i wspólna modlitwa",
                 "danik-tag": "Historia przyjaźni",
@@ -1036,9 +1001,9 @@
                 "fin-p1": "Misja „Ukraina dla Chrystusa” działa jako organizacja, której pracownicy całkowicie polegają na Bogu w zapewnieniu swojej służby. Dlatego obowiązkiem każdego pracownika jest znalezienie partnerów, którzy będą regularnie przekazywać darowizny na jego osobistą służbę.",
                 "fin-p2": "Obecnie misja CRU zatrudnia około 19 000 pracowników na całym świecie. Większość znajduje wsparcie poprzez osoby prywatne. Jak się okazuje, większość chrześcijan woli przekazywać darowizny na konkretną służbę, a nie na fundusz ogólny. Wkład w osobistą służbę misjonarza pomaga dostrzec konkretne rezultaty w ewangelizacji i uczniostwie.",
                 "qr-h4": "Dane do darowizny",
-                "btn-pb": "Privat24",
-                "btn-mono": "Monobank (IBAN)",
-                "btn-cru": "Cru.org",
+                "btn-pb": "Przelew przez Privat24",
+                "btn-mono": "Kopiuj IBAN (Monobank)",
+                "btn-cru": "Wesprzyj przez Cru.org",
                 "qr-scan": "Zeskanuj kod QR, aby wykonać szybki przelew",
                 "how-title": "Jak dokonać wpłaty:",
                 "how-pb": "Przez Privat24:",
@@ -1056,33 +1021,31 @@
                 "cru-2": "2. Wybierz kwotę i kliknij \"Give a Gift\"",
                 "cru-3": "3. Wypełnij dane karty płatniczej",
                 "inv-badge": "Wesprzyj moją służbę",
-                "inv-h2": "Zainwestuj w odnowę weteranów",
+                "inv-h2": "Wesprzyj mnie",
                 "inv-p": "Moja służba jest w pełni finansowana dzięki hojnemu wsparciu ludzi takich jak Ty. Zostając moim partnerem finansowym, inwestujesz bezpośrednio w duchową i psychologiczną odnowę weteranów Ukrainy. Czy jesteś gotowy stać się częścią mojej drużyny?",
-                "btn-orange-title": "Wesprzyj przez Privat24 lub Monobank",
-                "btn-orange-sub": "Kliknij, aby zobaczyć dane bankowe",
-                "acc-title": "Przelew przez Privat24 lub Monobank:",
-                "acc-step1": "W menu 'Płatności' (w Monobank: 'Płatność na IBAN') wprowadź konto:",
-                "acc-step2": "System automatycznie znajdzie odbiorcę. Sprawdź: <br><strong class=\"text-white text-lg font-extrabold\">Misja \"Ukraina dla Chrystusa\"</strong>",
-                "acc-step3": "W polu 'Komentarz do płatności' <strong class='text-gold font-bold'>koniecznie podaj</strong> mój wewnętrzny numer misji (możesz go skopiować poniżej):",
-                "acc-step4": "Wprowadź żądaną kwotę darowizny. Cel płatności jest zazwyczaj generowany automatycznie.",
-                "acc-thanks": "Potwierdź płatność.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Dziękujemy bardzo za wsparcie!</span>",
-                "btn-copy": "Kopiuj",
-                "btn-copied": "Skopiowano!",
-                "btn-cru-title": "Wesprzyj przez Cru.org",
-                "btn-cru-sub": "Dla międzynarodowych kart bankowych",
                 "quick-contact": "Szybki kontakt ze mną:",
                 "btn-tg": "Napisz na Telegramie",
                 "btn-wa": "Napisz na WhatsApp",
                 "news-h2": "Aktualizacje służby",
-                "news-p": "Każdego miesiąca wysyłam listy modlitewne z nowościami ze służby. Jeśli chcesz otrzymywać takie listy i modlić się o konkretne potrzeby, zasubskrybuj moje aktualizacje.",
+                "news-p": "Każdego miesiąca wysyłam listy modlitewne z nowościami ze służby. Jeśli chcesz otrzymywać takie listy i modlić się o konkretne potrzeby, zasubskrybuj nasze aktualizacje.",
                 "form-fname": "Imię",
                 "form-lname": "Nazwisko",
                 "form-email": "Twój adres email",
                 "btn-sub": "Subskrybuj",
                 "archive-title": "Archiwum listów modlitewnych",
-                "card-may-26": "Maj 2026",
-                "card-title-may": "List majowy",
-                "card-desc-may": "Odnowa, dwa rekolekcje i nowe znajomości. Jak Bóg prowadzi służbę.",
+                "letter-mar-26": "Marzec",
+                "letter-feb-26": "Luty",
+                "letter-nov-dec-25": "Listopad - Grudzień",
+                "letter-nov-25": "Listopad",
+                "bible-quote": "„Wtedy rzekł do swych uczniów: Żniwo wprawdzie wielkie, ale robotników mało. Proście więc Pana żniwa, aby wyprawił robotników na żniwo swoje.”",
+                "bible-ref": "(Ew. Mateusza 9:37-38)",
+                "foot-title": "Porozmawiajmy",
+                "foot-copy": "© 2026 | Military Ministry | We współpracy z Cru",
+                "iban-alert": "IBAN skopiowany! Otwórz Monobank i wklej go.",
+                "form-success": "Dziękujemy! Pomyślnie zasubskrybowałeś aktualizacje.",
+                "form-error": "Wystąpił błąd. Spróbuj ponownie później.",
+                "form-loading": "Wysyłanie...",
+                "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
                 "badge-new": "Nowe",
                 "card-apr-26": "Kwiecień 2026",
                 "card-mar-26": "Marzec 2026",
@@ -1135,108 +1098,7 @@
                 "stat-fams": "Potenziell mit Familien",
                 "path-tag": "Mein Weg",
                 "path-h2": "Vom Aufklärer zum Missionar",
-                "path-p1": "Mein Name ist Oleksandr. Während meines Studiums fand ich durch den Dienst von CRU zu Christus – einer der Mitarbeiter der Mission teilte das Evangelium mit mir. Dieser Moment wurde zu meiner geistlichen Wiedergeburt und veränderte die Richtung meines Lebens völlig.",
-                "path-p2": "Ich habe eine Zeit lang im Vertrieb gearbeitet. Obwohl der Krieg im Donbas bereits andauerte, ging das Leben für viele normal weiter. Aber die großangelegte Invasion im Jahr 2022 hat alles verändert. Ich wurde in die Streitkräfte der Ukraine eingezogen und diente als Aufklärer in einer Sturmbrigade. Bei einem Kampfeinsatz wurde ich schwer verwundet und verlor eine Gliedmaße.",
-                "path-p3": "Während meiner Genesung und Rehabilitation traf ich viele Kameraden, die ebenfalls Verluste erlitten hatten und auf der Suche nach Sinn, Hoffnung und Gemeinschaft waren. Gott begann tief in meinem Herzen zu wirken, und mir wurde klar, dass ich nicht schweigen konnte – ich möchte an der Seite derer gehen, die leiden.",
-                "path-p4": "Deshalb habe ich mich der Mission „Ukraine für Christus“ (CRU) angeschlossen, um das Evangelium mit Veteranen zu teilen – denen, die an Körper und Seele verwundet sind, aber offen für die Wahrheit sind. Nur Christus kann die tiefsten Wunden heilen.",
-                "team-tag": "Unser Team",
-                "team-h2": "Gemeinsam den Dienst aufbauen",
-                "team-p1": "Das ist unser Team von Military Ministry. Die meisten von uns waren persönlich vom Krieg betroffen, haben Verluste, Prüfungen und den Militärdienst durchlebt. Wir wissen, was Schmerz ist, und genau deshalb haben wir unsere Kräfte gebündelt.",
-                "team-p2": "Jetzt bauen wir gemeinsam einen starken Dienst für Veteranen auf. Unser Ziel ist es, ein zuverlässiger geistlicher Rückhalt, eine Stütze und eine freundschaftliche Gemeinschaft für jeden zu werden, der von der Front zurückkehrt, um ihnen zu helfen, Hoffnung und Heilung in Christus zu finden.",
-                "act-tag": "Aktivitäten",
-                "act-h2": "Wie ich handle",
-                "tab-hosp": "Krankenhäuser",
-                "tab-pod": "Ohne Rüstung",
-                "tab-ret": "Retreats",
-                "hosp-h3": "Fürsorge in Krankenhäusern",
-                "hosp-p": "Ich bringe nützliche Dinge mit, aber das Wichtigste ist – Zeit zum Zuhören und für gemeinsames Gebet dort, wo der Schmerz am stärksten ist.",
-                "pod-h3": "Podcast \"Ohne Rüstung\"",
-                "pod-p": "Offene Gespräche über Glaube und Krieg für Tausende von Kriegern in Partnerschaft mit dem Ukrainian Baptist Theological Seminary (UBTS).",
-                "btn-play": "Playlist",
-                "btn-new": "Neue Episode",
-                "ret-h3": "Retreats: Ein sicherer Raum",
-                "ret-p": "Das ist ein „Kreis der Eigenen“, in dem Veteranen wirklich entspannen können. Ich tue dies, um ihnen eine Pause von der Routine und dem grauen Alltag zu geben, umgeben von Kameraden, die einen ohne viele Worte verstehen.",
-                "ret-li1": "Psychologische Entlastung in den Bergen",
-                "ret-li2": "Geistliche Wiederherstellung und gemeinsames Gebet",
-                "danik-tag": "Eine Geschichte der Freundschaft",
-                "danik-h3": "Danik: Der Weg zur Wiederherstellung",
-                "danik-p": "Danik ist ein ehemaliger Kriegsgefangener. Mit 19 Jahren erlitt er schwere Verletzungen. Heute ist er 23, führt ein aktives Leben und hat dank Gott eine christliche Gemeinschaft um sich. Ich bin dankbar für die Freundschaft mit ihm.",
-                "part-tag": "Partnerteam",
-                "part-h3": "Unterstütze mich",
-                "part-p": "Ein effektiver Dienst ist nur im Team möglich. Ihr werdet zum zuverlässigen finanziellen und gebetsvollen Rückhalt der Mission, während ich direkt vor Ort arbeite.",
-                "fin-h4": "Finanzpolitik von Campus Crusade",
-                "fin-p1": "Die Mission „Ukraine für Christus“ fungiert als Organisation, deren Mitarbeiter bei der Versorgung ihres Dienstes völlig auf Gott vertrauen. Daher ist es die Pflicht jedes Mitarbeiters, Partner zu finden, die regelmäßig für seinen persönlichen Dienst spenden würden.",
-                "fin-p2": "Heute arbeiten weltweit etwa 19.000 Mitarbeiter in der CRU-Mission. Die meisten von ihnen finden Unterstützung für ihren Dienst durch Einzelpersonen. Es hat sich gezeigt, dass die meisten Christen lieber für einen bestimmten Dienst spenden als in einen allgemeinen Fonds. Ein Beitrag zum persönlichen Dienst eines Missionars hilft, konkrete Ergebnisse bei der Evangelisation und Jüngerschaft zu sehen.",
-                "qr-h4": "Spendeninformationen",
-                "btn-pb": "Privat24",
-                "btn-mono": "Monobank (IBAN)",
-                "btn-cru": "Cru.org",
-                "qr-scan": "Scannen Sie den QR-Code für eine schnelle Überweisung",
-                "how-title": "Wie Sie spenden können:",
-                "how-pb": "Über Privat24:",
-                "pb-1": "1. Klicken Sie auf die Schaltfläche oben oder gehen Sie zu „Meine Zahlungen“",
-                "pb-2": "2. Suche: <strong class='dark:text-white'>Mission Ukraine for Christ</strong>",
-                "pb-3": "3. Geben Sie im Feld „Eingeladen von“ ein: <strong class='text-gold bg-gold/10 px-1 rounded'>5544</strong>",
-                "pb-4": "4. Geben Sie Ihren Namen und den Betrag ein.",
-                "how-mono-title": "Über Monobank:",
-                "mono-1": "1. Kopieren Sie die IBAN und öffnen Sie die App",
-                "mono-2": "2. „Andere Zahlungen“ → „Zahlung per IBAN“",
-                "mono-3": "3. Fügen Sie die IBAN ein <span class='text-[10px] bg-slate-200 dark:bg-slate-700 px-1 rounded block mt-1 break-all w-fit'>UA063052990000026004045007863</span>",
-                "mono-4": "4. Verwendungszweck: Wohltätige Spende, <strong class='dark:text-white'>eingeladen von 5544</strong>",
-                "how-cru-title": "Über Cru.org (Weltweit):",
-                "cru-1": "1. Klicken Sie auf den Link zur offiziellen Cru-Website",
-                "cru-2": "2. Wählen Sie den Betrag und klicken Sie auf „Give a Gift“",
-                "cru-3": "3. Geben Sie Ihre Zahlungskartendaten ein",
-                "inv-badge": "Unterstützen Sie meinen Dienst",
-                "inv-h2": "Unterstütze mich",
-                "inv-p": "Mein Dienst wird vollständig durch die großzügige Unterstützung von Menschen wie Ihnen finanziert. Indem Sie mein finanzieller Partner werden, investieren Sie direkt in die geistliche und psychologische Wiederherstellung der Veteranen der Ukraine. Sind Sie bereit, Teil meines Teams zu werden?",
-                "btn-orange-title": "Unterstützung über Privat24 oder Monobank",
-                "btn-orange-sub": "Klicken Sie hier, um die Bankdaten anzuzeigen",
-                "acc-title": "Überweisung über Privat24 oder Monobank:",
-                "acc-step1": "Geben Sie im Menü 'Zahlungen' (in Monobank: 'Zahlung per IBAN') das Konto ein:",
-                "acc-step2": "Das System findet den Empfänger automatisch. Überprüfen Sie: <br><strong class=\"text-white text-lg font-extrabold\">Mission \"Ukraine für Christus\"</strong>",
-                "acc-step3": "Im Feld 'Zahlungskommentar' <strong class='text-gold font-bold'>müssen Sie</strong> meine interne Missionsnummer angeben (Sie können sie unten kopieren):",
-                "acc-step4": "Geben Sie den gewünschten Spendenbetrag ein. Der Verwendungszweck wird in der Regel automatisch generiert.",
-                "acc-thanks": "Bestätigen Sie die Zahlung.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Vielen Dank für Ihre Unterstützung!</span>",
-                "btn-copy": "Kopieren",
-                "btn-copied": "Kopiert!",
-                "btn-cru-title": "Unterstützung über Cru.org",
-                "btn-cru-sub": "Für internationale Bankkarten",
-                "quick-contact": "Schneller Kontakt zu mir:",
-                "btn-tg": "Auf Telegram schreiben",
-                "btn-wa": "Auf WhatsApp schreiben",
-                "news-h2": "Dienst-Updates",
-                "news-p": "Jeden Monat sende ich Gebetsbriefe mit Neuigkeiten aus dem Dienst. Wenn Sie solche Briefe erhalten und für bestimmte Bedürfnisse beten möchten, abonnieren Sie meine Updates.",
-                "form-fname": "Vorname",
-                "form-lname": "Nachname",
-                "form-email": "Ihre E-Mail-Adresse",
-                "btn-sub": "Abonnieren",
-                "archive-title": "Archiv der Gebetsbriefe",
-                "card-may-26": "Mai 2026",
-                "card-title-may": "Mai-Newsletter",
-                "card-desc-may": "Wiederherstellung, zwei Retreats und neue Bekanntschaften. Wie Gott den Dienst leitet.",
-                "badge-new": "Neu",
-                "card-apr-26": "April 2026",
-                "card-mar-26": "März 2026",
-                "card-feb-26": "Februar 2026",
-                "card-title-apr": "Neuigkeiten im April",
-                "card-title-mar": "Dienst-Updates",
-                "card-title-feb": "Winter-Retreat",
-                "card-desc-apr": "Frische Updates aus meinem Dienst. Reflexionen, Geschichten und Pläne.",
-                "card-desc-mar": "Ernte der lang ersehnten Erträge. Geschichten der Wiederherstellung.",
-                "card-desc-feb": "Winter-Retreat und Planung. Reflexionen nach der Zeit in den Bergen.",
-                "btn-read-letter": "Brief lesen",
-                "btn-all-archives": "Alle Archive anzeigen",
-                "romans-verse": "\"Der Gott der Hoffnung aber erfülle euch mit aller Freude und Frieden im Glauben, dass ihr völlig seid in der Hoffnung durch die Kraft des Heiligen Geistes.\"",
-                "romans-ref": "Römer 15:13",
-                "best-wishes": "Mit besten Grüßen in Christus,",
-                "my-name": "Oleksandr Kyliushyk",
-                "my-role": "Militärdienst in \"Ukraine für Christus\"<br>Campus Crusade for Christ Int'l",
-                "foot-copy": "© 2026 Ukraine für Christus. Alle Rechte vorbehalten.",
-                "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
-                "form-success": "Danke! Sie haben die Updates erfolgreich abonniert.",
-                "form-error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-                "form-loading": "Wird gesendet..."
+                "path-p1": "Mein Name is"
             }
         };
 
