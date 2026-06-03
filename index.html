@@ -6,8 +6,9 @@
     <title>Military Ministry | Досягти ветеранів надією Христа</title>
     
     <!-- Favicon вкладки браузера із захистом від кешування -->
-    <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=2">
-    <link rel="apple-touch-icon" href="MM_CruBlue_2020_RGB.png?v=2">
+    <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
+    <link rel="shortcut icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
+    <link rel="apple-touch-icon" href="MM_CruBlue_2020_RGB.png?v=5">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -99,13 +100,7 @@
             <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-widest">
                 <a href="#about" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-path">Мій шлях</a>
                 <a href="#vision" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-vision">Бачення</a>
-                <a href="#challenge" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-challenge">Чому ветерани?</a>
-                <a href="#activity" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-activity">Діяльність</a>
-                <a href="#partnership" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-partnership">Підтримка</a>
-                <a href="#newsletters" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-newsletters">Молитовні листи</a>
-            </nav>
-
-            <div class="flex items-center gap-3 sm:gap-5 shrink-0">
+            <div class="flex items-center gap-5">
                 <!-- Language Switcher -->
                 <div class="relative flex items-center shrink-0">
                     <select id="lang-switcher" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm focus:outline-none cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
@@ -117,10 +112,16 @@
                     <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none"></i>
                 </div>
 
-                <!-- Theme Toggle Button -->
+                <!-- Theme Toggle Button (Оновлено на чисті SVG, щоб прибрати шестерню) -->
                 <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors shrink-0">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                    <!-- Місяць для світлої теми (клік перемикає на темну) -->
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <!-- Сонце для темної теми (клік перемикає на світлу) -->
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707-.707a1 1 0 10-1.414 1.414l.707.707a1 1 0 101.414-1.414zm2.12 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
                 </button>
 
                 <div class="hidden md:block shrink-0">
@@ -314,13 +315,13 @@
                 </button>
             </div>
 
-            <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 shadow-sm min-h-[500px] transition-colors duration-200">
+            <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 shadow-sm min-h-[500px] transition-colors duration-200">
                 
-                <!-- HOSPITALS TAB -->
+                <!-- Hospitals Tab -->
                 <div id="tab-hospitals" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="hosp-h3">Турбота в госпіталях</h3>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="hosp-p">Я приношу корисні речі, але найголовніше — час для вислуховування та спільної молитви там, де біль найгостріший.</p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="hosp-p">Моя головна ціль у госпіталях — це жива присутність. Іноді це щось символічне на згадку, але справжня цінність цих зустрічей полягає у часі, який ми проводимо разом. Це час для уважного вислуховування, розділеного болю та спільної молитви там, де вона потрібна найбільше. Я прагну бути поруч, щоб кожен поранений воїн відчував: його внутрішня боротьба важлива, і він у ній не один.</p>
                     </div>
                     <div class="rounded-[2rem] overflow-hidden shadow-lg relative w-full border border-slate-200 dark:border-slate-700" style="aspect-ratio: 16/9;">
                         <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Госпіталі Олександр" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
@@ -797,7 +798,7 @@
                 "stat-2-lbl": "Країн світу",
                 "stat-3-lbl": "Служимо в Україні з",
                 "vision-tag": "Бачення",
-                "vision-h3": "Війна залишає рани не лише на тілі, а й на душі. Я вірю, що тільки Христос здатен дати справжнє зцілення.",
+                "vision-h3": "Війна залишає рани не лише на тілі, а й на душі. Я вірю, що tylko Христос здатен дати справжнє зцілення.",
                 "win-desc": "Донести Євангеліє до ветеранів через стосунки, свідчення та служіння.",
                 "build-desc": "Допомогти їм зростати у вірі, знайти сенс, спокій та стабільність.",
                 "send-desc": "Надихати ставати світлом та прикладом відновлення у своїх громадах.",
@@ -824,20 +825,9 @@
                 "tab-pod": "Без броні",
                 "tab-ret": "Ретрити",
                 "hosp-h3": "Турбота в госпіталях",
-                "hosp-p": "Я приношу корисні речі, але найголовніше — час для вислуховування та спільної молитви там, де біль найгостріший.",
+                "hosp-p": "Моя головна ціль у госпіталях — це жива присутність. Іноді це щось символічне на згадку, але справжня цінність цих зустрічей полягає у часі, який ми проводимо разом. Це час для уважного вислуховування, розділеного болю та спільної молитви там, де вона потрібна найбільше. Я прагну бути поруч, щоб кожен поранений воїн відчував: його внутрішня боротьба важлива, і він у ній не один.",
                 "pod-h3": "Подкаст \"Без броні\"",
-                "pod-desc-updated": "Це простір, де ми говоримо чесно, але без цинізму. Шукаємо надію без фальші та відверто обговорюємо людину, війну і віру — без броні. Я є співведучим цього проєкту разом із Надією Калачовою. Подкаст створено у співпраці Української баптистської теологічної семінарії (УБТС) та місії «Україна для Христа».",
-                "pod-ep": "ЕПІЗОД",
-                "pod-ep1-desc": "У цьому епізоді подкасту «Без броні» ми знімаємо емоційну броню в розмові з Романом Пікуліком — ветераном російсько-української війни з 2014 року та лідером військового служіння місії «Україна для Христа». Говоримо відверто про те, що відбувається з вірою на фронті та чи можливе там «стерильне» християнство.",
-                "pod-ep2-desc": "У новому епізоді подкасту «Без броні» ми знімаємо емоційnu броню в розмові з подружжям Москаликів. Віталій — командир, який служить з початку повномасштабного вторгнення, а Христина — ініціаторка груп підтримки для дружин військових.",
-                "pod-ep3-desc": "Пастор Віктор Гайдучок з осені 2022 року ходив на Марсове поле у Львові — молився, дякував і просто був поруч із родинами загиблих військових. У 2023 році війна прийшла і в його родину — на фронті загинув його зять Богдан Рільник.",
-                "pod-p1-ctx": "Ми не оминаємо гострих кутів: обговорюємо досвід війни, який формує й водночас ламає, вплив віри на лідерство у війську, образу на церкву, тригери в цивільному житті та те, яким може бути добрий сценарій повернення ветерана до спільноти.",
-                "pod-p2-ctx": "Говоримо відверто: що найважче на війні, як трансформуються стосунки на відстані, чому звичні слова підтримки іноді ранять, і як виглядає віра, коли на молитву зовсім немає часу.",
-                "pod-p3-ctx": "У цій розмові говоримо про те, як церкві жити з людьми з різним досвідом війни — і які запитання ти ставиш Богові, коли війна і біль стають особистими.",
-                "pod-quote-lbl": "ДУМКА ДЛЯ ВАС",
-                "pod-quote-1": "\"Чи можливо зберегти стерильне християнство в окопі, де кожен погляд — це питання життя та смерті?\"",
-                "pod-quote-2": "\"Як зберегти зв'язок і любов, коли між вами кілометри фронту і постійна загроза втрати?\"",
-                "pod-quote-3": "\"Які запитання ти ставиш Богу, коли війна та біль смерті стають твоїми особистими?\"",
+                "pod-p": "Відкриті розмови про віру та війну для тисяч воїнів у партнерстві з Українською Баптистською Теологічною Семінарією (УБТС).",
                 "btn-play": "Плейлист",
                 "btn-new": "Свіжий випуск",
                 "ret-h3": "Ретрити: Безпечний простір",
@@ -968,20 +958,9 @@
                 "tab-pod": "Podcasts",
                 "tab-ret": "Retreats \"Circle of Trust\"",
                 "hosp-h3": "Care in Hospitals",
-                "hosp-p": "I bring useful items, but most importantly—time to listen and pray together where the pain is sharpest.",
-                "pod-h3": "Podcast \"Without Armor\"",
-                "pod-desc-updated": "This is a space where we talk honestly, but without cynicism. We look for hope without falsehood and discuss the person, war, and faith openly—without armor. I am a co-host of this project together with Nadiya Kalachova. The podcast was created in cooperation with the Ukrainian Baptist Theological Seminary (UBTS) and the \"Ukraine for Christ\" mission.",
-                "pod-ep": "EPISODE",
-                "pod-ep1-desc": "In this episode of the podcast \"Without Armor\", we remove emotional armor in a conversation with Roman Pikulyk - a veteran of the Russian-Ukrainian war since 2014 and the leader of the military ministry of the \"Ukraine for Christ\" mission. We speak openly about what happens to faith on the front line and whether \"sterile\" Christianity is possible there.",
-                "pod-ep2-desc": "In the new episode of the podcast \"Without Armor\", we remove emotional armor in a conversation with Vitalli and Khrystyna Moskalik. Vitaliy is a commander who has been serving since the beginning of the full-scale invasion, and Khrystyna is the initiator of support groups for wives of military personnel.",
-                "pod-ep3-desc": "Pastor Viktor Haiduchok since autumn 2022 went to the Field of Mars in Lviv — prayed, thanked and was just there with the families of the fallen military. In 2023, the war came to his family - his son-in-law Bohdan Rylnyk was killed on the front line.",
-                "pod-p1-ctx": "We do not avoid sharp corners: we discuss the experience of war, which forms and at the same time breaks, the influence of faith on leadership in the army, offense at the church, triggers in civilian life and what a good scenario for a veteran's return to the community can be.",
-                "pod-p2-ctx": "We speak frankly: what is the most difficult thing in war, how relationships transform at a distance, why usual words of support sometimes hurt, and what faith looks like when there is absolutely no time for prayer.",
-                "pod-p3-ctx": "In this conversation, we talk about how the church can live with people with different experiences of war - and what questions you ask God when war and pain become personal.",
-                "pod-quote-lbl": "THOUGHT FOR YOU",
-                "pod-quote-1": "\"Is it possible to preserve sterile Christianity in a trench where every look is a matter of life and death?\"",
-                "pod-quote-2": "\"How to keep connection and love when there are kilometers of front and a constant threat of loss between you?\"",
-                "pod-quote-3": "\"What questions do you ask God when war and the pain of death become your personal ones?\"",
+                "hosp-p": "My main goal in hospitals is a active presence. Sometimes it is a small symbolic keepsake, but the true value of these meetings lies in the time we spend together. It is a time for attentive listening, shared pain, and joint prayer where it is needed most. I strive to be there so that every wounded warrior feels that his inner struggle matters, and he is not alone in it.",
+                "pod-h3": "Podcast \"Voice of Hope\"",
+                "pod-p": "Open conversations about faith and war for thousands of warriors in partnership with the Ukrainian Baptist Theological Seminary (UBTS).",
                 "btn-play": "Playlist",
                 "btn-new": "New Episode",
                 "ret-h3": "Retreats: Safe Space",
@@ -1112,20 +1091,9 @@
                 "tab-pod": "Bez pancerza",
                 "tab-ret": "Rekolekcje",
                 "hosp-h3": "Opieka w szpitalach",
-                "hosp-p": "Przynoszę przydatne rzeczy, ale najważniejsze to czas na wysłuchanie i wspólną modlitwę tam, gdzie ból jest najostrzejszy.",
+                "hosp-p": "Moim głównym celem w szpitalach jest żywa obecność. Czasami jest to drobna, symboliczna pamiątka, ale prawdziwa wartość tych spotkań tkwi w czasie, który spędzamy razem. To czas uważnego słuchania, dzielenia się bólem i wspólnej modlitwy tam, gzie jest ona najbardziej potrzebna. Pragnę być blisko, aby każdy ranny żołnierz czuł, że jego wewnętrzna walka ma znaczenie i nie jest w niej sam.",
                 "pod-h3": "Podcast \"Bez pancerza\"",
-                "pod-desc-updated": "To przestrzeń, w której rozmawiamy szczerze, ale bez cynizmu. Szukamy nadziei bez fałszu i otwarcie rozmawiamy o człowieku, wojnie i wierze — bez pancerza. Jestem współprowadzącym ten projekt razem z Nadią Kałaczową. Podcast powstał we współpracy z Ukraińskim Baptystycznym Seminarium Teologicznym (UBTS) oraz misją „Ukraina dla Chrystusa”.",
-                "pod-ep": "EPIZOD",
-                "pod-ep1-desc": "W tym odcinku podcastu „Bez pancerza” zdejmujemy emocjonalny pancerz w rozmowie z Romanem Pikulikiem – weteranem wojny rosyjsko-ukraińskiej od 2014 roku i liderem duszpasterstwa wojskowego misji „Ukraina dla Chrystusa”. Rozmawiamy szczerze o tym, co dzieje się z wiarą na froncie i czy możliwe jest tam „sterylne” chrześcijaństwo.",
-                "pod-ep2-desc": "W nowym odcinku podcastu „Bez pancerza” zdejmujemy emocjonalny pancerz w rozmowie z małżeństwem Moskalików. Witalij to dowódca służący od początku pełnoskalowej inwazji, a Krystyna jest inicjatorką grup wsparcia dla żon wojskowych.",
-                "pod-ep3-desc": "Pastor Wiktor Hajduczok od jesieni 2022 roku chodził na Pole Marsowe we Lwowie – modlił się, dziękował i po prostu był przy rodzinach poległych żołnierzy. W 2023 roku wojna przyszła także do jego rodziny – na froncie zginął jego zięć Bohdan Rylnyk.",
-                "pod-p1-ctx": "Nie omijamy ostrych tematów: rozmawiamy o doświadczeniu wojny, które kształtuje i jednocześnie niszczy, wpływie wiary na przywództwo w wojsku, żalu do kościoła, wyzwalaczach w życiu cywilnym i tym, jak może wyglądać dobry scenariusz powrotu weterana do społeczności.",
-                "pod-p2-ctx": "Rozmawiamy szczerze: co jest najtrudniejsze na wojnie, jak zmieniają się relacje na odległość, dlaczego zwykłe słowa wsparcia czasem ranią i jak wygląda wiara, gdy nie ma czasu na modlitwę.",
-                "pod-p3-ctx": "W tej rozmowie mówimy o tym, jak kościół może żyć z ludźmi o różnym doświadczeniu wojny – i jakie pytania zadajesz Bogu, gdy wojna i ból stają się osobiste.",
-                "pod-quote-lbl": "MYŚL DLA CIEBIE",
-                "pod-quote-1": "„Czy można zachować sterylne chrześcijaństwo w okopie, gdzie każde spojrzenie decyduje o życiu i śmierci?”",
-                "pod-quote-2": "„Jak utrzymać kontakt i miłość, gdy dzielą was kilometry frontu i ciągłe zagrożenie stratą?”",
-                "pod-quote-3": "„Jakie pytania zadajesz Bogu, gdy wojna i ból śmierci stają się twoimi osobistymi?”",
+                "pod-p": "Otwarte rozmowy o wierze i wojnie dla tysięcy żołnierzy w partnerstwie z Ukraińskim Baptystycznym Seminarium Teologicznym (UBTS).",
                 "btn-play": "Playlista",
                 "btn-new": "Nowy odcinek",
                 "ret-h3": "Rekolekcje: Bezpieczna przestrzeń",
@@ -1247,7 +1215,7 @@
                 "path-tag": "Mein Weg",
                 "path-h2": "Vom Aufklärer zum Missionar",
                 "path-p1": "Mein Name ist Oleksandr. Während meines Studiums fand ich durch den Dienst von CRU zu Christus – einer der Mitarbeiter der Mission teilte das Evangelium mit mir. Dieser Moment wurde zu meiner geistlichen Wiedergeburt und veränderte die Richtung meines Lebens völlig.",
-                "path-p2": "Ich habe eine Zeit lang im Vertrieb gearbeitet. Obwohl der Krieg im Donbas bereits anstand, ging das Leben für viele normal weiter. Aber die großangelegte Invasion im Jahr 2022 hat alles verändert. Ich wurde in die Streitkräfte der Ukraine eingezogen und diente als Aufklärer in einer Sturmbrigade. Bei einem Kampfeinsatz wurde ich schwer verwundet und verlor eine Gliedmaße.",
+                "path-p2": "Ich habe eine Zeit lang im Vertrieb gearbeitet. Obwohl der Krieg im Donbas bereits andauerte, ging das Leben für viele normal weiter. Aber die großangelegte Invasion im Jahr 2022 hat alles verändert. Ich wurde in die Streitkräfte der Ukraine eingezogen und diente als Aufklärer in einer Sturmbrigade. Bei einem Kampfeinsatz wurde ich schwer verwundet und verlor eine Gliedmaße.",
                 "path-p3": "Während meiner Genesung und Rehabilitation traf ich viele Kameraden, die ebenfalls Verluste erlitten hatten und auf der Suche nach Sinn, Hoffnung und Gemeinschaft waren. Gott begann tief in meinem Herzen zu wirken, und mir wurde klar, dass ich nicht schweigen konnte – ich möchte an der Seite derer gehen, die leiden.",
                 "path-p4": "Deshalb habe ich mich der Mission „Ukraine für Christus“ (CRU) angeschlossen, um das Evangelium mit Veteranen zu teilen – denen, die an Körper und Seele verwundet sind, aber offen für die Wahrheit sind. Nur Christus kann die tiefsten Wunden heilen.",
                 "team-tag": "Unser Team",
@@ -1260,20 +1228,9 @@
                 "tab-pod": "Ohne Rüstung",
                 "tab-ret": "Retreats",
                 "hosp-h3": "Fürsorge in Krankenhäusern",
-                "hosp-p": "Ich bringe nützliche Dinge mit, aber das Wichtigste ist – Zeit zum Zuhören und für gemeinsames Gebet dort, wo der Schmerz am stärksten ist.",
+                "hosp-p": "Mein Hauptziel in Krankenhäusern ist lebendige Präsenz. Manchmal ist es ein kleines symbolisches Andenken, aber der wahre Wert dieser Treffen liegt in der Zeit, die wir zusammen verbringen. Es ist eine Zeit des aufmerksamen Zuhörens, des geteilten Schmerzes und des gemeinsamen Gebets dort, wo es am meisten gebraucht wird. Ich strebe danach, da zu sein, damit jeder verwundete Krieger fühlt, dass sein innerer Kampf zählt und er nicht allein darin ist.",
                 "pod-h3": "Podcast \"Ohne Rüstung\"",
-                "pod-desc-updated": "Dies ist ein Raum, in dem wir ehrlich, aber ohne Zynismus sprechen. Wir suchen Hoffnung ohne Falschheit und diskutieren offen über Mensch, Krieg und Glauben — ohne Rüstung. Ich bin Co-Moderator dieses Projekts zusammen mit Nadiya Kalachova. Der Podcast entstand in Zusammenarbeit mit dem Ukrainischen Baptistischen Theologischen Seminar (UBTS) und der Mission „Ukraine für Christus“.",
-                "pod-ep": "EPISODE",
-                "pod-ep1-desc": "In dieser Episode des Podcasts „Ohne Rüstung“ legen wir die emotionale Rüstung ab im Gespräch mit Roman Pikulyk – einem Veteranen des russisch-ukrainischen Krieges seit 2014 und Leiter des Militärdienstes der Mission „Ukraine für Christus“. Wir sprechen offen darüber, was mit dem Glauben an der Front passiert und ob dort ein „steriles“ Christentum möglich ist.",
-                "pod-ep2-desc": "In der neuen Episode des Podcasts „Ohne Rüstung“ legen wir im Gespräch mit den Eheleuten Moskalik die emotionale Rüstung ab. Vitaliy ist ein Kommandeur, der seit Beginn der großangelegten Invasion dient, und Khrystyna ist die Initiatorin von Selbsthilfegruppen für Ehefrauen von Militärangehörigen.",
-                "pod-ep3-desc": "Pastor Viktor Haiduchok geht seit Herbst 2022 auf das Marsfeld in Lemberg – er betete, dankte und war einfach für die Familien der gefallenen Soldaten da. Im Jahr 2023 kam der Krieg auch in seine Familie – sein Schwiegersohn Bohdan Rylnyk fiel an der Front.",
-                "pod-p1-ctx": "Wir meiden keine heißen Eisen: Wir sprechen über die Kriegserfahrung, die prägt und zugleich bricht, den Einfluss des Glaubens auf die Führung in der Armee, den Groll auf die Kirche, die Trigger im zivilen Leben und wie ein gutes Szenario für die Rückkehr eines Veteranen in die Gemeinschaft aussehen kann.",
-                "pod-p2-ctx": "Wir sprechen offen: Was ist das Schwerste im Krieg, wie verändern sich Beziehungen auf Distanz, warum verletzen vertraute Worte der Unterstützung manchmal und wie sieht der Glaube aus, wenn absolut keine Zeit zum Beten bleibt.",
-                "pod-p3-ctx": "In diesem Gespräch sprechen wir darüber, wie die Kirche mit Menschen mit unterschiedlichen Kriegserfahrungen leben kann – und welche Fragen man Gott stellt, wenn Krieg und Schmerz persönlich werden.",
-                "pod-quote-lbl": "GEDANKE FÜR SIE",
-                "pod-quote-1": "„Ist es möglich, ein steriles Christentum in einem Schützengraben zu bewahren, in dem jeder Blick über Leben und Tod entscheidet?“",
-                "pod-quote-2": "„Wie hält man Verbindung und Liebe aufrecht, wenn Kilometer an Front und die ständige Angst vor Verlust zwischen einem stehen?“",
-                "pod-quote-3": "„Welche Fragen stellt man Gott, wenn der Krieg und der Schmerz des Todes zu den eigenen werden?“",
+                "pod-p": "Offene Gespräche über Glaube und Krieg für Tausende von Kriegern in Partnerschaft mit dem Ukrainian Baptist Theological Seminary (UBTS).",
                 "btn-play": "Playlist",
                 "btn-new": "Neue Episode",
                 "ret-h3": "Retreats: Ein sicherer Raum",
