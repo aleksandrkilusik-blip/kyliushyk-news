@@ -28,14 +28,21 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
         .logo-img { background-color: transparent !important; }
         img:not(.logo-img) { background-color: #E2E8F0; color: transparent; }
+        
+        /* Кастомний скроллбар для блоків тексту, якщо вони задовгі */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
 <body class="text-slate-800 antialiased py-8 px-4 sm:px-6 lg:px-8">
 
     <div class="max-w-5xl mx-auto space-y-8">
 
+        <!-- Шапка -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <a href="index.html" class="shrink-0 hover:opacity-80 transition-opacity">
                 <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain logo-img">
@@ -47,9 +54,11 @@
             </div>
         </div>
 
+        <!-- Головний банер-вітання -->
         <div class="bg-brandBlue rounded-3xl shadow-lg overflow-hidden relative group">
             <div class="absolute inset-0 bg-gradient-to-r from-brandDark to-transparent opacity-80 z-0"></div>
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl z-0"></div>
+            <!-- Декоративні кола -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl z-0 transition-transform duration-700 group-hover:scale-110"></div>
             
             <div class="relative z-10 p-8 sm:p-12 md:p-16 text-center">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase">
@@ -61,7 +70,9 @@
             </div>
         </div>
 
+        <!-- ІСТОРІЯ 1: СЛАВІК -->
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <!-- Синя шапка картки -->
             <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
                 <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
                     Історія Славіка
@@ -71,10 +82,13 @@
                 </div>
             </div>
             
+            <!-- Тіло картки -->
             <div class="flex flex-col md:flex-row">
+                <!-- Ліва колонка: Фото і цитата -->
                 <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-r border-slate-100 flex flex-col gap-6">
-                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
-                        <img src="IMG_6828.jpeg" alt="Славік" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <!-- Забрано жорсткі обмеження пропорцій, додано гнучкість -->
+                    <div class="rounded-2xl overflow-hidden shadow-md flex-grow">
+                        <img src="IMG_6828.jpeg" alt="Славік" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 min-h-[250px]">
                     </div>
                     <blockquote class="bg-white border-l-4 border-gold p-5 rounded-r-xl shadow-sm mt-auto">
                         <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
@@ -84,6 +98,7 @@
                     </blockquote>
                 </div>
                 
+                <!-- Права колонка: Текст -->
                 <div class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
                     <p>
                         <strong class="text-slate-900">Славік був мобілізований у 2024 році</strong> до морської піхоти. Як і я, він служив у розвідці на Харківському напрямку. Під час бойового завдання у Куп'янську їхню позицію помітив ворог. Хлопці відступали під масованим обстрілом і вийшли на заміновану ділянку.
@@ -101,10 +116,11 @@
             </div>
         </div>
 
+        <!-- ІСТОРІЯ 2: САША -->
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
             <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
                 <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
-                    Історія 2. Олександр: кохання, сильніше за полон
+                    Історія Саші
                 </h2>
                 <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
                     <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
@@ -113,8 +129,8 @@
             
             <div class="flex flex-col md:flex-row-reverse">
                 <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-l border-slate-100 flex flex-col gap-6">
-                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
-                        <img src="НАЗВA_ФАЙЛУ_САШІ.jpg" alt="Олександр" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="rounded-2xl overflow-hidden shadow-md flex-grow">
+                        <img src="IMG_6848.jpeg" alt="Саша" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 min-h-[250px]">
                     </div>
                     <blockquote class="bg-white border-l-4 border-brandBlue p-5 rounded-r-xl shadow-sm mt-auto">
                         <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
@@ -126,7 +142,7 @@
                 
                 <div class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
                     <p>
-                        <strong class="text-slate-900">Олександр зустрів війну в Маріуполі</strong>, служачи в підрозділі оркестру морської піхоти. Опинившись у повному оточенні, його підрозділ потрапив у полон. Сашко — дуже вольова людина, але наша команда стала першою, з ким він наважився поділитися тим жахом: <em class="text-slate-800 font-medium">«Фізично було важко, але морально нас там просто ламали»</em>.
+                        <strong class="text-slate-900">Саша зустрів війну в Маріуполі</strong>, служачи в підрозділі оркестру морської піхоти. Опинившись у повному оточенні, його підрозділ потрапив у полон. Сашко — дуже вольова людина, але наша команда стала першою, з ким він наважився поділитися тим жахом: <em class="text-slate-800 font-medium">«Фізично було важко, але морально нас там просто ламали»</em>.
                     </p>
                     <p>
                         Він був упевнений, що вдома його вже ніхто не чекає. Але дружина виявилася неймовірно сильною жінкою, яка пройшла неможливе, аби його витягнути. Вона досі служить у війську і, будучи старшою за званням, жартома дає йому «накази» під час щоденних дзвінків: сходити до терапевта, потренуватися, випити кави.
@@ -138,10 +154,11 @@
             </div>
         </div>
 
+        <!-- ІСТОРІЯ 3: НАЗАРІ -->
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
             <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
                 <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
-                    Історія 3. Назарі: мрійник крізь решітку
+                    Історія Назарі
                 </h2>
                 <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
                     <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
@@ -150,8 +167,8 @@
             
             <div class="flex flex-col md:flex-row">
                 <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-r border-slate-100 flex flex-col gap-6">
-                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
-                        <img src="НАЗВA_ФАЙЛУ_НАЗАРІ.jpg" alt="Назарі" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="rounded-2xl overflow-hidden shadow-md flex-grow">
+                        <img src="IMG_7113.jpeg" alt="Назарі" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 min-h-[250px]">
                     </div>
                     <blockquote class="bg-white border-l-4 border-gold p-5 rounded-r-xl shadow-sm mt-auto">
                         <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
@@ -166,7 +183,7 @@
                         <strong class="text-slate-900">Назарі — боєць «Азову»</strong>, звільнений пів року тому. В полоні він отримав важку спінальну травму від побоїв і зараз пересувається на кріслі колісному. На початку він пережив панічний страх, не відчуваючи праву сторону тіла, але зараз є позитивна динаміка.
                     </p>
                     <p>
-                        Я назвав його «мрійником». У полоні його ліжко стояло біля вікна з решіткою. Назарі годинами дивився на хмари і <span class="bg-emerald-50 text-emerald-700 font-semibold px-1 rounded">у своей уяві подорожував із ними світом</span>. Найважчими стали 60 днів найжорстокішого тиску, коли ворог дізнався про його участь у боях на позиціях.
+                        Я назвав його «мрійником». У полоні його ліжко стояло біля вікна з решіткою. Назарі годинами дивився на хмари і <span class="bg-emerald-50 text-emerald-700 font-semibold px-1 rounded">у своїй уяві подорожував із ними світом</span>. Найважчими стали 60 днів найжорстокішого тиску, коли ворог дізнався про його участь у боях на позиціях.
                     </p>
                     <p>
                         Але сьогодні Назарі дивує життєлюбством: пише пісні, освідчився дівчині та вперто проходить реабілітацію. Лікарі дають хороші шанси. Ба більше, він повністю відкритий до розмов про Бога і сенс життя.
@@ -175,8 +192,10 @@
             </div>
         </div>
 
+        <!-- ІНТЕРАКТИВНА ПЛИТКА (GRID) ДЛЯ ДІЙ ТА ПОТРЕБ -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
             
+            <!-- Блок 1: Плани -->
             <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 lg:col-span-2 flex flex-col justify-center transition-all hover:shadow-md">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-700">
@@ -189,6 +208,7 @@
                 </p>
             </div>
 
+            <!-- Блок 2: Фінанси (Яскравий акцент) -->
             <div class="bg-gold rounded-3xl p-8 shadow-md flex flex-col justify-between transition-all hover:-translate-y-1">
                 <div>
                     <h3 class="text-xl font-black text-slate-900 uppercase mb-4">Стати партнером</h3>
@@ -201,6 +221,7 @@
                 </a>
             </div>
 
+            <!-- Блок 3: Молитовні потреби -->
             <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl lg:col-span-2 relative overflow-hidden">
                 <i class="fa-solid fa-hands-praying absolute -right-6 -top-6 text-[120px] text-white/5 rotate-12"></i>
                 <h3 class="text-2xl font-black text-gold uppercase mb-6 relative z-10">Молитовні потреби</h3>
@@ -211,7 +232,7 @@
                     </div>
                     <div class="flex gap-3">
                         <i class="fa-solid fa-check text-brandBlue mt-1"></i>
-                        <span><strong class="text-white">За Олександра</strong> — емоційне зцілення після полону.</span>
+                        <span><strong class="text-white">За Сашу</strong> — емоційне зцілення після полону.</span>
                     </div>
                     <div class="flex gap-3">
                         <i class="fa-solid fa-check text-brandBlue mt-1"></i>
@@ -224,6 +245,7 @@
                 </div>
             </div>
 
+            <!-- Блок 4: Зворотній зв'язок -->
             <div class="bg-white rounded-3xl p-8 shadow-sm border border-brandBlue/30 text-center flex flex-col justify-center items-center">
                 <h3 class="text-lg font-black text-slate-900 mb-2">Як я можу молитися за вас?</h3>
                 <p class="text-slate-500 text-xs mb-6">Напишіть мені, дозвольте підтримати вас.</p>
@@ -231,7 +253,7 @@
                     <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl flex justify-center items-center transition-colors">
                         <i class="fa-regular fa-envelope"></i>
                     </a>
-                    <a href="https://t.me/+380976058965" target="_blank" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white py-3 rounded-xl flex justify-center items-center transition-colors">
+                    <a href="https://t.me/+380976058965" target="_blank" class="flex-1 bg-[#0088cc] hover:bg-[#0077b5] text-white py-3 rounded-xl flex justify-center items-center transition-colors">
                         <i class="fa-brands fa-telegram text-lg"></i>
                     </a>
                 </div>
@@ -239,6 +261,7 @@
 
         </div>
 
+        <!-- Підвал -->
         <div class="pt-8 pb-12 flex flex-col items-center text-center space-y-4">
             <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
             <div>
