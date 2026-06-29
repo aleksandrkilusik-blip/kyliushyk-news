@@ -5,23 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Military Ministry | Досягти ветеранів надією Христа</title>
     
-    <!-- Favicon вкладки браузера із захистом від кешування -->
     <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
     <link rel="shortcut icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
     <link class="logo-img" rel="apple-touch-icon" href="MM_CruBlue_2020_RGB.png?v=5">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Скрипт для теми -->
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -91,12 +86,10 @@
 
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            <!-- ЛОГОТИП (Нове синє лого) -->
             <a href="#" class="shrink-0 flex items-center">
                 <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-12 w-auto object-contain logo-img">
             </a>
             
-            <!-- НАВІГАЦІЯ -->
             <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-widest">
                 <a href="#about" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-path">Мій шлях</a>
                 <a href="#vision" class="text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-vision">Бачення</a>
@@ -107,7 +100,6 @@
             </nav>
 
             <div class="flex items-center gap-5">
-                <!-- Language Switcher -->
                 <div class="relative flex items-center shrink-0">
                     <select id="lang-switcher" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm focus:outline-none cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
                         <option value="uk" class="text-slate-800 dark:text-slate-800">UA</option>
@@ -118,13 +110,10 @@
                     <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none"></i>
                 </div>
 
-                <!-- Theme Toggle Button (Оновлено на чисті SVG, щоб прибрати шестерню) -->
                 <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors shrink-0">
-                    <!-- Місяць для світлої теми (клік перемикає на темну) -->
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
-                    <!-- Сонце для темної теми (клік перемикає на світлу) -->
                     <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707-.707a1 1 0 10-1.414 1.414l.707.707a1 1 0 101.414-1.414zm2.12 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
@@ -140,7 +129,6 @@
             </div>
         </div>
         
-        <!-- Мобільне меню -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-6 space-y-4 shadow-xl transition-colors duration-200">
             <a href="#about" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-path">Мій шлях</a>
             <a href="#vision" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-vision">Бачення</a>
@@ -170,7 +158,6 @@
         </div>
     </section>
 
-    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-24 mb-16">
         <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 py-10 px-6 sm:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center transition-colors duration-200">
             <div class="space-y-3">
@@ -188,7 +175,6 @@
         </div>
     </div>
 
-    <!-- МІЙ ШЛЯХ (ABOUT) -->
     <section id="about" class="py-24 bg-white dark:bg-slate-900 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -212,7 +198,6 @@
         </div>
     </section>
 
-    <!-- БАЧЕННЯ (VISION) -->
     <section id="vision" class="py-24 bg-gold transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto mb-16">
@@ -239,7 +224,6 @@
         </div>
     </section>
 
-    <!-- ЧОМУ ВЕТЕРАНИ (CHALLENGE) -->
     <section id="challenge" class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -276,7 +260,6 @@
         </div>
     </section>
 
-    <!-- КОМАНДА -->
     <section id="team" class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -301,7 +284,6 @@
         </div>
     </section>
 
-    <!-- ДІЯЛЬНІСТЬ (ACTIVITY) -->
     <section id="activity" class="py-24 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -323,7 +305,6 @@
 
             <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 shadow-sm min-h-[500px] transition-colors duration-200">
                 
-                <!-- Hospitals Tab -->
                 <div id="tab-hospitals" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="hosp-h3">Турбота в госпіталях</h3>
@@ -334,9 +315,7 @@
                     </div>
                 </div>
 
-                <!-- PODCASTS TAB -->
                 <div id="tab-podcasts" class="tab-content hidden space-y-12">
-                    <!-- Intro Header -->
                     <div class="max-w-3xl mb-12">
                         <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white font-sans mb-4 transition-colors duration-200" data-i18n="pod-h3">Подкаст "Без броні"</h3>
                         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="pod-desc-updated">
@@ -344,7 +323,6 @@
                         </p>
                     </div>
 
-                    <!-- Episode 1 -->
                     <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
                         <div class="lg:col-span-7 space-y-6">
                             <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep">ОСОБИСТЕ</span>
@@ -370,7 +348,6 @@
                         </div>
                     </div>
 
-                    <!-- Episode 2 -->
                     <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
                         <div class="lg:col-span-7 space-y-6">
                             <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep">СІМ'Я ТА ВІЙНА</span>
@@ -396,7 +373,6 @@
                         </div>
                     </div>
 
-                    <!-- Episode 3 -->
                     <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
                         <div class="lg:col-span-7 space-y-6">
                             <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep">ДУХОВНІСТЬ</span>
@@ -423,7 +399,6 @@
                     </div>
                 </div>
 
-                <!-- RETREATS TAB -->
                 <div id="tab-retreats" class="tab-content hidden space-y-10">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div class="space-y-6 text-base">
@@ -437,12 +412,10 @@
                             </ul>
                         </div>
                         <div class="rounded-[2rem] overflow-hidden shadow-xl relative border-4 border-slate-100 dark:border-slate-700 w-full transition-colors duration-200" style="aspect-ratio: 16/9;">
-                            <!-- Перше велике фото (Будапешт) -->
                             <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                         </div>
                     </div>
                     
-                    <!-- 3 маленьких фото під ним, разом — рівно 4 фотографії -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
                             <img src="retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Спільний обід">
@@ -460,7 +433,6 @@
         </div>
     </section>
 
-    <!-- ДАНІК -->
     <section class="py-24 bg-slate-900 dark:bg-slate-950 text-white overflow-hidden transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -478,7 +450,6 @@
         </div>
     </section>
 
-    <!-- ПІДТРИМКА (PARTNERSHIP) -->
     <section id="partnership" class="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 font-sans transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -487,7 +458,6 @@
                 <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-medium transition-colors duration-200" data-i18n="part-p">Ефективне служіння можливе лише в команді. Ви стаєте надійним фінансовим та молитовним тилом місії, поки я працюю безпосередньо в полі.</p>
             </div>
 
-            <!-- Біблійна цитата (Матвія 9:37-38) -->
             <div class="bg-gold-pale dark:bg-gold/10 border-l-4 border-gold p-8 sm:p-10 rounded-r-3xl relative overflow-hidden transition-colors duration-200 mb-12 max-w-4xl mx-auto">
                 <i class="fa-solid fa-quote-right absolute -right-4 -top-4 text-9xl text-gold/10 dark:text-gold/20"></i>
                 <p class="font-serif italic text-2xl sm:text-3xl text-slate-800 dark:text-slate-200 leading-relaxed mb-6 relative z-10 transition-colors duration-200" data-i18n="bible-quote">
@@ -496,7 +466,6 @@
                 <p class="text-gold font-bold tracking-widest uppercase text-sm relative z-10" data-i18n="bible-ref">(Від Матвія 9:37-38)</p>
             </div>
 
-            <!-- Policy Card -->
             <div class="max-w-4xl mx-auto mb-16">
                 <div class="bg-slate-50 dark:bg-slate-800 p-8 sm:p-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 space-y-6 transition-colors duration-200">
                     <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 font-sans transition-colors duration-200">
@@ -510,7 +479,6 @@
                 </div>
             </div>
 
-            <!-- Big Blue Investment Block -->
             <div class="bg-[#135d7a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200 grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6 text-left">
                     <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-2">
@@ -523,7 +491,6 @@
                 </div>
                 
                 <div class="space-y-6">
-                    <!-- Accordion Orange Button -->
                     <div class="bg-[#d98127] rounded-[2rem] overflow-hidden transition-all duration-300 shadow-xl border border-black/5">
                         <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-[#c97521] transition-colors focus:outline-none">
                             <div class="flex items-center gap-5 pr-4">
@@ -540,11 +507,9 @@
                             </div>
                         </button>
 
-                        <!-- Expanded Content -->
                         <div id="bank-details" class="hidden bg-[#0c3953] text-white p-6 sm:p-8 border-t border-black/10">
                             <h5 class="text-xl font-bold mb-8" data-i18n="acc-title">Переказ через Приват24 або Monobank:</h5>
                             <div class="space-y-8">
-                                <!-- Step 1 -->
                                 <div class="flex gap-4 items-start">
                                     <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">1</div>
                                     <div class="space-y-3 w-full">
@@ -558,7 +523,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Step 2 -->
                                 <div class="flex gap-4 items-start">
                                     <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 mt-1">2</div>
                                     <div>
@@ -566,7 +530,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Step 3 -->
                                 <div class="flex gap-4 items-start">
                                     <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 mt-1">3</div>
                                     <div class="space-y-3 w-full">
@@ -580,7 +543,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Step 4 -->
                                 <div class="flex gap-4 items-start">
                                     <div class="w-8 h-8 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">4</div>
                                     <div>
@@ -588,7 +550,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Success message -->
                                 <div class="flex gap-4 items-center mt-8 pt-6 border-t border-white/10">
                                     <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-xl shrink-0">
                                         <i class="fa-solid fa-check"></i>
@@ -599,7 +560,6 @@
                         </div>
                     </div>
 
-                    <!-- CRU Button -->
                     <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6 font-sans">
                         <div class="flex items-center gap-5 pr-4">
                             <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
@@ -617,7 +577,6 @@
                 </div>
             </div>
 
-            <!-- FAST MESSENGERS -->
             <div id="join-form" class="mt-16 bg-white dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200 font-sans">
                 <p class="text-xl sm:text-2xl font-serif italic text-slate-800 dark:text-slate-200 font-medium leading-relaxed" data-i18n="quote-end">
                     "Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні."
@@ -641,11 +600,9 @@
         </div>
     </section>
 
-    <!-- ОНОВЛЕННЯ ТА ЛИСТИ -->
     <section id="newsletters" class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Спрощена секція заголовка з посиланням на Telegram канал -->
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-6">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="news-h2">Оновлення служіння</h2>
                 <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
@@ -658,14 +615,27 @@
                 </div>
             </div>
 
-            <!-- ARCHIVE BLOG CARDS -->
             <div class="mt-20 font-sans">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 (April) -->
+                    
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div>
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center">
+                            <img src="image_be71bb.jpg" alt="Newsletter Cover June" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jun-26">Червень 2026</span>
+                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jun">Незламні серця</h4>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jun">3 історії стійкості, нові подкасти та Божа надія серед темряви полону й болю.</p>
+                            <a href="newsletter-june.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
-                            <img src="IMG_6228.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="IMG_6228.jpeg" alt="Newsletter Cover April" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
@@ -677,10 +647,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 (March) -->
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
-                            <img src="IMG_6519.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="IMG_6519.jpeg" alt="Newsletter Cover March" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-mar-26">Березень 2026</span>
@@ -692,20 +661,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 (Feb) -->
-                    <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center">
-                            <img src="retrit2.jpeg" alt="Newsletter Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-feb-26">Лютий 2026</span>
-                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-feb">Зимовий ретрит</h4>
-                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-feb">Зимовий ретрит та планування. Роздуми після часу в горах.</p>
-                            <a href="https://mailchi.mp/b257707a4ffb/t5whsbmqs4-573" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="mt-12 text-center">
@@ -720,7 +675,6 @@
     <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-                <!-- Ліва колонка -->
                 <div class="space-y-8">
                     <div class="flex items-center gap-6">
                         <img src="MM_CruBlue_2020_RGB.png" alt="Україна для Христа" class="h-12 w-auto object-contain logo-img">
@@ -750,7 +704,6 @@
                     </div>
                 </div>
 
-                <!-- Права колонка -->
                 <div class="flex flex-col md:items-end justify-between space-y-12">
                     <div class="space-y-4 md:text-right">
                         <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
@@ -785,7 +738,6 @@
             </div>
         </footer>
 
-    <!-- TRANSLATIONS SCRIPT -->
     <script>
         const translations = {
             uk: {
@@ -909,6 +861,9 @@
                 "form-loading": "Відправка...",
                 "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\"",
                 "badge-new": "Нове",
+                "card-jun-26": "Червень 2026",
+                "card-title-jun": "Незламні серця",
+                "card-desc-jun": "3 історії стійкості, нові подкасти та Божа надія серед темряви полону й болю.",
                 "card-apr-26": "Квітень 2026",
                 "card-mar-26": "Березень 2026",
                 "card-feb-26": "Лютий 2026",
@@ -1032,6 +987,9 @@
                 "form-loading": "Sending...",
                 "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
                 "badge-new": "New",
+                "card-jun-26": "June 2026",
+                "card-title-jun": "Unbreakable Hearts",
+                "card-desc-jun": "3 stories of resilience, new podcasts, and God's hope amidst the darkness of captivity and pain.",
                 "card-apr-26": "April 2026",
                 "card-mar-26": "March 2026",
                 "card-feb-26": "February 2026",
@@ -1154,6 +1112,9 @@
                 "form-loading": "Wysyłanie...",
                 "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
                 "badge-new": "Nowe",
+                "card-jun-26": "Czerwiec 2026",
+                "card-title-jun": "Niezłomne Serca",
+                "card-desc-jun": "3 historie niezłomności, nowe podcasty i Boża nadzieja w ciemności niewoli i bólu.",
                 "card-apr-26": "Kwiecień 2026",
                 "card-mar-26": "Marzec 2026",
                 "card-feb-26": "Luty 2026",
@@ -1288,6 +1249,9 @@
                 "form-loading": "Wird gesendet...",
                 "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
                 "badge-new": "Neu",
+                "card-jun-26": "Juni 2026",
+                "card-title-jun": "Unzerbrechliche Herzen",
+                "card-desc-jun": "3 Geschichten über Resilienz, neue Podcasts und Gottes Hoffnung inmitten der Dunkelheit von Gefangenschaft und Schmerz.",
                 "card-apr-26": "April 2026",
                 "card-mar-26": "März 2026",
                 "card-feb-26": "Februar 2026",
@@ -1298,7 +1262,9 @@
                 "card-desc-mar": "Ernte der lang ersehnten Erträge. Geschichten der Wiederherstellung.",
                 "card-desc-feb": "Winter-Retreat und Planung. Reflexionen nach der Zeit in den Bergen.",
                 "btn-read-letter": "Brief lesen",
-                "btn-all-archives": "Alle Archive anzeigen"
+                "btn-all-archives": "Alle Archive anzeigen",
+                "btn-team": "Our team page",
+                "btn-tg-channel": "My Telegram Channel"
             }
         };
 
@@ -1422,27 +1388,29 @@
         const msg = document.getElementById('nl-message');
         const btn = document.getElementById('nl-submit');
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            btn.disabled = true;
-            btn.innerText = window.t('form-loading');
-            msg.classList.add('hidden');
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerText = window.t('form-loading');
+                msg.classList.add('hidden');
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    msg.innerText = window.t('form-success');
-                    msg.className = 'text-green-500 text-sm font-bold mt-2 block';
-                    form.reset();
-                    btn.innerText = window.t('btn-sub');
-                    btn.disabled = false;
-                })
-                .catch(error => {
-                    msg.innerText = window.t('form-error');
-                    msg.className = 'text-red-500 text-sm font-bold mt-2 block';
-                    btn.innerText = window.t('btn-sub');
-                    btn.disabled = false;
-                });
-        });
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        msg.innerText = window.t('form-success');
+                        msg.className = 'text-green-500 text-sm font-bold mt-2 block';
+                        form.reset();
+                        btn.innerText = window.t('btn-sub');
+                        btn.disabled = false;
+                    })
+                    .catch(error => {
+                        msg.innerText = window.t('form-error');
+                        msg.className = 'text-red-500 text-sm font-bold mt-2 block';
+                        btn.innerText = window.t('btn-sub');
+                        btn.disabled = false;
+                    });
+            });
+        }
     </script>
 </body>
 </html>
