@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,6 +27,19 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Виняток для логотипу */
+        .logo-img {
+            background-color: transparent !important;
+        }
+        
+        img:not(.logo-img) {
+            background-color: #E2E8F0;
+            color: transparent;
+        }
+        .dark img:not(.logo-img) {
+            background-color: #1E293B;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased py-8 px-4">
@@ -35,7 +48,7 @@
         
         <div class="p-6 md:p-8 border-b border-slate-100 flex justify-between items-center bg-white">
             <a href="index.html" class="shrink-0 flex items-center">
-                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain">
+                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain logo-img">
             </a>
             <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Червень 2026</span>
         </div>
@@ -87,7 +100,7 @@
             </blockquote>
 
             <div class="rounded-2xl overflow-hidden shadow-sm my-6">
-                <img src="image_be71bb.jpg" alt="Ветеран Славік після поранення" class="w-full h-auto object-cover">
+                <img src="image_be71bb.JPG" alt="Ветеран Славік після поранення" class="w-full h-auto object-cover">
             </div>
 
             <hr class="border-slate-100">
@@ -116,7 +129,7 @@
             </blockquote>
 
             <div class="rounded-2xl overflow-hidden shadow-sm my-6">
-                <img src="image_be6b32.jpg" alt="Ветеран Олександр після повернення з полону" class="w-full h-auto object-cover">
+                <img src="image_be6b32.JPG" alt="Ветеран Олександр після повернення з полону" class="w-full h-auto object-cover">
             </div>
 
             <hr class="border-slate-100">
@@ -142,7 +155,7 @@
             </blockquote>
 
             <div class="rounded-2xl overflow-hidden shadow-sm my-6">
-                <img src="image_be6715.jpg" alt="Ветеран Назарі під час реабілітації" class="w-full h-auto object-cover">
+                <img src="image_be6715.JPG" alt="Ветеран Назарі під час реабілітації" class="w-full h-auto object-cover">
             </div>
 
             <hr class="border-slate-100">
