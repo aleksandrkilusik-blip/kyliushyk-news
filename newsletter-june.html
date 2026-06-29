@@ -54,21 +54,45 @@
             </div>
         </div>
 
-        <!-- Головний банер-вітання -->
-        <div class="bg-brandBlue rounded-3xl shadow-lg overflow-hidden relative group">
-            <div class="absolute inset-0 bg-gradient-to-r from-brandDark to-transparent opacity-80 z-0"></div>
-            <!-- Декоративні кола -->
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl z-0 transition-transform duration-700 group-hover:scale-110"></div>
+        <!-- Головний банер-вітання (Оновлений з фото) -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
             
-            <div class="relative z-10 p-8 sm:p-12 md:p-16 text-center">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase">
+            <div class="p-8 sm:p-12 md:p-14 text-center z-10">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase">
                     Вітаю друзі, останні новини служіння! 👋
                 </h1>
-                <p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-medium">
+                <p class="text-slate-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-medium mb-8">
                     Останні тижні подарували мені знайомство з трьома хлопцями, чиї історії стали свідченням залізної мужності, і нагадали, наскільки сильно кожен із них потребує Божого дотику.
                 </p>
+                
+                <!-- Кнопки -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
+                    <a href="#prayer-requests" class="w-full sm:w-auto bg-brandBlue hover:bg-brandDark text-white font-bold py-3.5 px-8 rounded-xl transition-colors uppercase tracking-wider text-sm shadow-md flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-hands-praying"></i> Молитовні потреби
+                    </a>
+                    <a href="#stories" class="w-full sm:w-auto bg-gold hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded-xl transition-colors uppercase tracking-wider text-sm shadow-md flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-book-open"></i> Історії
+                    </a>
+                </div>
             </div>
+
+            <!-- Блок з фотографією песика -->
+            <div class="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
+                <img src="IMG_3440.jpeg" alt="Мій пухнастий помічник" class="absolute inset-0 w-full h-full object-cover">
+                <!-- Темний градієнт знизу для читабельності тексту -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                <!-- Текст поверх фотографії -->
+                <div class="absolute bottom-0 left-0 w-full p-6 sm:p-8 text-center sm:text-left">
+                    <p class="text-white font-bold text-lg sm:text-2xl drop-shadow-lg flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+                        <i class="fa-solid fa-paw text-gold text-2xl"></i>
+                        Нарешті пес потрохи долучається до служіння і подорожує зі мною
+                    </p>
+                </div>
+            </div>
+            
         </div>
+
+        <div id="stories" class="scroll-mt-8"></div>
 
         <!-- ІСТОРІЯ 1: СЛАВІК -->
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
@@ -220,45 +244,62 @@
                     Підтримати місію
                 </a>
             </div>
+        </div>
 
-            <!-- Блок 3: Молитовні потреби -->
-            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl lg:col-span-2 relative overflow-hidden">
-                <i class="fa-solid fa-hands-praying absolute -right-6 -top-6 text-[120px] text-white/5 rotate-12"></i>
-                <h3 class="text-2xl font-black text-gold uppercase mb-6 relative z-10">Молитовні потреби</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 relative z-10 text-sm text-slate-300">
-                    <div class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+        <!-- ДРУГИЙ РЯДОК ГРІДА (50/50) ДЛЯ ПОТРЕБ ТА ЗВ'ЯЗКУ -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            
+            <!-- Блок 3: Молитовні потреби (Темний) -->
+            <div id="prayer-requests" class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl scroll-mt-8">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-slate-900 shrink-0">
+                        <i class="fa-solid fa-hands-praying text-xl"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black uppercase tracking-wide">Молитовні потреби</h3>
+                </div>
+                <ul class="space-y-5 text-slate-300 text-[15px] sm:text-base">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
                         <span><strong class="text-white">За Славіка</strong> — успішна адаптація до протеза в Одесі.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
                         <span><strong class="text-white">За Сашу</strong> — емоційне зцілення після полону.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
                         <span><strong class="text-white">За Назарі</strong> — відновлення ніг та відкриття серця Богу.</span>
                     </div>
-                    <div class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
                         <span><strong class="text-white">За служіння</strong> — розвиток команди на новий робочий рік.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Блок 4: Зворотній зв'язок (Світлий) -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue flex items-center justify-center text-white shrink-0">
+                            <i class="fa-regular fa-envelope text-xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-wide">Як я можу молитися?</h3>
                     </div>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-8">
+                        Партнерство — це рух у двох напрямках. Поки ви підтримуєте мене молитвами, я щиро прагну ділитися вашими тягарями. Напишіть мені: які у вас зараз труднощі чи радощі?
+                    </p>
                 </div>
-            </div>
-
-            <!-- Блок 4: Зворотній зв'язок -->
-            <div class="bg-white rounded-3xl p-8 shadow-sm border border-brandBlue/30 text-center flex flex-col justify-center items-center">
-                <h3 class="text-lg font-black text-slate-900 mb-2">Як я можу молитися за вас?</h3>
-                <p class="text-slate-500 text-xs mb-6">Напишіть мені, дозвольте підтримати вас.</p>
-                <div class="flex gap-3 w-full">
-                    <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl flex justify-center items-center transition-colors">
-                        <i class="fa-regular fa-envelope"></i>
+                <div class="flex flex-wrap gap-3">
+                    <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-full transition-colors text-sm border border-slate-200">
+                        <i class="fa-solid fa-envelope"></i> Email
                     </a>
-                    <a href="https://t.me/+380976058965" target="_blank" class="flex-1 bg-[#0088cc] hover:bg-[#0077b5] text-white py-3 rounded-xl flex justify-center items-center transition-colors">
-                        <i class="fa-brands fa-telegram text-lg"></i>
+                    <a href="https://t.me/+380976058965" target="_blank" class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-blue-50 hover:bg-blue-100 text-[#0088cc] font-bold rounded-full transition-colors text-sm border border-blue-100">
+                        <i class="fa-brands fa-telegram text-lg"></i> Telegram
                     </a>
                 </div>
             </div>
-
+            
         </div>
 
         <!-- Підвал -->
