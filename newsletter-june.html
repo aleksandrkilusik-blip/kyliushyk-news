@@ -19,240 +19,259 @@
                 extend: {
                     colors: {
                         gold: '#FDBE15',
-                        brandBlue: '#0B7A99'
+                        brandBlue: '#0B7A99',
+                        brandDark: '#085A73'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         
-        /* Виняток для логотипу */
-        .logo-img {
-            background-color: transparent !important;
-        }
+        .logo-img { background-color: transparent !important; }
+        img:not(.logo-img) { background-color: #E2E8F0; color: transparent; }
         
-        img:not(.logo-img) {
-            background-color: #E2E8F0;
-            color: transparent;
-        }
-        .dark img:not(.logo-img) {
-            background-color: #1E293B;
-        }
+        /* Кастомний скроллбар для блоків тексту, якщо вони задовгі */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased py-8 px-4 sm:px-6">
+<body class="text-slate-800 antialiased py-8 px-4 sm:px-6 lg:px-8">
 
-    <div class="max-w-2xl mx-auto space-y-6 lg:space-y-8">
+    <!-- РОЗШИРЕНИЙ КОНТЕЙНЕР ДЛЯ ДВОКОЛОНКОВОГО ДИЗАЙНУ -->
+    <div class="max-w-5xl mx-auto space-y-8">
 
-        <!-- Шапка з логотипом -->
-        <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 p-6 flex justify-between items-center">
-            <a href="index.html" class="shrink-0 flex items-center hover:opacity-80 transition-opacity">
+        <!-- Шапка -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="shrink-0 hover:opacity-80 transition-opacity">
                 <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain logo-img">
             </a>
-            <span class="text-xs font-bold uppercase tracking-widest text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
-                Червень 2026
-            </span>
+            <div class="flex items-center gap-3">
+                <span class="text-sm font-bold text-slate-400">МІСІЯ В УКРАЇНІ</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                <span class="text-sm font-bold text-brandBlue uppercase tracking-wider">Червень 2026</span>
+            </div>
         </div>
 
-        <!-- Вступна картка -->
-        <div class="bg-brandBlue text-white rounded-[2rem] shadow-md p-8 sm:p-10 relative overflow-hidden">
-            <!-- Декоративний елемент -->
-            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl"></div>
+        <!-- Головний банер-вітання -->
+        <div class="bg-brandBlue rounded-3xl shadow-lg overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-brandDark to-transparent opacity-80 z-0"></div>
+            <!-- Декоративні кола -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl z-0 transition-transform duration-700 group-hover:scale-110"></div>
             
-            <h1 class="text-3xl sm:text-4xl font-black mb-4 relative z-10">
-                Вітаю, друзі! 👋
-            </h1>
-            <div class="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed relative z-10">
-                <p>
-                    Цей місяць видався неймовірно насиченим подіями, якими мені дуже хочеться поділитися з вами. Попри внутрішні виклики та відновлення, ми з командою встигли записати три нові епізоди нашого подкасту з надзвичайно глибокими гостями. Про них я детальніше розповім трохи пізніше, коли епізоди вже вийдуть у світ.
-                </p>
-                <p>
-                    Але сьогодні я хочу сфокусувати цей лист на головному — на людях. Останні тижні подарували мені знайомство з трьома хлопцями, чиї історії стали для мене свідченням залізної мужності, і водночас нагадали, наскільки сильно кожен із них потребує Божого дотику та нашої молитовної підтримки.
-                </p>
-            </div>
-        </div>
-
-        <!-- КАРТКА 1: Славік -->
-        <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
-            <div class="bg-slate-50 border-b border-slate-100 p-6 sm:p-8 flex items-center gap-4">
-                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-black text-xl shrink-0">1</div>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">Славік: диво порятунку на мінному полі</h2>
-            </div>
-            
-            <div class="p-6 sm:p-8">
-                <img src="image_be71bb.JPG" alt="Ветеран Славік" class="w-full h-auto object-cover rounded-2xl mb-8 shadow-sm">
-                
-                <div class="space-y-4 text-slate-600 leading-relaxed">
-                    <p>
-                        Славік був мобілізований у 2024 році до морської піхоти. Як і я, він служив у розвідці на Харківському напрямку, а згодом перейшов у підрозділ БПЛА. Під час виконання бойового завдання у Куп'янську їхню позицію помітив ворог — почався масований обстріл. Хлопці прийняли рішення відступати, але вийшли на заміновану ділянку.
-                    </p>
-                    <p>
-                        Побратим рухався попереду, коли поряд стався вибух, і в ту ж мить Славік наступив на міну. Оглушений та поранений, він упав. Не гаючи часу, він сам наклав собі турнікет, підсвітив ліхтариком і побачив, що перша фіксація не зупинила кровотечу. Тоді він наклав другий турнікет вище, під самий пах. Кров зупинилася. Гадаючи, що побратим загинув, Славік заліз у закутки розвалин, накрився термоковдрою і приготувався чекати.
-                    </p>
-                    <p>
-                        Він терпів пекельний біль з 9 вечора до 5 ранку без жодного знеболювального. На світанку повз рухалася група — це був суміжний підрозділ, і серед них виявився живий побратим Славіка! Побратим усю ніч благав командирів іти на пошуки, але через ворожі дрони це було самогубством. Хлопця евакуювали під новими обстрілами через те саме мінне поле. На жаль, у Києві лікарі вже не змогли врятувати ногу вище коліна. 
-                    </p>
-                    <p>
-                        Славік залишається неймовірно позитивним і рухливим. Його сім'я проживає в Одесі, і я вже поділився з ним новиною, що там відкривається філіал центру <em class="not-italic font-semibold text-slate-900">Superhumans</em>. Це шанс для нього проходити реабілітацію поруч із рідними.
-                    </p>
-                </div>
-
-                <blockquote class="mt-8 bg-blue-50/50 border-l-4 border-brandBlue p-5 rounded-r-xl">
-                    <p class="italic text-slate-700 font-medium">
-                        «Бо Він спасе убогого, що кличе, і вбогого, що не має помічника... Від утиску й насилля визволить їхні душі...»
-                    </p>
-                    <cite class="block text-xs font-bold text-brandBlue mt-3 not-italic uppercase tracking-wider">— Псалом 72</cite>
-                </blockquote>
-            </div>
-        </div>
-
-        <!-- КАРТКА 2: Олександр -->
-        <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
-            <div class="bg-slate-50 border-b border-slate-100 p-6 sm:p-8 flex items-center gap-4">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-black text-xl shrink-0">2</div>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">Олександр: кохання, сильніше за стіни полону</h2>
-            </div>
-            
-            <div class="p-6 sm:p-8">
-                <img src="image_be6b32.JPG" alt="Ветеран Олександр" class="w-full h-auto object-cover rounded-2xl mb-8 shadow-sm">
-                
-                <div class="space-y-4 text-slate-600 leading-relaxed">
-                    <p>
-                        Олександр також служив у морській піхоті, але в підрозділі оркестру. Повномасштабну війну він зустрів у Маріуполі. Опинившись у повному оточенні, його підрозділ потрапив у полон. Сашко — дуже вольова і цілеспрямована людина, але полон залишає страшні шрами. Наша команда стала першою, з ким він наважився бодай трохи поділитися тим жахом. Сашко відверто сказав: <span class="font-medium text-slate-800">«Фізично було важко, але морально нас там просто ламали»</span>.
-                    </p>
-                    <p>
-                        Перебуваючи там, він був упевнений, що після повернення його вже ніхто не чекатиме. Його дружина виявилася неймовірно сильною жінкою — вона пройшла через усе можливе й неможливе, аби витягнути чоловіка. Зараз вона сама досі служить у війську. Сашко ділиться, що оскільки вона старша за званням, то під час щоденних дзвінків дає йому «накази», і він слухняно виконує рутинні цивільні справи: ходить до терапевтів, тренується в залі, п'є каву.
-                    </p>
-                    <p>
-                        Він на волі всього місяць, і видно, що адаптація ще попереду. Це постійне проживання травми по новій, біль і розпач, які накочують хвилями. Проте ми продовжуємо спілкування, і я вірю, що Бог має на нього Свій план.
-                    </p>
-                </div>
-
-                <blockquote class="mt-8 bg-blue-50/50 border-l-4 border-brandBlue p-5 rounded-r-xl">
-                    <p class="italic text-slate-700 font-medium">
-                        «Поклади на Господа журбу твою, і Він підтримає тебе... Він зцілює зламаних серцем, і перев'язує їхні рани».
-                    </p>
-                    <cite class="block text-xs font-bold text-brandBlue mt-3 not-italic uppercase tracking-wider">— Псалом 55 / 147</cite>
-                </blockquote>
-            </div>
-        </div>
-
-        <!-- КАРТКА 3: Назарі -->
-        <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
-            <div class="bg-slate-50 border-b border-slate-100 p-6 sm:p-8 flex items-center gap-4">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-black text-xl shrink-0">3</div>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">Назарі: мрійник, який подорожував крізь решітку</h2>
-            </div>
-            
-            <div class="p-6 sm:p-8">
-                <img src="image_be6715.JPG" alt="Ветеран Назарі" class="w-full h-auto object-cover rounded-2xl mb-8 shadow-sm">
-                
-                <div class="space-y-4 text-slate-600 leading-relaxed">
-                    <p>
-                        Назарі (саме так, не Назарій) — боєць «Азову». Його звільнили близько пів року тому. В полоні він отримав важку спінальну травму від побоїв, через що наразі пересувається на кріслі колісному. На початку він взагалі не відчував усю праву сторону і пережив панічний страх, що це назавжди, але зараз є позитивна динаміка.
-                    </p>
-                    <p>
-                        Під час нашої розмови я назвав його «мрійником». У полоні його ліжко було поруч із вікном із решіткою. Назарі годинами дивився на хмари і у своїй уяві подорожував разом із ними різними країнами. Так минала його буденність і очікування свободи. 
-                    </p>
-                    <p>
-                        Найважчим моментом стали 60 днів, коли росіяни дізналися про його участь у боях на позиціях. Тоді почалися дні найжорстокішого тиску. Але сьогодні він дивує своєю активністю: пише пісні, освідчився дівчині та проходить реабілітацію. Лікарі дають хороші шанси на відновлення. Ба більше, Назарі відкритий до розмов про Бога.
-                    </p>
-                </div>
-
-                <blockquote class="mt-8 bg-blue-50/50 border-l-4 border-brandBlue p-5 rounded-r-xl">
-                    <p class="italic text-slate-700 font-medium">
-                        «Він виводить в'язнів із кайданів... Почує Господь убогих, і в'язнями Своїми не зневажить».
-                    </p>
-                    <cite class="block text-xs font-bold text-brandBlue mt-3 not-italic uppercase tracking-wider">— Псалом 68 / 69</cite>
-                </blockquote>
-            </div>
-        </div>
-
-        <!-- КАРТКА: Плани -->
-        <div class="bg-slate-900 text-white rounded-[2rem] shadow-md p-8 sm:p-10 text-center sm:text-left flex flex-col sm:flex-row items-center gap-8">
-            <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center shrink-0 border border-slate-700">
-                <i class="fa-solid fa-route text-3xl text-gold"></i>
-            </div>
-            <div class="space-y-3">
-                <h3 class="text-2xl font-bold text-white">Нові кроки: Superhumans</h3>
-                <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                    Усі ці долі — лише крапля в морі того, що пережили наші захисники. Щоб допомагати їм ще професійніше, я налагодив контакт із центром реабілітації <strong class="text-white">Superhumans</strong> і планую долучитися до їхньої програми «Рівний рівному». Це відкриє двері для ефективного духовного та емоційного служіння ветеранам.
+            <div class="relative z-10 p-8 sm:p-12 md:p-16 text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase">
+                    Вітаю друзі, останні новини служіння! 👋
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-medium">
+                    Останні тижні подарували мені знайомство з трьома хлопцями, чиї історії стали свідченням залізної мужності, і нагадали, наскільки сильно кожен із них потребує Божого дотику.
                 </p>
             </div>
         </div>
 
-        <!-- КАРТКА: Молитовні потреби (Темна) -->
-        <div class="bg-white border-2 border-slate-900 rounded-[2rem] shadow-sm overflow-hidden">
-            <div class="bg-slate-900 p-6 flex items-center justify-center gap-3 text-white">
-                <i class="fa-solid fa-hands-praying text-gold text-xl"></i>
-                <h3 class="font-bold uppercase tracking-widest text-sm sm:text-base">Молитовні потреби</h3>
+        <!-- ІСТОРІЯ 1: СЛАВІК -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <!-- Синя шапка картки -->
+            <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
+                <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
+                    Історія 1. Славік: чудо порятунку на мінному полі
+                </h2>
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
             </div>
-            <div class="p-6 sm:p-8 bg-white">
-                <ul class="space-y-4 text-slate-700 font-medium">
-                    <li class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
-                        <span><strong class="text-slate-900">За Славіка</strong> — за адаптацію до протеза та можливість пройти відновлення у Superhumans в Одесі.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
-                        <span><strong class="text-slate-900">За Олександра</strong> — за його емоційне відновлення після полону та благословення для його дружини.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
-                        <span><strong class="text-slate-900">За Назарі</strong> — за повернення чутливості ніг та відкриття його серця для Христа.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
-                        <span><strong class="text-slate-900">За служіння</strong> — за Боже керівництво у співпраці з «Рівний рівному» та за формування команди партнерів.</span>
-                    </li>
-                </ul>
+            
+            <!-- Тіло картки (Двоколонковий макет) -->
+            <div class="flex flex-col md:flex-row">
+                <!-- Ліва колонка: Фото і цитата -->
+                <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-r border-slate-100 flex flex-col gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
+                        <img src="image_be71bb.JPG" alt="Славік" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <blockquote class="bg-white border-l-4 border-gold p-5 rounded-r-xl shadow-sm mt-auto">
+                        <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
+                            «Бо Він спасе убогого, що кличе, і вбогого, що не має помічника... Від утиску й насилля визволить їхні душі»
+                        </p>
+                        <cite class="block text-xs font-bold text-gold mt-3 not-italic uppercase tracking-widest">— Псалом 72</cite>
+                    </blockquote>
+                </div>
+                
+                <!-- Права колонка: Текст -->
+                <div class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
+                    <p>
+                        <strong class="text-slate-900">Славік був мобілізований у 2024 році</strong> до морської піхоти. Як і я, він служив у розвідці на Харківському напрямку. Під час бойового завдання у Куп'янську їхню позицію помітив ворог. Хлопці відступали під масованим обстрілом і вийшли на заміновану ділянку.
+                    </p>
+                    <p>
+                        Побратим рухався попереду, коли поряд стався вибух. Славік наступив на міну. Оглушений та поранений, він сам наклав собі турнікет, але перша фіксація не зупинила кровотечу. Він холоднокровно наклав другий турнікет вище, під самий пах. Кров зупинилася. Гадаючи, що побратим загинув, Славік сховався в розвалинах і приготувався чекати.
+                    </p>
+                    <p>
+                        <span class="bg-amber-100 text-amber-900 font-semibold px-1 rounded">Він терпів пекельний біль з 9 вечора до 5 ранку</span> без знеболювального. На світанку його знайшла група, серед якої виявився його живий побратим! Евакуація йшла через мінне поле. На жаль, у Києві лікарі вже не змогли врятувати ногу вище коліна.
+                    </p>
+                    <p>
+                        Славік залишається неймовірно позитивним. Я поділився з ним новиною про відкриття <em class="text-brandBlue font-bold">Superhumans</em> в його рідній Одесі — це чудовий шанс для реабілітації поруч із сім'єю.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <!-- КАРТКА: Фінанси -->
-        <div class="bg-amber-50 rounded-[2rem] p-8 border border-amber-200 text-center space-y-5">
-            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto text-amber-500 shadow-sm mb-2">
-                <i class="fa-solid fa-hand-holding-heart text-2xl"></i>
+        <!-- ІСТОРІЯ 2: ОЛЕКСАНДР (Зворотній макет для динаміки) -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
+                <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
+                    Історія 2. Олександр: кохання, сильніше за полон
+                </h2>
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
             </div>
-            <h4 class="text-xl font-bold text-slate-900">Команда партнерів на наступний рік</h4>
-            <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                Ваша підтримка — це те, що дає нам змогу бути поруч із хлопцями в часи найбільшого розпачу. Вона покриває витрати на ретрити та створення контенту.
-            </p>
-            <a href="index.html#partnership" class="inline-block bg-brandBlue hover:bg-opacity-90 text-white font-bold text-sm px-8 py-4 rounded-full shadow-md transition-transform hover:-translate-y-1">
-                Стати фінансовим партнером
+            
+            <!-- Тіло картки (Реверсивний макет) -->
+            <div class="flex flex-col md:flex-row-reverse">
+                <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-l border-slate-100 flex flex-col gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
+                        <img src="image_be6b32.JPG" alt="Олександр" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <blockquote class="bg-white border-l-4 border-brandBlue p-5 rounded-r-xl shadow-sm mt-auto">
+                        <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
+                            «Поклади на Господа журбу твою, і Він підтримає тебе... Він зцілює зламаних серцем»
+                        </p>
+                        <cite class="block text-xs font-bold text-brandBlue mt-3 not-italic uppercase tracking-widest">— Псалом 55 / 147</cite>
+                    </blockquote>
+                </div>
+                
+                <div class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
+                    <p>
+                        <strong class="text-slate-900">Олександр зустрів війну в Маріуполі</strong>, служачи в підрозділі оркестру морської піхоти. Опинившись у повному оточенні, його підрозділ потрапив у полон. Сашко — дуже вольова людина, але наша команда стала першою, з ким він наважився поділитися тим жахом: <em class="text-slate-800 font-medium">«Фізично було важко, але морально нас там просто ламали»</em>.
+                    </p>
+                    <p>
+                        Він був упевнений, що вдома його вже ніхто не чекає. Але дружина виявилася неймовірно сильною жінкою, яка пройшла неможливе, аби його витягнути. Вона досі служить у війську і, будучи старшою за званням, жартома дає йому «накази» під час щоденних дзвінків: сходити до терапевта, потренуватися, випити кави.
+                    </p>
+                    <p>
+                        <span class="bg-blue-50 text-brandBlue font-semibold px-1 rounded">Він на волі всього місяць</span>, і видно, що адаптація ще попереду. Це постійне проживання травми по новій, біль і розпач, які накочують хвилями. Проте ми продовжуємо спілкування, і я вірю, що Бог має на нього Свій план.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ІСТОРІЯ 3: НАЗАРІ -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
+                <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
+                    Історія 3. Назарі: мрійник крізь решітку
+                </h2>
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-2/5 p-6 sm:p-8 bg-slate-50 border-r border-slate-100 flex flex-col gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md aspect-square md:aspect-[4/5] relative">
+                        <img src="image_be6715.JPG" alt="Назарі" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <blockquote class="bg-white border-l-4 border-gold p-5 rounded-r-xl shadow-sm mt-auto">
+                        <p class="italic text-slate-700 text-sm font-medium leading-relaxed">
+                            «Він виводить в'язнів із кайданів... Почує Господь убогих, і в'язнями Своїми не зневажить»
+                        </p>
+                        <cite class="block text-xs font-bold text-gold mt-3 not-italic uppercase tracking-widest">— Псалом 68 / 69</cite>
+                    </blockquote>
+                </div>
+                
+                <div class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
+                    <p>
+                        <strong class="text-slate-900">Назарі — боєць «Азову»</strong>, звільнений пів року тому. В полоні він отримав важку спінальну травму від побоїв і зараз пересувається на кріслі колісному. На початку він пережив панічний страх, не відчуваючи праву сторону тіла, але зараз є позитивна динаміка.
+                    </p>
+                    <p>
+                        Я назвав його «мрійником». У полоні його ліжко стояло біля вікна з решіткою. Назарі годинами дивився на хмари і <span class="bg-emerald-50 text-emerald-700 font-semibold px-1 rounded">у своїй уяві подорожував із ними світом</span>. Найважчими стали 60 днів найжорстокішого тиску, коли ворог дізнався про його участь у боях на позиціях.
+                    </p>
+                    <p>
+                        Але сьогодні Назарі дивує життєлюбством: пише пісні, освідчився дівчині та вперто проходить реабілітацію. Лікарі дають хороші шанси. Ба більше, він повністю відкритий до розмов про Бога і сенс життя.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ІНТЕРАКТИВНА ПЛИТКА (GRID) ДЛЯ ДІЙ ТА ПОТРЕБ -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+            
+            <!-- Блок 1: Плани -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 lg:col-span-2 flex flex-col justify-center transition-all hover:shadow-md">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-700">
+                        <i class="fa-solid fa-route text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase">Нові кроки: Superhumans</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Усі ці долі — лише крапля в морі. Щоб допомагати професійніше, я налагодив контакт із центром реабілітації <strong class="text-brandBlue">Superhumans</strong> і планую долучитися до програми «Рівний рівному». Це відкриє двері для щоденного духовного та емоційного служіння ветеранам.
+                </p>
+            </div>
+
+            <!-- Блок 2: Фінанси (Яскравий акцент) -->
+            <div class="bg-gold rounded-3xl p-8 shadow-md flex flex-col justify-between transition-all hover:-translate-y-1">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 uppercase mb-4">Стати партнером</h3>
+                    <p class="text-slate-900/80 font-medium text-sm leading-relaxed mb-6">
+                        Ваша підтримка дає змогу бути поруч із хлопцями. Вона покриває ретрити та витрати місії на наступний рік.
+                    </p>
+                </div>
+                <a href="index.html#partnership" class="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide">
+                    Підтримати місію
+                </a>
+            </div>
+
+            <!-- Блок 3: Молитовні потреби -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl lg:col-span-2 relative overflow-hidden">
+                <i class="fa-solid fa-hands-praying absolute -right-6 -top-6 text-[120px] text-white/5 rotate-12"></i>
+                <h3 class="text-2xl font-black text-gold uppercase mb-6 relative z-10">Молитовні потреби</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 relative z-10 text-sm text-slate-300">
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                        <span><strong class="text-white">За Славіка</strong> — успішна адаптація до протеза в Одесі.</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                        <span><strong class="text-white">За Олександра</strong> — емоційне зцілення після полону.</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                        <span><strong class="text-white">За Назарі</strong> — відновлення ніг та відкриття серця Богу.</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-brandBlue mt-1"></i>
+                        <span><strong class="text-white">За служіння</strong> — розвиток команди на новий робочий рік.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок 4: Зворотній зв'язок -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-brandBlue/30 text-center flex flex-col justify-center items-center">
+                <h3 class="text-lg font-black text-slate-900 mb-2">Як я можу молитися за вас?</h3>
+                <p class="text-slate-500 text-xs mb-6">Напишіть мені, дозвольте підтримати вас.</p>
+                <div class="flex gap-3 w-full">
+                    <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl flex justify-center items-center transition-colors">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a href="https://t.me/+380976058965" target="_blank" class="flex-1 bg-[#0088cc] hover:bg-[#0077b5] text-white py-3 rounded-xl flex justify-center items-center transition-colors">
+                        <i class="fa-brands fa-telegram text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Підвал -->
+        <div class="pt-8 pb-12 flex flex-col items-center text-center space-y-4">
+            <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+            <div>
+                <p class="font-black text-slate-900 text-lg">Олександр Килюшик</p>
+                <p class="text-slate-500 text-sm">З молитвою про вас</p>
+            </div>
+            <a href="index.html" class="inline-flex items-center gap-2 text-brandBlue hover:text-brandDark transition-colors font-bold text-sm uppercase tracking-widest mt-4">
+                <i class="fa-solid fa-arrow-left"></i> На головну
             </a>
-        </div>
-
-        <!-- КАРТКА: Зворотний зв'язок -->
-        <div class="bg-white p-8 sm:p-10 rounded-[2rem] text-center border border-slate-200 shadow-sm">
-            <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Як я можу молитися за ВАС?</h2>
-            <p class="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed mb-8">
-                Партнерство — це рух у двох напрямках. Поки ви підтримуєте мене молитвами, я щиро прагну ділитися вашими тягарями. Напишіть мені, дозвольте підтримати вас.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:oleksandr.kyliushyk@cru.org" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 hover:bg-slate-200 rounded-full text-sm font-semibold text-slate-800 transition-colors">
-                    <i class="fa-regular fa-envelope text-slate-500"></i> Email
-                </a>
-                <a href="https://t.me/+380976058965" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0088cc]/10 hover:bg-[#0088cc]/20 text-[#0088cc] rounded-full text-sm font-bold transition-colors">
-                    <i class="fa-brands fa-telegram text-lg"></i> Telegram
-                </a>
-            </div>
-        </div>
-
-        <!-- Фінал -->
-        <div class="text-center pt-4 pb-8 space-y-2 text-slate-600">
-            <p>Дякую, що ви є живою частиною цієї місії!</p>
-            <p class="font-medium text-slate-900">З молитвою про вас,</p>
-            <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-16 h-16 rounded-full object-cover shadow-md mx-auto my-4 border-2 border-white">
-            <p class="font-black text-brandBlue text-xl">Олександр Килюшик</p>
-            
-            <div class="pt-8 mt-8">
-                <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-slate-800 transition-colors font-semibold text-sm uppercase tracking-widest">
-                    <i class="fa-solid fa-arrow-left"></i> На головну
-                </a>
-            </div>
         </div>
 
     </div>
