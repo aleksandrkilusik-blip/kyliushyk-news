@@ -57,39 +57,57 @@
             </div>
         </div>
 
-        <!-- Головний банер-вітання (Оновлений з фото) -->
-        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+        <!-- Головний банер-вітання (Стиль карток 50/50) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
-            <div class="p-8 sm:p-12 md:p-14 text-center z-10">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase">
-                    Вітаю друзі, останні новини служіння! 👋
-                </h1>
-                <p class="text-slate-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-medium mb-8">
-                    Останні тижні подарували мені знайомство з трьома хлопцями, чиї історії стали свідченням залізної мужності, і нагадали, наскільки сильно кожен із них потребує Божого дотику.
-                </p>
+            <!-- Ліва картка: Текст і кнопки -->
+            <div class="bg-brandBlue rounded-3xl shadow-sm p-8 sm:p-10 md:p-12 flex flex-col justify-center relative overflow-hidden group">
+                <!-- Декоративний елемент (кола) -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
                 
-                <!-- Кнопки -->
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
-                    <a href="#prayer-requests" class="w-full sm:w-auto bg-brandBlue hover:bg-brandDark text-white font-bold py-3.5 px-8 rounded-xl transition-colors uppercase tracking-wider text-sm shadow-md flex justify-center items-center gap-2">
-                        <i class="fa-solid fa-hands-praying"></i> Молитовні потреби
-                    </a>
-                    <a href="#stories" class="w-full sm:w-auto bg-gold hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded-xl transition-colors uppercase tracking-wider text-sm shadow-md flex justify-center items-center gap-2">
-                        <i class="fa-solid fa-book-open"></i> Історії
-                    </a>
+                <div class="relative z-10">
+                    <!-- Тег дати -->
+                    <div class="flex flex-wrap items-center gap-2 mb-6">
+                        <span class="bg-gold text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
+                            Оновлення служіння
+                        </span>
+                        <span class="border border-white/20 text-white/80 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> Червень 2026
+                        </span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
+                        Вітаю друзі, останні новини служіння! 👋
+                    </h1>
+                    <p class="text-white/90 text-base md:text-lg leading-relaxed font-medium mb-10">
+                        Останні тижні подарували мені знайомство з трьома хлопцями, чиї історії стали свідченням залізної мужності, і нагадали, наскільки сильно кожен із них потребує Божого дотику.
+                    </p>
+                    
+                    <!-- Кнопки -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#stories" class="bg-gold hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded-full transition-colors uppercase tracking-wider text-sm shadow-md text-center">
+                            Читати історії
+                        </a>
+                        <a href="#prayer-requests" class="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold py-3.5 px-8 rounded-full transition-colors uppercase tracking-wider text-sm text-center">
+                            Молитовні потреби
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Блок з фотографією песика -->
-            <div class="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
-                <img src="IMG_3440.jpeg" alt="Мій пухнастий помічник" class="absolute inset-0 w-full h-full object-cover">
+            <!-- Права картка: Фотографія песика -->
+            <div class="rounded-3xl shadow-sm overflow-hidden relative min-h-[400px] lg:min-h-[500px] group">
+                <img src="IMG_3440.jpeg" alt="Мій пухнастий помічник" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <!-- Темний градієнт знизу для читабельності тексту -->
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
-                <!-- Текст поверх фотографії -->
-                <div class="absolute bottom-0 left-0 w-full p-6 sm:p-8 text-center sm:text-left">
-                    <p class="text-white font-bold text-lg sm:text-2xl drop-shadow-lg flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
-                        <i class="fa-solid fa-paw text-gold text-2xl"></i>
-                        Нарешті пес потрохи долучається до служіння і подорожує зі мною
-                    </p>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-0"></div>
+                <!-- Текст поверх фотографії у стильному блоці -->
+                <div class="absolute bottom-0 left-0 w-full p-6 sm:p-8 z-10">
+                    <div class="bg-slate-900/50 backdrop-blur-md border border-white/10 p-5 rounded-2xl">
+                        <p class="text-white font-medium text-sm sm:text-base leading-relaxed flex items-start gap-3">
+                            <i class="fa-solid fa-paw text-gold mt-1 text-lg"></i>
+                            <span>Нарешті пес потрохи долучається до служіння і подорожує зі мною. Це не завжди ідеально, але це наша реальність! 😊</span>
+                        </p>
+                    </div>
                 </div>
             </div>
             
