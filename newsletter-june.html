@@ -96,10 +96,12 @@
             </div>
 
             <!-- Права картка: Фотографія песика -->
-            <div class="rounded-3xl shadow-sm overflow-hidden relative min-h-[400px] lg:min-h-[500px] group">
-                <img src="IMG_3440.jpeg" alt="Мій пухнастий помічник" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <!-- ЗМІНА: прибрано жорстку min-h, фото тепер вписується цілком (object-contain) -->
+            <!-- замість обрізки (object-cover), контейнер темний, щоб не було дивних білих країв -->
+            <div class="rounded-3xl shadow-sm overflow-hidden relative bg-slate-900 min-h-[400px] lg:min-h-[500px] flex items-center justify-center group">
+                <img src="IMG_3440.jpeg" alt="Мій пухнастий помічник" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105">
                 <!-- Темний градієнт знизу для читабельності тексту -->
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-0"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent z-0 pointer-events-none"></div>
                 <!-- Текст поверх фотографії у стильному блоці -->
                 <div class="absolute bottom-0 left-0 w-full p-6 sm:p-8 z-10">
                     <div class="bg-slate-900/50 backdrop-blur-md border border-white/10 p-5 rounded-2xl">
