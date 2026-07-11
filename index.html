@@ -1576,6 +1576,13 @@
                 obs.observe(el);
             });
 
+            /* Запобіжник: якщо анімація не спрацювала — показати все */
+            setTimeout(function () {
+                if (document.querySelectorAll('.reveal-in').length === 0) {
+                    document.querySelectorAll('.reveal-init').forEach(function (el) { el.classList.add('reveal-in'); });
+                }
+            }, 3000);
+
             /* Лічильники статистики */
             function animateCounter(el) {
                 var text = el.textContent.trim();
