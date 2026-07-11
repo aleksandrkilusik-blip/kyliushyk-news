@@ -80,6 +80,19 @@
         .dark img:not(.logo-img) {
             background-color: #1E293B;
         }
+
+        /* === Анімації === */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+        .reveal-init { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal-in { opacity: 1; transform: none; }
+        .tab-content:not(.hidden) { animation: fadeUp .35s ease both; }
+        #bank-details:not(.hidden) { animation: fadeUp .3s ease both; }
+        .hero-fade { animation: fadeUp .8s ease both; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-init { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .tab-content:not(.hidden), #bank-details:not(.hidden), .hero-fade { animation: none !important; }
+            html { scroll-behavior: auto !important; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900 transition-colors duration-200">
@@ -140,7 +153,7 @@
     </header>
 
     <section class="relative pt-32 pb-48 hero-bg transition-colors duration-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="hero-fade max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-tight leading-[0.9] text-white font-sans mb-8">
                 Military <br><span class="text-gold font-serif italic">Ministry</span>
             </h1>
@@ -492,7 +505,7 @@
                 </div>
                 
                 <div class="space-y-6">
-                    <div class="bg-[#d98127] rounded-[2rem] overflow-hidden transition-all duration-300 shadow-xl border border-black/5">
+                    <div id="pay-bank" class="bg-[#d98127] rounded-[2rem] overflow-hidden transition-all duration-300 shadow-xl border border-black/5">
                         <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-[#c97521] transition-colors focus:outline-none">
                             <div class="flex items-center gap-5 pr-4">
                                 <div class="w-12 h-12 sm:w-14 sm:h-14 bg-black/10 rounded-xl flex items-center justify-center shrink-0 text-slate-900">
@@ -561,7 +574,7 @@
                         </div>
                     </div>
 
-                    <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6 font-sans">
+                    <a id="pay-cru" href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6 font-sans">
                         <div class="flex items-center gap-5 pr-4">
                             <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
                                 <i class="fa-solid fa-globe text-xl sm:text-2xl"></i>
@@ -1533,5 +1546,64 @@
             });
         }
     </script>
+    <script>
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            /* Оплата: UA — Приват/Моно, інші мови — Cru.org */
+            var sw = document.getElementById('lang-switcher');
+            function updatePayVisibility() {
+                var lang = sw ? sw.value : 'uk';
+                var bank = document.getElementById('pay-bank');
+                var cru = document.getElementById('pay-cru');
+                if (bank) bank.style.display = (lang === 'uk') ? '' : 'none';
+                if (cru) cru.style.display = (lang === 'uk') ? 'none' : '';
+            }
+            if (sw) sw.addEventListener('change', updatePayVisibility);
+            updatePayVisibility();
+            setTimeout(updatePayVisibility, 300);
+
+            if (reduce) return;
+
+            /* Плавна поява секцій при скролі */
+            var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('reveal-in'); obs.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('section:not(:first-of-type), footer, div[class*="-mt-24"]').forEach(function (el) {
+                el.classList.add('reveal-init');
+                obs.observe(el);
+            });
+
+            /* Лічильники статистики */
+            function animateCounter(el) {
+                var text = el.textContent.trim();
+                var m = text.match(/^(\d+(?:[.,]\d+)?)(.*)$/);
+                if (!m) return;
+                var target = parseFloat(m[1].replace(',', '.'));
+                var suffix = m[2];
+                var decimals = (m[1].split(/[.,]/)[1] || '').length;
+                var dur = 1400, start = null;
+                function step(ts) {
+                    if (!start) start = ts;
+                    var p = Math.min((ts - start) / dur, 1);
+                    p = 1 - Math.pow(1 - p, 3);
+                    el.textContent = (target * p).toFixed(decimals) + suffix;
+                    if (p < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }
+            var counterObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+                });
+            }, { threshold: 0.6 });
+            document.querySelectorAll('span.text-5xl').forEach(function (el) {
+                if (/^\d/.test(el.textContent.trim())) counterObs.observe(el);
+            });
+        })();
+    </script>
+
 </body>
 </html>
