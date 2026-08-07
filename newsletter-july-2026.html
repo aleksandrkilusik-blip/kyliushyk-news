@@ -494,9 +494,16 @@
         }
 
         (function () {
-            let saved = 'uk';
-            try { saved = localStorage.getItem('newsletter-lang') || 'uk'; } catch (e) {}
-            setLanguage(saved);
+            let lang = 'uk';
+            try {
+                const p = new URLSearchParams(window.location.search).get('lang');
+                if (p === 'en' || p === 'uk') {
+                    lang = p;
+                } else {
+                    lang = localStorage.getItem('newsletter-lang') || 'uk';
+                }
+            } catch (e) {}
+            setLanguage(lang);
         })();
     </script>
 
