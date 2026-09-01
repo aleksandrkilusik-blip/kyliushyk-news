@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="uk" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="page-title">Молитовний лист | Серпень 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FDBE15',
+                        brandBlue: '#0B7A99',
+                        brandDark: '#085A73'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        .logo-img { background-color: transparent !important; }
+        img:not(.logo-img) { background-color: #E2E8F0; color: transparent; }
+
+        /* Кастомний скроллбар для блоків тексту, якщо вони задовгі */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+
+        /* Плавний скрол для якорів */
+        html { scroll-behavior: smooth; }
+
+        /* Перемикач мови */
+        .lang-btn { transition: all 0.2s ease; }
+        .lang-btn.active { background-color: #0B7A99; color: #fff; }
+        .lang-btn:not(.active) { background-color: transparent; color: #64748b; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased py-8 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-7xl mx-auto space-y-8">
+
+        <!-- Шапка -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="shrink-0 hover:opacity-80 transition-opacity">
+                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain logo-img">
+            </a>
+            <div class="flex items-center gap-3 flex-wrap justify-center">
+                <span class="text-sm font-bold text-slate-400" data-key="mission-label">МІСІЯ В УКРАЇНІ</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                <span class="text-sm font-bold text-brandBlue uppercase tracking-wider" data-key="month-label">Серпень 2026</span>
+                <div class="flex items-center gap-1 bg-slate-100 rounded-full p-1 ml-2">
+                    <button id="lang-uk" onclick="setLanguage('uk')" class="lang-btn active px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">UA</button>
+                    <button id="lang-en" onclick="setLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">EN</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Головний банер-вітання (Стиль карток 50/50) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Ліва картка: Текст і кнопки -->
+            <div class="bg-brandBlue rounded-3xl shadow-sm p-8 sm:p-10 md:p-12 flex flex-col justify-center relative overflow-hidden group">
+                <!-- Декоративний елемент (кола) -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
+
+                <div class="relative z-10">
+                    <!-- Тег дати -->
+                    <div class="flex flex-wrap items-center gap-2 mb-6">
+                        <span class="bg-gold text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full" data-key="tag-update">
+                            Оновлення служіння
+                        </span>
+                        <span class="border border-white/20 text-white/80 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> <span data-key="month-label">Серпень 2026</span>
+                        </span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight" data-key="h1-title">
+                        Вітаю друзі, останні новини служіння! 👋
+                    </h1>
+                    <p class="text-white/90 text-base md:text-lg leading-relaxed font-medium mb-6" data-key="h1-desc">
+                        Цього місяця я мав можливість побути у відпустці — трохи більше часу наодинці з собою. Чесно кажучи, це не дуже допомогло розслабитись: більшу частину відпустки мене переповнювала тривога.
+                    </p>
+                    <p class="text-white/80 text-sm md:text-base leading-relaxed mb-10" data-key="h1-desc2">
+                        Але слава Богу, що попри різні душевні травми Він торкався мого серця, і я міг насолодитись Його красою навколо. Тому й далі тримаюся певної структури та порядку — щоб депресія не пробивала серце, а служіння могло продовжуватись.
+                    </p>
+
+                    <!-- Кнопки -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#stories" class="bg-gold hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded-full transition-colors uppercase tracking-wider text-sm shadow-md text-center" data-key="btn-stories">
+                            Читати історії
+                        </a>
+                        <a href="#prayer-requests" class="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold py-3.5 px-8 rounded-full transition-colors uppercase tracking-wider text-sm text-center" data-key="btn-prayer">
+                            Молитовні потреби
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Права колонка: дві фотографії -->
+            <div class="flex flex-col gap-6">
+
+                <!-- Фото з відпустки -->
+                <div class="rounded-3xl shadow-sm overflow-hidden relative h-64 sm:h-72 lg:h-auto lg:flex-1 lg:min-h-[280px] group">
+                    <img src="alex-vacation.jpeg" alt="Відпустка в горах" class="absolute inset-0 w-full h-full object-cover object-[center_62%] transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/10 to-transparent z-0"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 sm:p-7 z-10">
+                        <span class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gold mb-2" data-key="rest-tag">
+                            <i class="fa-solid fa-mountain-sun"></i> Час наодинці
+                        </span>
+                        <p class="text-white/95 font-medium text-sm sm:text-base leading-relaxed" data-key="rest-text">
+                            Попри тривогу, Бог давав побачити Свою красу навколо.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Фото з псом -->
+                <div class="rounded-3xl shadow-sm overflow-hidden relative h-72 sm:h-80 lg:h-auto lg:flex-1 lg:min-h-[280px] group">
+                    <img src="dog.jpeg" alt="Мій пухнастий помічник" class="absolute inset-0 w-full h-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-0"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 sm:p-7 z-10">
+                        <span class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gold mb-3" data-key="dog-tag">
+                            <i class="fa-solid fa-paw"></i> P.S. Найщиріша зустріч після відпустки
+                        </span>
+                        <div class="bg-slate-900/50 backdrop-blur-md border border-white/10 p-4 sm:p-5 rounded-2xl">
+                            <p class="text-white font-medium text-sm sm:text-base leading-relaxed flex items-start gap-3">
+                                <i class="fa-solid fa-paw text-gold mt-1 text-lg"></i>
+                                <span data-key="dog-text">Пес був неймовірно щасливий моєму поверненню. Іноді Бог говорить до нас саме через таку просту, безумовну радість. 😊</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="stories" class="scroll-mt-8"></div>
+
+        <!-- ІСТОРІЯ 1: ДІАНА -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
+                <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide" data-key="s1-title">
+                    Історія Діани
+                </h2>
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/2 p-6 sm:p-8 bg-slate-50 border-r border-slate-100 flex flex-col gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md relative w-full h-64 md:h-80 lg:h-[360px] shrink-0">
+                        <img src="diana.jpeg" alt="Діана" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gold" data-key="s1-tag">
+                        <i class="fa-solid fa-shield-halved"></i> Військова, що знову вирушила на ротацію
+                    </span>
+                    <blockquote class="bg-white border-l-4 border-gold p-5 rounded-r-xl shadow-sm mt-auto">
+                        <p class="italic text-slate-700 text-sm font-medium leading-relaxed" data-key="s1-quote">
+                            «Бо Своїм Анголам Він накаже про тебе, щоб тебе стерегли на всіх твоїх дорогах»
+                        </p>
+                        <cite class="block text-xs font-bold text-gold mt-3 not-italic uppercase tracking-widest" data-key="s1-cite">— Псалом 91:11</cite>
+                    </blockquote>
+                </div>
+
+                <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
+                    <p data-key="s1-p1">
+                        <strong class="text-slate-900">З Діаною я познайомився для запису подкасту.</strong> Місяць тому вона повернулася з ротації — і вже незабаром мала вирушати знову. Це та коротка пауза, у якій військові намагаються встигнути прожити ціле цивільне життя.
+                    </p>
+                    <p data-key="s1-p2">
+                        Діана тримається чудово. У неї є міцна підтримка вдома — сім'я та друзі, які завжди поруч. І, як вона ділилася, у неї є <span class="bg-amber-100 text-amber-900 font-semibold px-1 rounded">чітка структура, щоб асимілюватись у цивільне життя</span> після повернення з фронту.
+                    </p>
+                    <p data-key="s1-p3">
+                        <strong class="text-slate-900">Мене це щиро вражає.</strong> Вміння розділяти війну і мирне життя — це не байдужість, це велика внутрішня робота. І дуже тішить, що Діана має інструменти, які їй у цьому допомагають.
+                    </p>
+                    <p data-key="s1-p4">
+                        <strong class="text-slate-900">З 1 вересня вона вже на ротації</strong> — тому дуже прошу вас молитись за неї. Переглянути наш подкаст із Діаною можна <a href="https://youtu.be/A23GSLahOoY" target="_blank" class="text-brandBlue font-bold underline decoration-gold decoration-2 underline-offset-2 hover:text-brandDark">тут</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ІСТОРІЯ 2: ЄВГЕН -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-xl group">
+            <div class="bg-brandBlue px-8 py-4 flex items-center justify-between">
+                <h2 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide" data-key="s2-title">
+                    Історія пана Євгена
+                </h2>
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse">
+                <div class="w-full md:w-1/2 p-6 sm:p-8 bg-slate-50 border-l border-slate-100 flex flex-col gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md relative w-full h-64 md:h-80 lg:h-[360px] shrink-0">
+                        <img src="yevhen.jpeg" alt="Євген" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-brandBlue" data-key="s2-tag">
+                        <i class="fa-solid fa-eye"></i> Танкіст, який вчиться жити без зору
+                    </span>
+                    <blockquote class="bg-white border-l-4 border-brandBlue p-5 rounded-r-xl shadow-sm mt-auto">
+                        <p class="italic text-slate-700 text-sm font-medium leading-relaxed" data-key="s2-quote">
+                            «І Я поведу невидющих дорогою, якої не знають, стежками незнаними їх поведу, оберну перед ними темноту на світло»
+                        </p>
+                        <cite class="block text-xs font-bold text-brandBlue mt-3 not-italic uppercase tracking-widest" data-key="s2-cite">— Ісая 42:16</cite>
+                    </blockquote>
+                </div>
+
+                <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-center space-y-5 text-slate-600 leading-relaxed text-[15px] sm:text-base">
+                    <p data-key="s2-p1">
+                        <strong class="text-slate-900">Пан Євген провів на війні три роки</strong> — був танкістом. Під час виконання бойового завдання поряд розірвався снаряд, і він втратив свідомість. У голові виявилася купа уламків, які довелося діставати: були довготривалі операції.
+                    </p>
+                    <p data-key="s2-p2">
+                        <span class="bg-blue-50 text-brandBlue font-semibold px-1 rounded">Євген втратив зір</span> і зараз вчиться жити з цим, проходячи реабілітацію. Лікарі сказали, що є можливість відновити одне око. Він трохи скутий — така вже вдача, — але дуже відкритий до руху: ділився, що просто не може сидіти в палаті.
+                    </p>
+                    <p data-key="s2-p3">
+                        <strong class="text-slate-900">Ми мали можливість разом пообідати і сходити в кінотеатр.</strong> Так-так, ми повели незрячого в кіно 🙂 Технології не перестають мене дивувати: ми завантажили додаток, який озвучує все, що відбувається на екрані.
+                    </p>
+                    <p data-key="s2-p4">
+                        <strong class="text-slate-900">І ось найважливіше:</strong> ми з подругою одягли пов'язки на очі й розділили цей досвід разом із ним. Це вражає. Іноді щоб побути поруч із людиною, треба на дві години увійти в її темряву.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ІНТЕРАКТИВНА ПЛИТКА (GRID) ДЛЯ ДІЙ ТА ПОТРЕБ -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+
+            <!-- Блок 1: Плани -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 lg:col-span-2 flex flex-col justify-center transition-all hover:shadow-md">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-700">
+                        <i class="fa-solid fa-route text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase" data-key="plans-title">Нові кроки: повернення у ритм</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-4" data-key="plans-text">
+                    Повернувшись до <strong class="text-brandBlue">Львова</strong>, я потрохи почав вливатися у служіння і налагоджувати певні процеси. Хочу й далі ділитися історіями наших військових і тих, хто переживає наслідки війни, — щоб у них була така підтримка, як ваша молитва за них.
+                </p>
+                <p class="text-slate-600 leading-relaxed" data-key="plans-text2">
+                    Дуже хочу зафіксувати якомога більше таких історій. А ще продовжую <strong class="text-brandBlue">пошук команди партнерів</strong>, щоб мати можливість і далі повноцінно здійснювати це служіння.
+                </p>
+            </div>
+
+            <!-- Блок 2: Фінанси (Яскравий акцент) -->
+            <div class="bg-gold rounded-3xl p-8 shadow-md flex flex-col justify-between transition-all hover:-translate-y-1">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900 uppercase mb-4" data-key="partner-title">Стати партнером</h3>
+                    <p class="text-slate-900/80 font-medium text-sm leading-relaxed mb-6" data-key="partner-text">
+                        Я продовжую пошук команди партнерів. Ваша підтримка — це те, що дозволяє бути поруч із військовими та фіксувати їхні історії.
+                    </p>
+                </div>
+                <a href="index.html#partnership" class="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide" data-key="partner-btn">
+                    Підтримати місію
+                </a>
+            </div>
+        </div>
+
+        <!-- ДРУГИЙ РЯДОК ГРІДА (50/50) ДЛЯ ПОТРЕБ ТА ЗВ'ЯЗКУ -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+            <!-- Блок 3: Молитовні потреби (Темний) -->
+            <div id="prayer-requests" class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl scroll-mt-8">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-slate-900 shrink-0">
+                        <i class="fa-solid fa-hands-praying text-xl"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black uppercase tracking-wide" data-key="prayer-title">Молитовні потреби</h3>
+                </div>
+                <ul class="space-y-5 text-slate-300 text-[15px] sm:text-base">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
+                        <span data-key="prayer-li1"><strong class="text-white">За Діану</strong> — захист на ротації, до якої вона вирушила 1 вересня.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
+                        <span data-key="prayer-li2"><strong class="text-white">За пана Євгена</strong> — зцілення ока, успішна реабілітація та мир для його сім'ї й двох дітей.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
+                        <span data-key="prayer-li3"><strong class="text-white">За мене особисто</strong> — щоб тривога відступала, а внутрішня структура й Божа присутність тримали серце.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-0.5 text-lg">•</span>
+                        <span data-key="prayer-li4"><strong class="text-white">За служіння</strong> — команду партнерів і можливість зафіксувати більше історій.</span>
+                    </li>
+                </ul>
+                <p class="mt-8 text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-6" data-key="prayer-closing">
+                    Дякую, що перебуваєте разом зі мною в цьому служінні. Я дуже ціную вашу підтримку — вона відчутна навіть на відстані!
+                </p>
+            </div>
+
+            <!-- Блок 4: Зворотній зв'язок (Світлий) -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue flex items-center justify-center text-white shrink-0">
+                            <i class="fa-regular fa-envelope text-xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-wide" data-key="feedback-title">Як я можу молитися?</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-8" data-key="feedback-text">
+                        Партнерство — це рух у двох напрямках. Поки ви підтримуєте мене молитвами, я щиро прагну ділитися вашими тягарями. Напишіть мені: які у вас зараз труднощі чи радощі?
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-full transition-colors text-sm border border-slate-200">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                    <a href="https://t.me/+380976058965" target="_blank" class="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-blue-50 hover:bg-blue-100 text-[#0088cc] font-bold rounded-full transition-colors text-sm border border-blue-100">
+                        <i class="fa-brands fa-telegram text-lg"></i> Telegram
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Фінальна цитата -->
+        <div class="bg-brandBlue rounded-3xl shadow-sm p-8 sm:p-12 text-center relative overflow-hidden">
+            <div class="absolute -top-16 -left-16 w-56 h-56 bg-white opacity-5 rounded-full blur-3xl"></div>
+            <i class="fa-solid fa-quote-left text-gold text-3xl mb-6 relative z-10"></i>
+            <p class="text-white text-xl sm:text-2xl font-medium leading-relaxed max-w-2xl mx-auto relative z-10 italic" data-key="final-quote">
+                «На пасовиськах зелених Він мене випасає, на тихую воду мене провадить. Він душу мою відживляє»
+            </p>
+            <cite class="block text-gold text-sm font-bold uppercase tracking-widest mt-6 not-italic relative z-10" data-key="final-cite">— Псалом 23:2-3</cite>
+        </div>
+
+        <!-- Підвал -->
+        <div class="pt-8 pb-12 flex flex-col items-center text-center space-y-4">
+            <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+            <div>
+                <p class="font-black text-slate-900 text-lg" data-key="footer-name">Олександр Килюшик</p>
+                <p class="text-slate-500 text-sm" data-key="footer-blessing">З благословенням у Христі</p>
+                <p class="text-slate-400 text-xs mt-1 uppercase tracking-widest font-bold" data-key="footer-role">Служіння серед військових · Місія «Україна для Христа»</p>
+            </div>
+            <a href="index.html" class="inline-flex items-center gap-2 text-brandBlue hover:text-brandDark transition-colors font-bold text-sm uppercase tracking-widest mt-4">
+                <i class="fa-solid fa-arrow-left"></i> <span data-key="footer-back">На головну</span>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const translations = {
+            "page-title": { uk: "Молитовний лист | Серпень 2026", en: "Prayer Letter | August 2026" },
+            "mission-label": { uk: "МІСІЯ В УКРАЇНІ", en: "MISSION IN UKRAINE" },
+            "month-label": { uk: "Серпень 2026", en: "August 2026" },
+            "tag-update": { uk: "Оновлення служіння", en: "Ministry Update" },
+            "h1-title": { uk: "Вітаю друзі, останні новини служіння! 👋", en: "Hello friends, here's the latest ministry news! 👋" },
+            "h1-desc": { uk: "Цього місяця я мав можливість побути у відпустці — трохи більше часу наодинці з собою. Чесно кажучи, це не дуже допомогло розслабитись: більшу частину відпустки мене переповнювала тривога.", en: "This month I had the chance to take some time off — a little more time alone with myself. To be honest, it didn't help me relax much: for most of that break I was filled with anxiety." },
+            "h1-desc2": { uk: "Але слава Богу, що попри різні душевні травми Він торкався мого серця, і я міг насолодитись Його красою навколо. Тому й далі тримаюся певної структури та порядку — щоб депресія не пробивала серце, а служіння могло продовжуватись.", en: "But praise God that, despite the wounds I carry inside, He kept touching my heart, and I was able to enjoy His beauty all around me. That is why I keep holding on to a certain structure and order — so that depression cannot break through my heart, and the ministry can go on." },
+            "btn-stories": { uk: "Читати історії", en: "Read the Stories" },
+            "btn-prayer": { uk: "Молитовні потреби", en: "Prayer Requests" },
+            "rest-tag": { uk: "Час наодинці", en: "Time alone" },
+            "rest-text": { uk: "Попри тривогу, Бог давав побачити Свою красу навколо.", en: "Despite the anxiety, God let me see His beauty all around." },
+            "dog-tag": { uk: "P.S. Найщиріша зустріч після відпустки", en: "P.S. The most sincere welcome home" },
+            "dog-text": { uk: "Пес був неймовірно щасливий моєму поверненню. Іноді Бог говорить до нас саме через таку просту, безумовну радість. 😊", en: "My dog was overjoyed that I was back. Sometimes God speaks to us through exactly that kind of simple, unconditional joy. 😊" },
+
+            "s1-title": { uk: "Історія Діани", en: "Diana's Story" },
+            "s1-tag": { uk: "Військова, що знову вирушила на ротацію", en: "A servicewoman heading back to rotation" },
+            "s1-quote": { uk: "«Бо Своїм Анголам Він накаже про тебе, щоб тебе стерегли на всіх твоїх дорогах»", en: "\"For he shall give his angels charge over thee, to keep thee in all thy ways\"" },
+            "s1-cite": { uk: "— Псалом 91:11", en: "— Psalm 91:11" },
+            "s1-p1": { uk: "<strong class=\"text-slate-900\">З Діаною я познайомився для запису подкасту.</strong> Місяць тому вона повернулася з ротації — і вже незабаром мала вирушати знову. Це та коротка пауза, у якій військові намагаються встигнути прожити ціле цивільне життя.", en: "<strong class=\"text-slate-900\">I met Diana while recording a podcast.</strong> A month earlier she had come back from rotation — and she was already due to head out again. It's that short pause in which soldiers try to fit an entire civilian life." },
+            "s1-p2": { uk: "Діана тримається чудово. У неї є міцна підтримка вдома — сім'я та друзі, які завжди поруч. І, як вона ділилася, у неї є <span class=\"bg-amber-100 text-amber-900 font-semibold px-1 rounded\">чітка структура, щоб асимілюватись у цивільне життя</span> після повернення з фронту.", en: "Diana is holding up remarkably well. She has strong support at home — family and friends who are always there. And, as she shared, she has <span class=\"bg-amber-100 text-amber-900 font-semibold px-1 rounded\">a clear structure for readjusting to civilian life</span> after coming back from the front." },
+            "s1-p3": { uk: "<strong class=\"text-slate-900\">Мене це щиро вражає.</strong> Вміння розділяти війну і мирне життя — це не байдужість, це велика внутрішня робота. І дуже тішить, що Діана має інструменти, які їй у цьому допомагають.", en: "<strong class=\"text-slate-900\">That truly amazes me.</strong> Being able to keep war and peacetime life apart isn't indifference — it's a great deal of inner work. And it gladdens me that Diana has the tools that help her do it." },
+            "s1-p4": { uk: "<strong class=\"text-slate-900\">З 1 вересня вона вже на ротації</strong> — тому дуже прошу вас молитись за неї. Переглянути наш подкаст із Діаною можна <a href=\"https://youtu.be/A23GSLahOoY\" target=\"_blank\" class=\"text-brandBlue font-bold underline decoration-gold decoration-2 underline-offset-2 hover:text-brandDark\">тут</a>.", en: "<strong class=\"text-slate-900\">As of September 1 she is back on rotation</strong> — so I ask you very much to pray for her. You can watch our podcast with Diana <a href=\"https://youtu.be/A23GSLahOoY\" target=\"_blank\" class=\"text-brandBlue font-bold underline decoration-gold decoration-2 underline-offset-2 hover:text-brandDark\">here</a>." },
+
+            "s2-title": { uk: "Історія пана Євгена", en: "Yevhen's Story" },
+            "s2-tag": { uk: "Танкіст, який вчиться жити без зору", en: "A tank crewman learning to live without sight" },
+            "s2-quote": { uk: "«І Я поведу невидющих дорогою, якої не знають, стежками незнаними їх поведу, оберну перед ними темноту на світло»", en: "\"And I will bring the blind by a way that they knew not; I will lead them in paths that they have not known: I will make darkness light before them\"" },
+            "s2-cite": { uk: "— Ісая 42:16", en: "— Isaiah 42:16" },
+            "s2-p1": { uk: "<strong class=\"text-slate-900\">Пан Євген провів на війні три роки</strong> — був танкістом. Під час виконання бойового завдання поряд розірвався снаряд, і він втратив свідомість. У голові виявилася купа уламків, які довелося діставати: були довготривалі операції.", en: "<strong class=\"text-slate-900\">Yevhen spent three years at war</strong> as a tank crewman. During a combat mission a shell exploded nearby and he lost consciousness. His head was full of shrapnel that had to be removed — there were long, drawn-out surgeries." },
+            "s2-p2": { uk: "<span class=\"bg-blue-50 text-brandBlue font-semibold px-1 rounded\">Євген втратив зір</span> і зараз вчиться жити з цим, проходячи реабілітацію. Лікарі сказали, що є можливість відновити одне око. Він трохи скутий — така вже вдача, — але дуже відкритий до руху: ділився, що просто не може сидіти в палаті.", en: "<span class=\"bg-blue-50 text-brandBlue font-semibold px-1 rounded\">Yevhen lost his sight</span> and is now learning to live with it while going through rehabilitation. Doctors have told him there is a chance of restoring one eye. He's a little reserved — that's simply his character — but very open to being on the move: he told me he just can't sit still in a hospital room." },
+            "s2-p3": { uk: "<strong class=\"text-slate-900\">Ми мали можливість разом пообідати і сходити в кінотеатр.</strong> Так-так, ми повели незрячого в кіно 🙂 Технології не перестають мене дивувати: ми завантажили додаток, який озвучує все, що відбувається на екрані.", en: "<strong class=\"text-slate-900\">We had the chance to share lunch and then go to the cinema.</strong> Yes, you read that right — we took a blind man to the movies 🙂 Technology never ceases to amaze me: we downloaded an app that narrates everything happening on screen." },
+            "s2-p4": { uk: "<strong class=\"text-slate-900\">І ось найважливіше:</strong> ми з подругою одягли пов'язки на очі й розділили цей досвід разом із ним. Це вражає. Іноді щоб побути поруч із людиною, треба на дві години увійти в її темряву.", en: "<strong class=\"text-slate-900\">And here's what mattered most:</strong> a friend and I put on blindfolds and shared the whole experience with him. It leaves a deep impression. Sometimes, to truly be beside someone, you have to step into their darkness for a couple of hours." },
+
+            "plans-title": { uk: "Нові кроки: повернення у ритм", en: "New Steps: Back into Rhythm" },
+            "plans-text": { uk: "Повернувшись до <strong class=\"text-brandBlue\">Львова</strong>, я потрохи почав вливатися у служіння і налагоджувати певні процеси. Хочу й далі ділитися історіями наших військових і тих, хто переживає наслідки війни, — щоб у них була така підтримка, як ваша молитва за них.", en: "Back in <strong class=\"text-brandBlue\">Lviv</strong>, I've slowly been easing back into ministry and getting certain processes in order. I want to keep sharing the stories of our soldiers and of those living with the aftermath of war — so that they have the kind of support your prayers give them." },
+            "plans-text2": { uk: "Дуже хочу зафіксувати якомога більше таких історій. А ще продовжую <strong class=\"text-brandBlue\">пошук команди партнерів</strong>, щоб мати можливість і далі повноцінно здійснювати це служіння.", en: "I very much want to record as many of these stories as possible. And I'm still <strong class=\"text-brandBlue\">looking for a team of partners</strong>, so that this ministry can continue in full." },
+
+            "partner-title": { uk: "Стати партнером", en: "Become a Partner" },
+            "partner-text": { uk: "Я продовжую пошук команди партнерів. Ваша підтримка — це те, що дозволяє бути поруч із військовими та фіксувати їхні історії.", en: "I'm still building a team of partners. Your support is what makes it possible to stand alongside these soldiers and to record their stories." },
+            "partner-btn": { uk: "Підтримати місію", en: "Support the Ministry" },
+
+            "prayer-title": { uk: "Молитовні потреби", en: "Prayer Requests" },
+            "prayer-li1": { uk: "<strong class=\"text-white\">За Діану</strong> — захист на ротації, до якої вона вирушила 1 вересня.", en: "<strong class=\"text-white\">For Diana</strong> — protection on the rotation she left for on September 1." },
+            "prayer-li2": { uk: "<strong class=\"text-white\">За пана Євгена</strong> — зцілення ока, успішна реабілітація та мир для його сім'ї й двох дітей.", en: "<strong class=\"text-white\">For Yevhen</strong> — healing for his eye, a successful rehabilitation, and peace for his wife and two children." },
+            "prayer-li3": { uk: "<strong class=\"text-white\">За мене особисто</strong> — щоб тривога відступала, а внутрішня структура й Божа присутність тримали серце.", en: "<strong class=\"text-white\">For me personally</strong> — that anxiety would loosen its grip, and that inner structure and God's presence would keep my heart steady." },
+            "prayer-li4": { uk: "<strong class=\"text-white\">За служіння</strong> — команду партнерів і можливість зафіксувати більше історій.", en: "<strong class=\"text-white\">For the ministry</strong> — a team of partners, and the chance to record more of these stories." },
+            "prayer-closing": { uk: "Дякую, що перебуваєте разом зі мною в цьому служінні. Я дуже ціную вашу підтримку — вона відчутна навіть на відстані!", en: "Thank you for standing with me in this ministry. I deeply value your support — it is felt even from a distance!" },
+
+            "feedback-title": { uk: "Як я можу молитися?", en: "How Can I Pray for You?" },
+            "feedback-text": { uk: "Партнерство — це рух у двох напрямках. Поки ви підтримуєте мене молитвами, я щиро прагну ділитися вашими тягарями. Напишіть мені: які у вас зараз труднощі чи радощі?", en: "Partnership moves in two directions. While you support me in prayer, I genuinely want to carry your burdens too. Write to me: what challenges or joys are you facing right now?" },
+
+            "final-quote": { uk: "«На пасовиськах зелених Він мене випасає, на тихую воду мене провадить. Він душу мою відживляє»", en: "\"He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul\"" },
+            "final-cite": { uk: "— Псалом 23:2-3", en: "— Psalm 23:2-3" },
+
+            "footer-name": { uk: "Олександр Килюшик", en: "Oleksandr Kyliushyk" },
+            "footer-blessing": { uk: "З благословенням у Христі", en: "With blessings in Christ" },
+            "footer-role": { uk: "Служіння серед військових · Місія «Україна для Христа»", en: "Ministry among the military · Ukraine for Christ Mission" },
+            "footer-back": { uk: "На головну", en: "Back to Home" }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-key]').forEach(function (el) {
+                const key = el.getAttribute('data-key');
+                if (translations[key] && translations[key][lang] !== undefined) {
+                    el.innerHTML = translations[key][lang];
+                }
+            });
+            document.getElementById('lang-uk').classList.toggle('active', lang === 'uk');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            try { localStorage.setItem('newsletter-lang', lang); } catch (e) {}
+        }
+
+        (function () {
+            let saved = 'uk';
+            try { saved = localStorage.getItem('newsletter-lang') || 'uk'; } catch (e) {}
+            setLanguage(saved);
+        })();
+    </script>
+
+</body>
+</html>
