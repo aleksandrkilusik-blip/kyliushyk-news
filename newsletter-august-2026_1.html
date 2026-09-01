@@ -237,16 +237,91 @@
                 </p>
             </div>
 
-            <!-- Блок 2: Фінанси (Яскравий акцент) -->
-            <div class="bg-gold rounded-3xl p-8 shadow-md flex flex-col justify-between transition-all hover:-translate-y-1">
-                <div>
-                    <h3 class="text-xl font-black text-slate-900 uppercase mb-4" data-key="partner-title">Стати партнером</h3>
-                    <p class="text-slate-900/80 font-medium text-sm leading-relaxed mb-6" data-key="partner-text">
-                        Я продовжую пошук команди партнерів. Ваша підтримка — це те, що дозволяє бути поруч із військовими та фіксувати їхні історії.
-                    </p>
+            <!-- Блок 2: Підтримати мене -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col">
+                <h3 class="text-xl font-black text-slate-900 uppercase mb-3" data-key="partner-title">Підтримати мене</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-5" data-key="partner-text">
+                    Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнером, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України.
+                </p>
+
+                <div class="bg-[#d98127] rounded-2xl overflow-hidden shadow-md border border-black/5">
+                    <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-5 flex items-center justify-between gap-3 hover:bg-[#c97521] transition-colors focus:outline-none">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 bg-black/10 rounded-xl flex items-center justify-center shrink-0 text-slate-900">
+                                <i class="fa-regular fa-credit-card text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-extrabold text-slate-900 leading-snug" data-key="btn-orange-title">Підтримати через Приват24 або Monobank</h4>
+                                <p class="text-xs font-bold text-slate-900/70 mt-1" data-key="btn-orange-sub">Натисніть, щоб переглянути реквізити</p>
+                            </div>
+                        </div>
+                        <div class="w-9 h-9 bg-slate-900 text-white rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 acc-icon">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </button>
+
+                    <div id="bank-details" class="hidden bg-[#0c3953] text-white p-5 border-t border-black/10">
+                        <h5 class="text-base font-bold mb-6" data-key="acc-title">Переказ через Приват24 або Monobank:</h5>
+                        <div class="space-y-6">
+                            <div class="flex gap-3 items-start">
+                                <div class="w-7 h-7 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0">1</div>
+                                <div class="space-y-2 w-full min-w-0">
+                                    <p class="text-slate-200 text-sm font-medium" data-key="acc-step1">В меню "Платежі" (у Monobank: "Платіж за IBAN") введіть рахунок:</p>
+                                    <div class="bg-[#154b68] rounded-xl p-3 border border-white/10 space-y-3">
+                                        <code class="block text-sm font-mono text-white font-bold tracking-wider break-all">UA063052990000026004045007863</code>
+                                        <button onclick="copyToClipboard('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 w-full justify-center">
+                                            <i class="fa-regular fa-copy"></i> <span data-key="btn-copy" class="copy-text">Скопіювати</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 items-start">
+                                <div class="w-7 h-7 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0 mt-1">2</div>
+                                <p class="text-slate-200 text-sm font-medium leading-relaxed" data-key="acc-step2">Система автоматично знайде отримувача. Перевірте: <br><strong class="text-white text-base font-extrabold">Місія "Україна для Христа"</strong></p>
+                            </div>
+
+                            <div class="flex gap-3 items-start">
+                                <div class="w-7 h-7 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0 mt-1">3</div>
+                                <div class="space-y-2 w-full min-w-0">
+                                    <p class="text-slate-200 text-sm font-medium leading-relaxed" data-key="acc-step3">У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class="text-gold font-bold">обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):</p>
+                                    <div class="bg-[#154b68] rounded-xl p-3 border border-white/10 space-y-3">
+                                        <code class="block text-xl font-extrabold text-gold tracking-widest pl-1">5544</code>
+                                        <button onclick="copyToClipboard('5544', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 w-full justify-center">
+                                            <i class="fa-regular fa-copy"></i> <span data-key="btn-copy" class="copy-text">Скопіювати</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 items-start">
+                                <div class="w-7 h-7 bg-gold text-slate-900 rounded-full flex items-center justify-center font-extrabold text-xs shrink-0">4</div>
+                                <p class="text-slate-200 text-sm font-medium" data-key="acc-step4">Вкажіть бажану суму пожертви. Призначення платежу зазвичай формується автоматично.</p>
+                            </div>
+
+                            <div class="flex gap-3 items-center pt-5 border-t border-white/10">
+                                <div class="w-9 h-9 bg-green-500 text-white rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p class="text-sm leading-relaxed font-medium" data-key="acc-thanks">Підтвердіть платіж.<br><span class="text-gold uppercase tracking-wider font-extrabold">Щиро дякуємо за вашу підтримку!</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <a href="index.html#partnership" class="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide" data-key="partner-btn">
-                    Підтримати місію
+
+                <a href="https://give.cru.org/1315771?modal=give-gift&amp;d=1315771" target="_blank" rel="noopener noreferrer" class="mt-4 bg-slate-50 hover:bg-slate-100 rounded-2xl p-5 flex items-center justify-between gap-3 transition-colors border border-slate-200 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 text-blue-600">
+                            <i class="fa-solid fa-globe text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-extrabold text-slate-900 leading-snug" data-key="btn-cru-title">Підтримати через Cru.org</h4>
+                            <p class="text-xs font-bold text-slate-500 mt-1" data-key="btn-cru-sub">Для міжнародних банківських карток</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 bg-slate-100 group-hover:bg-blue-600 group-hover:text-white text-slate-600 rounded-full flex items-center justify-center shrink-0 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                 </a>
             </div>
         </div>
@@ -373,9 +448,19 @@
             "plans-text": { uk: "Повернувшись до <strong class=\"text-brandBlue\">Львова</strong>, я потрохи почав вливатися у служіння і налагоджувати певні процеси. Хочу й далі ділитися історіями наших військових і тих, хто переживає наслідки війни, — щоб у них була така підтримка, як ваша молитва за них.", en: "Back in <strong class=\"text-brandBlue\">Lviv</strong>, I've slowly been easing back into ministry and getting certain processes in order. I want to keep sharing the stories of our soldiers and of those living with the aftermath of war — so that they have the kind of support your prayers give them." },
             "plans-text2": { uk: "Дуже хочу зафіксувати якомога більше таких історій. А ще продовжую <strong class=\"text-brandBlue\">пошук команди партнерів</strong>, щоб мати можливість і далі повноцінно здійснювати це служіння.", en: "I very much want to record as many of these stories as possible. And I'm still <strong class=\"text-brandBlue\">looking for a team of partners</strong>, so that this ministry can continue in full." },
 
-            "partner-title": { uk: "Стати партнером", en: "Become a Partner" },
-            "partner-text": { uk: "Я продовжую пошук команди партнерів. Ваша підтримка — це те, що дозволяє бути поруч із військовими та фіксувати їхні історії.", en: "I'm still building a team of partners. Your support is what makes it possible to stand alongside these soldiers and to record their stories." },
-            "partner-btn": { uk: "Підтримати місію", en: "Support the Ministry" },
+            "partner-title": { uk: "Підтримати мене", en: "Support Me" },
+            "partner-text": { uk: "Моє служіння повністю фінансується завдяки щедрій підтримці таких людей, як ви. Стаючи моїм фінансовим партнером, ви безпосередньо інвестуєте у духовне та психологічне відновлення ветеранів України.", en: "My ministry is funded entirely through the generous support of people like you. By becoming my financial partner, you invest directly in the spiritual and psychological recovery of Ukraine's veterans." },
+            "btn-orange-title": { uk: "Підтримати через Приват24 або Monobank", en: "Give via Privat24 or Monobank" },
+            "btn-orange-sub": { uk: "Натисніть, щоб переглянути реквізити", en: "Tap to see the bank details" },
+            "acc-title": { uk: "Переказ через Приват24 або Monobank:", en: "Transfer via Privat24 or Monobank:" },
+            "acc-step1": { uk: "В меню \"Платежі\" (у Monobank: \"Платіж за IBAN\") введіть рахунок:", en: "In the \"Payments\" menu (in Monobank: \"Payment by IBAN\") enter the account:" },
+            "acc-step2": { uk: "Система автоматично знайде отримувача. Перевірте: <br><strong class=\"text-white text-base font-extrabold\">Місія \"Україна для Христа\"</strong>", en: "The system will find the recipient automatically. Please check it says: <br><strong class=\"text-white text-base font-extrabold\">Ukraine for Christ Mission</strong>" },
+            "acc-step3": { uk: "У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class=\"text-gold font-bold\">обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):", en: "In the \"Payment comment\" field (or \"Referred by\") <strong class=\"text-gold font-bold\">you must enter</strong> my internal number in the mission (you can copy it below):" },
+            "acc-step4": { uk: "Вкажіть бажану суму пожертви. Призначення платежу зазвичай формується автоматично.", en: "Enter the amount you wish to give. The payment purpose is usually filled in automatically." },
+            "acc-thanks": { uk: "Підтвердіть платіж.<br><span class=\"text-gold uppercase tracking-wider font-extrabold\">Щиро дякуємо за вашу підтримку!</span>", en: "Confirm the payment.<br><span class=\"text-gold uppercase tracking-wider font-extrabold\">Thank you sincerely for your support!</span>" },
+            "btn-copy": { uk: "Скопіювати", en: "Copy" },
+            "btn-cru-title": { uk: "Підтримати через Cru.org", en: "Give via Cru.org" },
+            "btn-cru-sub": { uk: "Для міжнародних банківських карток", en: "For international bank cards" },
 
             "prayer-title": { uk: "Молитовні потреби", en: "Prayer Requests" },
             "prayer-li1": { uk: "<strong class=\"text-white\">За Діану</strong> — захист на ротації, до якої вона вирушила 1 вересня.", en: "<strong class=\"text-white\">For Diana</strong> — protection on the rotation she left for on September 1." },
@@ -395,6 +480,26 @@
             "footer-role": { uk: "Служіння серед військових · Місія «Україна для Христа»", en: "Ministry among the military · Ukraine for Christ Mission" },
             "footer-back": { uk: "На головну", en: "Back to Home" }
         };
+
+        function toggleAccordion(id, button) {
+            const el = document.getElementById(id);
+            const icon = button.querySelector('.acc-icon');
+            el.classList.toggle('hidden');
+            icon.style.transform = el.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(function () {
+                const label = button.querySelector('.copy-text');
+                const original = label.textContent;
+                label.textContent = document.documentElement.lang === 'en' ? 'Copied!' : 'Скопійовано!';
+                button.style.backgroundColor = 'rgba(34, 197, 94, 0.25)';
+                setTimeout(function () {
+                    label.textContent = original;
+                    button.style.backgroundColor = '';
+                }, 2000);
+            });
+        }
 
         function setLanguage(lang) {
             document.documentElement.lang = lang;
