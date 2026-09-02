@@ -515,7 +515,7 @@
         }
 
         (function () {
-            let saved = 'uk';
+            let saved = new URLSearchParams(location.search).get('lang'); if (saved === 'en' || saved === 'uk') { setLanguage(saved); return; } saved = 'uk';
             try { saved = localStorage.getItem('newsletter-lang') || 'uk'; } catch (e) {}
             setLanguage(saved);
         })();
