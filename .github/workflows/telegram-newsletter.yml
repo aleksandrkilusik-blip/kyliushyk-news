@@ -1,5 +1,9 @@
 name: Публікація молитовного листа в Telegram
 
+# Пост у канал іде ТІЛЬКИ якщо в повідомленні коміту є мітка [tg].
+# Заливайте чернетку і правте скільки завгодно — доки мітки немає, канал мовчить.
+# Коли лист готовий: зробіть будь-яку правку файлу з [tg] у commit message.
+
 on:
   push:
     branches: [main]
@@ -24,23 +28,34 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Знайти нові файли листів
+      - name: Перевірити мітку [tg] і знайти файли листів
         id: detect
         run: |
           set -euo pipefail
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Ручний запуск — мітка не потрібна."
             FILES="${{ github.event.inputs.file }}"
           else
             BEFORE="${{ github.event.before }}"
-            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
-              # перший пуш у гілку — беремо файли останнього коміту
-              FILES=$(git diff-tree --no-commit-id --name-only --diff-filter=A -r "${{ github.sha }}" -- 'newsletter-*.html' || true)
+            if [ -z "$BEFORE" ] \
+               || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+               || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+              MSGS=$(git log -1 --format=%B "${{ github.sha }}")
+              CHANGED=$(git diff-tree --no-commit-id --name-only --diff-filter=AM -r "${{ github.sha }}" -- 'newsletter-*.html' || true)
             else
-              # тільки ДОДАНІ файли (--diff-filter=A), редагування старих листів не постяться
-              FILES=$(git diff --name-only --diff-filter=A "$BEFORE" "${{ github.sha }}" -- 'newsletter-*.html' || true)
+              MSGS=$(git log --format=%B "$BEFORE..${{ github.sha }}")
+              CHANGED=$(git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" -- 'newsletter-*.html' || true)
+            fi
+
+            if echo "$MSGS" | grep -qiF '[tg]'; then
+              echo "Мітку [tg] знайдено — публікуємо."
+              FILES="$CHANGED"
+            else
+              echo "Мітки [tg] у повідомленні коміту немає — це чернетка, публікацію пропущено."
+              FILES=""
             fi
           fi
-          echo "Знайдено: ${FILES:-<нічого>}"
+          echo "Файли: ${FILES:-<немає>}"
           {
             echo "files<<EOF"
             echo "${FILES}"
