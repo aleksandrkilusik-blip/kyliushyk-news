@@ -1,0 +1,113 @@
+name: Публікація молитовного листа в Telegram
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'newsletter-*.html'
+  # Ручний запуск: Actions → цей workflow → Run workflow → вписати ім'я файлу
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "Файл листа, напр. newsletter-september-2026.html"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Клонувати репозиторій
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Знайти нові файли листів
+        id: detect
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FILES="${{ github.event.inputs.file }}"
+          else
+            BEFORE="${{ github.event.before }}"
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              # перший пуш у гілку — беремо файли останнього коміту
+              FILES=$(git diff-tree --no-commit-id --name-only --diff-filter=A -r "${{ github.sha }}" -- 'newsletter-*.html' || true)
+            else
+              # тільки ДОДАНІ файли (--diff-filter=A), редагування старих листів не постяться
+              FILES=$(git diff --name-only --diff-filter=A "$BEFORE" "${{ github.sha }}" -- 'newsletter-*.html' || true)
+            fi
+          fi
+          echo "Знайдено: ${FILES:-<нічого>}"
+          {
+            echo "files<<EOF"
+            echo "${FILES}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Надіслати в Telegram
+        if: steps.detect.outputs.files != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SITE_BASE: https://aleksandrkilusik-blip.github.io/kyliushyk-news
+          FILES: ${{ steps.detect.outputs.files }}
+        run: |
+          python3 - <<'PY'
+          import html, os, pathlib, re, sys, urllib.parse, urllib.request, json
+
+          token = os.environ["TELEGRAM_BOT_TOKEN"]
+          chat_id = os.environ["TELEGRAM_CHAT_ID"]
+          base = os.environ["SITE_BASE"].rstrip("/")
+
+          def title_of(path: pathlib.Path) -> str:
+              raw = path.read_text(encoding="utf-8", errors="ignore")
+              # 1) og:title, якщо є
+              m = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)', raw, re.I)
+              # 2) звичайний <title> (може мати атрибути, напр. data-key)
+              m = m or re.search(r"<title[^>]*>(.*?)</title>", raw, re.I | re.S)
+              # 3) перший <h1>
+              m = m or re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.I | re.S)
+              if m:
+                  text = re.sub(r"<[^>]+>", "", m.group(1))
+                  text = html.unescape(text).strip()
+                  text = re.sub(r"\s+", " ", text)
+                  if text:
+                      return text
+              # 4) запасний варіант — з імені файлу
+              return path.stem.replace("-", " ").replace("_", " ").strip()
+
+          sent = 0
+          for name in [f.strip() for f in os.environ["FILES"].splitlines() if f.strip()]:
+              path = pathlib.Path(name)
+              if not path.is_file():
+                  print(f"::warning::файл не знайдено: {name}")
+                  continue
+              title = title_of(path)
+              url = f"{base}/{urllib.parse.quote(path.name)}"
+              text = f"📬 <b>{html.escape(title)}</b>\n\n{url}"
+
+              payload = urllib.parse.urlencode({
+                  "chat_id": chat_id,
+                  "text": text,
+                  "parse_mode": "HTML",
+                  "disable_web_page_preview": "false",
+              }).encode()
+              req = urllib.request.Request(
+                  f"https://api.telegram.org/bot{token}/sendMessage", data=payload
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      body = json.loads(r.read().decode())
+                  print(f"✅ надіслано: {title} → {url}")
+                  sent += 1
+              except Exception as e:
+                  detail = getattr(e, "read", lambda: b"")().decode(errors="ignore")
+                  print(f"::error::не вдалося надіслати {name}: {e} {detail}")
+                  sys.exit(1)
+
+          if sent == 0:
+              print("Нових листів для публікації немає.")
+          PY
