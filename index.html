@@ -649,7 +649,10 @@
                 <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
                     Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.
                 </p>
-                <form name="submit-to-google-sheet" class="max-w-2xl mx-auto text-left pt-2">
+                <form name="subscribe-form" method="POST"
+                      action="https://formsubmit.co/oleksandr.kyliushyk@cru.org"
+                      class="max-w-2xl mx-auto text-left pt-2">
+                    <input type="hidden" name="_next" value="https://aleksandrkilusik-blip.github.io/kyliushyk-news/index.html?subscribed=1#newsletters">
                     <input type="hidden" name="_subject" value="Новий партнер молитовного листа">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -1603,39 +1606,20 @@
         });
 
         // --- Форма підписки ---
-        // FormSubmit: лист про нового підписника йде на oleksandr.kyliushyk@cru.org
-        const scriptURL = 'https://formsubmit.co/ajax/oleksandr.kyliushyk@cru.org';
-        const form = document.forms['submit-to-google-sheet'];
-        const msg = document.getElementById('nl-message');
-        const btn = document.getElementById('nl-submit');
-
-        if (form) {
-            form.addEventListener('submit', e => {
-                e.preventDefault();
-                btn.disabled = true;
-                btn.innerText = window.t('form-loading');
-                msg.classList.add('hidden');
-
-                fetch(scriptURL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)})
-                    .then(response => response.json().catch(() => ({ success: 'false', message: 'HTTP ' + response.status })))
-                    .then(data => {
-                        console.log('[subscribe] відповідь сервісу:', data);
-                        if (String(data.success) !== 'true') throw new Error(data.message || 'failed');
-                        msg.innerText = window.t('form-success');
-                        msg.className = 'text-green-500 text-sm font-bold mt-2 block';
-                        form.reset();
-                        btn.innerText = window.t('btn-sub');
-                        btn.disabled = false;
-                    })
-                    .catch(error => {
-                        console.error('[subscribe]', error);
-                        msg.innerText = window.t('form-error') + ' (' + (error && error.message ? error.message : '?') + ')';
-                        msg.className = 'text-red-500 text-sm font-bold mt-2 block';
-                        btn.innerText = window.t('btn-sub');
-                        btn.disabled = false;
-                    });
-            });
-        }
+        // Звичайний POST на FormSubmit: браузер іде на їхню сторінку і повертається
+        // сюди з ?subscribed=1. Ніякого fetch — отже ніякого CORS.
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            if (!params.has('subscribed')) return;
+            const msg = document.getElementById('nl-message');
+            if (msg) {
+                msg.innerText = window.t('form-success');
+                msg.className = 'text-green-500 text-sm font-bold mt-2 block';
+            }
+            history.replaceState(null, '', window.location.pathname + window.location.hash);
+            const target = document.getElementById('newsletters');
+            if (target) setTimeout(() => target.scrollIntoView(), 100);
+        })();
     </script>
     <script>
         (function () {
