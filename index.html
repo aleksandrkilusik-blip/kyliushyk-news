@@ -649,13 +649,8 @@
                 <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
                     Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.
                 </p>
-                <form name="subscribe-form" method="POST"
-                      action="https://formsubmit.co/oleksandr.kyliushyk@cru.org"
+                <form name="subscribe-form" method="POST" action="" data-endpoint=""
                       class="max-w-2xl mx-auto text-left pt-2">
-                    <input type="hidden" name="_next" value="https://aleksandrkilusik-blip.github.io/kyliushyk-news/index.html?subscribed=1#newsletters">
-                    <input type="hidden" name="_subject" value="Новий партнер молитовного листа">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <label class="sr-only" for="nl-fname" data-i18n="form-fname">Ім'я</label>
@@ -1606,19 +1601,33 @@
         });
 
         // --- Форма підписки ---
-        // Звичайний POST на FormSubmit: браузер іде на їхню сторінку і повертається
-        // сюди з ?subscribed=1. Ніякого fetch — отже ніякого CORS.
+        // Надсилання звичайним POST на власний Google Apps Script (data-endpoint).
+        // Поки endpoint не заданий, форма не надсилається нікуди.
         (function () {
-            const params = new URLSearchParams(window.location.search);
-            if (!params.has('subscribed')) return;
+            const form = document.forms['subscribe-form'];
             const msg = document.getElementById('nl-message');
-            if (msg) {
+            if (!form) return;
+
+            const endpoint = form.getAttribute('data-endpoint');
+            if (endpoint) {
+                form.setAttribute('action', endpoint);
+            } else {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (!msg) return;
+                    msg.innerText = window.t('form-error');
+                    msg.className = 'text-red-500 text-sm font-bold mt-2 block';
+                });
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('subscribed') && msg) {
                 msg.innerText = window.t('form-success');
                 msg.className = 'text-green-500 text-sm font-bold mt-2 block';
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+                const target = document.getElementById('newsletters');
+                if (target) setTimeout(function () { target.scrollIntoView(); }, 100);
             }
-            history.replaceState(null, '', window.location.pathname + window.location.hash);
-            const target = document.getElementById('newsletters');
-            if (target) setTimeout(() => target.scrollIntoView(), 100);
         })();
     </script>
     <script>
