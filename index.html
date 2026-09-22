@@ -5,11 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Military Ministry | Досягти ветеранів надією Христа</title>
     
+    <meta name="description" content="Олександр Килюшик — ветеран і місіонер «Україна для Христа» (Cru). Госпіталі, подкаст «Без броні», ретрити для тих, хто повертається з війни. Один чесний лист на місяць.">
+    <link rel="canonical" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/">
+
+    <!-- Open Graph / соцмережі та месенджери -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Military Ministry | Ukraine for Christ (Cru)">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:url" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/">
+    <meta property="og:title" content="He lost a leg in the war — then went back to the hospitals">
+    <meta property="og:description" content="Oleksandr Kyliushyk serves Ukraine's 1.3 million veterans with Cru. Hospital visits, a veterans' podcast, retreats. Real stories, one letter a month.">
+    <meta property="og:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Oleksandr Kyliushyk with a wounded soldier in a Ukrainian military hospital">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="He lost a leg in the war — then went back to the hospitals">
+    <meta name="twitter:description" content="Oleksandr Kyliushyk serves Ukraine's 1.3 million veterans with Cru. Hospital visits, a veterans' podcast, retreats. Real stories, one letter a month.">
+    <meta name="twitter:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+
     <link rel="icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
     <link rel="shortcut icon" type="image/png" href="MM_CruBlue_2020_RGB.png?v=5">
     <link class="logo-img" rel="apple-touch-icon" href="MM_CruBlue_2020_RGB.png?v=5">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,36 +42,7 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class', 
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    },
-                    colors: {
-                        gold: {
-                            DEFAULT: '#FBBF24',
-                            light: '#FCD34D',
-                            pale: '#FEF3C7'
-                        },
-                        slate: {
-                            50: '#F8FAFC',
-                            100: '#F1F5F9',
-                            200: '#E2E8F0',
-                            700: '#334155',
-                            800: '#1E293B',
-                            900: '#0F172A',
-                            950: '#020617'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F1F5F9; }
@@ -81,6 +70,30 @@
             background-color: #1E293B;
         }
 
+        /* === Доступність: золотий текст на світлому тлі === */
+        /* #FBBF24 на білому дає контраст 1.67:1 при нормі WCAG AA 4.5:1.
+           На світлих поверхнях підміняємо на #A16207 (4.9:1), на темних лишаємо золотий. */
+        :root:not(.dark) .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-50 .text-gold,
+        :root:not(.dark) .bg-slate-100 .text-gold { color: #A16207; }
+
+        :root:not(.dark) .bg-slate-800 .text-gold,
+        :root:not(.dark) .bg-slate-900 .text-gold,
+        :root:not(.dark) .bg-slate-950 .text-gold,
+        :root:not(.dark) .bg-gold .text-gold,
+        :root:not(.dark) .hero-bg .text-gold,
+        :root:not(.dark) [class*="bg-["] .text-gold { color: #FBBF24; }
+
+        /* білі картки всередині темних або золотих секцій — знову темне золото */
+        :root:not(.dark) .bg-gold .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-900 .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-800 .bg-white .text-gold { color: #A16207; }
+
+        .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+        /* Компенсація липкої шапки при переході по якорях */
+        section[id], div[id] { scroll-margin-top: 6rem; }
+
         /* === Анімації === */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
         .reveal-init { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
@@ -100,7 +113,7 @@
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             <a href="#" class="shrink-0 flex items-center">
-                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-12 w-auto object-contain logo-img">
+                <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" fetchpriority="high" loading="eager" decoding="async" class="h-12 w-auto object-contain logo-img">
             </a>
             
             <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-widest">
@@ -148,7 +161,8 @@
             <a href="#challenge" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-challenge">Чому ветерани?</a>
             <a href="#activity" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-activity">Діяльність</a>
             <a href="#partnership" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-partnership">Підтримка</a>
-            <a href="#newsletters" onclick="toggleMobileMenu()" class="block font-bold text-gold uppercase tracking-widest text-sm" data-i18n="nav-newsletters">Молитовні листи</a>
+            <a href="#newsletters" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-newsletters">Молитовні листи</a>
+            <a href="#partnership" onclick="toggleMobileMenu()" class="block text-center bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-4 px-6 rounded-full transition-all shadow-md mt-2" data-i18n="btn-partner">Стати партнером</a>
         </div>
     </header>
 
@@ -194,7 +208,7 @@
                 <div class="relative border-slate-100 dark:border-slate-700">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
                     <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full max-w-md mx-auto transition-colors duration-200" style="aspect-ratio: 4 / 5;">
-                        <img src="IMG_0278_Original.jpeg" alt="Олександр у військовій формі" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                        <img loading="lazy" decoding="async" src="IMG_0278_Original.jpeg" alt="Олександр у військовій формі" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                     </div>
                 </div>
                 <div class="space-y-6 font-sans">
@@ -261,11 +275,11 @@
                 </div>
                 <div class="lg:col-span-5 space-y-4">
                     <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-3xl shadow-sm border-b-4 border-gold transition-colors duration-200">
-                        <span class="block text-5xl font-extrabold text-gold mb-2">1.3 М</span>
+                        <span class="block text-5xl font-extrabold text-gold mb-2" data-counter>1.3 M</span>
                         <p class="font-bold text-slate-800 dark:text-slate-200 uppercase text-xs tracking-widest" data-i18n="stat-vets">Ветеранів сьогодні</p>
                     </div>
                     <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-3xl shadow-sm border-b-4 border-slate-900 dark:border-slate-600 transition-colors duration-200">
-                        <span class="block text-5xl font-extrabold text-slate-900 dark:text-white mb-2 transition-colors duration-200">6.0 М</span>
+                        <span class="block text-5xl font-extrabold text-slate-900 dark:text-white mb-2 transition-colors duration-200" data-counter>6.0 M</span>
                         <p class="font-bold text-slate-800 dark:text-slate-200 uppercase text-xs tracking-widest" data-i18n="stat-fams">Потенційно з родинами</p>
                     </div>
                 </div>
@@ -290,7 +304,7 @@
                 <div class="relative">
                     <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
                     <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full transition-colors duration-200" style="aspect-ratio: 4 / 3;">
-                        <img src="team.jpeg" alt="Команда Military Ministry" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                        <img loading="lazy" decoding="async" src="team.jpeg" alt="Команда Military Ministry" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -324,7 +338,7 @@
                         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="hosp-p">Моя головна ціль у госпіталях — це жива присутність. Іноді це щось символічне на згадку, але справжня цінність цих зустрічей полягає у часі, який ми проводимо разом. Це час для уважного вислуховування, розділеного болю та спільної молитви там, де вона потрібна найбільше. Я прагну бути поруч, щоб кожен поранений воїн відчував: його внутрішня боротьба важлива, і він у ній не один.</p>
                     </div>
                     <div class="rounded-[2rem] overflow-hidden shadow-lg relative w-full border border-slate-200 dark:border-slate-700" style="aspect-ratio: 16/9;">
-                        <img src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Госпіталі Олександр" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                        <img loading="lazy" decoding="async" src="5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Госпіталі Олександр" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                     </div>
                 </div>
 
@@ -425,19 +439,19 @@
                             </ul>
                         </div>
                         <div class="rounded-[2rem] overflow-hidden shadow-xl relative border-4 border-slate-100 dark:border-slate-700 w-full transition-colors duration-200" style="aspect-ratio: 16/9;">
-                            <img src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                            <img loading="lazy" decoding="async" src="164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Ретрит" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
-                            <img src="retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Спільний обід">
+                            <img loading="lazy" decoding="async" src="retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Спільний обід">
                         </div>
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
-                            <img src="mounting.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Зимові гори">
+                            <img loading="lazy" decoding="async" src="mounting.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Зимові гори">
                         </div>
                         <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
-                            <img src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Група з прапором">
+                            <img loading="lazy" decoding="async" src="4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Група з прапором">
                         </div>
                     </div>
                 </div>
@@ -450,7 +464,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10 dark:border-slate-800 w-full max-w-md mx-auto lg:mx-0 transition-colors duration-200" style="aspect-ratio: 1/1;">
-                    <img src="3452AB0C-ED9F-415C-AC0F-3770C44428FD_1_105_c.jpeg" alt="Danik" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                    <img loading="lazy" decoding="async" src="3452AB0C-ED9F-415C-AC0F-3770C44428FD_1_105_c.jpeg" alt="Danik" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="space-y-6">
                     <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="danik-tag">Історія дружби</span>
@@ -588,6 +602,19 @@
                             <i class="fa-solid fa-arrow-right"></i>
                         </div>
                     </a>
+
+                    <div class="mt-6 rounded-[1.5rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-7 text-left">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h5 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="trust-h">Підзвітність і прозорість</h5>
+                                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="trust-p1">Пожертви приймає Cru (Campus Crusade for Christ International) — зареєстрована організація 501(c)(3). Для жертводавців у США внески є tax-deductible, на кожну пожертву надходить квитанція, а щомісячне партнерство можна змінити або скасувати будь-коли.</p>
+                                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="trust-p2">Я звітую щомісяця — з іменами, цифрами й тим, що не спрацювало.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -620,22 +647,46 @@
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-6">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="news-h2">Оновлення служіння</h2>
                 <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
-                    Кожного місяця я ділюся молитовними листами з новинами служіння. Приєднуйтесь до мого Telegram-каналу, щоб першими отримувати оновлення та молитися разом зі мною.
+                    Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.
                 </p>
-                <div class="flex justify-center pt-2">
-                    <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-extrabold py-4 px-8 rounded-xl transition-all shadow-md text-base sm:text-lg active:scale-95">
+                <form name="submit-to-google-sheet" class="max-w-2xl mx-auto text-left pt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <label class="sr-only" for="nl-fname" data-i18n="form-fname">Ім'я</label>
+                        <input id="nl-fname" name="firstName" type="text" required
+                               class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
+                               data-i18n-placeholder="form-fname" placeholder="Ім'я">
+                        <label class="sr-only" for="nl-lname" data-i18n="form-lname">Прізвище</label>
+                        <input id="nl-lname" name="lastName" type="text"
+                               class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
+                               data-i18n-placeholder="form-lname" placeholder="Прізвище">
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 mt-3">
+                        <label class="sr-only" for="nl-email" data-i18n="form-email">Ваш email</label>
+                        <input id="nl-email" name="email" type="email" required autocomplete="email"
+                               class="flex-grow w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
+                               data-i18n-placeholder="form-email" placeholder="Ваш email">
+                        <button id="nl-submit" type="submit"
+                                class="shrink-0 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-8 rounded-xl transition-all shadow-md active:scale-95 text-base whitespace-nowrap"
+                                data-i18n="btn-sub">Підписатись</button>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-3" data-i18n="form-note">Один лист на місяць. Без спаму. Відписатися можна будь-коли.</p>
+                    <span id="nl-message" class="hidden"></span>
+                </form>
+
+                <div class="flex justify-center pt-4">
+                    <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
                         <i class="fa-brands fa-telegram text-xl"></i> <span data-i18n="btn-tg-channel">Мій Telegram-канал</span>
                     </a>
                 </div>
             </div>
 
             <div class="mt-20 font-sans">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img src="alex-vacation.jpeg" alt="Newsletter Cover August" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-aug-26">Серпень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-aug">Структура й надія</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-aug">Про відпустку, тривогу й дві історії людей, які вчаться жити після війни.</p><a href="newsletter-august-2026_1.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img src="cover-dog.jpeg" alt="Newsletter Cover July" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jul-26">Липень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jul">Місяць зустрічей</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jul">Історії Валерії та Сашка, літня хроніка й нові кроки служіння.</p><a href="newsletter-july-2026.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="alex-vacation.jpeg" alt="Newsletter Cover August" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-aug-26">Серпень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-aug">Структура й надія</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-aug">Про відпустку, тривогу й дві історії людей, які вчаться жити після війни.</p><a href="newsletter-august-2026_1.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="cover-dog.jpeg" alt="Newsletter Cover July" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jul-26">Липень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jul">Місяць зустрічей</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jul">Історії Валерії та Сашка, літня хроніка й нові кроки служіння.</p><a href="newsletter-july-2026.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div>
                     
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center">
-                            <img src="IMG_3440.jpeg" alt="Newsletter Cover June" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img loading="lazy" decoding="async" src="IMG_3440.jpeg" alt="Newsletter Cover June" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jun-26">Червень 2026</span>
@@ -649,7 +700,7 @@
 
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
-                            <img src="IMG_6228.jpeg" alt="Newsletter Cover April" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img loading="lazy" decoding="async" src="IMG_6228.jpeg" alt="Newsletter Cover April" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
@@ -663,7 +714,7 @@
 
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
-                            <img src="IMG_6519.jpeg" alt="Newsletter Cover March" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img loading="lazy" decoding="async" src="IMG_6519.jpeg" alt="Newsletter Cover March" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
                             <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-mar-26">Березень 2026</span>
@@ -691,7 +742,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
                 <div class="space-y-8">
                     <div class="flex items-center gap-6">
-                        <img src="MM_CruBlue_2020_RGB.png" alt="Україна для Христа" class="h-12 w-auto object-contain logo-img">
+                        <img loading="lazy" decoding="async" src="MM_CruBlue_2020_RGB.png" alt="Україна для Христа" class="h-12 w-auto object-contain logo-img">
                     </div>
                     
                     <div>
@@ -706,7 +757,7 @@
                             З найкращими побажаннями у Христі,
                         </p>
                         <div class="flex items-center gap-4">
-                            <img src="IMG_6525.jpeg" alt="Олександр Килюшик" class="w-14 h-14 rounded-full object-cover shadow-md border-2 border-white dark:border-slate-800">
+                            <img loading="lazy" decoding="async" width="56" height="56" src="avatar-alex.jpg" alt="Олександр Килюшик" class="w-14 h-14 rounded-full object-cover shadow-md border-2 border-white dark:border-slate-800">
                             <div>
                                 <h4 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="my-name">Олександр Килюшик</h4>
                                 <p class="text-slate-500 dark:text-slate-400 text-xs mt-1 leading-snug" data-i18n="my-role">
@@ -755,6 +806,12 @@
     <script>
         const translations = {
             uk: {
+                "trust-h": "Підзвітність і прозорість",
+                "trust-p1": "Пожертви приймає Cru (Campus Crusade for Christ International) — зареєстрована організація 501(c)(3). Для жертводавців у США внески є tax-deductible, на кожну пожертву надходить квитанція, а щомісячне партнерство можна змінити або скасувати будь-коли.",
+                "trust-p2": "Я звітую щомісяця — з іменами, цифрами й тим, що не спрацювало.",
+                "form-note": "Один лист на місяць. Без спаму. Відписатися можна будь-коли.",
+                "page-title": "Олександр Килюшик | Поруч із пораненими ветеранами України",
+                "meta-desc": "Олександр Килюшик — ветеран і місіонер «Україна для Христа» (Cru). Госпіталі, подкаст «Без броні», ретрити для тих, хто повертається з війни.",
                 "sub-brand": "Зцілення Надією",
                 "nav-vision": "Бачення",
                 "nav-challenge": "Чому ветерани?",
@@ -861,7 +918,7 @@
                 "btn-tg": "Написати в Telegram",
                 "btn-wa": "Написати в WhatsApp",
                 "news-h2": "Оновлення служіння",
-                "news-p": "Кожного місяця я ділюся молитовними листами з новинами служіння. Приєднуйтесь до мого Telegram-каналу, щоб першими отримувати оновлення та молитися разом зі мною.",
+                "news-p": "Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.",
                 "form-fname": "Ім'я",
                 "form-lname": "Прізвище",
                 "form-email": "Ваша email адреса",
@@ -914,6 +971,12 @@
                 "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l"
             },
             en: {
+                "trust-h": "Accountability &amp; transparency",
+                "trust-p1": "Gifts are received by Cru (Campus Crusade for Christ International), a registered 501(c)(3) organization. Gifts from U.S. donors are tax-deductible, you receive a receipt for every gift, and you can change or cancel a monthly partnership at any time.",
+                "trust-p2": "I report every month — with names, numbers, and what didn't work.",
+                "form-note": "One letter a month. No spam. Unsubscribe anytime.",
+                "page-title": "Oleksandr Kyliushyk | Walking with Ukraine's wounded veterans",
+                "meta-desc": "A combat veteran and amputee serving Ukraine's wounded soldiers with Cru. Hospital visits, a veterans' podcast, and retreats — one honest letter a month.",
                 "sub-brand": "Healing with Hope",
                 "nav-vision": "Vision",
                 "nav-challenge": "Why Veterans?",
@@ -923,7 +986,7 @@
                 "nav-newsletters": "Prayer Letters",
                 "btn-partner": "Become a Partner",
                 "hero-tag": "Part of \"Ukraine for Christ\"",
-                "hero-desc": "Standing beside those returning from war. I am the spiritual rear for Ukraine's veterans.",
+                "hero-desc": "I'm a combat veteran and an amputee. Now I walk back into the hospitals to sit with the men who are still there.",
                 "hero-btn-news": "Latest News",
                 "stat-1-lbl": "Year mission founded",
                 "stat-2-lbl": "Countries worldwide",
@@ -941,17 +1004,17 @@
                 "stat-vets": "Veterans today",
                 "stat-fams": "Potentially with families",
                 "path-tag": "My Path",
-                "path-h2": "From Scout to Missionary",
+                "path-h2": "From Reconnaissance to Ministry",
                 "path-p1": "My name is Oleksandr. During my university years, I came to Christ through the CRU ministry—one of the staff members shared the Gospel with me. This moment became my spiritual birth and completely changed the direction of my life.",
-                "path-p2": "I worked in sales for a while. Although the war in Donbas was ongoing, life for many remained usual. But the full-scale invasion in 2022 changed everything. I was mobilized to the Armed Forces of Ukraine and served as a scout in an assault brigade. During a combat mission, I was severely wounded and lost a limb.",
+                "path-p2": "I worked in sales for a while. Although the war in Donbas was ongoing, life for many remained usual. But the full-scale invasion in 2022 changed everything. I was mobilized to the Armed Forces of Ukraine and served in reconnaissance with an assault brigade. During a combat mission, I was severely wounded and lost a limb.",
                 "path-p3": "During recovery and rehabilitation, I met many fellow soldiers who had also experienced loss and were searching for meaning, hope, and community. God began to work deeply in my heart, and I realized I couldn't stay silent—I want to walk alongside those who suffer.",
                 "path-p4": "That is why I joined the \"Ukraine for Christ\" (CRU) mission to share the Gospel with veterans—those wounded in body and soul, yet open to the truth. Only Christ can heal the deepest wounds.",
                 "team-tag": "Our Team",
                 "team-h2": "Building the Ministry Together",
                 "team-p1": "This is our Military Ministry team. Most of us have been personally affected by the war, went through losses, trials, and military service. We know what pain is, and that is why we united our efforts.",
-                "team-p2": "Now we are building a strong ministry for veterans together. Our goal is to become a reliable spiritual rear, support, and a friendly community for everyone returning from the front, to help them find hope and healing in Christ.",
+                "team-p2": "Together we are building a ministry veterans can lean on — steady support and real community for everyone coming back from the front, so they can find hope and healing in Christ.",
                 "act-tag": "Activity",
-                "act-h2": "How I Act",
+                "act-h2": "What I Do",
                 "tab-hosp": "Hospitals",
                 "tab-pod": "Podcasts",
                 "tab-ret": "Retreats \"Circle of Trust\"",
@@ -970,7 +1033,7 @@
                 "danik-p": "Danik is a former prisoner of war. He received severe injuries at 19. Today he is 23, leads an active life, and thanks to God has a Christian community around him. I am grateful for his friendship.",
                 "part-tag": "Partnership Team",
                 "part-h3": "Support Me",
-                "part-p": "Effective ministry is only possible in a team. You become the reliable financial and prayerful rear of the mission while I work directly in the field.",
+                "part-p": "No one does this alone. You hold the line in prayer and giving; I do the work on the ground.",
                 "fin-h4": "Campus Crusade Financial Policy",
                 "fin-p1": "The \"Ukraine for Christ\" mission operates as an organization whose staff fully relies on God to provide for their ministry. Therefore, it is the duty of each staff member to find partners who will regularly donate to their personal ministry.",
                 "fin-p2": "Today, the CRU mission employs about 19,000 staff worldwide. Most find support for their ministry through individuals. As it turns out, most Christians prefer to donate to a specific ministry rather than a general fund. Contributing to a missionary's personal ministry helps see concrete results in evangelism and discipleship.",
@@ -1008,7 +1071,7 @@
                 "btn-tg": "Write on Telegram",
                 "btn-wa": "Write on WhatsApp",
                 "news-h2": "Ministry Updates",
-                "news-p": "Every month I send prayer letters with ministry news. If you would like to receive such letters and pray for specific needs, subscribe to my updates.",
+                "news-p": "Once a month I send a prayer letter with news from the ministry — real stories, specific needs, answered prayers. Leave your email and it will come to your inbox.",
                 "form-fname": "First Name",
                 "form-lname": "Last Name",
                 "form-email": "Your email address",
@@ -1073,6 +1136,12 @@
                 "btn-cru-sub": "For international bank cards"
             },
             pl: {
+                "trust-h": "Odpowiedzialność i przejrzystość",
+                "trust-p1": "Darowizny przyjmuje Cru (Campus Crusade for Christ International) — zarejestrowana organizacja 501(c)(3). Darczyńcy w USA mogą odliczyć darowiznę od podatku, na każdą wpłatę wystawiane jest potwierdzenie, a comiesięczne wsparcie można zmienić lub anulować w każdej chwili.",
+                "trust-p2": "Co miesiąc zdaję relację — z imionami, liczbami i tym, co się nie udało.",
+                "form-note": "Jeden list miesięcznie. Bez spamu. Możesz zrezygnować w każdej chwili.",
+                "page-title": "Ołeksandr Kyliuszyk | Przy rannych weteranach Ukrainy",
+                "meta-desc": "Weteran i misjonarz misji „Ukraina dla Chrystusa” (Cru). Szpitale, podcast, rekolekcje dla wracających z wojny.",
                 "sub-brand": "Uzdrowienie Nadzieją",
                 "nav-vision": "Wizja",
                 "nav-challenge": "Dlaczego weterani?",
@@ -1166,7 +1235,7 @@
                 "btn-tg": "Napisz na Telegramie",
                 "btn-wa": "Napisz na WhatsApp",
                 "news-h2": "Aktualizacje służby",
-                "news-p": "Każdego miesiąca wysyłam listy modlitewne z nowościami ze służby. Jeśli chcesz otrzymywać takie listy i modlić się o konkretne potrzeby, zasubskrybuj moje aktualizacje.",
+                "news-p": "Raz w miesiącu wysyłam list modlitewny z wiadomościami ze służby — historie, konkretne potrzeby, podziękowania. Zostaw e-mail, a list trafi do Ciebie.",
                 "form-fname": "Imię",
                 "form-lname": "Nazwisko",
                 "form-email": "Twój adres email",
@@ -1231,6 +1300,12 @@
                 "btn-cru-sub": "Dla międzynarodowych kart bankowych"
             },
             de: {
+                "trust-h": "Rechenschaft und Transparenz",
+                "trust-p1": "Spenden werden von Cru (Campus Crusade for Christ International) entgegengenommen, einer eingetragenen 501(c)(3)-Organisation. Für Spender in den USA sind die Beiträge steuerlich absetzbar, für jede Spende gibt es eine Quittung, und eine monatliche Partnerschaft kann jederzeit geändert oder beendet werden.",
+                "trust-p2": "Ich berichte jeden Monat — mit Namen, Zahlen und dem, was nicht funktioniert hat.",
+                "form-note": "Ein Brief pro Monat. Kein Spam. Jederzeit abbestellbar.",
+                "page-title": "Oleksandr Kyliushyk | An der Seite verwundeter Veteranen der Ukraine",
+                "meta-desc": "Kriegsveteran und Missionar der Mission „Ukraine für Christus“ (Cru). Lazarette, Podcast, Retreats für Heimkehrer.",
                 "sub-brand": "Heilung durch Hoffnung",
                 "nav-vision": "Vision",
                 "nav-challenge": "Warum Veteranen?",
@@ -1331,7 +1406,7 @@
                 "btn-tg": "Auf Telegram schreiben",
                 "btn-wa": "Auf WhatsApp schreiben",
                 "news-h2": "Dienst-Updates",
-                "news-p": "Jeden Monat sende ich Gebetsbriefe mit Neuigkeiten aus dem Dienst. Wenn Sie solche Briefe erhalten und für bestimmte Bedürfnisse beten möchten, abonnieren Sie meine Updates.",
+                "news-p": "Einmal im Monat schicke ich einen Gebetsbrief mit Nachrichten aus dem Dienst — Geschichten, konkrete Anliegen, Dank. Hinterlassen Sie Ihre E-Mail-Adresse.",
                 "form-fname": "Vorname",
                 "form-lname": "Nachname",
                 "form-email": "Ihre E-Mail-Adresse",
@@ -1425,6 +1500,13 @@
                 }
             });
             document.documentElement.lang = lang;
+
+            const dict = translations[lang] || {};
+            if (dict['page-title']) document.title = dict['page-title'];
+            if (dict['meta-desc']) {
+                const md = document.querySelector('meta[name="description"]');
+                if (md) md.setAttribute('content', dict['meta-desc']);
+            }
         }
 
         applyTranslations(currentLang);
@@ -1606,7 +1688,7 @@
                     if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
                 });
             }, { threshold: 0.6 });
-            document.querySelectorAll('span.text-5xl').forEach(function (el) {
+            document.querySelectorAll('[data-counter]').forEach(function (el) {
                 if (/^\d/.test(el.textContent.trim())) counterObs.observe(el);
             });
         })();
