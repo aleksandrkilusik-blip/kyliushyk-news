@@ -650,19 +650,23 @@
                     Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.
                 </p>
                 <form name="submit-to-google-sheet" class="max-w-2xl mx-auto text-left pt-2">
+                    <input type="hidden" name="_subject" value="Новий партнер молитовного листа">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <label class="sr-only" for="nl-fname" data-i18n="form-fname">Ім'я</label>
-                        <input id="nl-fname" name="firstName" type="text" required
+                        <input id="nl-fname" name="Ім’я" type="text" required
                                class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-fname" placeholder="Ім'я">
                         <label class="sr-only" for="nl-lname" data-i18n="form-lname">Прізвище</label>
-                        <input id="nl-lname" name="lastName" type="text"
+                        <input id="nl-lname" name="Прізвище" type="text"
                                class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-lname" placeholder="Прізвище">
                     </div>
                     <div class="flex flex-col sm:flex-row gap-3 mt-3">
                         <label class="sr-only" for="nl-email" data-i18n="form-email">Ваш email</label>
-                        <input id="nl-email" name="email" type="email" required autocomplete="email"
+                        <input id="nl-email" name="Пошта" type="email" required autocomplete="email"
                                class="flex-grow w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-email" placeholder="Ваш email">
                         <button id="nl-submit" type="submit"
@@ -1599,7 +1603,8 @@
         });
 
         // --- Форма підписки ---
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzUXMwXH2sMmkKvy3kmmgRu97GlYszF_73UX_Ue0R1-uWW2Nb6hzi4Mv70wlDP7BYw/exec';
+        // FormSubmit: лист про нового підписника йде на oleksandr.kyliushyk@cru.org
+        const scriptURL = 'https://formsubmit.co/ajax/oleksandr.kyliushyk@cru.org';
         const form = document.forms['submit-to-google-sheet'];
         const msg = document.getElementById('nl-message');
         const btn = document.getElementById('nl-submit');
@@ -1611,8 +1616,10 @@
                 btn.innerText = window.t('form-loading');
                 msg.classList.add('hidden');
 
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => {
+                fetch(scriptURL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)})
+                    .then(response => response.json())
+                    .then(data => {
+                        if (String(data.success) !== 'true') throw new Error(data.message || 'failed');
                         msg.innerText = window.t('form-success');
                         msg.className = 'text-green-500 text-sm font-bold mt-2 block';
                         form.reset();
