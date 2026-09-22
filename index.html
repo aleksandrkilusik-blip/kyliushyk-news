@@ -698,18 +698,26 @@
     <section id="share" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-gold font-bold uppercase tracking-widest text-xs block mb-3" data-i18n="share-tag">Поділитися</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans mb-5 transition-colors duration-200" data-i18n="share-h">Надішліть це одній людині</h2>
-            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="share-p">Ви, найімовірніше, знаєте когось, хто молиться за військових і жодного не зустрічав. Перешліть йому цю сторінку — більше нічого не потрібно.</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans mb-5 transition-colors duration-200" data-i18n="share-h">Кому це варто почути?</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="share-p">Найчастіше нові партнери приходять не з реклами, а тому що хтось назвав моє ім'я у розмові.</p>
 
-            <div class="mt-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8 text-left">
-                <span class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3" data-i18n="share-label">Готовий текст — просто скопіюйте</span>
-                <p id="share-message" class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed font-serif italic" data-i18n="share-msg">«У мене є друг в Україні. Він втратив ногу на війні — і повернувся в госпіталі, щоб сидіти поруч з іншими пораненими. Раз на місяць він пише чесний лист про це. Подумав про тебе:»</p>
+            <div class="mt-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8">
+                <p class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed" data-i18n="share-ref-p">Якщо ця історія когось вам нагадала — просто напишіть мені, кого. Я зв'яжуся сам і скажу, що це ви порадили.</p>
+                <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%97%D0%BD%D0%B0%D1%8E%2C%20%D0%BA%D0%BE%D0%BC%D1%83%20%D1%86%D0%B5%20%D0%B2%D0%B0%D1%80%D1%82%D0%BE%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md active:scale-95 text-base mt-6">
+                    <i class="fa-solid fa-envelope text-lg"></i> <span data-i18n="share-ref-btn">Написати мені</span>
+                </a>
 
-                <div class="flex flex-wrap gap-3 mt-6">
-                    <button type="button" id="share-copy" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3 px-6 rounded-xl transition-all shadow-md active:scale-95 text-sm">
-                        <i class="fa-regular fa-copy"></i> <span data-i18n="share-btn-copy">Скопіювати</span>
+                <div class="flex items-center gap-4 my-8">
+                    <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
+                    <span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest whitespace-nowrap" data-i18n="share-or">або надішліть посилання</span>
+                    <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
+                </div>
+
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <button type="button" id="share-copy" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-regular fa-copy"></i> <span data-i18n="share-btn-copy">Скопіювати посилання</span>
                     </button>
-                    <a id="share-mail" href="#" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                    <a id="share-mail" href="#" class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
                         <i class="fa-solid fa-envelope"></i> Email
                     </a>
                     <a id="share-wa" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb757] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
@@ -871,14 +879,15 @@
     <script>
         const translations = {
             uk: {
+                "share-or": "або надішліть посилання",
+                "share-ref-btn": "Написати мені",
+                "share-ref-p": "Якщо ця історія когось вам нагадала — просто напишіть мені, кого. Я зв'яжуся сам і скажу, що це ви порадили.",
                 "share-tag": "Поділитися",
-                "share-h": "Надішліть це одній людині",
-                "share-p": "Ви, найімовірніше, знаєте когось, хто молиться за військових і жодного не зустрічав. Перешліть йому цю сторінку — більше нічого не потрібно.",
-                "share-label": "Готовий текст — просто скопіюйте",
-                "share-msg": "«У мене є друг в Україні. Він втратив ногу на війні — і повернувся в госпіталі, щоб сидіти поруч з іншими пораненими. Раз на місяць він пише чесний лист про це. Подумав про тебе:»",
-                "share-btn-copy": "Скопіювати",
-                "share-done": "Скопійовано. Тепер просто вставте у листа чи месенджер.",
-                "share-fail": "Не вдалося скопіювати — виділіть текст вручну.",
+                "share-h": "Кому це варто почути?",
+                "share-p": "Найчастіше нові партнери приходять не з реклами, а тому що хтось назвав моє ім'я у розмові.",
+                "share-btn-copy": "Скопіювати посилання",
+                "share-done": "Посилання скопійовано.",
+                "share-fail": "Не вдалося скопіювати — скопіюйте адресу з рядка браузера.",
                 "ask-h": "Стати щомісячним партнером",
                 "ask-per": "на місяць",
                 "ask-note": "Суми орієнтовні — важлива регулярність, а не розмір. Разова пожертва теж допомагає. Оберіть зручний спосіб нижче.",
@@ -1046,14 +1055,15 @@
                 "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l"
             },
             en: {
+                "share-or": "or send the link",
+                "share-ref-btn": "Email me a name",
+                "share-ref-p": "If this brought someone to mind, just email me their name. I will reach out myself and tell them you suggested it.",
                 "share-tag": "Share",
-                "share-h": "Send this to one person",
-                "share-p": "You probably know someone who prays for soldiers and has never met one. Send them this page — that is all it takes.",
-                "share-label": "Here is a message you can copy",
-                "share-msg": "“A friend of mine in Ukraine lost his leg in the war — and went back to the hospitals to sit with other wounded soldiers. He writes one honest letter a month about it. Thought of you:”",
-                "share-btn-copy": "Copy",
-                "share-done": "Copied. Paste it into an email or a message.",
-                "share-fail": "Could not copy — please select the text manually.",
+                "share-h": "Who should hear about this?",
+                "share-p": "New partners almost never come from advertising. They come because someone said my name in a conversation.",
+                "share-btn-copy": "Copy link",
+                "share-done": "Link copied.",
+                "share-fail": "Could not copy — take the address from the browser bar.",
                 "ask-h": "Become a monthly partner",
                 "ask-per": "per month",
                 "ask-note": "These amounts are a guide, not a requirement — consistency matters more than size, and a one-time gift helps too. Choose your amount on the Cru.org page below.",
@@ -1221,14 +1231,15 @@
                 "btn-cru-sub": "For international bank cards"
             },
             pl: {
+                "share-or": "albo wyślij link",
+                "share-ref-btn": "Napisz do mnie",
+                "share-ref-p": "Jeśli ktoś Ci się przypomniał — po prostu napisz mi, kto to. Skontaktuję się sam i powiem, że to Twoja rekomendacja.",
                 "share-tag": "Podziel się",
-                "share-h": "Wyślij to jednej osobie",
-                "share-p": "Pewnie znasz kogoś, kto modli się za żołnierzy i nigdy żadnego nie spotkał. Prześlij mu tę stronę — nic więcej nie trzeba.",
-                "share-label": "Gotowy tekst — wystarczy skopiować",
-                "share-msg": "„Mam przyjaciela w Ukrainie. Stracił nogę na wojnie — i wrócił do szpitali, by siedzieć obok innych rannych. Raz w miesiącu pisze o tym szczery list. Pomyślałem o Tobie:”",
-                "share-btn-copy": "Kopiuj",
-                "share-done": "Skopiowano. Wklej w e-mail lub wiadomość.",
-                "share-fail": "Nie udało się skopiować — zaznacz tekst ręcznie.",
+                "share-h": "Kto powinien o tym usłyszeć?",
+                "share-p": "Nowi partnerzy prawie nigdy nie przychodzą z reklamy. Przychodzą, bo ktoś wymienił moje imię w rozmowie.",
+                "share-btn-copy": "Kopiuj link",
+                "share-done": "Link skopiowany.",
+                "share-fail": "Nie udało się skopiować — skopiuj adres z paska przeglądarki.",
                 "ask-h": "Zostań comiesięcznym partnerem",
                 "ask-per": "miesięcznie",
                 "ask-note": "Kwoty są orientacyjne — ważniejsza jest regularność niż wysokość, a jednorazowy dar też pomaga. Kwotę wybierzesz na stronie Cru.org poniżej.",
@@ -1395,14 +1406,15 @@
                 "btn-cru-sub": "Dla międzynarodowych kart bankowych"
             },
             de: {
+                "share-or": "oder senden Sie den Link",
+                "share-ref-btn": "Schreiben Sie mir",
+                "share-ref-p": "Wenn Ihnen jemand eingefallen ist — schreiben Sie mir einfach, wer. Ich melde mich selbst und sage, dass Sie es empfohlen haben.",
                 "share-tag": "Teilen",
-                "share-h": "Schicken Sie das einer Person",
-                "share-p": "Sie kennen vermutlich jemanden, der für Soldaten betet und nie einem begegnet ist. Schicken Sie ihm diese Seite — mehr braucht es nicht.",
-                "share-label": "Ein fertiger Text zum Kopieren",
-                "share-msg": "„Ich habe einen Freund in der Ukraine. Er verlor im Krieg sein Bein — und kehrte in die Lazarette zurück, um bei anderen Verwundeten zu sitzen. Einmal im Monat schreibt er einen ehrlichen Brief darüber. Ich musste an dich denken:”",
-                "share-btn-copy": "Kopieren",
-                "share-done": "Kopiert. Fügen Sie es in eine E-Mail oder Nachricht ein.",
-                "share-fail": "Kopieren nicht möglich — bitte Text manuell markieren.",
+                "share-h": "Wer sollte davon erfahren?",
+                "share-p": "Neue Partner kommen fast nie über Werbung. Sie kommen, weil jemand meinen Namen im Gespräch genannt hat.",
+                "share-btn-copy": "Link kopieren",
+                "share-done": "Link kopiert.",
+                "share-fail": "Kopieren nicht möglich — Adresse aus der Browserzeile nehmen.",
                 "ask-h": "Monatlicher Partner werden",
                 "ask-per": "pro Monat",
                 "ask-note": "Die Beträge sind Richtwerte — Regelmäßigkeit zählt mehr als Höhe, und eine einmalige Gabe hilft ebenso. Den Betrag wählen Sie auf der Cru.org-Seite unten.",
@@ -1817,25 +1829,20 @@
             const box = document.getElementById('share');
             if (!box) return;
             const url = location.origin + location.pathname;
-            const msgEl = document.getElementById('share-message');
             const done = document.getElementById('share-done');
-            const full = () => (msgEl.innerText || '').replace(/^[«"\u201C\u201E]+|[»"\u201D]+$/g, '').trim() + ' ' + url;
 
-            function links() {
-                const t = encodeURIComponent(full());
-                document.getElementById('share-wa').href = 'https://wa.me/?text=' + t;
-                document.getElementById('share-tg').href =
-                    'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(full().replace(' ' + url, ''));
-                document.getElementById('share-fb').href =
-                    'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(url);
+            document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(url);
+            document.getElementById('share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            function mail() {
                 document.getElementById('share-mail').href =
-                    'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + t;
+                    'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(url);
             }
-            links();
-            document.getElementById('lang-switcher')?.addEventListener('change', () => setTimeout(links, 50));
+            mail();
+            document.getElementById('lang-switcher')?.addEventListener('change', () => setTimeout(mail, 50));
 
             document.getElementById('share-copy').addEventListener('click', function () {
-                navigator.clipboard.writeText(full()).then(() => {
+                navigator.clipboard.writeText(url).then(() => {
                     done.innerText = window.t('share-done');
                     done.className = 'text-green-600 dark:text-green-400 text-sm font-bold mt-4 block';
                 }).catch(() => {
