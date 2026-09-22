@@ -656,17 +656,17 @@
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <label class="sr-only" for="nl-fname" data-i18n="form-fname">Ім'я</label>
-                        <input id="nl-fname" name="Ім’я" type="text" required
+                        <input id="nl-fname" name="name" type="text" required
                                class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-fname" placeholder="Ім'я">
                         <label class="sr-only" for="nl-lname" data-i18n="form-lname">Прізвище</label>
-                        <input id="nl-lname" name="Прізвище" type="text"
+                        <input id="nl-lname" name="surname" type="text"
                                class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-lname" placeholder="Прізвище">
                     </div>
                     <div class="flex flex-col sm:flex-row gap-3 mt-3">
                         <label class="sr-only" for="nl-email" data-i18n="form-email">Ваш email</label>
-                        <input id="nl-email" name="Пошта" type="email" required autocomplete="email"
+                        <input id="nl-email" name="email" type="email" required autocomplete="email"
                                class="flex-grow w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
                                data-i18n-placeholder="form-email" placeholder="Ваш email">
                         <button id="nl-submit" type="submit"
@@ -1617,8 +1617,9 @@
                 msg.classList.add('hidden');
 
                 fetch(scriptURL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)})
-                    .then(response => response.json())
+                    .then(response => response.json().catch(() => ({ success: 'false', message: 'HTTP ' + response.status })))
                     .then(data => {
+                        console.log('[subscribe] відповідь сервісу:', data);
                         if (String(data.success) !== 'true') throw new Error(data.message || 'failed');
                         msg.innerText = window.t('form-success');
                         msg.className = 'text-green-500 text-sm font-bold mt-2 block';
@@ -1627,7 +1628,8 @@
                         btn.disabled = false;
                     })
                     .catch(error => {
-                        msg.innerText = window.t('form-error');
+                        console.error('[subscribe]', error);
+                        msg.innerText = window.t('form-error') + ' (' + (error && error.message ? error.message : '?') + ')';
                         msg.className = 'text-red-500 text-sm font-bold mt-2 block';
                         btn.innerText = window.t('btn-sub');
                         btn.disabled = false;
