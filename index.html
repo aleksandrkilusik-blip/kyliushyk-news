@@ -647,35 +647,12 @@
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-6">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="news-h2">Оновлення служіння</h2>
                 <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
-                    Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.
+                    Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Напишіть мені, і я додам вас до розсилки. Або приєднуйтесь до Telegram-каналу.
                 </p>
-                <form name="subscribe-form" method="POST" action="" data-endpoint=""
-                      class="max-w-2xl mx-auto text-left pt-2">
-                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <label class="sr-only" for="nl-fname" data-i18n="form-fname">Ім'я</label>
-                        <input id="nl-fname" name="name" type="text" required
-                               class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
-                               data-i18n-placeholder="form-fname" placeholder="Ім'я">
-                        <label class="sr-only" for="nl-lname" data-i18n="form-lname">Прізвище</label>
-                        <input id="nl-lname" name="surname" type="text"
-                               class="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
-                               data-i18n-placeholder="form-lname" placeholder="Прізвище">
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-3 mt-3">
-                        <label class="sr-only" for="nl-email" data-i18n="form-email">Ваш email</label>
-                        <input id="nl-email" name="email" type="email" required autocomplete="email"
-                               class="flex-grow w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition"
-                               data-i18n-placeholder="form-email" placeholder="Ваш email">
-                        <button id="nl-submit" type="submit"
-                                class="shrink-0 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-8 rounded-xl transition-all shadow-md active:scale-95 text-base whitespace-nowrap"
-                                data-i18n="btn-sub">Підписатись</button>
-                    </div>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-3" data-i18n="form-note">Один лист на місяць. Без спаму. Відписатися можна будь-коли.</p>
-                    <span id="nl-message" class="hidden"></span>
-                </form>
-
-                <div class="flex justify-center pt-4">
+                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
+                    <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%BC%D0%BE%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82&body=%D0%86%D0%BC%27%D1%8F%3A%20%0A%D0%9F%D1%80%D1%96%D0%B7%D0%B2%D0%B8%D1%89%D0%B5%3A%20%0A" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
+                        <i class="fa-solid fa-envelope text-lg"></i> <span data-i18n="btn-sub-mail">Отримувати лист на пошту</span>
+                    </a>
                     <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
                         <i class="fa-brands fa-telegram text-xl"></i> <span data-i18n="btn-tg-channel">Мій Telegram-канал</span>
                     </a>
@@ -808,10 +785,10 @@
     <script>
         const translations = {
             uk: {
+                "btn-sub-mail": "Отримувати лист на пошту",
                 "trust-h": "Підзвітність і прозорість",
                 "trust-p1": "Пожертви приймає Cru (Campus Crusade for Christ International) — зареєстрована організація 501(c)(3). Для жертводавців у США внески є tax-deductible, на кожну пожертву надходить квитанція, а щомісячне партнерство можна змінити або скасувати будь-коли.",
                 "trust-p2": "Я звітую щомісяця — з іменами, цифрами й тим, що не спрацювало.",
-                "form-note": "Один лист на місяць. Без спаму. Відписатися можна будь-коли.",
                 "page-title": "Олександр Килюшик | Поруч із пораненими ветеранами України",
                 "meta-desc": "Олександр Килюшик — ветеран і місіонер «Україна для Христа» (Cru). Госпіталі, подкаст «Без броні», ретрити для тих, хто повертається з війни.",
                 "sub-brand": "Зцілення Надією",
@@ -920,19 +897,12 @@
                 "btn-tg": "Написати в Telegram",
                 "btn-wa": "Написати в WhatsApp",
                 "news-h2": "Оновлення служіння",
-                "news-p": "Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Залиште email, і лист приходитиме вам. Або приєднуйтесь до Telegram-каналу.",
-                "form-fname": "Ім'я",
-                "form-lname": "Прізвище",
-                "form-email": "Ваша email адреса",
-                "btn-sub": "Підписатись",
+                "news-p": "Кожного місяця я надсилаю молитовний лист із новинами служіння — історії, конкретні потреби, подяки. Напишіть мені, і я додам вас до розсилки. Або приєднуйтесь до Telegram-каналу.",
                 "bible-quote": "\"Тоді Він казав Своїм учням: Жниво справді велике, та робітників мало; тож благайте Господаря жнива, щоб на жниво Своє Він робітників вислав.\"",
                 "bible-ref": "(Від Матвія 9:37-38)",
                 "foot-title": "Давайте спілкуватися",
                 "foot-copy": "© 2026 Україна для Христа. Всі права захищені.",
                 "iban-alert": "IBAN скопійовано! Відкрийте Monobank та вставте його.",
-                "form-success": "Дякуємо! Ви успішно підписалися на оновлення.",
-                "form-error": "Сталася помилка. Будь ласка, спробуйте пізніше.",
-                "form-loading": "Відправка...",
                 "quote-end": "\"Якщо Господь спонукає Вас прийняти позитивне рішення, я буду вдячний за вашу першу пожертву вже сьогодні.\"",
                 "badge-new": "Нове", "card-aug-26": "Серпень 2026", "card-title-aug": "Структура й надія", "card-desc-aug": "Про відпустку, тривогу й дві історії людей, які вчаться жити після війни.", "card-jul-26": "Липень 2026", "card-title-jul": "Місяць зустрічей", "card-desc-jul": "Історії Валерії та Сашка, літня хроніка й нові кроки служіння.",
                 "card-jun-26": "Червень 2026",
@@ -973,10 +943,10 @@
                 "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l"
             },
             en: {
+                "btn-sub-mail": "Get the letter by email",
                 "trust-h": "Accountability &amp; transparency",
                 "trust-p1": "Gifts are received by Cru (Campus Crusade for Christ International), a registered 501(c)(3) organization. Gifts from U.S. donors are tax-deductible, you receive a receipt for every gift, and you can change or cancel a monthly partnership at any time.",
                 "trust-p2": "I report every month — with names, numbers, and what didn't work.",
-                "form-note": "One letter a month. No spam. Unsubscribe anytime.",
                 "page-title": "Oleksandr Kyliushyk | Walking with Ukraine's wounded veterans",
                 "meta-desc": "A combat veteran and amputee serving Ukraine's wounded soldiers with Cru. Hospital visits, a veterans' podcast, and retreats — one honest letter a month.",
                 "sub-brand": "Healing with Hope",
@@ -1073,19 +1043,12 @@
                 "btn-tg": "Write on Telegram",
                 "btn-wa": "Write on WhatsApp",
                 "news-h2": "Ministry Updates",
-                "news-p": "Once a month I send a prayer letter with news from the ministry — real stories, specific needs, answered prayers. Leave your email and it will come to your inbox.",
-                "form-fname": "First Name",
-                "form-lname": "Last Name",
-                "form-email": "Your email address",
-                "btn-sub": "Subscribe",
+                "news-p": "Once a month I send a prayer letter with news from the ministry — real stories, specific needs, answered prayers. Email me and I'll add you to the list. Or join the Telegram channel.",
                 "bible-quote": "\"Then he said to his disciples, 'The harvest is plentiful but the workers are few. Ask the Lord of the harvest, therefore, to send out workers into his harvest field.'\"",
                 "bible-ref": "(Matthew 9:37-38)",
                 "foot-title": "Let's communicate",
                 "foot-copy": "© 2026 | Military Ministry | In partnership with Cru",
                 "iban-alert": "IBAN copied! Open Monobank and paste it.",
-                "form-success": "Thank you! You have successfully subscribed to updates.",
-                "form-error": "An error occurred. Please try again later.",
-                "form-loading": "Sending...",
                 "quote-end": "\"If the Lord prompts you to make a positive decision, I would be grateful for your first donation today.\"",
                 "badge-new": "New", "card-aug-26": "August 2026", "card-title-aug": "Structure and Hope", "card-desc-aug": "On rest, anxiety, and two people learning to live after the war.", "card-jul-26": "July 2026", "card-title-jul": "A Month of Encounters", "card-desc-jul": "Stories of Valeria and Sashko, a summer chronicle, and new ministry steps.",
                 "card-jun-26": "June 2026",
@@ -1138,10 +1101,10 @@
                 "btn-cru-sub": "For international bank cards"
             },
             pl: {
+                "btn-sub-mail": "Otrzymuj list e-mailem",
                 "trust-h": "Odpowiedzialność i przejrzystość",
                 "trust-p1": "Darowizny przyjmuje Cru (Campus Crusade for Christ International) — zarejestrowana organizacja 501(c)(3). Darczyńcy w USA mogą odliczyć darowiznę od podatku, na każdą wpłatę wystawiane jest potwierdzenie, a comiesięczne wsparcie można zmienić lub anulować w każdej chwili.",
                 "trust-p2": "Co miesiąc zdaję relację — z imionami, liczbami i tym, co się nie udało.",
-                "form-note": "Jeden list miesięcznie. Bez spamu. Możesz zrezygnować w każdej chwili.",
                 "page-title": "Ołeksandr Kyliuszyk | Przy rannych weteranach Ukrainy",
                 "meta-desc": "Weteran i misjonarz misji „Ukraina dla Chrystusa” (Cru). Szpitale, podcast, rekolekcje dla wracających z wojny.",
                 "sub-brand": "Uzdrowienie Nadzieją",
@@ -1237,19 +1200,12 @@
                 "btn-tg": "Napisz na Telegramie",
                 "btn-wa": "Napisz na WhatsApp",
                 "news-h2": "Aktualizacje służby",
-                "news-p": "Raz w miesiącu wysyłam list modlitewny z wiadomościami ze służby — historie, konkretne potrzeby, podziękowania. Zostaw e-mail, a list trafi do Ciebie.",
-                "form-fname": "Imię",
-                "form-lname": "Nazwisko",
-                "form-email": "Twój adres email",
-                "btn-sub": "Subskrybuj",
+                "news-p": "Raz w miesiącu wysyłam list modlitewny z wiadomościami ze służby. Napisz do mnie, a dopiszę Cię do listy. Albo dołącz do kanału Telegram.",
                 "bible-quote": "„Wtedy rzekł do swych uczniów: Żniwo wprawdzie wielkie, ale robotników mało. Proście więc Pana żniwa, aby wyprawił robotników na żniwo swoje.”",
                 "bible-ref": "(Ew. Mateusza 9:37-38)",
                 "foot-title": "Porozmawiajmy",
                 "foot-copy": "© 2026 | Military Ministry | We współpracy z Cru",
                 "iban-alert": "IBAN skopiowany! Otwórz Monobank i wklej go.",
-                "form-success": "Dziękujemy! Pomyślnie zasubskrybowałeś aktualizacje.",
-                "form-error": "Wystąpił błąd. Spróbuj ponownie później.",
-                "form-loading": "Wysyłanie...",
                 "quote-end": "„Jeśli Pan skłoni Cię do podjęcia pozytywnej decyzji, będę wdzięczny za Twoją pierwszą darowiznę już dziś.”",
                 "badge-new": "Nowe",
                 "card-jun-26": "Czerwiec 2026",
@@ -1302,10 +1258,10 @@
                 "btn-cru-sub": "Dla międzynarodowych kart bankowych"
             },
             de: {
+                "btn-sub-mail": "Brief per E-Mail erhalten",
                 "trust-h": "Rechenschaft und Transparenz",
                 "trust-p1": "Spenden werden von Cru (Campus Crusade for Christ International) entgegengenommen, einer eingetragenen 501(c)(3)-Organisation. Für Spender in den USA sind die Beiträge steuerlich absetzbar, für jede Spende gibt es eine Quittung, und eine monatliche Partnerschaft kann jederzeit geändert oder beendet werden.",
                 "trust-p2": "Ich berichte jeden Monat — mit Namen, Zahlen und dem, was nicht funktioniert hat.",
-                "form-note": "Ein Brief pro Monat. Kein Spam. Jederzeit abbestellbar.",
                 "page-title": "Oleksandr Kyliushyk | An der Seite verwundeter Veteranen der Ukraine",
                 "meta-desc": "Kriegsveteran und Missionar der Mission „Ukraine für Christus“ (Cru). Lazarette, Podcast, Retreats für Heimkehrer.",
                 "sub-brand": "Heilung durch Hoffnung",
@@ -1408,11 +1364,7 @@
                 "btn-tg": "Auf Telegram schreiben",
                 "btn-wa": "Auf WhatsApp schreiben",
                 "news-h2": "Dienst-Updates",
-                "news-p": "Einmal im Monat schicke ich einen Gebetsbrief mit Nachrichten aus dem Dienst — Geschichten, konkrete Anliegen, Dank. Hinterlassen Sie Ihre E-Mail-Adresse.",
-                "form-fname": "Vorname",
-                "form-lname": "Nachname",
-                "form-email": "Ihre E-Mail-Adresse",
-                "btn-sub": "Abonnieren",
+                "news-p": "Einmal im Monat schicke ich einen Gebetsbrief mit Nachrichten aus dem Dienst. Schreiben Sie mir, und ich nehme Sie in die Liste auf. Oder treten Sie dem Telegram-Kanal bei.",
                 "archive-title": "Archiv der Gebetsbriefe",
                 "letter-mar-26": "März",
                 "letter-feb-26": "Februar",
@@ -1423,9 +1375,6 @@
                 "foot-title": "Lassen Sie uns kommunizieren",
                 "foot-copy": "© 2026 | Military Ministry | In Partnerschaft mit Cru",
                 "iban-alert": "IBAN kopiert! Öffnen Sie Monobank und fügen Sie sie ein.",
-                "form-success": "Danke! Sie haben die Updates erfolgreich abonniert.",
-                "form-error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-                "form-loading": "Wird gesendet...",
                 "quote-end": "„Wenn der Herr Sie dazu bewegt, eine positive Entscheidung zu treffen, wäre ich Ihnen noch heute für Ihre erste Spende dankbar.“",
                 "badge-new": "Neu",
                 "card-jun-26": "Juni 2026",
@@ -1600,35 +1549,6 @@
             }
         });
 
-        // --- Форма підписки ---
-        // Надсилання звичайним POST на власний Google Apps Script (data-endpoint).
-        // Поки endpoint не заданий, форма не надсилається нікуди.
-        (function () {
-            const form = document.forms['subscribe-form'];
-            const msg = document.getElementById('nl-message');
-            if (!form) return;
-
-            const endpoint = form.getAttribute('data-endpoint');
-            if (endpoint) {
-                form.setAttribute('action', endpoint);
-            } else {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    if (!msg) return;
-                    msg.innerText = window.t('form-error');
-                    msg.className = 'text-red-500 text-sm font-bold mt-2 block';
-                });
-            }
-
-            const params = new URLSearchParams(window.location.search);
-            if (params.has('subscribed') && msg) {
-                msg.innerText = window.t('form-success');
-                msg.className = 'text-green-500 text-sm font-bold mt-2 block';
-                history.replaceState(null, '', window.location.pathname + window.location.hash);
-                const target = document.getElementById('newsletters');
-                if (target) setTimeout(function () { target.scrollIntoView(); }, 100);
-            }
-        })();
     </script>
     <script>
         (function () {
