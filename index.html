@@ -89,6 +89,23 @@
         :root:not(.dark) .bg-slate-900 .bg-white .text-gold,
         :root:not(.dark) .bg-slate-800 .bg-white .text-gold { color: #A16207; }
 
+        /* === Доступність: видимий фокус з клавіатури (WCAG 2.4.7) === */
+        :focus-visible { outline: 3px solid #0F172A; outline-offset: 3px; }
+        .dark :focus-visible,
+        .bg-slate-900 :focus-visible, .bg-slate-950 :focus-visible,
+        .hero-bg :focus-visible, [class*="bg-["] :focus-visible { outline-color: #FBBF24; }
+        :root:not(.dark) .bg-slate-900 .bg-white :focus-visible,
+        :root:not(.dark) [class*="bg-["] .bg-white :focus-visible { outline-color: #0F172A; }
+        #pay-bank > button:focus-visible { outline-color: #0F172A; outline-offset: -5px; }
+
+        .skip-link { position: absolute; left: 1rem; top: -200px; z-index: 100; background: #FBBF24; color: #0F172A;
+                     padding: .85rem 1.25rem; border-radius: .75rem; font-weight: 800; text-decoration: none; }
+        .skip-link:focus { top: 1rem; }
+
+        /* світлі плашки всередині кольорових блоків — темне золото; цитата на блідо-золотому — ще темніше */
+        :root:not(.dark) [class*="bg-["] .bg-slate-50 .text-gold { color: #A16207; }
+        :root:not(.dark) .bg-gold-pale .text-gold { color: #854D0E; }
+
         .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
         /* Компенсація липкої шапки при переході по якорях */
@@ -109,6 +126,7 @@
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900 transition-colors duration-200">
+    <a href="#main" class="skip-link" data-i18n="skip-link">Перейти до змісту</a>
 
     <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
@@ -127,16 +145,16 @@
 
             <div class="flex items-center gap-5">
                 <div class="relative flex items-center shrink-0">
-                    <select id="lang-switcher" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm focus:outline-none cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
+                    <select id="lang-switcher" aria-label="Мова / Language" data-i18n-aria="aria-lang" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm py-3 min-w-[44px] cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
                         <option value="uk" class="text-slate-800 dark:text-slate-800">UA</option>
                         <option value="en" class="text-slate-800 dark:text-slate-800">EN</option>
                         <option value="pl" class="text-slate-800 dark:text-slate-800">PL</option>
                         <option value="de" class="text-slate-800 dark:text-slate-800">DE</option>
                     </select>
-                    <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none"></i>
+                    <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none" aria-hidden="true"></i>
                 </div>
 
-                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-lg text-xl p-2 transition-colors shrink-0">
+                <button id="theme-toggle" type="button" aria-label="Світла / темна тема" data-i18n-aria="aria-theme" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-xl p-3 transition-colors shrink-0">
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
@@ -151,7 +169,7 @@
                     </a>
                 </div>
 
-                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-800 dark:text-white p-2 shrink-0"><i id="menu-icon" class="fa-solid fa-bars text-2xl"></i></button>
+                <button type="button" id="menu-btn" onclick="toggleMobileMenu()" aria-label="Меню" data-i18n-aria="aria-menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden text-slate-800 dark:text-white w-11 h-11 flex items-center justify-center shrink-0"><i id="menu-icon" class="fa-solid fa-bars text-2xl" aria-hidden="true"></i></button>
             </div>
         </div>
         
@@ -165,6 +183,8 @@
             <a href="#partnership" onclick="toggleMobileMenu()" class="block text-center bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-4 px-6 rounded-full transition-all shadow-md mt-2" data-i18n="btn-partner">Стати партнером</a>
         </div>
     </header>
+
+    <main id="main" tabindex="-1">
 
     <section class="relative pt-32 pb-48 hero-bg transition-colors duration-200">
         <div class="hero-fade max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -211,7 +231,7 @@
                         <img loading="lazy" decoding="async" src="IMG_0278_Original.jpeg" alt="Олександр у військовій формі" class="path-slide w-full h-full object-cover object-center absolute inset-0 opacity-100 transition-opacity duration-700">
                         <img loading="lazy" decoding="async" src="path-kostia.jpg" alt="Олександр і Костянтин Шевченко" style="object-position:50% 42%" class="path-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
                         <img loading="lazy" decoding="async" src="path-3.jpg" alt="Олександр із побратимами" style="object-position:50% 35%" class="path-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
-                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10"></div>
+                        <div class="absolute bottom-1 left-0 right-0 flex justify-center gap-2 z-10"></div>
                     </div>
                 </div>
                 <div class="space-y-6 font-sans">
@@ -321,13 +341,13 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button onclick="switchTab('tab-hospitals')" id="btn-tab-hospitals" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md" data-i18n="tab-hosp">
+                <button type="button" onclick="switchTab('tab-hospitals')" id="btn-tab-hospitals" aria-controls="tab-hospitals" aria-pressed="true" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md" data-i18n="tab-hosp">
                     Госпіталі
                 </button>
-                <button onclick="switchTab('tab-podcasts')" id="btn-tab-podcasts" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-pod">
+                <button type="button" onclick="switchTab('tab-podcasts')" id="btn-tab-podcasts" aria-controls="tab-podcasts" aria-pressed="false" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-pod">
                     Без броні
                 </button>
-                <button onclick="switchTab('tab-retreats')" id="btn-tab-retreats" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-ret">
+                <button type="button" onclick="switchTab('tab-retreats')" id="btn-tab-retreats" aria-controls="tab-retreats" aria-pressed="false" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-ret">
                     Ретрити
                 </button>
             </div>
@@ -371,8 +391,8 @@
                             <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p1-ctx">
                                 Ми не оминаємо гострих кутів: обговорюємо досвід війни, який формує й водночас ламає, вплив віри на лідерство у війську, образу на церкву, тригери в цивільному житті та те, яким може бути добрий сценарій повернення ветерана до спільноти.
                             </p>
-                            <a href="https://youtu.be/WIReJo30ppA?si=aJ2ftkdk8SPUNWFB" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="https://youtu.be/WIReJo30ppA?si=aJ2ftkdk8SPUNWFB" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -396,8 +416,8 @@
                             <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p2-ctx">
                                 Говоримо відверто: що найважче на війні, як трансформуються стосунки на відстані, чому звичні слова підтримки іноді ранять, і як виглядає віра, коли на молитву зовсім немає часу.
                             </p>
-                            <a href="https://www.youtube.com/watch?v=o-OJkDOy-cM&list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="https://www.youtube.com/watch?v=o-OJkDOy-cM&list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -421,8 +441,8 @@
                             <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p3-ctx">
                                 Говоримо про те, як церкві жити з людьми з різним досвідом війни та як капелан чи пастор переживає втрату найрідніших, залишаючись опорою для інших.
                             </p>
-                            <a href="https://youtu.be/KR7hr8g7_wY?si=UlTwIM0YQiqsc__v" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="https://youtu.be/KR7hr8g7_wY?si=UlTwIM0YQiqsc__v" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Дивитись в YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -436,8 +456,8 @@
                                 Це «коло своїх», де ветерани можуть по-справжньому розслабитися. Я роблю це, щоб дати можливість відпочити від рутини та сірої буденності, перебуваючи в колі побратимів, які розуміють тебе без зайвих слів.
                             </p>
                             <ul class="space-y-3 font-medium text-slate-800 dark:text-slate-200">
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-mountain-sun text-gold"></i> <span data-i18n="ret-li1">Психологічне розвантаження у горах</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-heart text-gold"></i> <span data-i18n="ret-li2">Духовне відновлення та спільна молитва</span></li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-mountain-sun text-gold" aria-hidden="true"></i> <span data-i18n="ret-li1">Психологічне розвантаження у горах</span></li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-heart text-gold" aria-hidden="true"></i> <span data-i18n="ret-li2">Духовне відновлення та спільна молитва</span></li>
                             </ul>
                         </div>
                         <div class="rounded-[2rem] overflow-hidden shadow-xl relative border-4 border-slate-100 dark:border-slate-700 w-full transition-colors duration-200" style="aspect-ratio: 16/9;">
@@ -498,7 +518,7 @@
                             <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="diana-tag">Подкаст «Без броні»</span>
                             <h4 class="text-2xl sm:text-3xl font-extrabold font-sans" data-i18n="diana-h4">Діана: пауза між ротаціями</h4>
                             <p class="text-slate-300 dark:text-slate-400 leading-relaxed" data-i18n="diana-p">З Діаною ми записали епізод подкасту в коротку паузу між її ротаціями — ті кілька тижнів, коли військові намагаються встигнути прожити ціле цивільне життя. Вона розповіла, що допомагає їй не приносити війну додому: рідні поруч і чітка структура дня. Вміння розділяти війну і мирне життя — це не байдужість, а велика внутрішня робота.</p>
-                            <a href="https://youtu.be/A23GSLahOoY" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-gold font-bold hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i> <span data-i18n="diana-link">Дивитися розмову</span> <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                            <a href="https://youtu.be/A23GSLahOoY" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 py-3 -mb-3 text-gold font-bold hover:text-white transition-colors"><i class="fa-brands fa-youtube" aria-hidden="true"></i> <span data-i18n="diana-link">Дивитися розмову</span> <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
                         </div>
                     </article>
                 </div>
@@ -515,7 +535,7 @@
             </div>
 
             <div class="bg-gold-pale dark:bg-gold/10 border-l-4 border-gold p-8 sm:p-10 rounded-r-3xl relative overflow-hidden transition-colors duration-200 mb-12 max-w-4xl mx-auto">
-                <i class="fa-solid fa-quote-right absolute -right-4 -top-4 text-9xl text-gold/10 dark:text-gold/20"></i>
+                <i class="fa-solid fa-quote-right absolute -right-4 -top-4 text-9xl text-gold/10 dark:text-gold/20" aria-hidden="true"></i>
                 <p class="font-serif italic text-2xl sm:text-3xl text-slate-800 dark:text-slate-200 leading-relaxed mb-6 relative z-10 transition-colors duration-200" data-i18n="bible-quote">
                     "Тоді Він казав Своїм учням: Жниво справді велике, та робітників мало; тож благайте Господаря жнива, щоб на жниво Своє Він робітників вислав."
                 </p>
@@ -525,7 +545,7 @@
             <div class="max-w-4xl mx-auto mb-16">
                 <div class="bg-slate-50 dark:bg-slate-800 p-8 sm:p-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 space-y-6 transition-colors duration-200">
                     <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 font-sans transition-colors duration-200">
-                        <i class="fa-solid fa-scale-balanced text-gold"></i>
+                        <i class="fa-solid fa-scale-balanced text-gold" aria-hidden="true"></i>
                         <span data-i18n="fin-h4">Фінансова політика Кемпус Крусейд</span>
                     </h4>
                     <div class="text-slate-600 dark:text-slate-300 leading-relaxed text-base space-y-4 font-medium transition-colors duration-200">
@@ -539,7 +559,7 @@
             <div class="bg-[#135d7a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200 grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6 text-left">
                     <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-2">
-                        <i class="fa-solid fa-globe text-gold text-xl"></i>
+                        <i class="fa-solid fa-globe text-gold text-xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Підтримати мене</h3>
                     <p class="text-lg text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
@@ -553,47 +573,47 @@
                         <div id="ask-uah" class="grid grid-cols-3 gap-3">
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">500 ₴</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center ring-2 ring-white/70">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">1000 ₴</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">2500 ₴</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                         </div>
                         <div id="ask-usd" class="grid grid-cols-3 gap-3">
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">$50</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center ring-2 ring-white/70">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">$100</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                             <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
                                 <span class="block text-2xl sm:text-3xl font-extrabold text-white">$250</span>
-                                <span class="block text-[11px] font-bold text-white/70 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">на місяць</span>
                             </div>
                         </div>
-                        <p class="text-white/70 text-sm leading-relaxed mt-5" data-i18n="ask-note">Суми орієнтовні — важлива регулярність, а не розмір. Разова пожертва теж допомагає. Оберіть зручний спосіб нижче.</p>
+                        <p class="text-white/90 text-sm leading-relaxed mt-5" data-i18n="ask-note">Суми орієнтовні — важлива регулярність, а не розмір. Разова пожертва теж допомагає. Оберіть зручний спосіб нижче.</p>
                     </div>
 
                     <div id="pay-bank" class="bg-[#d98127] rounded-[2rem] overflow-hidden transition-all duration-300 shadow-xl border border-black/5">
-                        <button onclick="toggleAccordion('bank-details', this)" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-[#c97521] transition-colors focus:outline-none">
+                        <button type="button" onclick="toggleAccordion('bank-details', this)" aria-expanded="false" aria-controls="bank-details" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-[#c97521] transition-colors">
                             <div class="flex items-center gap-5 pr-4">
                                 <div class="w-12 h-12 sm:w-14 sm:h-14 bg-black/10 rounded-xl flex items-center justify-center shrink-0 text-slate-900">
-                                    <i class="fa-regular fa-credit-card text-xl sm:text-2xl"></i>
+                                    <i class="fa-regular fa-credit-card text-xl sm:text-2xl" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug" data-i18n="btn-orange-title">Підтримати через Приват24 або Monobank</h4>
-                                    <p class="text-xs sm:text-sm font-bold text-slate-900/70 mt-1" data-i18n="btn-orange-sub">Натисніть, щоб переглянути реквізити</p>
+                                    <p class="text-xs sm:text-sm font-bold text-slate-900 mt-1" data-i18n="btn-orange-sub">Натисніть, щоб переглянути реквізити</p>
                                 </div>
                             </div>
                             <div class="w-10 h-10 bg-slate-900 text-white rounded-full flex items-center justify-center shrink-0 transform transition-transform duration-300 acc-icon">
-                                <i class="fa-solid fa-chevron-down"></i>
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                             </div>
                         </button>
 
@@ -606,8 +626,8 @@
                                         <p class="text-slate-200 text-sm md:text-base font-medium" data-i18n="acc-step1">В меню "Платежі" (у Monobank: "Платіж за IBAN") введіть рахунок:</p>
                                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-3 border border-white/10 gap-3">
                                             <code class="text-sm md:text-base font-mono text-white font-bold tracking-wider break-all">UA063052990000026004045007863</code>
-                                            <button onclick="copyToClipboard('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
-                                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
+                                            <button type="button" onclick="copyToClipboard('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                                <i class="fa-regular fa-copy" aria-hidden="true"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
                                             </button>
                                         </div>
                                     </div>
@@ -626,8 +646,8 @@
                                         <p class="text-slate-200 text-sm md:text-base font-medium leading-relaxed" data-i18n="acc-step3">У полі «Коментар до платежу» (або «Залучив ПІБ») <strong class='text-gold font-bold'>обов'язково вкажіть</strong> мій внутрішній номер в місії (можна скопіювати його нижче):</p>
                                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#154b68] rounded-xl p-3 border border-white/10 gap-3 max-w-[280px]">
                                             <code class="text-xl md:text-2xl font-extrabold text-gold tracking-widest pl-2">5544</code>
-                                            <button onclick="copyToClipboard('5544', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
-                                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
+                                            <button type="button" onclick="copyToClipboard('5544', this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                                <i class="fa-regular fa-copy" aria-hidden="true"></i> <span data-i18n="btn-copy" class="copy-text">Скопіювати</span>
                                             </button>
                                         </div>
                                     </div>
@@ -642,7 +662,7 @@
 
                                 <div class="flex gap-4 items-center mt-8 pt-6 border-t border-white/10">
                                     <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-xl shrink-0">
-                                        <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check" aria-hidden="true"></i>
                                     </div>
                                     <p class="text-sm md:text-base leading-relaxed font-medium" data-i18n="acc-thanks">Підтвердіть платіж.<br><span class='text-gold uppercase tracking-wider font-extrabold'>Щиро дякуємо за вашу підтримку!</span></p>
                                 </div>
@@ -653,7 +673,7 @@
                     <a id="pay-cru" href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6 font-sans">
                         <div class="flex items-center gap-5 pr-4">
                             <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
-                                <i class="fa-solid fa-globe text-xl sm:text-2xl"></i>
+                                <i class="fa-solid fa-globe text-xl sm:text-2xl" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug" data-i18n="btn-cru-title">Підтримати через Cru.org</h4>
@@ -661,7 +681,7 @@
                             </div>
                         </div>
                         <div class="w-10 h-10 bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center shrink-0 transition-colors">
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </div>
                     </a>
 
@@ -682,7 +702,7 @@
                     <div class="mt-6 rounded-[1.5rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-7 text-left">
                         <div class="flex items-start gap-4">
                             <div class="w-10 h-10 shrink-0 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500">
-                                <i class="fa-solid fa-shield-halved"></i>
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                             </div>
                             <div class="space-y-2">
                                 <h5 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="trust-h">Підзвітність і прозорість</h5>
@@ -702,13 +722,13 @@
                 <div class="h-px bg-slate-200 dark:bg-slate-700 w-24 mx-auto transition-colors duration-200"></div>
                 
                 <div class="space-y-4">
-                    <p class="text-xs uppercase font-extrabold tracking-widest text-slate-400" data-i18n="quick-contact">Швидкий зв'язок зі мною:</p>
+                    <p class="text-xs uppercase font-extrabold tracking-widest text-slate-500 dark:text-slate-400" data-i18n="quick-contact">Швидкий зв'язок зі мною:</p>
                     <div class="flex flex-wrap justify-center gap-4">
-                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
-                            <i class="fa-brands fa-telegram text-lg"></i> <span data-i18n="btn-tg">Написати в Telegram</span>
+                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0077b5] hover:bg-[#006699] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
+                            <i class="fa-brands fa-telegram text-lg" aria-hidden="true"></i> <span data-i18n="btn-tg">Написати в Telegram</span>
                         </a>
-                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> <span data-i18n="btn-wa">Написати в WhatsApp</span>
+                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-slate-900 font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> <span data-i18n="btn-wa">Написати в WhatsApp</span>
                         </a>
                     </div>
                     <p class="text-slate-900 dark:text-white font-extrabold text-lg mt-2 font-sans tracking-wide font-medium transition-colors duration-200">+380 97 605 89 65</p>
@@ -727,30 +747,30 @@
             <div class="mt-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8">
                 <p class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed" data-i18n="share-ref-p">Якщо ця історія когось вам нагадала — просто напишіть мені, кого. Я зв'яжуся сам і скажу, що це ви порадили.</p>
                 <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%97%D0%BD%D0%B0%D1%8E%2C%20%D0%BA%D0%BE%D0%BC%D1%83%20%D1%86%D0%B5%20%D0%B2%D0%B0%D1%80%D1%82%D0%BE%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md active:scale-95 text-base mt-6">
-                    <i class="fa-solid fa-envelope text-lg"></i> <span data-i18n="share-ref-btn">Написати мені</span>
+                    <i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i> <span data-i18n="share-ref-btn">Написати мені</span>
                 </a>
 
                 <div class="flex items-center gap-4 my-8">
                     <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
-                    <span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest whitespace-nowrap" data-i18n="share-or">або надішліть посилання</span>
+                    <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest whitespace-nowrap" data-i18n="share-or">або надішліть посилання</span>
                     <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
                 </div>
 
                 <div class="flex flex-wrap gap-3 justify-center">
                     <button type="button" id="share-copy" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
-                        <i class="fa-regular fa-copy"></i> <span data-i18n="share-btn-copy">Скопіювати посилання</span>
+                        <i class="fa-regular fa-copy" aria-hidden="true"></i> <span data-i18n="share-btn-copy">Скопіювати посилання</span>
                     </button>
                     <a id="share-mail" href="#" class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
-                        <i class="fa-solid fa-envelope"></i> Email
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Email
                     </a>
-                    <a id="share-wa" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb757] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    <a id="share-wa" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb757] text-slate-900 font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
                     </a>
-                    <a id="share-tg" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
-                        <i class="fa-brands fa-telegram"></i> Telegram
+                    <a id="share-tg" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#0077b5] hover:bg-[#006699] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
                     </a>
-                    <a id="share-fb" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#1465d8] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
-                        <i class="fa-brands fa-facebook"></i> Facebook
+                    <a id="share-fb" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1464cc] hover:bg-[#135fbf] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook
                     </a>
                 </div>
                 <span id="share-done" class="hidden"></span>
@@ -768,16 +788,16 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
                     <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%BC%D0%BE%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82&body=%D0%86%D0%BC%27%D1%8F%3A%20%0A%D0%9F%D1%80%D1%96%D0%B7%D0%B2%D0%B8%D1%89%D0%B5%3A%20%0A" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
-                        <i class="fa-solid fa-envelope text-lg"></i> <span data-i18n="btn-sub-mail">Отримувати лист на пошту</span>
+                        <i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i> <span data-i18n="btn-sub-mail">Отримувати лист на пошту</span>
                     </a>
-                    <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0088cc] hover:bg-[#0077b5] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
-                        <i class="fa-brands fa-telegram text-xl"></i> <span data-i18n="btn-tg-channel">Мій Telegram-канал</span>
+                    <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0077b5] hover:bg-[#006699] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
+                        <i class="fa-brands fa-telegram text-xl" aria-hidden="true"></i> <span data-i18n="btn-tg-channel">Мій Telegram-канал</span>
                     </a>
                 </div>
             </div>
 
             <div class="mt-20 font-sans">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="alex-vacation.jpeg" alt="Newsletter Cover August" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-aug-26">Серпень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-aug">Структура й надія</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-aug">Про відпустку, тривогу й дві історії людей, які вчаться жити після війни.</p><a href="newsletter-august-2026_1.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="cover-dog.jpeg" alt="Newsletter Cover July" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jul-26">Липень 2026</span><h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jul">Місяць зустрічей</h4><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jul">Історії Валерії та Сашка, літня хроніка й нові кроки служіння.</p><a href="newsletter-july-2026.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i></a></div></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="absolute top-4 left-4 z-10 bg-gold text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full shadow-sm tracking-widest" data-i18n="badge-new">Нове</div><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="alex-vacation.jpeg" alt="Newsletter Cover August" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-aug-26">Серпень 2026</span><h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-aug">Структура й надія</h3><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-aug">Про відпустку, тривогу й дві історії людей, які вчаться жити після війни.</p><a href="newsletter-august-2026_1.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i></a></div></div><div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full"><div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative flex items-center justify-center"><img loading="lazy" decoding="async" src="cover-dog.jpeg" alt="Newsletter Cover July" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div><div class="p-8 flex flex-col flex-grow"><span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jul-26">Липень 2026</span><h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jul">Місяць зустрічей</h3><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jul">Історії Валерії та Сашка, літня хроніка й нові кроки служіння.</p><a href="newsletter-july-2026.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn"><span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i></a></div></div>
                     
                     <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col relative h-full">
                         
@@ -785,11 +805,11 @@
                             <img loading="lazy" decoding="async" src="IMG_3440.jpeg" alt="Newsletter Cover June" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
-                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jun-26">Червень 2026</span>
-                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jun">Незламні серця</h4>
+                            <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-jun-26">Червень 2026</span>
+                            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-jun">Незламні серця</h3>
                             <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-jun">3 історії стійкості, нові подкасти та Божа надія серед темряви полону й болю.</p>
-                            <a href="newsletter-june.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="newsletter-june.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -799,11 +819,11 @@
                             <img loading="lazy" decoding="async" src="IMG_6228.jpeg" alt="Newsletter Cover April" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
-                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
-                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-apr">Новини за квітень</h4>
+                            <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-apr-26">Квітень 2026</span>
+                            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-apr">Новини за квітень</h3>
                             <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-apr">Свіжі оновлення з мого служіння. Роздуми, історії та плани.</p>
-                            <a href="newsletter-april.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="newsletter-april.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -813,11 +833,11 @@
                             <img loading="lazy" decoding="async" src="IMG_6519.jpeg" alt="Newsletter Cover March" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
-                            <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-mar-26">Березень 2026</span>
-                            <h4 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-mar">Оновлення служіння</h4>
+                            <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="card-mar-26">Березень 2026</span>
+                            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 font-sans" data-i18n="card-title-mar">Оновлення служіння</h3>
                             <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow" data-i18n="card-desc-mar">Збираємо довгоочікуваний врожай. Історії відновлення.</p>
-                            <a href="newsletter-march.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit group/btn">
-                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            <a href="newsletter-march.html" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-read-letter">Читати лист</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -826,12 +846,14 @@
 
                 <div class="mt-12 text-center">
                     <a href="https://us16.campaign-archive.com/home/?u=8f90cbc57c904494ec74dc157&id=debb78a126" target="_blank" class="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-bold hover:text-gold dark:hover:text-gold transition-colors text-sm uppercase tracking-widest group/all">
-                        <span data-i18n="btn-all-archives">Переглянути всі архіви</span> <i class="fa-solid fa-arrow-right group-hover/all:translate-x-1 transition-transform"></i>
+                        <span data-i18n="btn-all-archives">Переглянути всі архіви</span> <i class="fa-solid fa-arrow-right group-hover/all:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -867,34 +889,34 @@
 
                 <div class="flex flex-col md:items-end justify-between space-y-12">
                     <div class="space-y-4 md:text-right">
-                        <a href="mailto:oleksandr.kyliushyk@cru.org" class="flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
-                            <i class="fa-regular fa-envelope text-lg text-slate-400 group-hover:text-gold transition-colors"></i>
+                        <a href="mailto:oleksandr.kyliushyk@cru.org" class="min-h-[44px] flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-regular fa-envelope text-lg text-slate-400 group-hover:text-gold transition-colors" aria-hidden="true"></i>
                             <span class="font-bold text-sm">oleksandr.kyliushyk@cru.org</span>
                         </a>
-                        <a href="tel:+380976058965" class="flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
-                            <i class="fa-solid fa-phone text-lg text-slate-400 group-hover:text-gold transition-colors"></i>
+                        <a href="tel:+380976058965" class="min-h-[44px] flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-solid fa-phone text-lg text-slate-400 group-hover:text-gold transition-colors" aria-hidden="true"></i>
                             <span class="font-bold text-sm">+380 (97) 605 89 65</span>
                         </a>
                     </div>
                     
                     <div class="flex items-center gap-3">
-                        <a href="https://www.instagram.com/sollex991?igsh=N3djd3UxcHIyYnZj&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:border-transparent transition-all shadow-sm">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/sollex991?igsh=N3djd3UxcHIyYnZj&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#0088cc] hover:border-transparent transition-all shadow-sm">
-                            <i class="fa-brands fa-telegram"></i>
+                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#0088cc] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] hover:border-transparent transition-all shadow-sm">
-                            <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest text-center md:text-left" data-i18n="foot-copy">© 2026 Україна для Христа. Всі права захищені.</p>
-                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-gold transition-colors shadow-sm">
-                    <i class="fa-solid fa-chevron-up"></i>
+                <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest text-center md:text-left" data-i18n="foot-copy">© 2026 Україна для Христа. Всі права захищені.</p>
+                <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Нагору" data-i18n-aria="aria-top" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-gold transition-colors shadow-sm">
+                    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
                 </button>
             </div>
         </footer>
@@ -902,6 +924,11 @@
     <script>
         const translations = {
             uk: {
+                "skip-link": "Перейти до змісту",
+                "aria-lang": "Мова сайту",
+                "aria-theme": "Світла / темна тема",
+                "aria-menu": "Меню",
+                "aria-top": "Нагору",
                 "share-or": "або надішліть посилання",
                 "share-ref-btn": "Написати мені",
                 "share-ref-p": "Якщо ця історія когось вам нагадала — просто напишіть мені, кого. Я зв'яжуся сам і скажу, що це ви порадили.",
@@ -1085,6 +1112,11 @@
                 "my-role": "Військове служіння в \"Україна для Христа\"<br>Campus Crusade for Christ Int'l"
             },
             en: {
+                "skip-link": "Skip to content",
+                "aria-lang": "Site language",
+                "aria-theme": "Light / dark theme",
+                "aria-menu": "Menu",
+                "aria-top": "Back to top",
                 "share-or": "or send the link",
                 "share-ref-btn": "Email me a name",
                 "share-ref-p": "If this brought someone to mind, just email me their name. I will reach out myself and tell them you suggested it.",
@@ -1268,6 +1300,11 @@
                 "btn-cru-sub": "For international bank cards"
             },
             pl: {
+                "skip-link": "Przejdź do treści",
+                "aria-lang": "Język strony",
+                "aria-theme": "Jasny / ciemny motyw",
+                "aria-menu": "Menu",
+                "aria-top": "Do góry",
                 "share-or": "albo wyślij link",
                 "share-ref-btn": "Napisz do mnie",
                 "share-ref-p": "Jeśli ktoś Ci się przypomniał — po prostu napisz mi, kto to. Skontaktuję się sam i powiem, że to Twoja rekomendacja.",
@@ -1450,6 +1487,11 @@
                 "btn-cru-sub": "Dla międzynarodowych kart bankowych"
             },
             de: {
+                "skip-link": "Zum Inhalt springen",
+                "aria-lang": "Sprache der Seite",
+                "aria-theme": "Helles / dunkles Design",
+                "aria-menu": "Menü",
+                "aria-top": "Nach oben",
                 "share-or": "oder senden Sie den Link",
                 "share-ref-btn": "Schreiben Sie mir",
                 "share-ref-p": "Wenn Ihnen jemand eingefallen ist — schreiben Sie mir einfach, wer. Ich melde mich selbst und sage, dass Sie es empfohlen haben.",
@@ -1667,6 +1709,10 @@
                     el.placeholder = translations[lang][key];
                 }
             });
+            document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+                const key = el.getAttribute('data-i18n-aria');
+                if (translations[lang] && translations[lang][key]) el.setAttribute('aria-label', translations[lang][key]);
+            });
             document.documentElement.lang = lang;
 
             const dict = translations[lang] || {};
@@ -1690,6 +1736,7 @@
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
             menu.classList.toggle('hidden');
+            document.getElementById('menu-btn')?.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-xmark');
         }
@@ -1700,6 +1747,7 @@
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50";
             });
+            document.querySelectorAll('.tab-btn').forEach(b => b.setAttribute('aria-pressed', String(b.id === 'btn-' + tabId)));
             document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md";
         }
 
@@ -1707,6 +1755,7 @@
             const content = document.getElementById(id);
             const icon = btn.querySelector('.acc-icon');
             content.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!content.classList.contains('hidden')));
             if(content.classList.contains('hidden')) {
                 icon.classList.remove('rotate-180');
             } else {
@@ -1844,14 +1893,15 @@
             if (!box) return;
             const slides = box.querySelectorAll('.path-slide');
             if (slides.length < 2) return;
-            const dots = box.querySelector('.absolute.bottom-4');
+            const dots = box.querySelector('.absolute.bottom-1');
             let i = 0, timer = null;
 
             slides.forEach((_, n) => {
                 const b = document.createElement('button');
                 b.type = 'button';
                 b.setAttribute('aria-label', 'Фото ' + (n + 1));
-                b.className = 'w-2.5 h-2.5 rounded-full bg-white/60 hover:bg-white transition-colors';
+                b.className = 'w-11 h-11 -mx-2 flex items-center justify-center';
+                b.innerHTML = '<span class="block w-2.5 h-2.5 rounded-full bg-white/60 transition-colors"></span>';
                 b.addEventListener('click', () => { show(n); restart(); });
                 dots.appendChild(b);
             });
@@ -1859,8 +1909,10 @@
             function show(n) {
                 i = n % slides.length;
                 slides.forEach((el, k) => el.style.opacity = (k === i ? '1' : '0'));
-                dots.childNodes.forEach((d, k) =>
-                    d.className = 'w-2.5 h-2.5 rounded-full transition-colors ' + (k === i ? 'bg-white' : 'bg-white/60 hover:bg-white'));
+                dots.childNodes.forEach((d, k) => {
+                    d.firstChild.className = 'block w-2.5 h-2.5 rounded-full transition-colors ' + (k === i ? 'bg-white' : 'bg-white/60');
+                    d.setAttribute('aria-current', k === i ? 'true' : 'false');
+                });
             }
             function restart() {
                 clearInterval(timer);
