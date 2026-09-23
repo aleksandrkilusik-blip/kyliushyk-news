@@ -1,6 +1,6 @@
 /** Конфіг повторює той, що був інлайном у index.html (Play CDN). */
 module.exports = {
-  content: ['./*.html'],
+  content: ['./*.html', './letters/*.html'],
   darkMode: 'class',
   theme: {
     extend: {

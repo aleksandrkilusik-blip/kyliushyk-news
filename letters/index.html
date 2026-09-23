@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молитовні листи | Олександр Килюшик</title>
+    <meta name="description" content="Щомісячні листи Олександра Килюшика — ветерана й місіонера «Україна для Христа» (Cru): історії ветеранів, ретрити, госпіталі, молитовні потреби.">
+    <link rel="canonical" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/letters/">
+
+    <!-- Open Graph: англійською, як і на головній -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Military Ministry | Ukraine for Christ (Cru)">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:url" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/letters/">
+    <meta property="og:title" content="Prayer letters from a veteran serving veterans in Ukraine">
+    <meta property="og:description" content="One letter a month from Oleksandr Kyliushyk (Cru): real stories of veterans, retreats and hospital visits, and specific prayer requests.">
+    <meta property="og:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Oleksandr Kyliushyk with a wounded soldier in a Ukrainian military hospital">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prayer letters from a veteran serving veterans in Ukraine">
+    <meta name="twitter:description" content="One letter a month from Oleksandr Kyliushyk (Cru): real stories of veterans, retreats and hospital visits, and specific prayer requests.">
+    <meta name="twitter:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+
+    <link rel="icon" type="image/png" href="../MM_CruBlue_2020_RGB.png?v=5">
+    <link rel="apple-touch-icon" href="../MM_CruBlue_2020_RGB.png?v=5">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        try {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* атрибут hidden має перемагати класи flex/grid (фільтр карток) */
+        [hidden] { display: none !important; }
+        .logo-img { background-color: transparent !important; }
+        img:not(.logo-img) { background-color: #E2E8F0; }
+        .dark img:not(.logo-img) { background-color: #1E293B; }
+
+        /* золотий текст на світлому — темне золото (як на головній) */
+        :root:not(.dark) .text-gold { color: #A16207; }
+
+        /* фокус з клавіатури */
+        :focus-visible { outline: 3px solid #0F172A; outline-offset: 3px; }
+        .dark :focus-visible, .bg-slate-900 :focus-visible { outline-color: #FBBF24; }
+        /* уся картка — одне посилання; рамка фокусу навколо картки */
+        @supports selector(:has(a)) {
+            .letter-link:focus-visible { outline: none; }
+            .letter-card:has(.letter-link:focus-visible) { outline: 3px solid #0F172A; outline-offset: 3px; }
+            .dark .letter-card:has(.letter-link:focus-visible) { outline-color: #FBBF24; }
+        }
+
+        .skip-link { position: absolute; left: 1rem; top: -200px; z-index: 100; background: #FBBF24; color: #0F172A;
+                     padding: .85rem 1.25rem; border-radius: .75rem; font-weight: 800; text-decoration: none; }
+        .skip-link:focus { top: 1rem; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            .letter-card img { transition: none !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900">
+    <a href="#main" class="skip-link" data-i18n="skip">Перейти до змісту</a>
+
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="../" class="shrink-0 flex items-center" aria-label="На головну" data-i18n-aria="home">
+                <img src="../MM_CruBlue_2020_RGB.png" alt="" class="h-12 w-auto object-contain logo-img">
+            </a>
+            <div class="flex items-center gap-3">
+                <div class="flex items-center rounded-full border border-slate-200 dark:border-slate-700 p-0.5" role="group" aria-label="Мова / Language">
+                    <button type="button" data-lang="uk" lang="uk" class="lang-btn min-w-[44px] h-11 px-3 rounded-full text-xs font-extrabold uppercase tracking-widest">UA</button>
+                    <button type="button" data-lang="en" lang="en" class="lang-btn min-w-[44px] h-11 px-3 rounded-full text-xs font-extrabold uppercase tracking-widest">EN</button>
+                </div>
+                <a href="../#partnership" class="hidden sm:inline-block bg-gold hover:bg-gold-light text-slate-900 font-bold px-5 py-3 rounded-full transition-colors shadow-md text-sm whitespace-nowrap" data-i18n="partner">Стати партнером</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section class="pt-8 sm:pt-12 pb-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a href="../#newsletters" class="inline-flex items-center gap-2 py-3 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> <span data-i18n="back">На головну</span>
+                </a>
+                <span class="block text-gold font-bold uppercase tracking-widest text-sm mt-6 mb-3" data-i18n="kicker">Архів</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight" data-i18n="h1">Молитовні листи</h1>
+                <p class="mt-5 max-w-2xl text-lg text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="lead">Раз на місяць я пишу, що Бог робить серед ветеранів: імена, історії, конкретні молитовні потреби — і чесно про те, що не вийшло.</p>
+            </div>
+        </section>
+
+        <section class="pb-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="filters" class="flex flex-wrap gap-2 mb-4" role="group" aria-label="Фільтр за темою" data-i18n-aria="filter-label" hidden></div>
+                <p id="count" class="text-sm font-bold text-slate-500 dark:text-slate-400 mb-8" aria-live="polite"></p>
+
+                <!-- Новий лист: скопіювати одну <article> нагору списку, поміняти href, картинку, datetime, data-tags
+                     і додати ключі <міс>-date / -title / -desc у T нижче (uk і en). -->
+                <div id="letters" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <article class="letter-card relative group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col" data-tags="stories personal podcast">
+                        <div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" src="../alex-vacation.jpeg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <time datetime="2026-08" class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="aug-date">Серпень 2026</time>
+                            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3"><a href="../newsletter-august-2026_1.html" class="letter-link after:absolute after:inset-0" data-i18n="aug-title">Структура й надія</a></h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5 flex-grow" data-i18n="aug-desc"></p>
+                            <ul class="tag-list flex flex-wrap gap-2"></ul>
+                        </div>
+                    </article>
+
+                    <article class="letter-card relative group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col" data-tags="stories retreats rehab">
+                        <div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" src="../cover-dog.jpeg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <time datetime="2026-07" class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="jul-date">Липень 2026</time>
+                            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3"><a href="../newsletter-july-2026.html" class="letter-link after:absolute after:inset-0" data-i18n="jul-title">Місяць зустрічей</a></h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5 flex-grow" data-i18n="jul-desc"></p>
+                            <ul class="tag-list flex flex-wrap gap-2"></ul>
+                        </div>
+                    </article>
+
+                    <article class="letter-card relative group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col" data-tags="stories rehab">
+                        <div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" src="../IMG_3440.jpeg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <time datetime="2026-06" class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="jun-date">Червень 2026</time>
+                            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3"><a href="../newsletter-june.html" class="letter-link after:absolute after:inset-0" data-i18n="jun-title">Незламні серця</a></h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5 flex-grow" data-i18n="jun-desc"></p>
+                            <ul class="tag-list flex flex-wrap gap-2"></ul>
+                        </div>
+                    </article>
+
+                    <article class="letter-card relative group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col" data-tags="stories retreats podcast rehab personal">
+                        <div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" src="../IMG_6228.jpeg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <time datetime="2026-04" class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="apr-date">Квітень 2026</time>
+                            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3"><a href="../newsletter-april.html" class="letter-link after:absolute after:inset-0" data-i18n="apr-title">Світло крізь темряву</a></h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5 flex-grow" data-i18n="apr-desc"></p>
+                            <ul class="tag-list flex flex-wrap gap-2"></ul>
+                        </div>
+                    </article>
+
+                    <article class="letter-card relative group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col" data-tags="stories retreats podcast personal">
+                        <div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" src="../IMG_6519.jpeg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <time datetime="2026-03" class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-3" data-i18n="mar-date">Березень 2026</time>
+                            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3"><a href="../newsletter-march.html" class="letter-link after:absolute after:inset-0" data-i18n="mar-title">Знову в дорозі</a></h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5 flex-grow" data-i18n="mar-desc"></p>
+                            <ul class="tag-list flex flex-wrap gap-2"></ul>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="mt-16 bg-slate-900 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold" data-i18n="cta-h">Отримувати наступний лист</h2>
+                        <p class="text-white/90 mt-3 leading-relaxed" data-i18n="cta-p">Кожна з цих історій сталася, бо хтось молиться й дає щомісяця. Напишіть мені — і наступний лист прийде вам особисто.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 md:justify-end">
+                        <a id="cta-mail" href="mailto:oleksandr.kyliushyk@cru.org" class="bg-gold hover:bg-gold-light text-slate-900 font-bold px-6 py-3.5 rounded-full text-center transition-colors" data-i18n="cta-sub">Хочу отримувати листи</a>
+                        <a href="../#partnership" class="border border-white/40 hover:border-gold hover:text-gold text-white font-bold px-6 py-3.5 rounded-full text-center transition-colors" data-i18n="partner">Стати партнером</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
+            <p class="text-slate-500 dark:text-slate-400" data-i18n="copy">© 2026 Олександр Килюшик · «Україна для Христа» (Cru)</p>
+            <a href="https://us16.campaign-archive.com/home/?u=8f90cbc57c904494ec74dc157&amp;id=debb78a126" target="_blank" rel="noopener noreferrer" class="py-3 font-bold text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold underline underline-offset-4 transition-colors" data-i18n="early">Ранніші листи — в архіві Mailchimp</a>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        const T = {
+            uk: {
+                "page-title": "Молитовні листи | Олександр Килюшик",
+                "meta-desc": "Щомісячні листи Олександра Килюшика — ветерана й місіонера «Україна для Христа» (Cru): історії ветеранів, ретрити, госпіталі, молитовні потреби.",
+                "skip": "Перейти до змісту",
+                "home": "На головну",
+                "back": "На головну",
+                "partner": "Стати партнером",
+                "kicker": "Архів",
+                "h1": "Молитовні листи",
+                "lead": "Раз на місяць я пишу, що Бог робить серед ветеранів: імена, історії, конкретні молитовні потреби — і чесно про те, що не вийшло.",
+                "filter-label": "Фільтр за темою",
+                "all": "Усі",
+                "tags-label": "Теми",
+                "aug-date": "Серпень 2026",
+                "aug-title": "Структура й надія",
+                "aug-desc": "Відпустка, тривога й чесно про те, як Бог тримає. І дві історії людей у короткій паузі між війною та цивільним життям.",
+                "jul-date": "Липень 2026",
+                "jul-title": "Місяць зустрічей",
+                "jul-desc": "Валерія прийшла з одним питанням: як допомагати ветеранам? Сашко після реабілітації надолужує чотири пропущені роки. І літня хроніка: ретрит, госпіталь, конференція.",
+                "jun-date": "Червень 2026",
+                "jun-title": "Незламні серця",
+                "jun-desc": "Три історії: розвідник, якого обстріл вигнав на мінне поле; музикант морської піхоти з Маріуполя; боєць, що повернувся з полону на кріслі колісному. І нові кроки в Superhumans.",
+                "apr-date": "Квітень 2026",
+                "apr-title": "Світло крізь темряву",
+                "apr-desc": "Історія Даніка з ретриту в Будапешті, біль і криза віри близької людини, подкасти, що відгукуються. Сила — в немочі.",
+                "mar-date": "Березень 2026",
+                "mar-title": "Знову в дорозі",
+                "mar-desc": "Два ретрити — у Будапешті й Карпатах, історія Захарія, розмова про те, щоб ветерани були почуті, і чесно про мій стан.",
+                "cta-h": "Отримувати наступний лист",
+                "cta-p": "Кожна з цих історій сталася, бо хтось молиться й дає щомісяця. Напишіть мені — і наступний лист прийде вам особисто.",
+                "cta-sub": "Хочу отримувати листи",
+                "mail-subject": "Хочу отримувати молитовний лист",
+                "mail-body": "Ім'я: \nПрізвище: \n",
+                "copy": "© 2026 Олександр Килюшик · «Україна для Христа» (Cru)",
+                "early": "Ранніші листи — в архіві Mailchimp"
+            },
+            en: {
+                "page-title": "Prayer Letters | Oleksandr Kyliushyk",
+                "meta-desc": "Monthly letters from Oleksandr Kyliushyk, a veteran and missionary with Ukraine for Christ (Cru): veterans' stories, retreats, hospital visits, prayer requests.",
+                "skip": "Skip to content",
+                "home": "Home",
+                "back": "Home",
+                "partner": "Become a partner",
+                "kicker": "Archive",
+                "h1": "Prayer Letters",
+                "lead": "Once a month I write about what God is doing among veterans: names, stories, specific prayer requests — and an honest word about what didn't work.",
+                "filter-label": "Filter by topic",
+                "all": "All",
+                "tags-label": "Topics",
+                "aug-date": "August 2026",
+                "aug-title": "Structure and Hope",
+                "aug-desc": "Time off, anxiety, and an honest look at how God holds on. Plus two stories of people in the short pause between war and civilian life.",
+                "jul-date": "July 2026",
+                "jul-title": "A Month of Encounters",
+                "jul-desc": "Valeria came with one question: how can I help veterans? After rehab, Sashko is catching up on four lost years. Plus a summer chronicle: a retreat, the hospital, a conference.",
+                "jun-date": "June 2026",
+                "jun-title": "Unbreakable Hearts",
+                "jun-desc": "Three stories: a scout driven onto a minefield by shelling, a marine-band musician from Mariupol, a soldier back from captivity in a wheelchair. And new steps at Superhumans.",
+                "apr-date": "April 2026",
+                "apr-title": "Light Through the Darkness",
+                "apr-desc": "Danik's story from the Budapest retreat, a friend's pain and crisis of faith, podcast episodes that land. Strength in weakness.",
+                "mar-date": "March 2026",
+                "mar-title": "On the Road Again",
+                "mar-desc": "Two retreats — Budapest and the Carpathians — Zakhariy's story, a panel on making sure veterans are heard, and an honest word about how I'm doing.",
+                "cta-h": "Get the next letter",
+                "cta-p": "Every one of these stories happened because someone prays and gives every month. Write to me, and the next letter will come to you personally.",
+                "cta-sub": "Send me the letters",
+                "mail-subject": "I'd like to receive your prayer letter",
+                "mail-body": "First name: \nLast name: \n",
+                "copy": "© 2026 Oleksandr Kyliushyk · Ukraine for Christ (Cru)",
+                "early": "Earlier letters — Mailchimp archive"
+            }
+        };
+        const TAGS = {
+            stories:  { uk: "Історії",                  en: "Stories" },
+            retreats: { uk: "Ретрити",                  en: "Retreats" },
+            rehab:    { uk: "Госпіталі й реабілітація", en: "Hospitals & rehab" },
+            podcast:  { uk: "Подкаст «Без броні»",      en: "Podcast" },
+            personal: { uk: "Особисте",                 en: "Personal" }
+        };
+        const ORDER = ["stories", "retreats", "rehab", "podcast", "personal"];
+
+        let lang = "uk";
+        try { const s = localStorage.getItem("site-lang"); if (s && s !== "uk") lang = "en"; } catch (e) {}
+        const q = new URLSearchParams(location.search);
+        if (q.get("lang") === "en" || q.get("lang") === "uk") lang = q.get("lang");
+        let active = TAGS[q.get("tag")] ? q.get("tag") : "all";
+
+        const cards = Array.from(document.querySelectorAll("#letters article"));
+        const filters = document.getElementById("filters");
+        const count = document.getElementById("count");
+
+        function countText(n) {
+            if (lang === "en") return n === 1 ? "1 letter" : n + " letters";
+            const m10 = n % 10, m100 = n % 100;
+            const w = (m10 === 1 && m100 !== 11) ? "лист" : (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) ? "листи" : "листів";
+            return n + " " + w;
+        }
+
+        function chipClass(on) {
+            return "min-h-[44px] px-4 rounded-full text-sm font-bold border transition-colors " + (on
+                ? "bg-slate-900 text-white border-slate-900 dark:bg-gold dark:text-slate-900 dark:border-gold"
+                : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-gold dark:hover:border-gold");
+        }
+
+        function buildFilters() {
+            filters.innerHTML = "";
+            ["all"].concat(ORDER).forEach(function (tag) {
+                const n = tag === "all" ? cards.length : cards.filter(function (c) { return c.dataset.tags.split(" ").indexOf(tag) > -1; }).length;
+                if (!n) return;
+                const b = document.createElement("button");
+                b.type = "button";
+                b.dataset.tag = tag;
+                b.textContent = (tag === "all" ? T[lang].all : TAGS[tag][lang]) + " · " + n;
+                b.addEventListener("click", function () { active = tag; apply(true); });
+                filters.appendChild(b);
+            });
+            filters.hidden = false;
+        }
+
+        function apply(fromClick) {
+            let shown = 0;
+            cards.forEach(function (c) {
+                const on = active === "all" || c.dataset.tags.split(" ").indexOf(active) > -1;
+                c.hidden = !on;
+                if (on) shown++;
+            });
+            filters.querySelectorAll("button").forEach(function (b) {
+                const on = b.dataset.tag === active;
+                b.setAttribute("aria-pressed", String(on));
+                b.className = chipClass(on);
+            });
+            count.textContent = countText(shown);
+            if (fromClick) {
+                const u = new URL(location.href);
+                if (active === "all") u.searchParams.delete("tag"); else u.searchParams.set("tag", active);
+                history.replaceState(null, "", u);
+            }
+        }
+
+        function setLang(l) {
+            lang = l;
+            const d = T[lang];
+            document.documentElement.lang = lang;
+            document.title = d["page-title"];
+            document.querySelector('meta[name="description"]').setAttribute("content", d["meta-desc"]);
+            document.querySelectorAll("[data-i18n]").forEach(function (el) {
+                const k = el.getAttribute("data-i18n");
+                if (d[k] !== undefined) el.textContent = d[k];
+            });
+            document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+                const k = el.getAttribute("data-i18n-aria");
+                if (d[k] !== undefined) el.setAttribute("aria-label", d[k]);
+            });
+            document.querySelectorAll(".lang-btn").forEach(function (b) {
+                const on = b.dataset.lang === lang;
+                b.setAttribute("aria-pressed", String(on));
+                b.className = "lang-btn min-w-[44px] h-11 px-3 rounded-full text-xs font-extrabold uppercase tracking-widest transition-colors " +
+                    (on ? "bg-slate-900 text-white dark:bg-gold dark:text-slate-900" : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white");
+            });
+            cards.forEach(function (c) {
+                const a = c.querySelector(".letter-link");
+                const base = a.getAttribute("href").split("?")[0];
+                a.setAttribute("href", base + "?lang=" + lang);
+                const ul = c.querySelector(".tag-list");
+                ul.setAttribute("aria-label", d["tags-label"]);
+                ul.innerHTML = "";
+                c.dataset.tags.split(" ").forEach(function (t) {
+                    const li = document.createElement("li");
+                    li.className = "text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300";
+                    li.textContent = TAGS[t][lang];
+                    ul.appendChild(li);
+                });
+            });
+            document.getElementById("cta-mail").href = "mailto:oleksandr.kyliushyk@cru.org?subject=" +
+                encodeURIComponent(d["mail-subject"]) + "&body=" + encodeURIComponent(d["mail-body"]);
+            buildFilters();
+            apply(false);
+        }
+
+        document.querySelectorAll(".lang-btn").forEach(function (b) {
+            b.addEventListener("click", function () {
+                try { localStorage.setItem("site-lang", b.dataset.lang); } catch (e) {}
+                setLang(b.dataset.lang);
+            });
+        });
+
+        setLang(lang);
+    })();
+    </script>
+</body>
+</html>
