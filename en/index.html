@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleksandr Kyliushyk | Serving Ukraine's Wounded Veterans With Cru</title>
+    
+    <meta name="description" content="Oleksandr Kyliushyk serves Ukraine's 1.3 million veterans with Cru. Hospital visits, a veterans' podcast, retreats. Real stories, one letter a month.">
+    <link rel="canonical" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/en/">
+    <link rel="alternate" hreflang="uk" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/">
+    <link rel="alternate" hreflang="en" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/en/">
+    <link rel="alternate" hreflang="x-default" href="https://aleksandrkilusik-blip.github.io/kyliushyk-news/">
+
+    <!-- Open Graph / соцмережі та месенджери -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Military Ministry | Ukraine for Christ (Cru)">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:url" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/en/">
+    <meta property="og:title" content="He lost a leg in the war — then went back to the hospitals">
+    <meta property="og:description" content="Oleksandr Kyliushyk serves Ukraine's 1.3 million veterans with Cru. Hospital visits, a veterans' podcast, retreats. Real stories, one letter a month.">
+    <meta property="og:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Oleksandr Kyliushyk with a wounded soldier in a Ukrainian military hospital">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="He lost a leg in the war — then went back to the hospitals">
+    <meta name="twitter:description" content="Oleksandr Kyliushyk serves Ukraine's 1.3 million veterans with Cru. Hospital visits, a veterans' podcast, retreats. Real stories, one letter a month.">
+    <meta name="twitter:image" content="https://aleksandrkilusik-blip.github.io/kyliushyk-news/og-cover.jpg">
+
+    <link rel="icon" type="image/png" href="../MM_CruBlue_2020_RGB.png?v=5">
+    <link rel="shortcut icon" type="image/png" href="../MM_CruBlue_2020_RGB.png?v=5">
+    <link class="logo-img" rel="apple-touch-icon" href="../MM_CruBlue_2020_RGB.png?v=5">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F1F5F9; }
+        .dark ::-webkit-scrollbar-track { background: #0F172A; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+        ::-webkit-scrollbar-thumb:hover { background: #FBBF24; }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)), url('../4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Виняток для логотипів, щоб прибрати сірий фон у PNG */
+        .logo-img {
+            background-color: transparent !important;
+        }
+        
+        img:not(.logo-img) {
+            background-color: #E2E8F0;
+            color: transparent;
+        }
+        .dark img:not(.logo-img) {
+            background-color: #1E293B;
+        }
+
+        /* === Доступність: золотий текст на світлому тлі === */
+        /* #FBBF24 на білому дає контраст 1.67:1 при нормі WCAG AA 4.5:1.
+           На світлих поверхнях підміняємо на #A16207 (4.9:1), на темних лишаємо золотий. */
+        :root:not(.dark) .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-50 .text-gold,
+        :root:not(.dark) .bg-slate-100 .text-gold { color: #A16207; }
+
+        :root:not(.dark) .bg-slate-800 .text-gold,
+        :root:not(.dark) .bg-slate-900 .text-gold,
+        :root:not(.dark) .bg-slate-950 .text-gold,
+        :root:not(.dark) .bg-gold .text-gold,
+        :root:not(.dark) .hero-bg .text-gold,
+        :root:not(.dark) [class*="bg-["] .text-gold { color: #FBBF24; }
+
+        /* білі картки всередині темних або золотих секцій — знову темне золото */
+        :root:not(.dark) .bg-gold .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-900 .bg-white .text-gold,
+        :root:not(.dark) .bg-slate-800 .bg-white .text-gold { color: #A16207; }
+
+        /* === Доступність: видимий фокус з клавіатури (WCAG 2.4.7) === */
+        :focus-visible { outline: 3px solid #0F172A; outline-offset: 3px; }
+        .dark :focus-visible,
+        .bg-slate-900 :focus-visible, .bg-slate-950 :focus-visible,
+        .hero-bg :focus-visible, [class*="bg-["] :focus-visible { outline-color: #FBBF24; }
+        :root:not(.dark) .bg-slate-900 .bg-white :focus-visible,
+        :root:not(.dark) [class*="bg-["] .bg-white :focus-visible { outline-color: #0F172A; }
+        #pay-bank > button:focus-visible { outline-color: #0F172A; outline-offset: -5px; }
+
+        .skip-link { position: absolute; left: 1rem; top: -200px; z-index: 100; background: #FBBF24; color: #0F172A;
+                     padding: .85rem 1.25rem; border-radius: .75rem; font-weight: 800; text-decoration: none; }
+        .skip-link:focus { top: 1rem; }
+
+        /* світлі плашки всередині кольорових блоків — темне золото; цитата на блідо-золотому — ще темніше */
+        :root:not(.dark) [class*="bg-["] .bg-slate-50 .text-gold { color: #A16207; }
+        :root:not(.dark) .bg-gold-pale .text-gold { color: #854D0E; }
+
+        .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+        /* Компенсація липкої шапки при переході по якорях */
+        section[id], div[id] { scroll-margin-top: 6rem; }
+
+        /* === Анімації === */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+        .reveal-init { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal-in { opacity: 1; transform: none; }
+        .tab-content:not(.hidden) { animation: fadeUp .35s ease both; }
+        #bank-details:not(.hidden) { animation: fadeUp .3s ease both; }
+        .hero-fade { animation: fadeUp .8s ease both; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-init { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .tab-content:not(.hidden), #bank-details:not(.hidden), .hero-fade { animation: none !important; }
+            html { scroll-behavior: auto !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-gold selection:text-slate-900 transition-colors duration-200">
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to content</a>
+
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="#" class="shrink-0 flex items-center">
+                <img src="../MM_CruBlue_2020_RGB.png" alt="Military Ministry" fetchpriority="high" loading="eager" decoding="async" class="h-12 w-auto object-contain logo-img">
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-widest">
+                <a href="#about" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-path">My Path</a>
+                <a href="#vision" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-vision">Vision</a>
+                <a href="#challenge" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-challenge">Why Veterans?</a>
+                <a href="#activity" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-activity">What I Do</a>
+                <a href="#partnership" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-partnership">Support</a>
+                <a href="#newsletters" class="py-3.5 text-slate-600 dark:text-slate-400 hover:text-gold dark:hover:text-gold transition-colors font-semibold" data-i18n="nav-newsletters">Prayer Letters</a>
+            </nav>
+
+            <div class="flex items-center gap-5">
+                <div class="relative flex items-center shrink-0">
+                    <select id="lang-switcher" aria-label="Language" class="bg-transparent text-slate-500 dark:text-slate-400 font-bold uppercase text-sm py-3 min-w-[44px] cursor-pointer hover:text-gold transition-colors appearance-none pr-4">
+                        <option value="en" selected class="text-slate-800 dark:text-slate-800">EN</option>
+                        <option value="uk" class="text-slate-800 dark:text-slate-800">UA</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-0 text-slate-400 text-[10px] pointer-events-none" aria-hidden="true"></i>
+                </div>
+
+                <button id="theme-toggle" type="button" aria-label="Light / dark theme" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-xl p-3 transition-colors shrink-0">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707-.707a1 1 0 10-1.414 1.414l.707.707a1 1 0 101.414-1.414zm2.12 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <div class="hidden md:block shrink-0">
+                    <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-bold px-5 xl:px-6 py-2.5 rounded-full transition-all shadow-md whitespace-nowrap text-sm xl:text-base inline-block" data-i18n="btn-partner">
+                        Become a Partner
+                    </a>
+                </div>
+
+                <button type="button" id="menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden text-slate-800 dark:text-white w-11 h-11 flex items-center justify-center shrink-0"><i id="menu-icon" class="fa-solid fa-bars text-2xl" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-6 space-y-4 shadow-xl transition-colors duration-200">
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-path">My Path</a>
+            <a href="#vision" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-vision">Vision</a>
+            <a href="#challenge" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-challenge">Why Veterans?</a>
+            <a href="#activity" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-activity">What I Do</a>
+            <a href="#partnership" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-partnership">Support</a>
+            <a href="#newsletters" onclick="toggleMobileMenu()" class="block font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm" data-i18n="nav-newsletters">Prayer Letters</a>
+            <a href="#partnership" onclick="toggleMobileMenu()" class="block text-center bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-4 px-6 rounded-full transition-all shadow-md mt-2" data-i18n="btn-partner">Become a Partner</a>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+
+    <section class="relative pt-32 pb-48 hero-bg transition-colors duration-200">
+        <div class="hero-fade max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] font-extrabold tracking-tight leading-[0.9] text-white font-sans mb-8">
+                Military <br><span class="text-gold font-serif italic">Ministry</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-medium mb-12" data-i18n="hero-desc">
+                Standing with those coming home from war. I am the spiritual home front for Ukraine's veterans.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#partnership" class="bg-gold hover:bg-gold-light text-slate-900 font-extrabold text-lg px-10 py-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-all" data-i18n="btn-partner">
+                    Become a Partner
+                </a>
+                <a href="#newsletters" class="bg-slate-800/50 hover:bg-slate-700/80 border border-slate-500 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-sm hover:-translate-y-1 transition-all backdrop-blur-md" data-i18n="hero-btn-news">
+                    Latest Updates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-24 mb-16">
+        <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 py-10 px-6 sm:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center transition-colors duration-200">
+            <div class="space-y-3">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">100</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="fruit-1-lbl">Retreat Participants</span>
+            </div>
+            <div class="space-y-3 md:border-l md:border-r border-slate-100 dark:border-slate-700 transition-colors duration-200">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">6</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="fruit-2-lbl">Episodes of the &quot;Without Armor&quot; Podcast</span>
+            </div>
+            <div class="space-y-3">
+                <span class="block text-5xl sm:text-6xl font-extrabold text-gold">8</span>
+                <span class="block text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="fruit-3-lbl">Years in Ministry</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 bg-white dark:bg-slate-900 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative border-slate-100 dark:border-slate-700">
+                    <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
+                    <div id="path-slider" class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full max-w-md mx-auto transition-colors duration-200" style="aspect-ratio: 4 / 5;">
+                        <img loading="lazy" decoding="async" src="../IMG_0278_Original.jpeg" alt="Oleksandr in military uniform" class="path-slide w-full h-full object-cover object-center absolute inset-0 opacity-100 transition-opacity duration-700">
+                        <img loading="lazy" decoding="async" src="../path-kostia.jpg" alt="Oleksandr and Kostiantyn Shevchenko" style="object-position:50% 42%" class="path-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+                        <img loading="lazy" decoding="async" src="../path-3.jpg" alt="Oleksandr with brothers-in-arms" style="object-position:50% 35%" class="path-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+                        <div class="absolute bottom-1 left-0 right-0 flex justify-center gap-2 z-10"></div>
+                    </div>
+                </div>
+                <div class="space-y-6 font-sans">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="path-tag">My Path</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6 transition-colors duration-200" data-i18n="path-h2">From Scout to Missionary</h2>
+                    <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base transition-colors duration-200">
+                        <p data-i18n="path-p1">My name is Oleksandr. I came to Christ in Odesa, as a student, through a campus outreach called &quot;Who Am I?&quot; — a Cru staff member shared the Gospel with me. That moment became my spiritual birth and changed the entire direction of my life.</p>
+                        <p data-i18n="path-campus">For the next seven years, I served students in Odesa myself. I led the same &quot;Who Am I?&quot; outreach that once brought me to Christ — around twenty students went through it with me. I led discipleship, organized evangelistic events, and played baseball with the guys: sport turned out to be a door that preaching couldn't open. One of the first people I shared the Gospel with was Kostiantyn Shevchenko. Today he leads the student ministry in Odesa himself.</p>
+                        <p data-i18n="path-p2">Later I spent some time in sales. The war in Donbas continued, but for many, life stayed ordinary. Russia's full-scale invasion in 2022 changed everything: I was mobilized and served as a scout in an assault brigade.</p>
+                        <p class="font-bold text-slate-800 dark:text-slate-200" data-i18n="path-p2b">During one of my combat missions, I was severely wounded and lost my leg.</p>
+                        <p data-i18n="path-p3">In rehab, there was no one beside me who would simply listen. I saw the same thing in dozens of my brothers-in-arms: people searching for meaning and community, finding emptiness instead. That's when I understood who I wanted to be for them — the person I was missing. Student ministry still matters to me, but a veteran will hear another veteran faster than anyone else.</p>
+                        <p class="font-bold text-slate-800 dark:text-slate-200" data-i18n="path-p4">That's why I joined the military ministry of Ukraine for Christ (Cru) — to share the Gospel with veterans, people wounded in body and soul, but open to the truth. Only Christ can heal the deepest wounds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision" class="py-24 bg-gold transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <span class="inline-block bg-slate-900 text-white font-extrabold uppercase tracking-widest text-xs px-5 py-2.5 rounded-full mb-6 shadow-sm" data-i18n="vision-tag">Vision</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-snug transition-colors duration-200" data-i18n="vision-h3">
+                    War leaves wounds not only on the body, but on the soul. I believe only Christ can bring true healing.
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-3xl group hover:-translate-y-1 hover:shadow-2xl transition-all shadow-lg">
+                    <h4 class="text-2xl font-extrabold mb-4 text-gold uppercase tracking-wider">WIN</h4>
+                    <p class="text-slate-600 dark:text-slate-300 font-medium text-sm leading-relaxed" data-i18n="win-desc">Bring the Gospel to veterans through relationships, testimony, and service.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-3xl group hover:-translate-y-1 hover:shadow-2xl transition-all shadow-lg">
+                    <h4 class="text-2xl font-bold mb-4 text-gold uppercase tracking-wider">BUILD</h4>
+                    <p class="text-slate-600 dark:text-slate-300 font-medium text-sm leading-relaxed" data-i18n="build-desc">Help them grow in faith, find meaning, peace, and stability.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-3xl group hover:-translate-y-1 hover:shadow-2xl transition-all shadow-lg">
+                    <h4 class="text-2xl font-extrabold mb-4 text-gold uppercase tracking-wider">SEND</h4>
+                    <p class="text-slate-600 dark:text-slate-300 font-medium text-sm leading-relaxed" data-i18n="send-desc">Inspire them to become light and examples of restoration in their own communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenge" class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="challenge-tag">Why Veterans?</span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight transition-colors duration-200" data-i18n="challenge-h2">Reaching Ukraine's Veterans With the Hope of Christ</h2>
+                    
+                    <div class="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-200">
+                        <p data-i18n="challenge-p1">
+                            I know what it's like to come home wounded — in body and in spirit. That's what pulled me into this work: not a statistic, but faces I recognize, because I was one of them.
+                        </p>
+                        
+                        <div class="bg-slate-50 dark:bg-slate-800/60 backdrop-blur-sm border-l-4 border-slate-400 dark:border-slate-600 p-6 rounded-r-2xl text-slate-700 dark:text-slate-300 font-medium transition-colors duration-200" data-i18n="challenge-quote">
+                            Many veterans return with pain, isolation, and an inner emptiness.
+                            The church is a place where they can find their Creator, feel accepted, and find a community that helps them reintegrate into society.
+                        </div>
+
+                        <p data-i18n="challenge-p2">
+                            Today Ukraine has more than <strong class="dark:text-white">1.3 million veterans</strong> — many carrying deep wounds, seen and unseen. After the war, that number could grow to <strong class="dark:text-white">5–6 million</strong>. That's why I joined <strong class="dark:text-white">Ukraine for Christ</strong> — to be present, to listen to their stories, and to point them to the One who can restore.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-3xl shadow-sm border-b-4 border-gold transition-colors duration-200">
+                        <span class="block text-5xl font-extrabold text-gold mb-2" data-counter>1.3 M</span>
+                        <p class="font-bold text-slate-800 dark:text-slate-200 uppercase text-xs tracking-widest" data-i18n="stat-vets">Veterans Today</p>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-3xl shadow-sm border-b-4 border-slate-900 dark:border-slate-600 transition-colors duration-200">
+                        <span class="block text-5xl font-extrabold text-slate-900 dark:text-white mb-2 transition-colors duration-200" data-counter>6.0 M</span>
+                        <p class="font-bold text-slate-800 dark:text-slate-200 uppercase text-xs tracking-widest" data-i18n="stat-fams">Potentially With Families</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 font-sans">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs block" data-i18n="team-tag">Our Team</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6 transition-colors duration-200" data-i18n="team-h2">Building This Ministry Together</h2>
+                    <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200">
+                        <p data-i18n="team-p1">Military Ministry is the veterans' outreach of Ukraine for Christ. Most of us have been through the war ourselves. Together we run retreats, visit hospitals, and support one another — I don't serve alone.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gold opacity-10 rounded-3xl blur-2xl"></div>
+                    <div class="relative rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 overflow-hidden w-full transition-colors duration-200" style="aspect-ratio: 4 / 3;">
+                        <img loading="lazy" decoding="async" src="../team-2026.jpg" alt="Military Ministry team" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activity" class="py-24 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase text-gold tracking-widest font-extrabold block mb-3" data-i18n="act-tag">What I Do</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="act-h2">How I Serve</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mt-5 transition-colors duration-200" data-i18n="act-sub">Retreats and the podcast are the doors in. What matters most happens behind them: right now I'm walking closely with five veterans — not one-off meetings, but ongoing friendship, prayer, and time.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button type="button" onclick="switchTab('tab-hospitals')" id="btn-tab-hospitals" aria-controls="tab-hospitals" aria-pressed="true" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md" data-i18n="tab-hosp">
+                    Hospitals
+                </button>
+                <button type="button" onclick="switchTab('tab-podcasts')" id="btn-tab-podcasts" aria-controls="tab-podcasts" aria-pressed="false" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-pod">
+                    Without Armor
+                </button>
+                <button type="button" onclick="switchTab('tab-retreats')" id="btn-tab-retreats" aria-controls="tab-retreats" aria-pressed="false" class="tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50" data-i18n="tab-ret">
+                    Retreats
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 shadow-sm min-h-[500px] transition-colors duration-200">
+                
+                <div id="tab-hospitals" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="hosp-h3">Presence in the Hospitals</h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="hosp-p">My main goal in the hospitals is simply to be present. Sometimes there's something small to leave behind as a keepsake, but the real value of these visits is the time we spend together — time to truly listen, to share the pain, and to pray where it's needed most. I want every wounded soldier to know: what's happening inside him matters, and he's not alone in it.</p>
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden shadow-lg relative w-full border border-slate-200 dark:border-slate-700" style="aspect-ratio: 16/9;">
+                        <img loading="lazy" decoding="async" src="../5ED39F71-2AED-47D8-98A6-AE03BF842819_1_105_c.jpeg" alt="Oleksandr in the hospitals" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+
+                <div id="tab-podcasts" class="tab-content hidden space-y-12">
+                    <div class="max-w-3xl mb-12">
+                        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white font-sans mb-4 transition-colors duration-200" data-i18n="pod-h3">The &quot;Without Armor&quot; Podcast</h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="pod-desc-updated">
+                            A space for honest conversation, without cynicism. We look for hope without pretending, and talk openly about people, war, and faith — without armor. I co-host the podcast with Nadiia Kalachova. It's produced in partnership with the Ukrainian Baptist Theological Seminary and the Ukraine for Christ mission.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep1-tag">PERSONAL</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold font-sans">Roman Pikulyk — Faith on the Front Line</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pod-ep1-desc">
+                                In this episode we take off the armor with Roman Pikulyk — a veteran of the Russo-Ukrainian war since 2014 and a leader in Ukraine for Christ's military ministry. We talk honestly about what happens to faith on the front line, and whether a &quot;clean,&quot; untouched Christianity is even possible there.
+                            </p>
+                            <div class="rounded-2xl overflow-hidden aspect-video relative w-full border border-white/10">
+                            <div class="rounded-2xl overflow-hidden aspect-video relative w-full border border-white/10">
+                                <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/WIReJo30ppA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="text-[11px] text-slate-400">Video in Ukrainian, no subtitles.</p>
+                        <div class="lg:col-span-5 space-y-6 border-t lg:border-t-0 lg:border-l border-slate-800 pt-6 lg:pt-0 lg:pl-8">
+                            <h5 class="text-gold font-extrabold uppercase tracking-widest text-xs" data-i18n="pod-quote-lbl">A Thought for You</h5>
+                            <blockquote class="border-l-4 border-gold pl-4 font-serif italic text-lg leading-relaxed text-slate-200" data-i18n="pod-quote-1">
+                                &quot;Can you keep an untouched Christianity in a trench, where every glance is a matter of life and death?&quot;
+                            </blockquote>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p1-ctx">
+                                We don't avoid the hard edges: the experience of war that shapes and breaks at once, how faith affects leadership in the military, resentment toward the church, triggers in civilian life, and what a good path back into community can look like for a veteran.
+                            </p>
+                            <a href="https://youtu.be/WIReJo30ppA?si=aJ2ftkdk8SPUNWFB" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Watch on YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep2-tag">FAMILY AND WAR</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold font-sans">The Moskalyks — A Relationship Across the Distance</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pod-ep2-desc">
+                                In this episode we take off the armor with the Moskalyk couple. Vitalii is a commander who has served since the start of the full-scale invasion; Khrystyna started support groups for the wives of servicemen.
+                            </p>
+                            <div class="rounded-2xl overflow-hidden aspect-video relative w-full border border-white/10">
+                            </div>
+                            <p class="text-[11px] text-slate-400">Video in Ukrainian, no subtitles.</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 space-y-6 border-t lg:border-t-0 lg:border-l border-slate-800 pt-6 lg:pt-0 lg:pl-8">
+                            <h5 class="text-gold font-extrabold uppercase tracking-widest text-xs" data-i18n="pod-quote-lbl">A Thought for You</h5>
+                            <blockquote class="border-l-4 border-gold pl-4 font-serif italic text-lg leading-relaxed text-slate-200" data-i18n="pod-quote-2">
+                                &quot;How do you keep connection and love alive when kilometers of front line and the constant threat of loss stand between you?&quot;
+                            </blockquote>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p2-ctx">
+                                We talk honestly: what's hardest about the war, how relationships change across distance, why familiar words of comfort sometimes wound instead of help, and what faith looks like when there's no time left to pray.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=o-OJkDOy-cM&list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Watch on YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-[2.5rem] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="inline-block bg-gold text-slate-900 font-extrabold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full" data-i18n="pod-ep3-tag">SPIRITUALITY</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold font-sans">Pastor Viktor Haiduchok — When the Pain Is Personal</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pod-ep3-desc">
+                                A conversation with Pastor Viktor Haiduchok, who supported the families of the fallen in Lviv at Marsove Pole, and later lost his own son-in-law, Bohdan Rilnyk, at the front.
+                            </p>
+                            <div class="rounded-2xl overflow-hidden aspect-video relative w-full border border-white/10">
+                            </div>
+                            <p class="text-[11px] text-slate-400">Video in Ukrainian, no subtitles.</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 space-y-6 border-t lg:border-t-0 lg:border-l border-slate-800 pt-6 lg:pt-0 lg:pl-8">
+                            <h5 class="text-gold font-extrabold uppercase tracking-widest text-xs" data-i18n="pod-quote-lbl">A Thought for You</h5>
+                            <blockquote class="border-l-4 border-gold pl-4 font-serif italic text-lg leading-relaxed text-slate-200" data-i18n="pod-quote-3">
+                                &quot;What questions do you bring to God when war and the pain of death become personal?&quot;
+                            </blockquote>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="pod-p3-ctx">
+                                We talk about how the church lives with people carrying very different experiences of war, and how a chaplain or pastor grieves the loss of those closest to him while still remaining a support for others.
+                            </p>
+                            <a href="https://youtu.be/KR7hr8g7_wY?si=UlTwIM0YQiqsc__v" target="_blank" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:text-gold-light transition-colors mt-auto w-fit py-3 -mb-3 group/btn">
+                                <span data-i18n="btn-watch-yt">Watch on YouTube</span> <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-retreats" class="tab-content hidden space-y-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 text-base">
+                            <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight font-sans transition-colors duration-200" data-i18n="ret-h3">Retreats: A Safe Space</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg transition-colors duration-200" data-i18n="ret-p">
+                                This is a 'circle of our own,' where veterans can truly let their guard down. I do this to give them a break from routine and the gray sameness of daily life, surrounded by brothers-in-arms who understand them without a lot of words.
+                            </p>
+                            <ul class="space-y-3 font-medium text-slate-800 dark:text-slate-200">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mountain-sun text-gold" aria-hidden="true"></i> <span data-i18n="ret-li1">Psychological rest and recovery in the mountains</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-heart text-gold" aria-hidden="true"></i> <span data-i18n="ret-li2">Spiritual renewal and shared prayer</span></li>
+                            </ul>
+                        </div>
+                        <div class="rounded-[2rem] overflow-hidden shadow-xl relative border-4 border-slate-100 dark:border-slate-700 w-full transition-colors duration-200" style="aspect-ratio: 16/9;">
+                            <img loading="lazy" decoding="async" src="../164156B7-78EF-4C23-BE67-767E3FCDEF54_1_105_c.jpeg" alt="Retreat" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
+                            <img loading="lazy" decoding="async" src="../retrit2.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Sharing a meal">
+                        </div>
+                        <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
+                            <img loading="lazy" decoding="async" src="../mounting.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Winter mountains">
+                        </div>
+                        <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700" style="aspect-ratio: 4/5;">
+                            <img loading="lazy" decoding="async" src="../4683B5B9-497F-4A8A-8B8E-1BE9BA48C0FD_1_105_c.jpeg" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105" alt="Group photo with the flag">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 dark:bg-slate-950 text-white overflow-hidden transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10 dark:border-slate-800 w-full max-w-md mx-auto lg:mx-0 transition-colors duration-200" style="aspect-ratio: 1/1;">
+                    <img loading="lazy" decoding="async" src="../3452AB0C-ED9F-415C-AC0F-3770C44428FD_1_105_c.jpeg" alt="Danik" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="danik-tag">A Story of Friendship</span>
+                    <h3 class="text-4xl font-extrabold font-sans" data-i18n="danik-h3">Danik: A Path to Recovery</h3>
+                    <p class="text-slate-300 dark:text-slate-400 text-lg leading-relaxed transition-colors duration-200" data-i18n="danik-p">
+                        Danik is a former prisoner of war. He suffered serious injuries at 19. Today he's 23, living an active life, and by God's grace has a Christian community around him. I'm grateful for his friendship.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-20 pt-16 border-t border-white/10">
+                <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="stories-more-tag">Two More Stories</span>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="bg-white/5 rounded-[2rem] overflow-hidden border border-white/10 flex flex-col">
+                        <div class="relative" style="aspect-ratio: 4/3;">
+                            <img loading="lazy" decoding="async" src="../yevhen.jpeg" alt="At the movies with Yevhen" class="w-full h-full object-cover absolute inset-0">
+                        </div>
+                        <div class="p-6 sm:p-8 space-y-4 flex-1 flex flex-col">
+                            <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="yevhen-tag">Hospital · Rehabilitation</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold font-sans" data-i18n="yevhen-h4">Yevhen: Two Hours in the Dark</h4>
+                            <p class="text-slate-300 dark:text-slate-400 leading-relaxed" data-i18n="yevhen-p">Yevhen spent three years at war as a tank crewman. A shell exploded nearby — shrapnel in his head, long surgeries, and he lost his sight. During rehab he couldn't sit still in his room, so we took him to the movies — with an app that narrates the screen. And we put on blindfolds ourselves, and watched it together with him.</p>
+                            <p class="border-l-4 border-gold pl-4 text-white font-medium italic leading-relaxed mt-auto" data-i18n="yevhen-quote">&quot;Sometimes, to truly be beside someone, you have to step into their darkness for two hours.&quot;</p>
+                        </div>
+                    </article>
+                    <article class="bg-white/5 rounded-[2rem] overflow-hidden border border-white/10 flex flex-col">
+                        <div class="relative" style="aspect-ratio: 4/3;">
+                            <img loading="lazy" decoding="async" src="../diana.jpeg" alt="Oleksandr and Diana" class="w-full h-full object-cover absolute inset-0">
+                        </div>
+                        <div class="p-6 sm:p-8 space-y-4 flex-1 flex flex-col">
+                            <span class="text-gold font-bold uppercase tracking-widest text-xs" data-i18n="diana-tag">&quot;Without Armor&quot; Podcast</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold font-sans" data-i18n="diana-h4">Diana: A Pause Between Rotations</h4>
+                            <p class="text-slate-300 dark:text-slate-400 leading-relaxed" data-i18n="diana-p">We recorded a podcast episode with Diana during a short pause between her rotations — those few weeks when soldiers try to fit an entire civilian life into almost no time. She told me what helps her keep from bringing the war home with her: family close by, and a clear structure to her days. Learning to separate war from peacetime life isn't indifference — it's serious inner work.</p>
+                            <a href="https://youtu.be/A23GSLahOoY" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 py-3 -mb-3 text-gold font-bold hover:text-white transition-colors"><i class="fa-brands fa-youtube" aria-hidden="true"></i> <span data-i18n="diana-link">Watch the Conversation</span> <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partnership" class="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 font-sans transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold font-bold uppercase tracking-widest text-sm mb-3" data-i18n="part-tag">A Team of Partners</span>
+                <h3 class="text-4xl font-extrabold text-slate-900 dark:text-white transition-colors duration-200" data-i18n="part-h3">Support Me</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-2xl mx-auto font-medium transition-colors duration-200" data-i18n="part-p">Effective ministry only happens in a team. You become a reliable financial and prayer home front for this ministry, while I work directly in the field.</p>
+            </div>
+
+            <div class="bg-gold-pale dark:bg-gold/10 border-l-4 border-gold p-8 sm:p-10 rounded-r-3xl relative overflow-hidden transition-colors duration-200 mb-12 max-w-4xl mx-auto">
+                <i class="fa-solid fa-quote-right absolute -right-4 -top-4 text-9xl text-gold/10 dark:text-gold/20" aria-hidden="true"></i>
+                <p class="font-serif italic text-2xl sm:text-3xl text-slate-800 dark:text-slate-200 leading-relaxed mb-6 relative z-10 transition-colors duration-200" data-i18n="bible-quote">
+                    &quot;Then he said unto his disciples, The harvest truly is plenteous, but the labourers are few; Pray ye therefore the Lord of the harvest, that he will send forth labourers into his harvest.&quot;
+                </p>
+                <p class="text-gold font-bold tracking-widest uppercase text-sm relative z-10" data-i18n="bible-ref">(Matthew 9:37-38)</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto mb-16">
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 sm:p-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 space-y-6 transition-colors duration-200">
+                    <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 font-sans transition-colors duration-200">
+                        <i class="fa-solid fa-scale-balanced text-gold" aria-hidden="true"></i>
+                        <span data-i18n="fin-h4">How Cru’s Support-Raising Model Works</span>
+                    </h4>
+                    <div class="text-slate-600 dark:text-slate-300 leading-relaxed text-base space-y-4 font-medium transition-colors duration-200">
+                        <p data-i18n="fin-p1">Ukraine for Christ operates as a faith-based mission: our staff rely on God to provide for their ministry through a team of partners. That’s why every missionary — myself included — is responsible for building a team of people who give regularly toward their own work.</p>
+                        <p data-i18n="fin-p2">Cru has about 19,000 staff serving worldwide today, and most of them are supported this way — through individual partners rather than a general fund. Most Christians, it turns out, would rather give toward a specific ministry than an anonymous pool. Giving to a missionary directly lets you see the real fruit of your part in the Gospel going out.</p>
+                        <p data-i18n="fin-p3">If you see value in this ministry, and it moves you — I'm looking for partners who can support me monthly, or with a one-time annual gift.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#135d7a] dark:bg-slate-800 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl transition-colors duration-200 grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6 text-left">
+                    <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-2">
+                        <i class="fa-solid fa-globe text-gold text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight" data-i18n="inv-h2">Partner With Me</h3>
+                    <p class="text-lg text-white/90 leading-relaxed font-medium" data-i18n="inv-p">
+                        My ministry is funded entirely by the generous support of people like you. As my financial partner, you invest directly in the spiritual and psychological recovery of Ukraine's veterans. Are you ready to become part of my team?
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="rounded-[2rem] bg-white/5 border border-white/15 p-6 sm:p-8">
+                        <h4 class="text-white font-extrabold text-lg sm:text-xl mb-5" data-i18n="ask-h">Become a Monthly Partner</h4>
+                        <div id="ask-usd" class="grid grid-cols-3 gap-3">
+                            <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">$50</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">per month</span>
+                            </div>
+                            <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center ring-2 ring-white/70">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">$100</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">per month</span>
+                            </div>
+                            <div class="rounded-2xl bg-white/10 border border-white/20 py-4 px-2 text-center">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">$250</span>
+                                <span class="block text-[11px] font-bold text-white/90 uppercase tracking-widest mt-1" data-i18n="ask-per">per month</span>
+                            </div>
+                        </div>
+                        <p class="text-white/90 text-sm leading-relaxed mt-5" data-i18n="ask-note">These amounts are a starting point — what matters is consistency, not size. A one-time gift helps too. Choose whichever way works for you below.</p>
+                    </div>
+
+
+                    <a id="pay-cru" href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[2rem] p-6 sm:p-8 flex items-center justify-between transition-colors shadow-xl group border border-slate-100 dark:border-slate-700 mt-6 font-sans">
+                        <div class="flex items-center gap-5 pr-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
+                                <i class="fa-solid fa-globe text-xl sm:text-2xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug" data-i18n="btn-cru-title">Give via Cru.org</h4>
+                                <p class="text-xs sm:text-sm font-bold text-slate-500 mt-1" data-i18n="btn-cru-sub">For international bank cards</p>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center shrink-0 transition-colors">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </div>
+                    </a>
+
+                    <div class="mt-6 rounded-[1.5rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 py-7 px-6 grid grid-cols-3 gap-4 text-center">
+                        <div class="space-y-1">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-gold">1951</span>
+                            <span class="block text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-1-lbl">Year the Mission Was Founded</span>
+                        </div>
+                        <div class="space-y-1 border-l border-r border-slate-200 dark:border-slate-700">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-gold">191+</span>
+                            <span class="block text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-2-lbl">Countries Worldwide</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-gold">1991</span>
+                            <span class="block text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest" data-i18n="stat-3-lbl">Serving in Ukraine Since</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 rounded-[1.5rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-7 text-left">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h5 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="trust-h">Accountability and Transparency</h5>
+                                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="trust-p1">Gifts are received by Cru (Campus Crusade for Christ International), a registered 501(c)(3) organization. For U.S. donors, gifts are tax-deductible, every gift receives a receipt, and monthly partnership can be changed or canceled at any time.</p>
+                                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300" data-i18n="trust-p2">I report every month — with names, numbers, and what didn’t work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="join-form" class="mt-16 bg-white dark:bg-slate-800 p-8 sm:p-12 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm max-w-4xl mx-auto text-center space-y-8 transition-colors duration-200 font-sans">
+                <p class="text-xl sm:text-2xl font-serif italic text-slate-800 dark:text-slate-200 font-medium leading-relaxed" data-i18n="quote-end">
+                    &quot;If the Lord is leading you to say yes, I'd be grateful for your first gift today.&quot;
+                </p>
+                
+                <div class="h-px bg-slate-200 dark:bg-slate-700 w-24 mx-auto transition-colors duration-200"></div>
+                
+                <div class="space-y-4">
+                    <p class="text-xs uppercase font-extrabold tracking-widest text-slate-500 dark:text-slate-400" data-i18n="quick-contact">Get in touch quickly:</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0077b5] hover:bg-[#006699] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
+                            <i class="fa-brands fa-telegram text-lg" aria-hidden="true"></i> <span data-i18n="btn-tg">Message me on Telegram</span>
+                        </a>
+                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-slate-900 font-bold py-3 px-6 rounded-xl transition-all shadow-sm text-sm active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> <span data-i18n="btn-wa">Message me on WhatsApp</span>
+                        </a>
+                    </div>
+                    <p class="text-slate-900 dark:text-white font-extrabold text-lg mt-2 font-sans tracking-wide font-medium transition-colors duration-200">+380 97 605 89 65</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="share" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold font-bold uppercase tracking-widest text-xs block mb-3" data-i18n="share-tag">Share</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans mb-5 transition-colors duration-200" data-i18n="share-h">Who Needs to Hear This?</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="share-p">New partners most often come not from ads, but because someone mentioned my name in conversation.</p>
+
+            <div class="mt-10 rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8">
+                <p class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed" data-i18n="share-ref-p">If this story reminded you of someone — just tell me who. I'll reach out myself, and let them know you're the one who pointed me their way.</p>
+                <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%97%D0%BD%D0%B0%D1%8E%2C%20%D0%BA%D0%BE%D0%BC%D1%83%20%D1%86%D0%B5%20%D0%B2%D0%B0%D1%80%D1%82%D0%BE%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md active:scale-95 text-base mt-6">
+                    <i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i> <span data-i18n="share-ref-btn">Write to Me</span>
+                </a>
+
+                <div class="flex items-center gap-4 my-8">
+                    <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
+                    <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest whitespace-nowrap" data-i18n="share-or">or send the link</span>
+                    <span class="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></span>
+                </div>
+
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <button type="button" id="share-copy" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-regular fa-copy" aria-hidden="true"></i> <span data-i18n="share-btn-copy">Copy Link</span>
+                    </button>
+                    <a id="share-mail" href="#" class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                    <a id="share-wa" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb757] text-slate-900 font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                    </a>
+                    <a id="share-tg" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#0077b5] hover:bg-[#006699] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
+                    </a>
+                    <a id="share-fb" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1464cc] hover:bg-[#135fbf] text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">
+                        <i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook
+                    </a>
+                </div>
+                <span id="share-done" class="hidden"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletters" class="py-24 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-6">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-sans transition-colors duration-200" data-i18n="news-h2">Ministry Updates</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-200" data-i18n="news-p">
+                    Every month I send a prayer letter with ministry news — stories, specific needs, thanksgivings. Write to me and I'll add you to the list. Or join the Telegram channel.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
+                    <a href="mailto:oleksandr.kyliushyk@cru.org?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%BC%D0%BE%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82&body=%D0%86%D0%BC%27%D1%8F%3A%20%0A%D0%9F%D1%80%D1%96%D0%B7%D0%B2%D0%B8%D1%89%D0%B5%3A%20%0A" class="inline-flex items-center gap-2.5 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
+                        <i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i> <span data-i18n="btn-sub-mail">Get the Letter by Email</span>
+                    </a>
+                    <a href="https://t.me/+zCLgD9Z2qjdlOTJi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-[#0077b5] hover:bg-[#006699] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
+                        <i class="fa-brands fa-telegram text-xl" aria-hidden="true"></i> <span data-i18n="btn-tg-channel">My Telegram Channel</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-20 max-w-2xl mx-auto text-center">
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-[2rem] p-8 sm:p-12">
+                    <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white font-sans mb-3">Read the Archive</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">Every letter, with topics and filters.</p>
+                    <a href="../letters/?lang=en" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-slate-900 font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md text-base active:scale-95">
+                        Browse All Letters <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-6">
+                        <img loading="lazy" decoding="async" src="../MM_CruBlue_2020_RGB.png" alt="Ukraine for Christ" class="h-12 w-auto object-contain logo-img">
+                    </div>
+                    
+                    <div>
+                        <p class="font-bold text-slate-900 dark:text-white text-lg sm:text-xl leading-relaxed" data-i18n="romans-verse">
+                            &quot;Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.&quot;
+                        </p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 font-medium" data-i18n="romans-ref">Romans 15:13</p>
+                    </div>
+                    
+                    <div class="space-y-5 pt-6 border-t border-slate-200 dark:border-slate-700">
+                        <p class="text-slate-500 dark:text-slate-400 italic text-sm" data-i18n="best-wishes">
+                            With every blessing in Christ,
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy" decoding="async" width="56" height="56" src="../avatar-alex.jpg" alt="Oleksandr Kyliushyk" class="w-14 h-14 rounded-full object-cover shadow-md border-2 border-white dark:border-slate-800">
+                            <div>
+                                <h4 class="font-extrabold text-slate-900 dark:text-white text-base" data-i18n="my-name">Oleksandr Kyliushyk</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs mt-1 leading-snug" data-i18n="my-role">
+                                    Military Ministry, Ukraine for Christ<br>
+                                    Campus Crusade for Christ Int'l
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:items-end justify-between space-y-12">
+                    <div class="space-y-4 md:text-right">
+                        <a href="mailto:oleksandr.kyliushyk@cru.org" class="min-h-[44px] flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-regular fa-envelope text-lg text-slate-400 group-hover:text-gold transition-colors" aria-hidden="true"></i>
+                            <span class="font-bold text-sm">oleksandr.kyliushyk@cru.org</span>
+                        </a>
+                        <a href="tel:+380976058965" class="min-h-[44px] flex items-center md:justify-end gap-3 text-slate-600 dark:text-slate-300 hover:text-gold dark:hover:text-gold transition-colors group">
+                            <i class="fa-solid fa-phone text-lg text-slate-400 group-hover:text-gold transition-colors" aria-hidden="true"></i>
+                            <span class="font-bold text-sm">+380 (97) 605 89 65</span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.instagram.com/sollex991?igsh=N3djd3UxcHIyYnZj&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://t.me/+380976058965" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#0088cc] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/380976058965" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] hover:border-transparent transition-all shadow-sm">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest text-center md:text-left" data-i18n="foot-copy">© 2026 Ukraine for Christ. All rights reserved.</p>
+                <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-gold transition-colors shadow-sm">
+                    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                </button>
+            </div>
+        </footer>
+
+    <script>
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            document.getElementById('menu-btn')?.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        // Activity tabs
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-gold/50";
+            });
+            document.querySelectorAll('.tab-btn').forEach(b => b.setAttribute('aria-pressed', String(b.id === 'btn-' + tabId)));
+            document.getElementById('btn-' + tabId).className = "tab-btn px-6 py-3 rounded-full text-lg font-bold transition-all border border-gold bg-gold text-slate-900 shadow-md";
+        }
+
+        // Language switcher: this page is the fixed English version.
+        // Picking UA sends the visitor back to the root site (which remembers the choice).
+        document.getElementById('lang-switcher').addEventListener('change', function (e) {
+            if (e.target.value === 'uk') {
+                try { localStorage.setItem('site-lang', 'uk'); } catch (err) {}
+                window.location.href = '../';
+            }
+        });
+
+        // --- Theme Toggle Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            lightIcon.classList.remove('hidden');
+        } else {
+            darkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+    <script>
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (reduce) return;
+
+            /* Плавна поява секцій при скролі */
+            var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('reveal-in'); obs.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('section:not(:first-of-type), footer, div[class*="-mt-24"]').forEach(function (el) {
+                el.classList.add('reveal-init');
+                obs.observe(el);
+            });
+
+            /* Запобіжник: якщо анімація не спрацювала — показати все */
+            setTimeout(function () {
+                if (document.querySelectorAll('.reveal-in').length === 0) {
+                    document.querySelectorAll('.reveal-init').forEach(function (el) { el.classList.add('reveal-in'); });
+                }
+            }, 3000);
+
+            /* Лічильники статистики */
+            function animateCounter(el) {
+                var text = el.textContent.trim();
+                var m = text.match(/^(\d+(?:[.,]\d+)?)(.*)$/);
+                if (!m) return;
+                var target = parseFloat(m[1].replace(',', '.'));
+                var suffix = m[2];
+                var decimals = (m[1].split(/[.,]/)[1] || '').length;
+                var dur = 1400, start = null;
+                function step(ts) {
+                    if (!start) start = ts;
+                    var p = Math.min((ts - start) / dur, 1);
+                    p = 1 - Math.pow(1 - p, 3);
+                    el.textContent = (target * p).toFixed(decimals) + suffix;
+                    if (p < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }
+            var counterObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+                });
+            }, { threshold: 0.6 });
+            document.querySelectorAll('[data-counter]').forEach(function (el) {
+                if (/^\d/.test(el.textContent.trim())) counterObs.observe(el);
+            });
+        })();
+    </script>
+
+    <script>
+        /* Слайдер фото в секції «Мій шлях» */
+        (function () {
+            const box = document.getElementById('path-slider');
+            if (!box) return;
+            const slides = box.querySelectorAll('.path-slide');
+            if (slides.length < 2) return;
+            const dots = box.querySelector('.absolute.bottom-1');
+            let i = 0, timer = null;
+
+            slides.forEach((_, n) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-label', 'Photo ' + (n + 1));
+                b.className = 'w-11 h-11 -mx-2 flex items-center justify-center';
+                b.innerHTML = '<span class="block w-2.5 h-2.5 rounded-full bg-white/60 transition-colors"></span>';
+                b.addEventListener('click', () => { show(n); restart(); });
+                dots.appendChild(b);
+            });
+
+            function show(n) {
+                i = n % slides.length;
+                slides.forEach((el, k) => el.style.opacity = (k === i ? '1' : '0'));
+                dots.childNodes.forEach((d, k) => {
+                    d.firstChild.className = 'block w-2.5 h-2.5 rounded-full transition-colors ' + (k === i ? 'bg-white' : 'bg-white/60');
+                    d.setAttribute('aria-current', k === i ? 'true' : 'false');
+                });
+            }
+            function restart() {
+                clearInterval(timer);
+                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    timer = setInterval(() => show(i + 1), 5000);
+                }
+            }
+            box.addEventListener('mouseenter', () => clearInterval(timer));
+            box.addEventListener('mouseleave', restart);
+            show(0); restart();
+        })();
+    </script>
+
+    <script>
+        /* Блок «Поділитися» */
+        (function () {
+            const box = document.getElementById('share');
+            if (!box) return;
+            const url = location.origin + location.pathname;
+            const done = document.getElementById('share-done');
+
+            document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(url);
+            document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(url);
+            document.getElementById('share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            function mail() {
+                document.getElementById('share-mail').href =
+                    'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(url);
+            }
+            mail();
+            document.getElementById('lang-switcher')?.addEventListener('change', () => setTimeout(mail, 50));
+
+            document.getElementById('share-copy').addEventListener('click', function () {
+                navigator.clipboard.writeText(url).then(() => {
+                    done.innerText = 'Link copied.';
+                    done.className = 'text-green-600 dark:text-green-400 text-sm font-bold mt-4 block';
+                }).catch(() => {
+                    done.innerText = "Couldn't copy \u2014 copy the address from your browser's address bar.";
+                    done.className = 'text-red-500 text-sm font-bold mt-4 block';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
