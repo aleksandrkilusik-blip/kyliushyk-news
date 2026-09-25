@@ -444,6 +444,8 @@
         (function () {
             let saved = 'uk';
             try { saved = localStorage.getItem('newsletter-lang') || 'uk'; } catch (e) {}
+            const q = new URLSearchParams(location.search).get('lang');
+            if (q === 'en' || q === 'uk') saved = q;
             setLanguage(saved);
         })();
     </script>
