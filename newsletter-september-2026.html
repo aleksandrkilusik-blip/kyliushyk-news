@@ -34,6 +34,14 @@
         .lang-btn { transition: all 0.2s ease; }
         .lang-btn.active { background-color: #0B7A99; color: #fff; }
         .lang-btn:not(.active) { background-color: transparent; color: #64748b; }
+    
+        /* Подвійне лого: Military Ministry + Україна для Христа */
+        .logo-pair { display: flex; align-items: center; gap: 0.875rem; }
+        .logo-divider { width: 1px; height: 2rem; background: #CBD5E1; flex-shrink: 0; }
+        .dark .logo-divider { background: #475569; }
+        .ufc-logo { height: 2.25rem; width: auto; }
+        .dark .ufc-logo { filter: invert(1); }
+        @media (max-width: 400px) { .logo-pair { gap: 0.625rem; } .ufc-logo { height: 1.75rem; } }
     </style>
 </head>
 <body class="text-slate-800 antialiased py-8 px-4 sm:px-6 lg:px-8">
@@ -42,8 +50,10 @@
 
         <!-- Шапка -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <a href="index.html" class="shrink-0 hover:opacity-80 transition-opacity">
+            <a href="index.html" class="shrink-0 hover:opacity-80 transition-opacity logo-pair">
                 <img src="MM_CruBlue_2020_RGB.png" alt="Military Ministry" class="h-10 object-contain logo-img">
+                <span class="logo-divider" aria-hidden="true"></span>
+                <img src="ufc-logo.png" alt="Україна для Христа" decoding="async" class="ufc-logo object-contain logo-img">
             </a>
             <div class="flex items-center gap-3 flex-wrap justify-center">
                 <span class="text-sm font-bold text-slate-400" data-key="mission-label">МІСІЯ В УКРАЇНІ</span>
