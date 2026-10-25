@@ -47,6 +47,10 @@
         .carousel-track::-webkit-scrollbar { display: none; }
         .carousel-track > img { scroll-snap-align: center; }
         .carousel-dot { transition: all 0.2s ease; }
+        /* Для англомовних першою — оплата карткою через Cru.org */
+        html[lang="en"] #support .pay-cru { order: 1; }
+        html[lang="en"] #support .pay-ua { order: 2; }
+
         .carousel-dot.active { background-color: #FDBE15; width: 1.25rem; }
     </style>
 </head>
@@ -285,12 +289,33 @@
                 </div>
             </div>
 
-            <div class="bg-gold rounded-3xl p-8 shadow-md flex flex-col justify-between transition-all hover:-translate-y-1">
+            <div id="support" class="bg-gold rounded-3xl p-8 shadow-md flex flex-col gap-5 scroll-mt-8">
                 <div>
                     <h3 class="text-xl font-black text-slate-900 uppercase mb-4" data-key="partner-title">Стати партнером</h3>
-                    <p class="text-slate-900/80 font-medium text-sm leading-relaxed mb-6" data-key="partner-text">Через усі ці поїздки я постійно відкладаю збір підтримки. Тим більше вдячний за вашу молитовну і фінансову підтримку — вона тримає мене в служінні й дає розуміння, що я поки на своєму місці.</p>
+                    <p class="text-slate-900/80 font-medium text-sm leading-relaxed" data-key="partner-text">Через усі ці поїздки я постійно відкладаю збір підтримки. Тим більше вдячний за вашу молитовну і фінансову підтримку — вона тримає мене в служінні й дає розуміння, що я поки на своєму місці.</p>
                 </div>
-                <a href="index.html#partnership" class="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide" data-key="partner-btn">Підтримати місію</a>
+                <div class="pay-ua bg-slate-900 text-white rounded-2xl p-5 space-y-4">
+                    <p class="text-xs font-black uppercase tracking-widest text-gold" data-key="pay-ua-title">Приват24 або Monobank</p>
+                    <div>
+                        <p class="text-xs text-slate-400 mb-1.5" data-key="pay-iban-label">Рахунок IBAN (платіж за реквізитами):</p>
+                        <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2 pl-3">
+                            <code class="font-mono text-xs sm:text-sm font-bold tracking-wide break-all flex-1">UA063052990000026004045007863</code>
+                            <button type="button" onclick="copyText('UA063052990000026004045007863', this)" class="shrink-0 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-wider transition-colors"><i class="fa-regular fa-copy"></i> <span class="copy-label" data-key="btn-copy">Копіювати</span></button>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400" data-key="pay-recipient">Отримувач: <strong class="text-white">Місія «Україна для Христа»</strong></p>
+                    <div>
+                        <p class="text-xs text-slate-400 mb-1.5" data-key="pay-code-label">У коментарі до платежу <strong class="text-gold">обов'язково</strong> вкажіть мій номер у місії:</p>
+                        <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2 pl-3">
+                            <code class="font-mono text-sm font-bold tracking-wide flex-1">5544</code>
+                            <button type="button" onclick="copyText('5544', this)" class="shrink-0 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-wider transition-colors"><i class="fa-regular fa-copy"></i> <span class="copy-label" data-key="btn-copy">Копіювати</span></button>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener" class="pay-cru block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 px-4 rounded-xl transition-colors text-sm uppercase tracking-wide">
+                    <span data-key="partner-btn">Підтримати мене</span>
+                    <span class="block text-[11px] font-medium normal-case tracking-normal text-slate-400 mt-1" data-key="partner-btn-sub">Карткою будь-якого банку світу · Cru.org</span>
+                </a>
             </div>
         </div>
 
@@ -416,7 +441,14 @@
 
             "partner-title": { uk: "Стати партнером", en: "Become a Partner" },
             "partner-text": { uk: "Через усі ці поїздки я постійно відкладаю збір підтримки. Тим більше вдячний за вашу молитовну і фінансову підтримку — вона тримає мене в служінні й дає розуміння, що я поки на своєму місці.", en: "Like most missionaries, I raise my own support through ministry partners — and with all this travel, I keep putting off my support raising. That makes me all the more grateful for your prayer and financial support: it keeps me going in ministry and assures me that, for now, I'm where I'm meant to be." },
-            "partner-btn": { uk: "Підтримати місію", en: "Support the Ministry" },
+            "partner-btn": { uk: "Підтримати мене", en: "Support Me" },
+            "pay-ua-title": { uk: "Приват24 або Monobank", en: "From a Ukrainian bank (Privat24 / Monobank)" },
+            "pay-iban-label": { uk: "Рахунок IBAN (платіж за реквізитами):", en: "IBAN account:" },
+            "pay-recipient": { uk: "Отримувач: <strong class=\"text-white\">Місія «Україна для Христа»</strong>", en: "Recipient: <strong class=\"text-white\">Mission \"Ukraine for Christ\"</strong>" },
+            "pay-code-label": { uk: "У коментарі до платежу <strong class=\"text-gold\">обов'язково</strong> вкажіть мій номер у місії:", en: "In the payment comment, <strong class=\"text-gold\">be sure</strong> to include my staff number:" },
+            "btn-copy": { uk: "Копіювати", en: "Copy" },
+            "btn-copied": { uk: "Скопійовано", en: "Copied" },
+            "partner-btn-sub": { uk: "Карткою будь-якого банку світу · Cru.org", en: "Give online by card from the US or anywhere · Cru.org (tax-deductible in the US)" },
 
             "prayer-title": { uk: "Молитовні потреби", en: "Prayer Requests" },
             "prayer-li1": { uk: "<strong class=\"text-white\">За Даніка</strong> — щоб його роздуми й молитви переросли в живу зустріч із Богом.", en: "<strong class=\"text-white\">For Danik</strong> — that his reflections and prayers would grow into a living encounter with God." },
@@ -437,6 +469,15 @@
             "footer-role": { uk: "Служіння серед військових · Місія «Україна для Христа»", en: "Military Ministry · Ukraine for Christ (Cru Ukraine)" },
             "footer-back": { uk: "На головну", en: "Back to Home" }
         };
+
+        function copyText(text, btn) {
+            const label = btn.querySelector('.copy-label');
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'uk';
+            navigator.clipboard.writeText(text).then(function () {
+                label.textContent = translations['btn-copied'][lang];
+                setTimeout(function () { label.textContent = translations['btn-copy'][lang]; }, 2000);
+            });
+        }
 
         function setLanguage(lang) {
             document.documentElement.lang = lang;
