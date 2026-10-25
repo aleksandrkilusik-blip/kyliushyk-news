@@ -107,6 +107,10 @@
         /* світлі плашки всередині кольорових блоків — темне золото; цитата на блідо-золотому — ще темніше */
         :root:not(.dark) [class*="bg-["] .bg-slate-50 .text-gold { color: #A16207; }
         :root:not(.dark) .bg-gold-pale .text-gold { color: #854D0E; }
+        /* темні плашки й кнопки всередині блідо-золотого блоку — знову яскраве золото; білі картки — темне золото */
+        :root:not(.dark) .bg-gold-pale .bg-slate-900.text-gold,
+        :root:not(.dark) .bg-gold-pale .bg-slate-900 .text-gold { color: #FBBF24; }
+        :root:not(.dark) .bg-gold-pale .bg-white .text-gold { color: #A16207; }
 
         .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
