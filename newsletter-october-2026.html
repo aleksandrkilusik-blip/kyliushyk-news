@@ -49,7 +49,8 @@
         .carousel-dot { transition: all 0.2s ease; }
         /* Оплата, як на головній: UA — Приват/Моно, EN — Cru.org */
         html[lang="en"] #support .pay-ua { display: none; }
-        html:not([lang="en"]) #support .pay-cru { display: none; }
+        html:not([lang="en"]) #support .pay-cru,
+        html:not([lang="en"]) #support .pay-ca { display: none; }
 
         .carousel-dot.active { background-color: #FDBE15; width: 1.25rem; }
     </style>
@@ -316,6 +317,24 @@
                     <span data-key="partner-btn">Підтримати мене</span>
                     <span class="block text-[11px] font-medium normal-case tracking-normal text-slate-400 mt-1" data-key="partner-btn-sub">Карткою будь-якого банку світу · Cru.org</span>
                 </a>
+                <div class="pay-ca bg-slate-900 text-white rounded-2xl p-5 space-y-4">
+                    <div>
+                        <p class="text-xs font-black uppercase tracking-widest text-gold">Giving from Canada</p>
+                        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Through Power to Change, Cru's partner ministry in Canada (Canadian tax receipt).</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 mb-1.5">Account: <strong class="text-white">Ministry of Oleksandr Kyliushyk</strong></p>
+                        <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2 pl-3">
+                            <code class="font-mono text-sm font-bold tracking-wide flex-1">200211</code>
+                            <button type="button" onclick="copyText('200211', this)" class="shrink-0 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-wider transition-colors"><i class="fa-regular fa-copy"></i> <span class="copy-label" data-key="btn-copy">Копіювати</span></button>
+                        </div>
+                    </div>
+                    <ol class="space-y-3 text-xs text-slate-300 leading-relaxed">
+                        <li class="flex gap-3"><span class="w-5 h-5 shrink-0 rounded-full bg-gold text-slate-900 font-black text-[11px] flex items-center justify-center">1</span><span><strong class="text-white">Online:</strong> <a href="https://p2c.com/donate" target="_blank" rel="noopener" class="text-gold font-semibold underline underline-offset-2">p2c.com/donate</a>. If my account doesn't show up in the search yet, add my name and account number 200211 in the notes field.</span></li>
+                        <li class="flex gap-3"><span class="w-5 h-5 shrink-0 rounded-full bg-gold text-slate-900 font-black text-[11px] flex items-center justify-center">2</span><span><strong class="text-white">By cheque:</strong> payable to Power to Change, with 200211 in the memo line. Mail to: 30439 Great Northern Avenue, Abbotsford, BC V2T&nbsp;0J6.</span></li>
+                        <li class="flex gap-3"><span class="w-5 h-5 shrink-0 rounded-full bg-gold text-slate-900 font-black text-[11px] flex items-center justify-center">3</span><span><strong class="text-white">By phone, with a card:</strong> <a href="tel:+18557224483" class="text-gold font-semibold whitespace-nowrap">1-855-722-4483</a>, Monday–Friday, 8:00 a.m.–4:30 p.m. Pacific Time.</span></li>
+                    </ol>
+                </div>
             </div>
         </div>
 
@@ -448,7 +467,7 @@
             "pay-code-label": { uk: "У коментарі до платежу <strong class=\"text-gold\">обов'язково</strong> вкажіть мій номер у місії:", en: "In the payment comment, <strong class=\"text-gold\">be sure</strong> to include my staff number:" },
             "btn-copy": { uk: "Копіювати", en: "Copy" },
             "btn-copied": { uk: "Скопійовано", en: "Copied" },
-            "partner-btn-sub": { uk: "Карткою будь-якого банку світу · Cru.org", en: "Give online by card from the US or anywhere · Cru.org (tax-deductible in the US)" },
+            "partner-btn-sub": { uk: "Карткою будь-якого банку світу · Cru.org", en: "Online by card from the US or anywhere else · Cru.org (tax-deductible in the US)" },
 
             "prayer-title": { uk: "Молитовні потреби", en: "Prayer Requests" },
             "prayer-li1": { uk: "<strong class=\"text-white\">За Даніка</strong> — щоб його роздуми й молитви переросли в живу зустріч із Богом.", en: "<strong class=\"text-white\">For Danik</strong> — that his reflections and prayers would grow into a living encounter with God." },
