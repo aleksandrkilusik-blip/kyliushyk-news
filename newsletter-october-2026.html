@@ -47,9 +47,9 @@
         .carousel-track::-webkit-scrollbar { display: none; }
         .carousel-track > img { scroll-snap-align: center; }
         .carousel-dot { transition: all 0.2s ease; }
-        /* Для англомовних першою — оплата карткою через Cru.org */
-        html[lang="en"] #support .pay-cru { order: 1; }
-        html[lang="en"] #support .pay-ua { order: 2; }
+        /* Оплата, як на головній: UA — Приват/Моно, EN — Cru.org */
+        html[lang="en"] #support .pay-ua { display: none; }
+        html:not([lang="en"]) #support .pay-cru { display: none; }
 
         .carousel-dot.active { background-color: #FDBE15; width: 1.25rem; }
     </style>
@@ -295,7 +295,7 @@
                     <p class="text-slate-900/80 font-medium text-sm leading-relaxed" data-key="partner-text">Через усі ці поїздки я постійно відкладаю збір підтримки. Тим більше вдячний за вашу молитовну і фінансову підтримку — вона тримає мене в служінні й дає розуміння, що я поки на своєму місці.</p>
                 </div>
                 <div class="pay-ua bg-slate-900 text-white rounded-2xl p-5 space-y-4">
-                    <p class="text-xs font-black uppercase tracking-widest text-gold" data-key="pay-ua-title">Приват24 або Monobank</p>
+                    <p class="text-xs font-black uppercase tracking-widest text-gold" data-key="pay-ua-title">Підтримати мене · Приват24 або Monobank</p>
                     <div>
                         <p class="text-xs text-slate-400 mb-1.5" data-key="pay-iban-label">Рахунок IBAN (платіж за реквізитами):</p>
                         <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2 pl-3">
@@ -442,7 +442,7 @@
             "partner-title": { uk: "Стати партнером", en: "Become a Partner" },
             "partner-text": { uk: "Через усі ці поїздки я постійно відкладаю збір підтримки. Тим більше вдячний за вашу молитовну і фінансову підтримку — вона тримає мене в служінні й дає розуміння, що я поки на своєму місці.", en: "With all this travel, I keep putting off my support raising. Raising support inside Ukraine is especially hard right now: many of the people who could give have been mobilized, others have lost their jobs, and many are already putting what they have into supporting the army. That makes me all the more grateful for your prayer and financial support — it keeps me going in ministry and assures me that, for now, I'm where I'm meant to be." },
             "partner-btn": { uk: "Підтримати мене", en: "Support Me" },
-            "pay-ua-title": { uk: "Приват24 або Monobank", en: "From a Ukrainian bank (Privat24 / Monobank)" },
+            "pay-ua-title": { uk: "Підтримати мене · Приват24 або Monobank", en: "Support me · Privat24 or Monobank" },
             "pay-iban-label": { uk: "Рахунок IBAN (платіж за реквізитами):", en: "IBAN account:" },
             "pay-recipient": { uk: "Отримувач: <strong class=\"text-white\">Місія «Україна для Христа»</strong>", en: "Recipient: <strong class=\"text-white\">Mission \"Ukraine for Christ\"</strong>" },
             "pay-code-label": { uk: "У коментарі до платежу <strong class=\"text-gold\">обов'язково</strong> вкажіть мій номер у місії:", en: "In the payment comment, <strong class=\"text-gold\">be sure</strong> to include my staff number:" },
