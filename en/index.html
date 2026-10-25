@@ -624,6 +624,51 @@
                         </div>
                     </a>
 
+                    <div id="pay-ca" class="bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-xl border border-slate-100 dark:border-slate-700 mt-6 font-sans">
+                        <button type="button" onclick="caToggle(this)" aria-expanded="false" aria-controls="ca-details" class="w-full text-left p-6 sm:p-8 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
+                            <div class="flex items-center gap-5 pr-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 dark:bg-red-900/30 rounded-2xl flex items-center justify-center shrink-0 text-red-600 dark:text-red-400">
+                                    <i class="fa-brands fa-canadian-maple-leaf text-xl sm:text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug">Give from Canada</h4>
+                                    <p class="text-xs sm:text-sm font-bold text-slate-500 mt-1">Power to Change · Canadian tax receipt</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-slate-100 dark:bg-slate-800 group-hover:bg-red-600 group-hover:text-white text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center shrink-0 transition-colors">
+                                <i class="fa-solid fa-chevron-down ca-icon transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                        <div id="ca-details" class="hidden bg-[#0c3953] text-white p-6 sm:p-8">
+                            <p class="text-slate-200 text-sm md:text-base leading-relaxed mb-5">Power to Change is Cru's partner ministry in Canada. My account there: <strong class="text-white">Ministry of Oleksandr Kyliushyk</strong></p>
+                            <div class="flex items-center justify-between gap-3 bg-black/20 border border-white/10 rounded-xl p-3 pl-4 mb-6">
+                                <code class="text-base font-mono text-white font-bold tracking-wider">200211</code>
+                                <button type="button" onclick="caCopy(this)" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shrink-0"><i class="fa-regular fa-copy" aria-hidden="true"></i> <span class="ca-copy-text">Copy</span></button>
+                            </div>
+                            <ol class="space-y-5">
+                                <li class="flex gap-4"><span class="w-7 h-7 shrink-0 rounded-full bg-gold text-slate-900 font-extrabold text-sm flex items-center justify-center">1</span><span class="text-slate-200 text-sm md:text-base leading-relaxed"><strong class="text-white">Online:</strong> <a href="https://p2c.com/donate" target="_blank" rel="noopener noreferrer" class="text-gold font-bold underline underline-offset-2">p2c.com/donate</a>. If my account doesn't show up in the search yet, add my name and account number 200211 in the notes field.</span></li>
+                                <li class="flex gap-4"><span class="w-7 h-7 shrink-0 rounded-full bg-gold text-slate-900 font-extrabold text-sm flex items-center justify-center">2</span><span class="text-slate-200 text-sm md:text-base leading-relaxed"><strong class="text-white">By cheque:</strong> payable to Power to Change, with 200211 in the memo line. Mail to: 30439 Great Northern Avenue, Abbotsford, BC V2T&nbsp;0J6.</span></li>
+                                <li class="flex gap-4"><span class="w-7 h-7 shrink-0 rounded-full bg-gold text-slate-900 font-extrabold text-sm flex items-center justify-center">3</span><span class="text-slate-200 text-sm md:text-base leading-relaxed"><strong class="text-white">By phone, with a card:</strong> <a href="tel:+18557224483" class="text-gold font-bold whitespace-nowrap">1-855-722-4483</a>, Monday–Friday, 8:00 a.m.–4:30 p.m. Pacific Time.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <script>
+                        function caToggle(btn) {
+                            var d = document.getElementById('ca-details');
+                            d.classList.toggle('hidden');
+                            var open = !d.classList.contains('hidden');
+                            btn.setAttribute('aria-expanded', String(open));
+                            btn.querySelector('.ca-icon').classList.toggle('rotate-180', open);
+                        }
+                        function caCopy(btn) {
+                            navigator.clipboard.writeText('200211').then(function () {
+                                var s = btn.querySelector('.ca-copy-text');
+                                s.textContent = 'Copied';
+                                setTimeout(function () { s.textContent = 'Copy'; }, 2000);
+                            });
+                        }
+                    </script>
+
                     <div class="mt-6 rounded-[1.5rem] border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 py-7 px-6 grid grid-cols-3 gap-4 text-center">
                         <div class="space-y-1">
                             <span class="block text-2xl sm:text-3xl font-extrabold text-gold">1951</span>
