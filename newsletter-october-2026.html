@@ -256,7 +256,7 @@
                     <p data-key="s4-p3">І все ж я хочу зберегти досвід саме тих, хто дотичний до війни. Чому вони чинять так, а не інакше — як, наприклад, інший Андрій, з ЧМТ, про якого я писав минулого разу. Чи помічають вони в цьому втручання чогось надприродного (якщо не віруючі) або як бачать у цьому Бога (якщо християни). І як саме змінюється їхня віра в процесі.</p>
                     <p data-key="s4-p4"><strong class="text-slate-900">Чесно кажучи,</strong> хотілося б якось зафіксувати й власний досвід. Але поки хочеться допомагати іншим, а до свого я ніяк не можу дійти.</p>
                     <p data-key="s4-p5"><strong class="text-slate-900">Ще одна новина: ми зробили лендінг подкасту.</strong> Перекладу відео наразі немає, а мені дуже хочеться, щоб ці історії почули й поза Україною. Тому поки ми перевели всі випуски в текстову версію й переклали англійською. Усі 7 подкастів можна переглянути за посиланням.</p>
-                    <a href="https://aleksandrkilusik-blip.github.io/bez-broni/" target="_blank" rel="noopener" class="self-start inline-flex items-center gap-2 bg-brandBlue hover:bg-brandDark text-white font-bold py-3 px-6 rounded-full transition-colors uppercase tracking-wider text-xs">
+                    <a href="https://aleksandrkilusik-blip.github.io/bez-broni/" data-href-uk="https://aleksandrkilusik-blip.github.io/bez-broni/" data-href-en="https://aleksandrkilusik-blip.github.io/bez-broni/en/" target="_blank" rel="noopener" class="self-start inline-flex items-center gap-2 bg-brandBlue hover:bg-brandDark text-white font-bold py-3 px-6 rounded-full transition-colors uppercase tracking-wider text-xs">
                         <i class="fa-solid fa-podcast text-base"></i> <span data-key="s4-btn">Усі випуски «Без броні»</span>
                     </a>
                 </div>
@@ -486,6 +486,9 @@
                 if (translations[key] && translations[key][lang] !== undefined) {
                     el.innerHTML = translations[key][lang];
                 }
+            });
+            document.querySelectorAll('[data-href-en]').forEach(function (el) {
+                el.href = el.getAttribute('data-href-' + lang);
             });
             document.getElementById('lang-uk').classList.toggle('active', lang === 'uk');
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
