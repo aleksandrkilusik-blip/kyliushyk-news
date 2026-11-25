@@ -317,9 +317,32 @@
                         Ваша підтримка дає змогу бути поруч із хлопцями. Вона покриває ретрити та витрати місії на наступний рік.
                     </p>
                 </div>
-                <a href="index.html#partnership" class="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide" data-key="partner-btn">
-                    Підтримати місію
-                </a>
+                <button type="button" onclick="togglePay(this)" aria-expanded="false" aria-controls="pay-details" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide flex items-center justify-center gap-2">
+                    <span data-key="partner-btn">Показати реквізити</span> <i class="fa-solid fa-chevron-down pay-icon transition-transform"></i>
+                </button>
+                <div id="pay-details" class="hidden mt-4 space-y-4 text-sm">
+                    <div class="bg-slate-900 text-white rounded-2xl p-5 space-y-3">
+                        <p class="font-black uppercase tracking-wider text-gold text-xs" data-key="pay-ua-title">Приват24 / Monobank</p>
+                        <p class="text-slate-300 text-xs" data-key="pay-ua-step1">«Платіж за IBAN», рахунок:</p>
+                        <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2">
+                            <code class="font-mono text-xs font-bold break-all flex-1">UA063052990000026004045007863</code>
+                            <button type="button" onclick="copyText('UA063052990000026004045007863', this)" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md text-[11px] font-bold uppercase shrink-0"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p class="text-slate-300 text-xs" data-key="pay-ua-step2">Отримувач: <strong class="text-white">Місія «Україна для Христа»</strong>. У коментарі до платежу обов'язково вкажіть мій номер у місії:</p>
+                        <div class="flex items-center gap-2 bg-white/10 rounded-lg p-2">
+                            <code class="font-mono text-sm font-bold flex-1">5544</code>
+                            <button type="button" onclick="copyText('5544', this)" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md text-[11px] font-bold uppercase shrink-0"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <a href="https://give.cru.org/1315771?modal=give-gift&d=1315771" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-3 bg-white/60 hover:bg-white rounded-2xl p-4 transition-colors">
+                        <span><strong class="block text-slate-900" data-key="pay-cru-title">Cru.org</strong><span class="text-slate-700 text-xs" data-key="pay-cru-sub">Міжнародні банківські картки</span></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-700"></i>
+                    </a>
+                    <div class="bg-white/60 rounded-2xl p-4 space-y-2">
+                        <strong class="block text-slate-900" data-key="pay-ca-title">З Канади (Power to Change)</strong>
+                        <p class="text-slate-700 text-xs" data-key="pay-ca-text">Рахунок <strong>200211</strong>, Ministry of Oleksandr Kyliushyk. Онлайн: <a href="https://p2c.com/donate" target="_blank" rel="noopener noreferrer" class="underline font-bold">p2c.com/donate</a></p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -458,7 +481,14 @@
 
             "partner-title": { uk: "Стати партнером", en: "Become a Partner" },
             "partner-text": { uk: "Ваша підтримка дає змогу бути поруч із хлопцями. Вона покриває ретрити та витрати місії на наступний рік.", en: "Your support makes it possible for me to stand alongside these men. It covers retreats and ministry expenses for the coming year." },
-            "partner-btn": { uk: "Підтримати місію", en: "Support the Ministry" },
+            "partner-btn": { uk: "Показати реквізити", en: "Show Giving Details" },
+            "pay-ua-title": { uk: "Приват24 / Monobank", en: "From Ukraine: Privat24 / Monobank" },
+            "pay-ua-step1": { uk: "«Платіж за IBAN», рахунок:", en: "Choose \"Payment by IBAN\" and enter the account:" },
+            "pay-ua-step2": { uk: "Отримувач: <strong class=\"text-white\">Місія «Україна для Христа»</strong>. У коментарі до платежу обов'язково вкажіть мій номер у місії:", en: "Recipient: <strong class=\"text-white\">Ukraine for Christ Mission</strong>. Be sure to put my staff number in the payment comment:" },
+            "pay-cru-title": { uk: "Cru.org", en: "Cru.org" },
+            "pay-cru-sub": { uk: "Міжнародні банківські картки", en: "International cards (US and worldwide)" },
+            "pay-ca-title": { uk: "З Канади (Power to Change)", en: "From Canada (Power to Change)" },
+            "pay-ca-text": { uk: "Рахунок <strong>200211</strong>, Ministry of Oleksandr Kyliushyk. Онлайн: <a href=\"https://p2c.com/donate\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline font-bold\">p2c.com/donate</a>", en: "Account <strong>200211</strong>, Ministry of Oleksandr Kyliushyk. Online: <a href=\"https://p2c.com/donate\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline font-bold\">p2c.com/donate</a>. Canadian tax receipt." },
 
             "prayer-title": { uk: "Молитовні потреби", en: "Prayer Requests" },
             "prayer-li1": { uk: "<strong class=\"text-white\">Про навчання.</strong> Мудрості, чи міняти курс.", en: "<strong class=\"text-white\">My studies.</strong> Wisdom about whether to switch programs." },
@@ -479,6 +509,20 @@
             "footer-role": { uk: "Служіння серед військових · Місія «Україна для Христа»", en: "Ministry among the military · Ukraine for Christ Mission" },
             "footer-back": { uk: "На головну", en: "Back to Home" }
         };
+
+        function togglePay(btn) {
+            var d = document.getElementById('pay-details');
+            var open = d.classList.toggle('hidden') === false;
+            btn.setAttribute('aria-expanded', String(open));
+            btn.querySelector('.pay-icon').classList.toggle('rotate-180', open);
+        }
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(function () {
+                var i = btn.querySelector('i');
+                i.className = 'fa-solid fa-check';
+                setTimeout(function () { i.className = 'fa-regular fa-copy'; }, 2000);
+            });
+        }
 
         function setLanguage(lang) {
             document.documentElement.lang = lang;
